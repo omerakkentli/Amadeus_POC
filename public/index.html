@@ -161,6 +161,9 @@
         const chatHistory = document.getElementById('chat-history');
         const messageInput = document.getElementById('messageInput');
         const sendBtn = document.getElementById('sendBtn');
+        
+        // Store conversation history for the API
+        let conversationHistory = [];
 
         function handleKeyPress(e) {
             if (e.key === 'Enter') {
@@ -185,7 +188,10 @@
                 const response = await fetch('/api/chat', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: text })
+                    body: JSON.stringify({ 
+                        message: text,
+                        history: conversationHistory
+                    })
                 });
 
                 const data = await response.json();
@@ -193,18 +199,26 @@
                 // Remove loading message
                 document.getElementById(loadingId).remove();
 
+                // Update history with user message (now that we know it succeeded essentially, though we sent it before)
+                // Actually better to add it before sending, but we need to handle failure. 
+                // For simplicity, we add to history list here.
+                conversationHistory.push({ role: 'user', content: text });
+
                 if (data.error) {
                     appendMessage(`Error: ${data.error}`, 'bot');
-                } else if (data.type === 'message') {
-                    appendMessage(data.content, 'bot');
-                } else if (data.type === 'results') {
+                } else {
+                    // The model response (text)
+                    if (data.content) {
+                        appendMessage(data.content, 'bot');
+                        conversationHistory.push({ role: 'model', content: data.content });
+                    }
+
+                    // Render flight cards if available
                     if (data.data && data.data.length > 0) {
-                        appendMessage(`Found ${data.data.length} flights for ${data.params.origin} -> ${data.params.destination} on ${data.params.date}:`, 'bot');
                         appendFlightResults(data.data);
-                    } else {
-                        appendMessage('No flights found matching your criteria.', 'bot');
                     }
                 }
+
             } catch (error) {
                 console.error(error);
                 document.getElementById(loadingId)?.remove();

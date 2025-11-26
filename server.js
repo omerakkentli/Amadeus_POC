@@ -41,20 +41,49 @@ async function initializeGemini() {
     }
 
     genAI = new GoogleGenerativeAI(apiKey);
+
+    // Define the tools
+    const tools = [
+        {
+            functionDeclarations: [
+                {
+                    name: "searchFlights",
+                    description: "Search for flights given an origin, destination, and date. Code must be IATA airport code.",
+                    parameters: {
+                        type: SchemaType.OBJECT,
+                        properties: {
+                            origin: { 
+                                type: SchemaType.STRING, 
+                                description: "The IATA code of the origin airport (e.g., IST, SFO, LHR)." 
+                            },
+                            destination: { 
+                                type: SchemaType.STRING, 
+                                description: "The IATA code of the destination airport (e.g., JFK, CDG, DXB)." 
+                            },
+                            date: { 
+                                type: SchemaType.STRING, 
+                                description: "The departure date in YYYY-MM-DD format." 
+                            }
+                        },
+                        required: ["origin", "destination", "date"]
+                    }
+                }
+            ]
+        }
+    ];
+
     model = genAI.getGenerativeModel({
         model: 'gemini-2.0-flash',
-        generationConfig: {
-            responseMimeType: "application/json",
-            responseSchema: {
-                type: SchemaType.OBJECT,
-                properties: {
-                    origin: { type: SchemaType.STRING, nullable: true },
-                    destination: { type: SchemaType.STRING, nullable: true },
-                    date: { type: SchemaType.STRING, nullable: true },
-                    missing_info: { type: SchemaType.STRING, nullable: true }
-                },
-                required: ["origin", "destination", "date", "missing_info"]
-            }
+        tools: tools,
+        systemInstruction: {
+            parts: [{ text: `You are a helpful and friendly flight search assistant. 
+            Your goal is to help users find flights using the searchFlights tool.
+            - Always ask clarifying questions if the user's request is ambiguous.
+            - If the user asks for a city name, convert it to the appropriate IATA code in your internal reasoning or tool call (e.g., London -> LHR, Istanbul -> IST).
+            - If the user provides relative dates (e.g., "next Friday"), calculate the YYYY-MM-DD date based on the current date provided in the context.
+            - When you find flights, summarize the options nicely in natural language, mentioning the cheapest or fastest options.
+            - If no flights are found, apologize and suggest alternative dates or routes.
+            - Be conversational and maintain context.` }]
         }
     });
 }
@@ -127,9 +156,39 @@ app.get('/api/search', async (req, res) => {
     }
 });
 
-// Chat Endpoint using Gemini
+// Tool Implementations
+const functions = {
+    searchFlights: async ({ origin, destination, date }) => {
+        console.log(`Executing searchFlights: ${origin} -> ${destination} on ${date}`);
+        try {
+            const token = await getAccessToken();
+            const response = await axios.get('https://test.api.amadeus.com/v2/shopping/flight-offers', {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                },
+                params: {
+                    originLocationCode: origin,
+                    destinationLocationCode: destination,
+                    departureDate: date,
+                    adults: 1,
+                    max: 5
+                }
+            });
+            
+            // Log full response as requested
+            console.log('Amadeus API Response:', JSON.stringify(response.data, null, 2));
+            
+            return response.data;
+        } catch (error) {
+            console.error('Amadeus API Error:', error.response ? error.response.data : error.message);
+            throw new Error('Failed to fetch flights from Amadeus.');
+        }
+    }
+};
+
+// Chat Endpoint using Gemini with Tools
 app.post('/api/chat', async (req, res) => {
-    const { message } = req.body;
+    const { message, history } = req.body;
 
     if (!message) {
         return res.status(400).json({ error: 'Message is required' });
@@ -140,66 +199,75 @@ app.post('/api/chat', async (req, res) => {
     }
 
     try {
-        // 1. Interpret user intent with Gemini
-        const currentDate = new Date().toISOString().split('T')[0];
-        const prompt = `
-            You are a flight search assistant. The current date is ${currentDate}.
-            The user wants to search for flights.
-            
-            Extract the following parameters from the user's query:
-            - origin: The IATA code of the origin airport (e.g., IST for Istanbul, SFO for San Francisco). Convert city names to their main airport's IATA code.
-            - destination: The IATA code of the destination airport. Convert city names to their main airport's IATA code.
-            - date: The departure date in YYYY-MM-DD format. Handle relative dates like "today", "tomorrow", "next Friday".
+        // Convert frontend history to Gemini format
+        // Frontend sends: [{ role: 'user'|'model', content: '...' }]
+        const chatHistory = (history || []).map(msg => ({
+            role: msg.role,
+            parts: [{ text: msg.content }]
+        }));
 
-            User Query: "${message}"
-        `;
-
-        const result = await model.generateContent(prompt);
-        const responseText = result.response.text();
-        const searchParams = JSON.parse(responseText);
-
-        console.log('Gemini extracted params:', searchParams);
-
-        if (!searchParams.origin || !searchParams.destination || !searchParams.date) {
-             return res.json({
-                 type: 'message',
-                 content: `I understood you want to go from ${searchParams.origin || '?'} to ${searchParams.destination || '?'} on ${searchParams.date || '?'}. Please provide the missing information.`
-             });
-        }
-
-        // 2. Call Amadeus API
-        const token = await getAccessToken();
-        const amadeusResponse = await axios.get('https://test.api.amadeus.com/v2/shopping/flight-offers', {
-            headers: {
-                'Authorization': `Bearer ${token}`
-            },
-            params: {
-                originLocationCode: searchParams.origin,
-                destinationLocationCode: searchParams.destination,
-                departureDate: searchParams.date,
-                adults: 1,
-                max: 5 // Limit results
-            }
+        const chat = model.startChat({
+            history: chatHistory
         });
 
-        // 3. Return results
+        const currentDate = new Date().toISOString().split('T')[0];
+        const userMessage = `[System: Current Date is ${currentDate}] ${message}`;
+
+        let result = await chat.sendMessage(userMessage);
+        let response = result.response;
+        let flightData = null;
+
+        // Handle Function Calls
+        while (response.functionCalls()) {
+            const calls = response.functionCalls();
+            const functionResponses = [];
+
+            for (const call of calls) {
+                const name = call.name;
+                const args = call.args;
+                
+                if (functions[name]) {
+                    try {
+                        const apiResult = await functions[name](args);
+                        
+                        if (name === 'searchFlights') {
+                            flightData = apiResult.data;
+                        }
+
+                        functionResponses.push({
+                            functionResponse: {
+                                name: name,
+                                response: { name: name, content: apiResult }
+                            }
+                        });
+                    } catch (err) {
+                         functionResponses.push({
+                            functionResponse: {
+                                name: name,
+                                response: { name: name, content: { error: err.message } }
+                            }
+                        });
+                    }
+                }
+            }
+            
+            // Send function results back to the model
+            result = await chat.sendMessage(functionResponses);
+            response = result.response;
+        }
+
+        // Final text response from model
+        const text = response.text();
+
         res.json({
-            type: 'results',
-            params: searchParams,
-            data: amadeusResponse.data.data
+            type: flightData ? 'results' : 'message',
+            content: text,
+            data: flightData
         });
 
     } catch (error) {
         console.error('Chat processing error:', error);
-        
-        let errorMessage = 'An error occurred while processing your request.';
-        if (error.response && error.response.data && error.response.data.errors) {
-             errorMessage = `Amadeus API Error: ${error.response.data.errors[0].detail}`;
-        } else if (error.message) {
-            errorMessage = error.message;
-        }
-
-        res.status(500).json({ error: errorMessage });
+        res.status(500).json({ error: 'An error occurred while processing your request.' });
     }
 });
 
