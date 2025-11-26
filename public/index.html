@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amadeus Flight Assistant</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -509,6 +511,54 @@
             container.style.backgroundColor = 'transparent';
             container.style.padding = '0';
             container.style.width = '100%';
+
+            // Map Container
+            const validHotels = hotels.filter(h => {
+                if (!h.geoCode) return false;
+                const lat = parseFloat(h.geoCode.latitude);
+                const lng = parseFloat(h.geoCode.longitude);
+                return !isNaN(lat) && !isNaN(lng) && (lat !== 0 || lng !== 0);
+            });
+
+            if (validHotels.length > 0) {
+                const mapContainer = document.createElement('div');
+                const mapId = 'map-' + Date.now();
+                mapContainer.id = mapId;
+                mapContainer.style.height = '300px';
+                mapContainer.style.width = '100%';
+                mapContainer.style.borderRadius = '8px';
+                mapContainer.style.marginBottom = '10px';
+                mapContainer.style.zIndex = '1';
+                container.appendChild(mapContainer);
+
+                // Initialize Map
+                setTimeout(() => {
+                    // Default view - will be overridden by fitBounds
+                    const map = L.map(mapId).setView([0, 0], 2);
+
+                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        maxZoom: 19,
+                        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                    }).addTo(map);
+
+                    const bounds = [];
+                    validHotels.forEach(hotel => {
+                        const lat = parseFloat(hotel.geoCode.latitude);
+                        const lng = parseFloat(hotel.geoCode.longitude);
+                        
+                        const marker = L.marker([lat, lng]).addTo(map);
+                        marker.bindPopup(`<b>${hotel.name}</b><br>ID: ${hotel.hotelId}`);
+                        bounds.push([lat, lng]);
+                    });
+                    
+                    if (bounds.length > 0) {
+                        map.fitBounds(bounds, { padding: [20, 20] });
+                    }
+                    
+                    // Invalidate size to ensure proper rendering
+                    map.invalidateSize();
+                }, 100);
+            }
 
             // Limit to 5 hotels for display to avoid spamming
             hotels.slice(0, 5).forEach(hotel => {
