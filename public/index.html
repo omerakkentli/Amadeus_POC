@@ -206,11 +206,61 @@
             font-weight: bold;
             color: #555;
         }
+
+        /* Activity Cards */
+        .activity-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .activity-card h4 {
+            margin: 0 0 5px 0;
+            color: #005eb8;
+            font-size: 1.1em;
+        }
+        .activity-meta {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 8px;
+            display: flex;
+            gap: 10px;
+        }
+        .activity-rating {
+            color: #f39c12;
+            font-weight: bold;
+        }
+        .activity-price {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* Hotel Cards */
+        .hotel-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .hotel-card h4 {
+            margin: 0;
+            color: #005eb8;
+        }
+        .hotel-info {
+            font-size: 0.9em;
+            color: #555;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>✈️ Amadeus Flight Assistant</h1>
+        <h1>✈️ Amadeus Travel Assistant</h1>
         
         <div id="chat-history">
             <div class="message bot">
@@ -280,9 +330,15 @@
                         conversationHistory.push({ role: 'model', content: data.content });
                     }
 
-                    // Render flight cards if available
+                    // Render UI cards if available
                     if (data.data && data.data.length > 0) {
-                        appendFlightResults(data.data);
+                        if (data.dataType === 'flights') {
+                            appendFlightResults(data.data);
+                        } else if (data.dataType === 'activities') {
+                            appendActivityResults(data.data);
+                        } else if (data.dataType === 'hotels') {
+                            appendHotelResults(data.data);
+                        }
                     }
                 }
 
@@ -408,6 +464,76 @@
                 `;
                 container.appendChild(card);
             });
+
+            chatHistory.appendChild(container);
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+        }
+
+        function appendActivityResults(activities) {
+            const container = document.createElement('div');
+            container.className = 'message bot';
+            container.style.backgroundColor = 'transparent';
+            container.style.padding = '0';
+            container.style.width = '100%';
+
+            activities.forEach(activity => {
+                const card = document.createElement('div');
+                card.className = 'activity-card';
+                
+                const price = activity.price ? `${activity.price.amount} ${activity.price.currencyCode}` : '';
+                const rating = activity.rating ? `⭐ ${activity.rating}` : '';
+                
+                card.innerHTML = `
+                    <h4>${activity.name}</h4>
+                    <div class="activity-meta">
+                        ${rating ? `<span class="activity-rating">${rating}</span>` : ''}
+                        ${price ? `<span class="activity-price">${price}</span>` : ''}
+                    </div>
+                    <div style="font-size: 0.9em; color: #444;">${activity.shortDescription || 'No description available.'}</div>
+                    <div style="margin-top: 8px; font-size: 0.8em; color: #888;">
+                        <a href="${activity.bookingLink || '#'}" target="_blank" style="color: #005eb8; text-decoration: none;">
+                            ${activity.bookingLink ? 'Book Now ↗' : ''}
+                        </a>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            chatHistory.appendChild(container);
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+        }
+
+        function appendHotelResults(hotels) {
+            const container = document.createElement('div');
+            container.className = 'message bot';
+            container.style.backgroundColor = 'transparent';
+            container.style.padding = '0';
+            container.style.width = '100%';
+
+            // Limit to 5 hotels for display to avoid spamming
+            hotels.slice(0, 5).forEach(hotel => {
+                const card = document.createElement('div');
+                card.className = 'hotel-card';
+                
+                card.innerHTML = `
+                    <h4>${hotel.name}</h4>
+                    <div class="hotel-info">ID: ${hotel.hotelId} | Chain: ${hotel.chainCode}</div>
+                    <div class="hotel-info">
+                        Latitude: ${hotel.geoCode ? hotel.geoCode.latitude : 'N/A'}, 
+                        Longitude: ${hotel.geoCode ? hotel.geoCode.longitude : 'N/A'}
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+             
+             if (hotels.length > 5) {
+                 const moreDiv = document.createElement('div');
+                 moreDiv.style.textAlign = 'center';
+                 moreDiv.style.padding = '10px';
+                 moreDiv.style.color = '#666';
+                 moreDiv.textContent = `...and ${hotels.length - 5} more hotels.`;
+                 container.appendChild(moreDiv);
+             }
 
             chatHistory.appendChild(container);
             chatHistory.scrollTop = chatHistory.scrollHeight;

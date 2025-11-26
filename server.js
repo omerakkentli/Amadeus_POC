@@ -191,6 +191,10 @@ async function initializeGemini() {
             
             **Response Formatting:**
             - Use **Markdown** for general text (bold, lists).
+            - **Data Display:**
+                - If the user asks for lists of flights, hotels, or activities, use the available tools.
+                - The system will automatically render cards for flights, hotels, and activities based on the tool output.
+                - **DO NOT** output raw JSON blocks for these items in your text response. Summarize the top options briefly in text if needed, or just say "Here are the results I found:".
             - **Comparisons:** When asked to compare options (flights or hotels), **DO NOT** create a Markdown table or a long text list.
             - Instead, output the comparison data using a special **JSON Code Block** with the language tag \`json-comparison\`.
             - Structure the JSON like this:
@@ -448,7 +452,8 @@ app.post('/api/chat', async (req, res) => {
 
         let result = await chat.sendMessage(userMessage);
         let response = result.response;
-        let flightData = null;
+        let uiData = null;
+        let uiType = null;
 
         // Handle Function Calls
         while (response.functionCalls()) {
@@ -463,8 +468,19 @@ app.post('/api/chat', async (req, res) => {
                     try {
                         const apiResult = await functions[name](args);
                         
+                        // Capture data for UI rendering
                         if (name === 'searchFlights') {
-                            flightData = apiResult.data;
+                            uiData = apiResult.data;
+                            uiType = 'flights';
+                        } else if (name === 'searchActivities') {
+                            uiData = apiResult.data;
+                            uiType = 'activities';
+                        } else if (name === 'searchHotelsByCity') {
+                            uiData = apiResult.data;
+                            uiType = 'hotels';
+                        } else if (name === 'getHotelOffers') {
+                            uiData = apiResult.data;
+                            uiType = 'offers';
                         }
 
                         functionResponses.push({
@@ -493,9 +509,10 @@ app.post('/api/chat', async (req, res) => {
         const text = response.text();
 
         res.json({
-            type: flightData ? 'results' : 'message',
+            type: uiData ? 'results' : 'message',
             content: text,
-            data: flightData
+            data: uiData,
+            dataType: uiType
         });
 
     } catch (error) {
