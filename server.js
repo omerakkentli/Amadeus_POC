@@ -542,10 +542,18 @@ app.post('/api/chat', async (req, res) => {
         saveSessions();
 
         // Convert session history to Gemini format
-        const chatHistory = session.messages.slice(0, -1).map(msg => ({
-            role: msg.role,
-            parts: [{ text: msg.content }]
-        }));
+        const chatHistory = session.messages.slice(0, -1).map(msg => {
+            let textContent = msg.content;
+            // If the message had associated UI data (flights, hotels, etc.), inject it into the context
+            // so the model knows what the user is looking at.
+            if (msg.data && msg.dataType) {
+                textContent += `\n\n[System Context: The user was shown the following ${msg.dataType} results: ${JSON.stringify(msg.data)}]`;
+            }
+            return {
+                role: msg.role,
+                parts: [{ text: textContent }]
+            };
+        });
 
         const chat = model.startChat({
             history: chatHistory

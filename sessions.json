@@ -10835,8 +10835,1796 @@
         "content": "Please provide me with the hotel ids so I can compare them.\n",
         "data": null,
         "dataType": null
+      },
+      {
+        "role": "user",
+        "content": "compare these"
+      },
+      {
+        "role": "model",
+        "content": "Please provide me with the hotel ids so I can compare them.",
+        "data": null,
+        "dataType": null
       }
     ],
     "createdAt": 1764193091886
+  },
+  "migj3gvo06ip5cb7jw5": {
+    "id": "migj3gvo06ip5cb7jw5",
+    "title": "New Chat",
+    "messages": [],
+    "createdAt": 1764193225524
+  },
+  "migj3hxgqwmtn4j9uz": {
+    "id": "migj3hxgqwmtn4j9uz",
+    "title": "New Chat",
+    "messages": [],
+    "createdAt": 1764193226884
+  },
+  "migj3iq8oy6kie68dmp": {
+    "id": "migj3iq8oy6kie68dmp",
+    "title": "New Chat",
+    "messages": [],
+    "createdAt": 1764193227920
+  },
+  "migj3iysc5aa28040gu": {
+    "id": "migj3iysc5aa28040gu",
+    "title": "Ibiza Hotel Hunt On!",
+    "messages": [
+      {
+        "role": "user",
+        "content": "find hotels in ibiza for next week starting monday"
+      },
+      {
+        "role": "model",
+        "content": "Okay, I found 41 hotels in Ibiza. Next week starting Monday would be 2025-12-01. Can you provide me with the check-out date and the number of adults, so I can check for offers?\n",
+        "data": [
+          {
+            "chainCode": "HA",
+            "iataCode": "IBZ",
+            "dupeId": 700022263,
+            "name": "AGROTURISMO CAN LLUC",
+            "hotelId": "HAIBZLLU",
+            "geoCode": {
+              "latitude": 38.90802,
+              "longitude": 1.43633
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07816",
+              "cityName": "IBIZA",
+              "lines": [
+                "SANT RAFEL"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:19:36"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 700027524,
+            "name": "BORA BORA JET APARTAMENTOS",
+            "hotelId": "HSIBZAGP",
+            "geoCode": {
+              "latitude": 38.88877,
+              "longitude": 1.40792
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7817",
+              "cityName": "IBIZA",
+              "lines": [
+                "PLAYA D'EN BOSSA"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:20:38"
+          },
+          {
+            "chainCode": "KY",
+            "iataCode": "IBZ",
+            "dupeId": 700012151,
+            "name": "SUITE HOTEL S'ARGAMASSA PALACE-S.EULALIA",
+            "hotelId": "KYIBZARG",
+            "geoCode": {
+              "latitude": 38.98584,
+              "longitude": 1.54542
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07840",
+              "cityName": "SANTA EULALIA DEL RIO  IB",
+              "lines": [
+                "URBANIZACION S'ARGAMASSA"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:20:24"
+          },
+          {
+            "chainCode": "FG",
+            "iataCode": "IBZ",
+            "dupeId": 700184588,
+            "name": "THE RED HOTEL BY IBIZA FEELING",
+            "hotelId": "FGIBZFLO",
+            "geoCode": {
+              "latitude": 38.90979,
+              "longitude": 1.43394
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07820",
+              "cityName": "IBIZA",
+              "lines": [
+                "CARRER DE RAMON I CAJAL 2"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:16:38"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 501425802,
+            "name": "TIVOLI APARTAMENTOS",
+            "hotelId": "HSIBZADW",
+            "geoCode": {
+              "latitude": 38.8943,
+              "longitude": 1.40982
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7800",
+              "cityName": "IBIZA",
+              "lines": [
+                "C- PEDRO MATUTES NOGUERA"
+              ]
+            },
+            "lastUpdate": "2025-10-07T09:03:32"
+          },
+          {
+            "chainCode": "YX",
+            "iataCode": "IBZ",
+            "dupeId": 501433110,
+            "name": "CAS GASI HOTEL IBIZA",
+            "hotelId": "YXIBZCGI",
+            "geoCode": {
+              "latitude": 38.99862,
+              "longitude": 1.42836
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07814",
+              "cityName": "SANTA GERTRUDIS",
+              "lines": [
+                "CAMINO VIEJO DE ST MATEU1"
+              ]
+            },
+            "lastUpdate": "2025-10-09T09:03:37"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 501425804,
+            "name": "MARCO POLO II.",
+            "hotelId": "HSIBZADX",
+            "geoCode": {
+              "latitude": 38.97976,
+              "longitude": 1.30768
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7820",
+              "cityName": "IBIZA",
+              "lines": [
+                "AVENIDA DE PORTMANY"
+              ]
+            },
+            "lastUpdate": "2025-10-01T09:00:21"
+          },
+          {
+            "chainCode": "TY",
+            "iataCode": "IBZ",
+            "dupeId": 700141965,
+            "name": "THB BAHIA",
+            "hotelId": "TYIBZTHB",
+            "geoCode": {
+              "latitude": 38.97131,
+              "longitude": 1.30531
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07820",
+              "cityName": "SANT ANTONI IBIZA",
+              "lines": [
+                "BELLAVISTA 1"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:17:57"
+          },
+          {
+            "chainCode": "FG",
+            "iataCode": "IBZ",
+            "dupeId": 700162680,
+            "name": "THE WHITE APARTMENTS BY IBIZA FEELING",
+            "hotelId": "FGIBZWAF",
+            "geoCode": {
+              "latitude": 38.9795,
+              "longitude": 1.30649
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07820",
+              "cityName": "SANT ANTONI DE PORTMANY",
+              "lines": [
+                "AVINGUDA DEL DR",
+                "FLEMING  3"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:16:38"
+          },
+          {
+            "chainCode": "WV",
+            "iataCode": "IBZ",
+            "dupeId": 700050237,
+            "name": "HOTEL EL GRECO",
+            "hotelId": "WVIBZGRE",
+            "geoCode": {
+              "latitude": 39.11332,
+              "longitude": 1.51819
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07820",
+              "cityName": "PORTINATX",
+              "lines": [
+                "CALA PORTINATX",
+                "SAN JUAN BAUTISTA"
+              ]
+            },
+            "masterChainCode": "TC",
+            "lastUpdate": "2025-06-03T10:18:28"
+          },
+          {
+            "chainCode": "DH",
+            "iataCode": "IBZ",
+            "dupeId": 700028670,
+            "name": "CLUB SAN MARINO",
+            "hotelId": "DHIBZAJM",
+            "geoCode": {
+              "latitude": 38.908,
+              "longitude": 1.43464
+            },
+            "address": {
+              "countryCode": "ES",
+              "cityName": "IBIZA",
+              "lines": [
+                "LUGO S/N, 07830 SAN ANTONIO, IBIZA, SPAIN"
+              ]
+            },
+            "masterChainCode": "TC",
+            "lastUpdate": "2025-06-03T10:21:35"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 501426080,
+            "name": "CLUB LA NORIA",
+            "hotelId": "HSIBZAGV",
+            "geoCode": {
+              "latitude": 38.89195,
+              "longitude": 1.40606
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7839",
+              "cityName": "IBIZA",
+              "lines": [
+                "ARGUELAGUES 7"
+              ]
+            },
+            "lastUpdate": "2025-10-07T09:03:32"
+          },
+          {
+            "chainCode": "KY",
+            "iataCode": "IBZ",
+            "dupeId": 501364973,
+            "name": "EL PUERTO-IBIZA",
+            "hotelId": "KYIBZPUE",
+            "geoCode": {
+              "latitude": 38.91175,
+              "longitude": 1.43208
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07800",
+              "cityName": "IBIZA",
+              "lines": [
+                "CALLE CARLES III 22-24"
+              ]
+            },
+            "lastUpdate": "2025-10-07T09:03:29"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 700001908,
+            "name": "TAGOMAGO",
+            "hotelId": "HSIBZAAH",
+            "geoCode": {
+              "latitude": 38.9742,
+              "longitude": 1.3088
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7830",
+              "cityName": "IBIZA",
+              "lines": [
+                "PLAYA S'ESTENYOL"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:20:36"
+          },
+          {
+            "chainCode": "ON",
+            "iataCode": "IBZ",
+            "dupeId": 700001882,
+            "name": "INTERTUR HOTEL MIAMI IBIZA",
+            "hotelId": "ONIBZMIA",
+            "geoCode": {
+              "latitude": 39.00284,
+              "longitude": 1.58097
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07840",
+              "cityName": "STA EULALIA DEL RIO",
+              "lines": [
+                "C/ POU ROIG, 70"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:21:51"
+          },
+          {
+            "chainCode": "KY",
+            "iataCode": "IBZ",
+            "dupeId": 700026013,
+            "name": "DUQUESA PLAYA - STA. EULALIA",
+            "hotelId": "KYIBZDUQ",
+            "geoCode": {
+              "latitude": 38.98563,
+              "longitude": 1.53632
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07840",
+              "cityName": "SANTA EULALIA DEL RIU",
+              "lines": [
+                "SANT LLORENC 16-18"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:20:24"
+          },
+          {
+            "chainCode": "UZ",
+            "iataCode": "IBZ",
+            "dupeId": 700006817,
+            "name": "FIESTA HOTEL DON CARLOS",
+            "hotelId": "UZIBZ816",
+            "geoCode": {
+              "latitude": 38.99826,
+              "longitude": 1.53859
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07849",
+              "cityName": "IBIZA",
+              "lines": [
+                "C/ LOS ROSALES 53",
+                "SANTA EULALIA DEL RIO"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:17:58"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 700182515,
+            "name": "SAN REMO CLUB HOTEL",
+            "hotelId": "HSIBZACU",
+            "geoCode": {
+              "latitude": 38.96758,
+              "longitude": 1.29885
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7820",
+              "cityName": "IBIZA",
+              "lines": [
+                "CTRA. PORT D ES TORRENT S-N,"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:20:38"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 501819148,
+            "name": "GRAND PALLADIUM PALACE IBIZA RESORT - SP",
+            "hotelId": "HSIBZADH",
+            "geoCode": {
+              "latitude": 38.87724,
+              "longitude": 1.40116
+            },
+            "address": {
+              "countryCode": "ES",
+              "cityName": "IBIZA",
+              "lines": [
+                "PLAYA DEN BOSSA"
+              ]
+            },
+            "lastUpdate": "2025-10-07T09:03:32"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 501425786,
+            "name": "ORQUIDEA",
+            "hotelId": "HSIBZAET",
+            "geoCode": {
+              "latitude": 38.98109,
+              "longitude": 1.53183
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7840",
+              "cityName": "IBIZA",
+              "lines": [
+                "PASEO MARITIMO S-N"
+              ]
+            },
+            "lastUpdate": "2025-10-07T09:03:32"
+          },
+          {
+            "chainCode": "DS",
+            "iataCode": "IBZ",
+            "dupeId": 700013420,
+            "name": "THE OCEAN DRIVE",
+            "hotelId": "DSIBZ118",
+            "geoCode": {
+              "latitude": 38.90882,
+              "longitude": 1.43207
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07800",
+              "cityName": "IBIZA/ BALEARES",
+              "lines": [
+                "PLAYA DE TALAMANCA",
+                "MARINA BOTAFOCH"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:19:56"
+          },
+          {
+            "chainCode": "DS",
+            "iataCode": "IBZ",
+            "dupeId": 700054026,
+            "name": "AGUAS DE IBIZA",
+            "hotelId": "DSIBZADI",
+            "geoCode": {
+              "latitude": 38.98648,
+              "longitude": 1.54295
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07840",
+              "cityName": "SANTA EULALIA DEL RIO",
+              "lines": [
+                "CALLE SALVADOR CAMACHO"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:19:56"
+          },
+          {
+            "chainCode": "LE",
+            "iataCode": "IBZ",
+            "dupeId": 700011102,
+            "name": "IBIZA ROCKS HOUSE AT PIKES HOTEL",
+            "hotelId": "LEIBZ757",
+            "geoCode": {
+              "latitude": 38.99113,
+              "longitude": 1.34494
+            },
+            "address": {
+              "countryCode": "ES",
+              "cityName": "SANT ANTONI DE PORTMANY",
+              "lines": [
+                "CAMINO DE SA VORERA S/N"
+              ]
+            },
+            "masterChainCode": "PV",
+            "lastUpdate": "2025-06-03T10:20:29"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 501426088,
+            "name": "BOSSA PARK",
+            "hotelId": "HSIBZAGJ",
+            "geoCode": {
+              "latitude": 38.89127,
+              "longitude": 1.40598
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7817",
+              "cityName": "IBIZA",
+              "lines": [
+                "SES BEGONIES S-N"
+              ]
+            },
+            "lastUpdate": "2025-10-07T09:03:32"
+          },
+          {
+            "chainCode": "FG",
+            "iataCode": "IBZ",
+            "dupeId": 700001892,
+            "name": "HOTEL ELS PINS-SANT ANTONI DE PORTMANY",
+            "hotelId": "FGIBZPIN",
+            "geoCode": {
+              "latitude": 39.00286,
+              "longitude": 1.35647
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07820",
+              "cityName": "SANT ANTONI DE PORTMANY",
+              "lines": [
+                "ES CALO S/N"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:16:38"
+          },
+          {
+            "chainCode": "FG",
+            "iataCode": "IBZ",
+            "dupeId": 700162679,
+            "name": "THE BLUE APARTMENTS BY IBIZA FEELING",
+            "hotelId": "FGIBZBAF",
+            "geoCode": {
+              "latitude": 38.98035,
+              "longitude": 1.30502
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07820",
+              "cityName": "SANT ANTONI DE PORTMANY",
+              "lines": [
+                "CARRER DE RAMON I",
+                "CAJAL  1"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:16:38"
+          },
+          {
+            "chainCode": "KY",
+            "iataCode": "IBZ",
+            "dupeId": 700003808,
+            "name": "APARTAMENTOS EL PUERTO",
+            "hotelId": "KYIBZAPU",
+            "geoCode": {
+              "latitude": 38.91171,
+              "longitude": 1.43316
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07800",
+              "cityName": "IBIZA",
+              "lines": [
+                "CALLE CARLOS III 22"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:20:24"
+          },
+          {
+            "chainCode": "KY",
+            "iataCode": "IBZ",
+            "dupeId": 700012083,
+            "name": "EXE ROYAL PLAZA",
+            "hotelId": "KYIBZRPL",
+            "geoCode": {
+              "latitude": 38.90581,
+              "longitude": 1.42074
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07800",
+              "cityName": "IBIZA",
+              "lines": [
+                "CALLE PEDRO FRANCES 27"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:20:24"
+          },
+          {
+            "chainCode": "BN",
+            "iataCode": "IBZ",
+            "dupeId": 700001890,
+            "name": "BARCELO PUEBLO IBIZA",
+            "hotelId": "BNIBZ636",
+            "geoCode": {
+              "latitude": 38.97999,
+              "longitude": 1.30812
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07830",
+              "cityName": "SANT JOSEP DE SA TALAIA",
+              "lines": [
+                "CALLE VALENCIA 23 27"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:19:28"
+          },
+          {
+            "chainCode": "HA",
+            "iataCode": "IBZ",
+            "dupeId": 700001911,
+            "name": "LA CALA  - SANTA EULALIA",
+            "hotelId": "HAIBZLAC",
+            "geoCode": {
+              "latitude": 38.98472,
+              "longitude": 1.53336
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07840",
+              "cityName": "SANTA EULARIA DES RIU",
+              "lines": [
+                "C/ HUESCA 1"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:19:36"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 700001872,
+            "name": "JET APARTAMENTOS",
+            "hotelId": "HSIBZAIH",
+            "geoCode": {
+              "latitude": 38.88874,
+              "longitude": 1.40757
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7817",
+              "cityName": "SAN JORGE",
+              "lines": [
+                "PLAYA DEN BOSSA"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:20:38"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 700001897,
+            "name": "LA SIRENA",
+            "hotelId": "HSIBZAGZ",
+            "geoCode": {
+              "latitude": 38.97035,
+              "longitude": 1.30922
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7880",
+              "cityName": "IBIZA",
+              "lines": [
+                "CALLE VERDAMELL, NO. 6"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:20:38"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 501425101,
+            "name": "TROPICAL",
+            "hotelId": "HSIBZABP",
+            "geoCode": {
+              "latitude": 38.98263,
+              "longitude": 1.30219
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7820",
+              "cityName": "IBIZA",
+              "lines": [
+                "C- CERVANTES, 28"
+              ]
+            },
+            "lastUpdate": "2025-10-07T09:03:31"
+          },
+          {
+            "chainCode": "WV",
+            "iataCode": "IBZ",
+            "dupeId": 700050871,
+            "name": "IBIZA GRAN HOTEL",
+            "hotelId": "WVIBZIBI",
+            "geoCode": {
+              "latitude": 38.9165,
+              "longitude": 1.44092
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07800",
+              "cityName": "EIVISSA",
+              "lines": [
+                "PASEO JUAN CARLOS I 17"
+              ]
+            },
+            "masterChainCode": "TC",
+            "lastUpdate": "2025-06-03T10:18:28"
+          },
+          {
+            "chainCode": "FG",
+            "iataCode": "IBZ",
+            "dupeId": 700005627,
+            "name": "HI! MONTEMAR APARTAMENTOS",
+            "hotelId": "FGIBZ7DY",
+            "geoCode": {
+              "latitude": 38.95619,
+              "longitude": 1.51832
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07849",
+              "cityName": "CALA LLONGA",
+              "lines": [
+                "C KILIMANJARO 15",
+                "IBIZA"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:16:38"
+          },
+          {
+            "chainCode": "DH",
+            "iataCode": "IBZ",
+            "dupeId": 700128362,
+            "name": "MONTANA",
+            "hotelId": "DHIBZAJL",
+            "geoCode": {
+              "latitude": 38.9214,
+              "longitude": 1.42485
+            },
+            "address": {
+              "countryCode": "ES",
+              "cityName": "IBIZA",
+              "lines": [
+                "CALLE ROMA 8 SANT ANTONI DE PORTMANY, IBIZA, SPAIN"
+              ]
+            },
+            "masterChainCode": "TC",
+            "lastUpdate": "2025-06-03T10:21:35"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 700143766,
+            "name": "USHUAIA BEACH HOTEL",
+            "hotelId": "HSIBZAED",
+            "geoCode": {
+              "latitude": 38.88509,
+              "longitude": 1.40524
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7817",
+              "cityName": "IBIZA",
+              "lines": [
+                "CARRETERA PLAYA DEN BOSSA 10"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:20:38"
+          },
+          {
+            "chainCode": "UZ",
+            "iataCode": "IBZ",
+            "dupeId": 700001845,
+            "name": "FIESTA HOTEL TANIT",
+            "hotelId": "UZIBZ268",
+            "geoCode": {
+              "latitude": 38.9903,
+              "longitude": 1.29241
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07820",
+              "cityName": "IBIZA",
+              "lines": [
+                "CARRETERA CALA GRACIO S/N",
+                "SAN ANTONIO DE PORTMANY"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:17:58"
+          },
+          {
+            "chainCode": "FG",
+            "iataCode": "IBZ",
+            "dupeId": 700073120,
+            "name": "THE PURPLE HOSTEL BY IBIZA FEELING",
+            "hotelId": "FGIBZLAU",
+            "geoCode": {
+              "latitude": 38.98142,
+              "longitude": 1.30092
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07820",
+              "cityName": "SANT ANTONI DE PORTMANY",
+              "lines": [
+                "CARRER D'ANTONI RIQUER, 23"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:16:38"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 700001896,
+            "name": "AZULINE MAR AMANTIS",
+            "hotelId": "HSIBZAAT",
+            "geoCode": {
+              "latitude": 38.96747,
+              "longitude": 1.29814
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7820",
+              "cityName": "IBIZA",
+              "lines": [
+                "PORT DES TORRENT S-N"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:20:36"
+          },
+          {
+            "chainCode": "SM",
+            "iataCode": "IBZ",
+            "dupeId": 700012807,
+            "name": "SOL IBIZA",
+            "hotelId": "SMIBZLOR",
+            "geoCode": {
+              "latitude": 38.9857,
+              "longitude": 1.54451
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07840",
+              "cityName": "SANTA EULALIA DEL RIO",
+              "lines": [
+                "PARE VICENT COSTA 2",
+                "IBIZA"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:17:42"
+          }
+        ],
+        "dataType": "hotels"
+      },
+      {
+        "role": "user",
+        "content": "compare"
+      },
+      {
+        "role": "model",
+        "content": "Could you please specify which hotels you'd like me to compare?\n",
+        "data": null,
+        "dataType": null
+      },
+      {
+        "role": "user",
+        "content": "top 3"
+      },
+      {
+        "role": "model",
+        "content": "Sure! To check the offers, I need to know the check-out date and the number of adults.\n```json-comparison\n{\n  \"title\": \"Hotel Comparison\",\n  \"columns\": [\"Name\", \"Address\", \"Latitude\", \"Longitude\"],\n  \"rows\": [\n    [\n      \"AGROTURISMO CAN LLUC\",\n      \"SANT RAFEL, IBIZA, 07816, ES\",\n      \"38.90802\",\n      \"1.43633\"\n    ],\n    [\n      \"BORA BORA JET APARTAMENTOS\",\n      \"PLAYA D'EN BOSSA, IBIZA, 7817, ES\",\n      \"38.88877\",\n      \"1.40792\"\n    ],\n    [\n      \"SUITE HOTEL S'ARGAMASSA PALACE-S.EULALIA\",\n      \"URBANIZACION S'ARGAMASSA, SANTA EULALIA DEL RIO  IB, 07840, ES\",\n      \"38.98584\",\n      \"1.54542\"\n    ]\n  ],\n  \"recommendation\": \"These are the top 3 hotels from the search results.\"\n}\n```\n",
+        "data": null,
+        "dataType": null
+      }
+    ],
+    "createdAt": 1764193228228
+  },
+  "migj3k7e8u82q73mrs": {
+    "id": "migj3k7e8u82q73mrs",
+    "title": "Inbize Hotels: Code and Dates?",
+    "messages": [
+      {
+        "role": "user",
+        "content": "find hotels in inbize for next week"
+      },
+      {
+        "role": "model",
+        "content": "Could you please provide the IATA code for Inbize? Also, what dates would you like to check in and check out next week?\n",
+        "data": null,
+        "dataType": null
+      },
+      {
+        "role": "user",
+        "content": "ibiza"
+      },
+      {
+        "role": "model",
+        "content": "Okay, I found 41 hotels in Ibiza (IBZ).\n\nRegarding the dates for \"next week\", considering today is November 26, 2025, would you like to check in on December 3, 2025, and check out on December 4, 2025?\n\nIf so, are there any specific hotels from the list you'd like me to check for offers?\n",
+        "data": [
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 501819148,
+            "name": "GRAND PALLADIUM PALACE IBIZA RESORT - SP",
+            "hotelId": "HSIBZADH",
+            "geoCode": {
+              "latitude": 38.87724,
+              "longitude": 1.40116
+            },
+            "address": {
+              "countryCode": "ES",
+              "cityName": "IBIZA",
+              "lines": [
+                "PLAYA DEN BOSSA"
+              ]
+            },
+            "lastUpdate": "2025-10-07T09:03:32"
+          },
+          {
+            "chainCode": "HA",
+            "iataCode": "IBZ",
+            "dupeId": 700022263,
+            "name": "AGROTURISMO CAN LLUC",
+            "hotelId": "HAIBZLLU",
+            "geoCode": {
+              "latitude": 38.90802,
+              "longitude": 1.43633
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07816",
+              "cityName": "IBIZA",
+              "lines": [
+                "SANT RAFEL"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:19:36"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 700001897,
+            "name": "LA SIRENA",
+            "hotelId": "HSIBZAGZ",
+            "geoCode": {
+              "latitude": 38.97035,
+              "longitude": 1.30922
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7880",
+              "cityName": "IBIZA",
+              "lines": [
+                "CALLE VERDAMELL, NO. 6"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:20:38"
+          },
+          {
+            "chainCode": "FG",
+            "iataCode": "IBZ",
+            "dupeId": 700162680,
+            "name": "THE WHITE APARTMENTS BY IBIZA FEELING",
+            "hotelId": "FGIBZWAF",
+            "geoCode": {
+              "latitude": 38.9795,
+              "longitude": 1.30649
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07820",
+              "cityName": "SANT ANTONI DE PORTMANY",
+              "lines": [
+                "AVINGUDA DEL DR",
+                "FLEMING  3"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:16:38"
+          },
+          {
+            "chainCode": "UZ",
+            "iataCode": "IBZ",
+            "dupeId": 700006817,
+            "name": "FIESTA HOTEL DON CARLOS",
+            "hotelId": "UZIBZ816",
+            "geoCode": {
+              "latitude": 38.99826,
+              "longitude": 1.53859
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07849",
+              "cityName": "IBIZA",
+              "lines": [
+                "C/ LOS ROSALES 53",
+                "SANTA EULALIA DEL RIO"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:17:58"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 700182515,
+            "name": "SAN REMO CLUB HOTEL",
+            "hotelId": "HSIBZACU",
+            "geoCode": {
+              "latitude": 38.96758,
+              "longitude": 1.29885
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7820",
+              "cityName": "IBIZA",
+              "lines": [
+                "CTRA. PORT D ES TORRENT S-N,"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:20:38"
+          },
+          {
+            "chainCode": "WV",
+            "iataCode": "IBZ",
+            "dupeId": 700050871,
+            "name": "IBIZA GRAN HOTEL",
+            "hotelId": "WVIBZIBI",
+            "geoCode": {
+              "latitude": 38.9165,
+              "longitude": 1.44092
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07800",
+              "cityName": "EIVISSA",
+              "lines": [
+                "PASEO JUAN CARLOS I 17"
+              ]
+            },
+            "masterChainCode": "TC",
+            "lastUpdate": "2025-06-03T10:18:28"
+          },
+          {
+            "chainCode": "FG",
+            "iataCode": "IBZ",
+            "dupeId": 700184588,
+            "name": "THE RED HOTEL BY IBIZA FEELING",
+            "hotelId": "FGIBZFLO",
+            "geoCode": {
+              "latitude": 38.90979,
+              "longitude": 1.43394
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07820",
+              "cityName": "IBIZA",
+              "lines": [
+                "CARRER DE RAMON I CAJAL 2"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:16:38"
+          },
+          {
+            "chainCode": "DH",
+            "iataCode": "IBZ",
+            "dupeId": 700128362,
+            "name": "MONTANA",
+            "hotelId": "DHIBZAJL",
+            "geoCode": {
+              "latitude": 38.9214,
+              "longitude": 1.42485
+            },
+            "address": {
+              "countryCode": "ES",
+              "cityName": "IBIZA",
+              "lines": [
+                "CALLE ROMA 8 SANT ANTONI DE PORTMANY, IBIZA, SPAIN"
+              ]
+            },
+            "masterChainCode": "TC",
+            "lastUpdate": "2025-06-03T10:21:35"
+          },
+          {
+            "chainCode": "KY",
+            "iataCode": "IBZ",
+            "dupeId": 700026013,
+            "name": "DUQUESA PLAYA - STA. EULALIA",
+            "hotelId": "KYIBZDUQ",
+            "geoCode": {
+              "latitude": 38.98563,
+              "longitude": 1.53632
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07840",
+              "cityName": "SANTA EULALIA DEL RIU",
+              "lines": [
+                "SANT LLORENC 16-18"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:20:24"
+          },
+          {
+            "chainCode": "KY",
+            "iataCode": "IBZ",
+            "dupeId": 700012151,
+            "name": "SUITE HOTEL S'ARGAMASSA PALACE-S.EULALIA",
+            "hotelId": "KYIBZARG",
+            "geoCode": {
+              "latitude": 38.98584,
+              "longitude": 1.54542
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07840",
+              "cityName": "SANTA EULALIA DEL RIO  IB",
+              "lines": [
+                "URBANIZACION S'ARGAMASSA"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:20:24"
+          },
+          {
+            "chainCode": "UZ",
+            "iataCode": "IBZ",
+            "dupeId": 700001845,
+            "name": "FIESTA HOTEL TANIT",
+            "hotelId": "UZIBZ268",
+            "geoCode": {
+              "latitude": 38.9903,
+              "longitude": 1.29241
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07820",
+              "cityName": "IBIZA",
+              "lines": [
+                "CARRETERA CALA GRACIO S/N",
+                "SAN ANTONIO DE PORTMANY"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:17:58"
+          },
+          {
+            "chainCode": "FG",
+            "iataCode": "IBZ",
+            "dupeId": 700073120,
+            "name": "THE PURPLE HOSTEL BY IBIZA FEELING",
+            "hotelId": "FGIBZLAU",
+            "geoCode": {
+              "latitude": 38.98142,
+              "longitude": 1.30092
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07820",
+              "cityName": "SANT ANTONI DE PORTMANY",
+              "lines": [
+                "CARRER D'ANTONI RIQUER, 23"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:16:38"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 700027524,
+            "name": "BORA BORA JET APARTAMENTOS",
+            "hotelId": "HSIBZAGP",
+            "geoCode": {
+              "latitude": 38.88877,
+              "longitude": 1.40792
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7817",
+              "cityName": "IBIZA",
+              "lines": [
+                "PLAYA D'EN BOSSA"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:20:38"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 700143766,
+            "name": "USHUAIA BEACH HOTEL",
+            "hotelId": "HSIBZAED",
+            "geoCode": {
+              "latitude": 38.88509,
+              "longitude": 1.40524
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7817",
+              "cityName": "IBIZA",
+              "lines": [
+                "CARRETERA PLAYA DEN BOSSA 10"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:20:38"
+          },
+          {
+            "chainCode": "KY",
+            "iataCode": "IBZ",
+            "dupeId": 501364973,
+            "name": "EL PUERTO-IBIZA",
+            "hotelId": "KYIBZPUE",
+            "geoCode": {
+              "latitude": 38.91175,
+              "longitude": 1.43208
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07800",
+              "cityName": "IBIZA",
+              "lines": [
+                "CALLE CARLES III 22-24"
+              ]
+            },
+            "lastUpdate": "2025-10-07T09:03:29"
+          },
+          {
+            "chainCode": "FG",
+            "iataCode": "IBZ",
+            "dupeId": 700005627,
+            "name": "HI! MONTEMAR APARTAMENTOS",
+            "hotelId": "FGIBZ7DY",
+            "geoCode": {
+              "latitude": 38.95619,
+              "longitude": 1.51832
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07849",
+              "cityName": "CALA LLONGA",
+              "lines": [
+                "C KILIMANJARO 15",
+                "IBIZA"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:16:38"
+          },
+          {
+            "chainCode": "YX",
+            "iataCode": "IBZ",
+            "dupeId": 501433110,
+            "name": "CAS GASI HOTEL IBIZA",
+            "hotelId": "YXIBZCGI",
+            "geoCode": {
+              "latitude": 38.99862,
+              "longitude": 1.42836
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07814",
+              "cityName": "SANTA GERTRUDIS",
+              "lines": [
+                "CAMINO VIEJO DE ST MATEU1"
+              ]
+            },
+            "lastUpdate": "2025-10-09T09:03:37"
+          },
+          {
+            "chainCode": "KY",
+            "iataCode": "IBZ",
+            "dupeId": 700003808,
+            "name": "APARTAMENTOS EL PUERTO",
+            "hotelId": "KYIBZAPU",
+            "geoCode": {
+              "latitude": 38.91171,
+              "longitude": 1.43316
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07800",
+              "cityName": "IBIZA",
+              "lines": [
+                "CALLE CARLOS III 22"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:20:24"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 501425786,
+            "name": "ORQUIDEA",
+            "hotelId": "HSIBZAET",
+            "geoCode": {
+              "latitude": 38.98109,
+              "longitude": 1.53183
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7840",
+              "cityName": "IBIZA",
+              "lines": [
+                "PASEO MARITIMO S-N"
+              ]
+            },
+            "lastUpdate": "2025-10-07T09:03:32"
+          },
+          {
+            "chainCode": "WV",
+            "iataCode": "IBZ",
+            "dupeId": 700050237,
+            "name": "HOTEL EL GRECO",
+            "hotelId": "WVIBZGRE",
+            "geoCode": {
+              "latitude": 39.11332,
+              "longitude": 1.51819
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07820",
+              "cityName": "PORTINATX",
+              "lines": [
+                "CALA PORTINATX",
+                "SAN JUAN BAUTISTA"
+              ]
+            },
+            "masterChainCode": "TC",
+            "lastUpdate": "2025-06-03T10:18:28"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 700001896,
+            "name": "AZULINE MAR AMANTIS",
+            "hotelId": "HSIBZAAT",
+            "geoCode": {
+              "latitude": 38.96747,
+              "longitude": 1.29814
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7820",
+              "cityName": "IBIZA",
+              "lines": [
+                "PORT DES TORRENT S-N"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:20:36"
+          },
+          {
+            "chainCode": "TY",
+            "iataCode": "IBZ",
+            "dupeId": 700141965,
+            "name": "THB BAHIA",
+            "hotelId": "TYIBZTHB",
+            "geoCode": {
+              "latitude": 38.97131,
+              "longitude": 1.30531
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07820",
+              "cityName": "SANT ANTONI IBIZA",
+              "lines": [
+                "BELLAVISTA 1"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:17:57"
+          },
+          {
+            "chainCode": "DH",
+            "iataCode": "IBZ",
+            "dupeId": 700028670,
+            "name": "CLUB SAN MARINO",
+            "hotelId": "DHIBZAJM",
+            "geoCode": {
+              "latitude": 38.908,
+              "longitude": 1.43464
+            },
+            "address": {
+              "countryCode": "ES",
+              "cityName": "IBIZA",
+              "lines": [
+                "LUGO S/N, 07830 SAN ANTONIO, IBIZA, SPAIN"
+              ]
+            },
+            "masterChainCode": "TC",
+            "lastUpdate": "2025-06-03T10:21:35"
+          },
+          {
+            "chainCode": "FG",
+            "iataCode": "IBZ",
+            "dupeId": 700001892,
+            "name": "HOTEL ELS PINS-SANT ANTONI DE PORTMANY",
+            "hotelId": "FGIBZPIN",
+            "geoCode": {
+              "latitude": 39.00286,
+              "longitude": 1.35647
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07820",
+              "cityName": "SANT ANTONI DE PORTMANY",
+              "lines": [
+                "ES CALO S/N"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:16:38"
+          },
+          {
+            "chainCode": "DS",
+            "iataCode": "IBZ",
+            "dupeId": 700013420,
+            "name": "THE OCEAN DRIVE",
+            "hotelId": "DSIBZ118",
+            "geoCode": {
+              "latitude": 38.90882,
+              "longitude": 1.43207
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07800",
+              "cityName": "IBIZA/ BALEARES",
+              "lines": [
+                "PLAYA DE TALAMANCA",
+                "MARINA BOTAFOCH"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:19:56"
+          },
+          {
+            "chainCode": "KY",
+            "iataCode": "IBZ",
+            "dupeId": 700012083,
+            "name": "EXE ROYAL PLAZA",
+            "hotelId": "KYIBZRPL",
+            "geoCode": {
+              "latitude": 38.90581,
+              "longitude": 1.42074
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07800",
+              "cityName": "IBIZA",
+              "lines": [
+                "CALLE PEDRO FRANCES 27"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:20:24"
+          },
+          {
+            "chainCode": "DS",
+            "iataCode": "IBZ",
+            "dupeId": 700054026,
+            "name": "AGUAS DE IBIZA",
+            "hotelId": "DSIBZADI",
+            "geoCode": {
+              "latitude": 38.98648,
+              "longitude": 1.54295
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07840",
+              "cityName": "SANTA EULALIA DEL RIO",
+              "lines": [
+                "CALLE SALVADOR CAMACHO"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:19:56"
+          },
+          {
+            "chainCode": "FG",
+            "iataCode": "IBZ",
+            "dupeId": 700162679,
+            "name": "THE BLUE APARTMENTS BY IBIZA FEELING",
+            "hotelId": "FGIBZBAF",
+            "geoCode": {
+              "latitude": 38.98035,
+              "longitude": 1.30502
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07820",
+              "cityName": "SANT ANTONI DE PORTMANY",
+              "lines": [
+                "CARRER DE RAMON I",
+                "CAJAL  1"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:16:38"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 700001872,
+            "name": "JET APARTAMENTOS",
+            "hotelId": "HSIBZAIH",
+            "geoCode": {
+              "latitude": 38.88874,
+              "longitude": 1.40757
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7817",
+              "cityName": "SAN JORGE",
+              "lines": [
+                "PLAYA DEN BOSSA"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:20:38"
+          },
+          {
+            "chainCode": "BN",
+            "iataCode": "IBZ",
+            "dupeId": 700001890,
+            "name": "BARCELO PUEBLO IBIZA",
+            "hotelId": "BNIBZ636",
+            "geoCode": {
+              "latitude": 38.97999,
+              "longitude": 1.30812
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07830",
+              "cityName": "SANT JOSEP DE SA TALAIA",
+              "lines": [
+                "CALLE VALENCIA 23 27"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:19:28"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 501425802,
+            "name": "TIVOLI APARTAMENTOS",
+            "hotelId": "HSIBZADW",
+            "geoCode": {
+              "latitude": 38.8943,
+              "longitude": 1.40982
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7800",
+              "cityName": "IBIZA",
+              "lines": [
+                "C- PEDRO MATUTES NOGUERA"
+              ]
+            },
+            "lastUpdate": "2025-10-07T09:03:32"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 700001908,
+            "name": "TAGOMAGO",
+            "hotelId": "HSIBZAAH",
+            "geoCode": {
+              "latitude": 38.9742,
+              "longitude": 1.3088
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7830",
+              "cityName": "IBIZA",
+              "lines": [
+                "PLAYA S'ESTENYOL"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:20:36"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 501425101,
+            "name": "TROPICAL",
+            "hotelId": "HSIBZABP",
+            "geoCode": {
+              "latitude": 38.98263,
+              "longitude": 1.30219
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7820",
+              "cityName": "IBIZA",
+              "lines": [
+                "C- CERVANTES, 28"
+              ]
+            },
+            "lastUpdate": "2025-10-07T09:03:31"
+          },
+          {
+            "chainCode": "HA",
+            "iataCode": "IBZ",
+            "dupeId": 700001911,
+            "name": "LA CALA  - SANTA EULALIA",
+            "hotelId": "HAIBZLAC",
+            "geoCode": {
+              "latitude": 38.98472,
+              "longitude": 1.53336
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07840",
+              "cityName": "SANTA EULARIA DES RIU",
+              "lines": [
+                "C/ HUESCA 1"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:19:36"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 501425804,
+            "name": "MARCO POLO II.",
+            "hotelId": "HSIBZADX",
+            "geoCode": {
+              "latitude": 38.97976,
+              "longitude": 1.30768
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7820",
+              "cityName": "IBIZA",
+              "lines": [
+                "AVENIDA DE PORTMANY"
+              ]
+            },
+            "lastUpdate": "2025-10-01T09:00:21"
+          },
+          {
+            "chainCode": "ON",
+            "iataCode": "IBZ",
+            "dupeId": 700001882,
+            "name": "INTERTUR HOTEL MIAMI IBIZA",
+            "hotelId": "ONIBZMIA",
+            "geoCode": {
+              "latitude": 39.00284,
+              "longitude": 1.58097
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07840",
+              "cityName": "STA EULALIA DEL RIO",
+              "lines": [
+                "C/ POU ROIG, 70"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:21:51"
+          },
+          {
+            "chainCode": "LE",
+            "iataCode": "IBZ",
+            "dupeId": 700011102,
+            "name": "IBIZA ROCKS HOUSE AT PIKES HOTEL",
+            "hotelId": "LEIBZ757",
+            "geoCode": {
+              "latitude": 38.99113,
+              "longitude": 1.34494
+            },
+            "address": {
+              "countryCode": "ES",
+              "cityName": "SANT ANTONI DE PORTMANY",
+              "lines": [
+                "CAMINO DE SA VORERA S/N"
+              ]
+            },
+            "masterChainCode": "PV",
+            "lastUpdate": "2025-06-03T10:20:29"
+          },
+          {
+            "chainCode": "SM",
+            "iataCode": "IBZ",
+            "dupeId": 700012807,
+            "name": "SOL IBIZA",
+            "hotelId": "SMIBZLOR",
+            "geoCode": {
+              "latitude": 38.9857,
+              "longitude": 1.54451
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "07840",
+              "cityName": "SANTA EULALIA DEL RIO",
+              "lines": [
+                "PARE VICENT COSTA 2",
+                "IBIZA"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:17:42"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 501426080,
+            "name": "CLUB LA NORIA",
+            "hotelId": "HSIBZAGV",
+            "geoCode": {
+              "latitude": 38.89195,
+              "longitude": 1.40606
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7839",
+              "cityName": "IBIZA",
+              "lines": [
+                "ARGUELAGUES 7"
+              ]
+            },
+            "lastUpdate": "2025-10-07T09:03:32"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "IBZ",
+            "dupeId": 501426088,
+            "name": "BOSSA PARK",
+            "hotelId": "HSIBZAGJ",
+            "geoCode": {
+              "latitude": 38.89127,
+              "longitude": 1.40598
+            },
+            "address": {
+              "countryCode": "ES",
+              "postalCode": "7817",
+              "cityName": "IBIZA",
+              "lines": [
+                "SES BEGONIES S-N"
+              ]
+            },
+            "lastUpdate": "2025-10-07T09:03:32"
+          }
+        ],
+        "dataType": "hotels"
+      },
+      {
+        "role": "user",
+        "content": "compare"
+      },
+      {
+        "role": "model",
+        "content": "Could you please specify which hotels you would like to compare?\n",
+        "data": null,
+        "dataType": null
+      },
+      {
+        "role": "user",
+        "content": "compare"
+      },
+      {
+        "role": "model",
+        "content": "Please specify which hotels in Ibiza you'd like to compare. If you have a list of hotels you're interested in, please provide their names or hotel IDs so I can proceed with the comparison.\n",
+        "data": null,
+        "dataType": null
+      },
+      {
+        "role": "user",
+        "content": "find hotels in ibize for next week"
+      },
+      {
+        "role": "model",
+        "content": "Okay, I found 41 hotels in Ibiza (IBZ).\n\nRegarding the dates for \"next week\", considering today is November 26, 2025, would you like to check in on December 3, 2025, and check out on December 4, 2025?\n\nIf so, are there any specific hotels from the list you'd like me to check for offers?\n\n[System Context: The user was shown the following hotels results: [{\"chainCode\":\"HS\",\"iataCode\":\"IBZ\",\"dupeId\":501819148,\"name\":\"GRAND PALLADIUM PALACE IBIZA RESORT - SP\",\"hotelId\":\"HSIBZADH\",\"geoCode\":{\"latitude\":38.87724,\"longitude\":1.40116},\"address\":{\"countryCode\":\"ES\",\"cityName\":\"IBIZA\",\"lines\":[\"PLAYA DEN BOSSA\"]},\"lastUpdate\":\"2025-10-07T09:03:32\"},{\"chainCode\":\"HA\",\"iataCode\":\"IBZ\",\"dupeId\":700022263,\"name\":\"AGROTURISMO CAN LLUC\",\"hotelId\":\"HAIBZLLU\",\"geoCode\":{\"latitude\":38.90802,\"longitude\":1.43633},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07816\",\"cityName\":\"IBIZA\",\"lines\":[\"SANT RAFEL\"]},\"lastUpdate\":\"2025-06-03T10:19:36\"},{\"chainCode\":\"HS\",\"iataCode\":\"IBZ\",\"dupeId\":700001897,\"name\":\"LA SIRENA\",\"hotelId\":\"HSIBZAGZ\",\"geoCode\":{\"latitude\":38.97035,\"longitude\":1.30922},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"7880\",\"cityName\":\"IBIZA\",\"lines\":[\"CALLE VERDAMELL, NO. 6\"]},\"lastUpdate\":\"2025-06-03T10:20:38\"},{\"chainCode\":\"FG\",\"iataCode\":\"IBZ\",\"dupeId\":700162680,\"name\":\"THE WHITE APARTMENTS BY IBIZA FEELING\",\"hotelId\":\"FGIBZWAF\",\"geoCode\":{\"latitude\":38.9795,\"longitude\":1.30649},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07820\",\"cityName\":\"SANT ANTONI DE PORTMANY\",\"lines\":[\"AVINGUDA DEL DR\",\"FLEMING  3\"]},\"lastUpdate\":\"2025-06-03T10:16:38\"},{\"chainCode\":\"UZ\",\"iataCode\":\"IBZ\",\"dupeId\":700006817,\"name\":\"FIESTA HOTEL DON CARLOS\",\"hotelId\":\"UZIBZ816\",\"geoCode\":{\"latitude\":38.99826,\"longitude\":1.53859},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07849\",\"cityName\":\"IBIZA\",\"lines\":[\"C/ LOS ROSALES 53\",\"SANTA EULALIA DEL RIO\"]},\"lastUpdate\":\"2025-06-03T10:17:58\"},{\"chainCode\":\"HS\",\"iataCode\":\"IBZ\",\"dupeId\":700182515,\"name\":\"SAN REMO CLUB HOTEL\",\"hotelId\":\"HSIBZACU\",\"geoCode\":{\"latitude\":38.96758,\"longitude\":1.29885},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"7820\",\"cityName\":\"IBIZA\",\"lines\":[\"CTRA. PORT D ES TORRENT S-N,\"]},\"lastUpdate\":\"2025-06-03T10:20:38\"},{\"chainCode\":\"WV\",\"iataCode\":\"IBZ\",\"dupeId\":700050871,\"name\":\"IBIZA GRAN HOTEL\",\"hotelId\":\"WVIBZIBI\",\"geoCode\":{\"latitude\":38.9165,\"longitude\":1.44092},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07800\",\"cityName\":\"EIVISSA\",\"lines\":[\"PASEO JUAN CARLOS I 17\"]},\"masterChainCode\":\"TC\",\"lastUpdate\":\"2025-06-03T10:18:28\"},{\"chainCode\":\"FG\",\"iataCode\":\"IBZ\",\"dupeId\":700184588,\"name\":\"THE RED HOTEL BY IBIZA FEELING\",\"hotelId\":\"FGIBZFLO\",\"geoCode\":{\"latitude\":38.90979,\"longitude\":1.43394},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07820\",\"cityName\":\"IBIZA\",\"lines\":[\"CARRER DE RAMON I CAJAL 2\"]},\"lastUpdate\":\"2025-06-03T10:16:38\"},{\"chainCode\":\"DH\",\"iataCode\":\"IBZ\",\"dupeId\":700128362,\"name\":\"MONTANA\",\"hotelId\":\"DHIBZAJL\",\"geoCode\":{\"latitude\":38.9214,\"longitude\":1.42485},\"address\":{\"countryCode\":\"ES\",\"cityName\":\"IBIZA\",\"lines\":[\"CALLE ROMA 8 SANT ANTONI DE PORTMANY, IBIZA, SPAIN\"]},\"masterChainCode\":\"TC\",\"lastUpdate\":\"2025-06-03T10:21:35\"},{\"chainCode\":\"KY\",\"iataCode\":\"IBZ\",\"dupeId\":700026013,\"name\":\"DUQUESA PLAYA - STA. EULALIA\",\"hotelId\":\"KYIBZDUQ\",\"geoCode\":{\"latitude\":38.98563,\"longitude\":1.53632},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07840\",\"cityName\":\"SANTA EULALIA DEL RIU\",\"lines\":[\"SANT LLORENC 16-18\"]},\"lastUpdate\":\"2025-06-03T10:20:24\"},{\"chainCode\":\"KY\",\"iataCode\":\"IBZ\",\"dupeId\":700012151,\"name\":\"SUITE HOTEL S'ARGAMASSA PALACE-S.EULALIA\",\"hotelId\":\"KYIBZARG\",\"geoCode\":{\"latitude\":38.98584,\"longitude\":1.54542},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07840\",\"cityName\":\"SANTA EULALIA DEL RIO  IB\",\"lines\":[\"URBANIZACION S'ARGAMASSA\"]},\"lastUpdate\":\"2025-06-03T10:20:24\"},{\"chainCode\":\"UZ\",\"iataCode\":\"IBZ\",\"dupeId\":700001845,\"name\":\"FIESTA HOTEL TANIT\",\"hotelId\":\"UZIBZ268\",\"geoCode\":{\"latitude\":38.9903,\"longitude\":1.29241},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07820\",\"cityName\":\"IBIZA\",\"lines\":[\"CARRETERA CALA GRACIO S/N\",\"SAN ANTONIO DE PORTMANY\"]},\"lastUpdate\":\"2025-06-03T10:17:58\"},{\"chainCode\":\"FG\",\"iataCode\":\"IBZ\",\"dupeId\":700073120,\"name\":\"THE PURPLE HOSTEL BY IBIZA FEELING\",\"hotelId\":\"FGIBZLAU\",\"geoCode\":{\"latitude\":38.98142,\"longitude\":1.30092},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07820\",\"cityName\":\"SANT ANTONI DE PORTMANY\",\"lines\":[\"CARRER D'ANTONI RIQUER, 23\"]},\"lastUpdate\":\"2025-06-03T10:16:38\"},{\"chainCode\":\"HS\",\"iataCode\":\"IBZ\",\"dupeId\":700027524,\"name\":\"BORA BORA JET APARTAMENTOS\",\"hotelId\":\"HSIBZAGP\",\"geoCode\":{\"latitude\":38.88877,\"longitude\":1.40792},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"7817\",\"cityName\":\"IBIZA\",\"lines\":[\"PLAYA D'EN BOSSA\"]},\"lastUpdate\":\"2025-06-03T10:20:38\"},{\"chainCode\":\"HS\",\"iataCode\":\"IBZ\",\"dupeId\":700143766,\"name\":\"USHUAIA BEACH HOTEL\",\"hotelId\":\"HSIBZAED\",\"geoCode\":{\"latitude\":38.88509,\"longitude\":1.40524},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"7817\",\"cityName\":\"IBIZA\",\"lines\":[\"CARRETERA PLAYA DEN BOSSA 10\"]},\"lastUpdate\":\"2025-06-03T10:20:38\"},{\"chainCode\":\"KY\",\"iataCode\":\"IBZ\",\"dupeId\":501364973,\"name\":\"EL PUERTO-IBIZA\",\"hotelId\":\"KYIBZPUE\",\"geoCode\":{\"latitude\":38.91175,\"longitude\":1.43208},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07800\",\"cityName\":\"IBIZA\",\"lines\":[\"CALLE CARLES III 22-24\"]},\"lastUpdate\":\"2025-10-07T09:03:29\"},{\"chainCode\":\"FG\",\"iataCode\":\"IBZ\",\"dupeId\":700005627,\"name\":\"HI! MONTEMAR APARTAMENTOS\",\"hotelId\":\"FGIBZ7DY\",\"geoCode\":{\"latitude\":38.95619,\"longitude\":1.51832},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07849\",\"cityName\":\"CALA LLONGA\",\"lines\":[\"C KILIMANJARO 15\",\"IBIZA\"]},\"lastUpdate\":\"2025-06-03T10:16:38\"},{\"chainCode\":\"YX\",\"iataCode\":\"IBZ\",\"dupeId\":501433110,\"name\":\"CAS GASI HOTEL IBIZA\",\"hotelId\":\"YXIBZCGI\",\"geoCode\":{\"latitude\":38.99862,\"longitude\":1.42836},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07814\",\"cityName\":\"SANTA GERTRUDIS\",\"lines\":[\"CAMINO VIEJO DE ST MATEU1\"]},\"lastUpdate\":\"2025-10-09T09:03:37\"},{\"chainCode\":\"KY\",\"iataCode\":\"IBZ\",\"dupeId\":700003808,\"name\":\"APARTAMENTOS EL PUERTO\",\"hotelId\":\"KYIBZAPU\",\"geoCode\":{\"latitude\":38.91171,\"longitude\":1.43316},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07800\",\"cityName\":\"IBIZA\",\"lines\":[\"CALLE CARLOS III 22\"]},\"lastUpdate\":\"2025-06-03T10:20:24\"},{\"chainCode\":\"HS\",\"iataCode\":\"IBZ\",\"dupeId\":501425786,\"name\":\"ORQUIDEA\",\"hotelId\":\"HSIBZAET\",\"geoCode\":{\"latitude\":38.98109,\"longitude\":1.53183},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"7840\",\"cityName\":\"IBIZA\",\"lines\":[\"PASEO MARITIMO S-N\"]},\"lastUpdate\":\"2025-10-07T09:03:32\"},{\"chainCode\":\"WV\",\"iataCode\":\"IBZ\",\"dupeId\":700050237,\"name\":\"HOTEL EL GRECO\",\"hotelId\":\"WVIBZGRE\",\"geoCode\":{\"latitude\":39.11332,\"longitude\":1.51819},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07820\",\"cityName\":\"PORTINATX\",\"lines\":[\"CALA PORTINATX\",\"SAN JUAN BAUTISTA\"]},\"masterChainCode\":\"TC\",\"lastUpdate\":\"2025-06-03T10:18:28\"},{\"chainCode\":\"HS\",\"iataCode\":\"IBZ\",\"dupeId\":700001896,\"name\":\"AZULINE MAR AMANTIS\",\"hotelId\":\"HSIBZAAT\",\"geoCode\":{\"latitude\":38.96747,\"longitude\":1.29814},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"7820\",\"cityName\":\"IBIZA\",\"lines\":[\"PORT DES TORRENT S-N\"]},\"lastUpdate\":\"2025-06-03T10:20:36\"},{\"chainCode\":\"TY\",\"iataCode\":\"IBZ\",\"dupeId\":700141965,\"name\":\"THB BAHIA\",\"hotelId\":\"TYIBZTHB\",\"geoCode\":{\"latitude\":38.97131,\"longitude\":1.30531},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07820\",\"cityName\":\"SANT ANTONI IBIZA\",\"lines\":[\"BELLAVISTA 1\"]},\"lastUpdate\":\"2025-06-03T10:17:57\"},{\"chainCode\":\"DH\",\"iataCode\":\"IBZ\",\"dupeId\":700028670,\"name\":\"CLUB SAN MARINO\",\"hotelId\":\"DHIBZAJM\",\"geoCode\":{\"latitude\":38.908,\"longitude\":1.43464},\"address\":{\"countryCode\":\"ES\",\"cityName\":\"IBIZA\",\"lines\":[\"LUGO S/N, 07830 SAN ANTONIO, IBIZA, SPAIN\"]},\"masterChainCode\":\"TC\",\"lastUpdate\":\"2025-06-03T10:21:35\"},{\"chainCode\":\"FG\",\"iataCode\":\"IBZ\",\"dupeId\":700001892,\"name\":\"HOTEL ELS PINS-SANT ANTONI DE PORTMANY\",\"hotelId\":\"FGIBZPIN\",\"geoCode\":{\"latitude\":39.00286,\"longitude\":1.35647},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07820\",\"cityName\":\"SANT ANTONI DE PORTMANY\",\"lines\":[\"ES CALO S/N\"]},\"lastUpdate\":\"2025-06-03T10:16:38\"},{\"chainCode\":\"DS\",\"iataCode\":\"IBZ\",\"dupeId\":700013420,\"name\":\"THE OCEAN DRIVE\",\"hotelId\":\"DSIBZ118\",\"geoCode\":{\"latitude\":38.90882,\"longitude\":1.43207},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07800\",\"cityName\":\"IBIZA/ BALEARES\",\"lines\":[\"PLAYA DE TALAMANCA\",\"MARINA BOTAFOCH\"]},\"lastUpdate\":\"2025-06-03T10:19:56\"},{\"chainCode\":\"KY\",\"iataCode\":\"IBZ\",\"dupeId\":700012083,\"name\":\"EXE ROYAL PLAZA\",\"hotelId\":\"KYIBZRPL\",\"geoCode\":{\"latitude\":38.90581,\"longitude\":1.42074},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07800\",\"cityName\":\"IBIZA\",\"lines\":[\"CALLE PEDRO FRANCES 27\"]},\"lastUpdate\":\"2025-06-03T10:20:24\"},{\"chainCode\":\"DS\",\"iataCode\":\"IBZ\",\"dupeId\":700054026,\"name\":\"AGUAS DE IBIZA\",\"hotelId\":\"DSIBZADI\",\"geoCode\":{\"latitude\":38.98648,\"longitude\":1.54295},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07840\",\"cityName\":\"SANTA EULALIA DEL RIO\",\"lines\":[\"CALLE SALVADOR CAMACHO\"]},\"lastUpdate\":\"2025-06-03T10:19:56\"},{\"chainCode\":\"FG\",\"iataCode\":\"IBZ\",\"dupeId\":700162679,\"name\":\"THE BLUE APARTMENTS BY IBIZA FEELING\",\"hotelId\":\"FGIBZBAF\",\"geoCode\":{\"latitude\":38.98035,\"longitude\":1.30502},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07820\",\"cityName\":\"SANT ANTONI DE PORTMANY\",\"lines\":[\"CARRER DE RAMON I\",\"CAJAL  1\"]},\"lastUpdate\":\"2025-06-03T10:16:38\"},{\"chainCode\":\"HS\",\"iataCode\":\"IBZ\",\"dupeId\":700001872,\"name\":\"JET APARTAMENTOS\",\"hotelId\":\"HSIBZAIH\",\"geoCode\":{\"latitude\":38.88874,\"longitude\":1.40757},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"7817\",\"cityName\":\"SAN JORGE\",\"lines\":[\"PLAYA DEN BOSSA\"]},\"lastUpdate\":\"2025-06-03T10:20:38\"},{\"chainCode\":\"BN\",\"iataCode\":\"IBZ\",\"dupeId\":700001890,\"name\":\"BARCELO PUEBLO IBIZA\",\"hotelId\":\"BNIBZ636\",\"geoCode\":{\"latitude\":38.97999,\"longitude\":1.30812},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07830\",\"cityName\":\"SANT JOSEP DE SA TALAIA\",\"lines\":[\"CALLE VALENCIA 23 27\"]},\"lastUpdate\":\"2025-06-03T10:19:28\"},{\"chainCode\":\"HS\",\"iataCode\":\"IBZ\",\"dupeId\":501425802,\"name\":\"TIVOLI APARTAMENTOS\",\"hotelId\":\"HSIBZADW\",\"geoCode\":{\"latitude\":38.8943,\"longitude\":1.40982},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"7800\",\"cityName\":\"IBIZA\",\"lines\":[\"C- PEDRO MATUTES NOGUERA\"]},\"lastUpdate\":\"2025-10-07T09:03:32\"},{\"chainCode\":\"HS\",\"iataCode\":\"IBZ\",\"dupeId\":700001908,\"name\":\"TAGOMAGO\",\"hotelId\":\"HSIBZAAH\",\"geoCode\":{\"latitude\":38.9742,\"longitude\":1.3088},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"7830\",\"cityName\":\"IBIZA\",\"lines\":[\"PLAYA S'ESTENYOL\"]},\"lastUpdate\":\"2025-06-03T10:20:36\"},{\"chainCode\":\"HS\",\"iataCode\":\"IBZ\",\"dupeId\":501425101,\"name\":\"TROPICAL\",\"hotelId\":\"HSIBZABP\",\"geoCode\":{\"latitude\":38.98263,\"longitude\":1.30219},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"7820\",\"cityName\":\"IBIZA\",\"lines\":[\"C- CERVANTES, 28\"]},\"lastUpdate\":\"2025-10-07T09:03:31\"},{\"chainCode\":\"HA\",\"iataCode\":\"IBZ\",\"dupeId\":700001911,\"name\":\"LA CALA  - SANTA EULALIA\",\"hotelId\":\"HAIBZLAC\",\"geoCode\":{\"latitude\":38.98472,\"longitude\":1.53336},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07840\",\"cityName\":\"SANTA EULARIA DES RIU\",\"lines\":[\"C/ HUESCA 1\"]},\"lastUpdate\":\"2025-06-03T10:19:36\"},{\"chainCode\":\"HS\",\"iataCode\":\"IBZ\",\"dupeId\":501425804,\"name\":\"MARCO POLO II.\",\"hotelId\":\"HSIBZADX\",\"geoCode\":{\"latitude\":38.97976,\"longitude\":1.30768},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"7820\",\"cityName\":\"IBIZA\",\"lines\":[\"AVENIDA DE PORTMANY\"]},\"lastUpdate\":\"2025-10-01T09:00:21\"},{\"chainCode\":\"ON\",\"iataCode\":\"IBZ\",\"dupeId\":700001882,\"name\":\"INTERTUR HOTEL MIAMI IBIZA\",\"hotelId\":\"ONIBZMIA\",\"geoCode\":{\"latitude\":39.00284,\"longitude\":1.58097},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07840\",\"cityName\":\"STA EULALIA DEL RIO\",\"lines\":[\"C/ POU ROIG, 70\"]},\"lastUpdate\":\"2025-06-03T10:21:51\"},{\"chainCode\":\"LE\",\"iataCode\":\"IBZ\",\"dupeId\":700011102,\"name\":\"IBIZA ROCKS HOUSE AT PIKES HOTEL\",\"hotelId\":\"LEIBZ757\",\"geoCode\":{\"latitude\":38.99113,\"longitude\":1.34494},\"address\":{\"countryCode\":\"ES\",\"cityName\":\"SANT ANTONI DE PORTMANY\",\"lines\":[\"CAMINO DE SA VORERA S/N\"]},\"masterChainCode\":\"PV\",\"lastUpdate\":\"2025-06-03T10:20:29\"},{\"chainCode\":\"SM\",\"iataCode\":\"IBZ\",\"dupeId\":700012807,\"name\":\"SOL IBIZA\",\"hotelId\":\"SMIBZLOR\",\"geoCode\":{\"latitude\":38.9857,\"longitude\":1.54451},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"07840\",\"cityName\":\"SANTA EULALIA DEL RIO\",\"lines\":[\"PARE VICENT COSTA 2\",\"IBIZA\"]},\"lastUpdate\":\"2025-06-03T10:17:42\"},{\"chainCode\":\"HS\",\"iataCode\":\"IBZ\",\"dupeId\":501426080,\"name\":\"CLUB LA NORIA\",\"hotelId\":\"HSIBZAGV\",\"geoCode\":{\"latitude\":38.89195,\"longitude\":1.40606},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"7839\",\"cityName\":\"IBIZA\",\"lines\":[\"ARGUELAGUES 7\"]},\"lastUpdate\":\"2025-10-07T09:03:32\"},{\"chainCode\":\"HS\",\"iataCode\":\"IBZ\",\"dupeId\":501426088,\"name\":\"BOSSA PARK\",\"hotelId\":\"HSIBZAGJ\",\"geoCode\":{\"latitude\":38.89127,\"longitude\":1.40598},\"address\":{\"countryCode\":\"ES\",\"postalCode\":\"7817\",\"cityName\":\"IBIZA\",\"lines\":[\"SES BEGONIES S-N\"]},\"lastUpdate\":\"2025-10-07T09:03:32\"}]]",
+        "data": null,
+        "dataType": null
+      }
+    ],
+    "createdAt": 1764193229834
+  },
+  "migj6tm7nfn3gsh1vtp": {
+    "id": "migj6tm7nfn3gsh1vtp",
+    "title": "New Chat",
+    "messages": [],
+    "createdAt": 1764193381999
   }
 }
