@@ -10,15 +10,96 @@
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
+            margin: 0;
+            padding: 0;
             background-color: #121212;
             color: #e0e0e0;
+            height: 100vh;
+            display: flex;
+        }
+
+        /* Layout */
+        .app-layout {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Sidebar */
+        #sidebar {
+            width: 260px;
+            background-color: #171717;
+            border-right: 1px solid #333;
             display: flex;
             flex-direction: column;
-            height: 90vh;
+            padding: 15px;
+            flex-shrink: 0;
         }
+
+        #new-chat-btn {
+            background-color: #172AAF;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 12px;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            transition: background-color 0.2s;
+        }
+
+        #new-chat-btn:hover {
+            background-color: #122085;
+        }
+
+        #session-list {
+            flex-grow: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .session-item {
+            padding: 10px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #ccc;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: background-color 0.2s;
+            text-decoration: none;
+        }
+
+        .session-item:hover {
+            background-color: #2a2a2a;
+        }
+
+        .session-item.active {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
         .container {
             background-color: #1e1e1e;
             padding: 20px;
@@ -29,7 +110,9 @@
             flex-direction: column;
             overflow: hidden;
             border: 1px solid #333;
+            height: 100%;
         }
+
         h1 {
             color: #ffffff;
             text-align: center;
@@ -229,6 +312,16 @@
             padding: 15px;
             margin-top: 10px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .activity-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+            background-color: #333;
         }
         .activity-card h4 {
             margin: 0 0 5px 0;
@@ -262,6 +355,14 @@
             flex-direction: column;
             gap: 5px;
         }
+        .hotel-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+            background-color: #333;
+            margin-bottom: 10px;
+        }
         .hotel-card h4 {
             margin: 0;
             color: #F668F2; /* Pink */
@@ -273,28 +374,153 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>TravelMate</h1>
-        
-        <div id="chat-history">
-            <div class="message bot">
-                Hello! I can help you find flights. Try asking something like "Find me a flight from Istanbul to San Francisco today".
+    <div class="app-layout">
+        <aside id="sidebar">
+            <button id="new-chat-btn" onclick="createNewSession()">
+                <span>+</span> New Chat
+            </button>
+            <div id="session-list">
+                <!-- Sessions will be populated here -->
             </div>
-        </div>
+        </aside>
+        
+        <main class="main-content">
+            <div class="container">
+                <h1>TravelMate</h1>
+                
+                <div id="chat-history">
+                    <!-- Messages will appear here -->
+                </div>
 
-        <div class="chat-input-area">
-            <input type="text" id="messageInput" placeholder="Type your request here..." onkeypress="handleKeyPress(event)">
-            <button id="sendBtn" onclick="sendMessage()">Send</button>
-        </div>
+                <div class="chat-input-area">
+                    <input type="text" id="messageInput" placeholder="Type your request here..." onkeypress="handleKeyPress(event)">
+                    <button id="sendBtn" onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </main>
     </div>
 
     <script>
         const chatHistory = document.getElementById('chat-history');
         const messageInput = document.getElementById('messageInput');
         const sendBtn = document.getElementById('sendBtn');
+        const sessionList = document.getElementById('session-list');
         
-        // Store conversation history for the API
-        let conversationHistory = [];
+        let currentSessionId = null;
+        const STORAGE_KEY_SESSION_ID = 'travelMate_currentSessionId';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadSessions();
+            
+            // Check localStorage for existing session
+            const savedSessionId = localStorage.getItem(STORAGE_KEY_SESSION_ID);
+            
+            if (savedSessionId) {
+                // Check if valid by trying to load it
+                await loadSession(savedSessionId);
+            }
+            
+            // If no saved session or load failed (currentSessionId still null), create new
+            if (!currentSessionId) {
+                await createNewSession();
+            }
+        });
+
+        async function loadSessions() {
+            try {
+                const response = await fetch('/api/sessions');
+                const sessions = await response.json();
+                
+                sessionList.innerHTML = '';
+                sessions.forEach(session => {
+                    const div = document.createElement('div');
+                    div.className = 'session-item';
+                    div.textContent = session.title || 'New Chat';
+                    div.onclick = () => loadSession(session.id);
+                    if (session.id === currentSessionId) {
+                        div.classList.add('active');
+                    }
+                    sessionList.appendChild(div);
+                });
+            } catch (error) {
+                console.error('Failed to load sessions:', error);
+            }
+        }
+
+        async function createNewSession() {
+            try {
+                const response = await fetch('/api/sessions', { method: 'POST' });
+                const session = await response.json();
+                
+                currentSessionId = session.id;
+                localStorage.setItem(STORAGE_KEY_SESSION_ID, currentSessionId);
+                
+                chatHistory.innerHTML = '';
+                
+                // Add welcome message
+                appendMessage('Hello! I can help you find flights, hotels, and activities. Where would you like to go?', 'bot');
+                
+                await loadSessions(); // Refresh list
+            } catch (error) {
+                console.error('Failed to create session:', error);
+            }
+        }
+
+        async function loadSession(id) {
+            if (currentSessionId === id && chatHistory.children.length > 0) return;
+            
+            try {
+                const response = await fetch(`/api/sessions/${id}`);
+                if (!response.ok) {
+                    if (response.status === 404) {
+                        console.warn('Session not found, clearing storage');
+                        localStorage.removeItem(STORAGE_KEY_SESSION_ID);
+                        currentSessionId = null; 
+                        return;
+                    }
+                    throw new Error('Failed to fetch session');
+                }
+                
+                const session = await response.json();
+                
+                currentSessionId = id;
+                localStorage.setItem(STORAGE_KEY_SESSION_ID, currentSessionId);
+                
+                chatHistory.innerHTML = '';
+                
+                // Update UI active state
+                document.querySelectorAll('.session-item').forEach(el => el.classList.remove('active'));
+                // We re-render list to make it easy
+                await loadSessions();
+
+                if (session.messages.length === 0) {
+                     appendMessage('Hello! I can help you find flights, hotels, and activities. Where would you like to go?', 'bot');
+                } else {
+                    // Replay messages
+                    session.messages.forEach(msg => {
+                        if (msg.role === 'user') {
+                            appendMessage(msg.content, 'user');
+                        } else {
+                             appendMessage(msg.content, 'bot');
+                             
+                             // Render rich UI components if they exist in history
+                             if (msg.data && msg.dataType) {
+                                 if (msg.dataType === 'flights') {
+                                     appendFlightResults(msg.data);
+                                 } else if (msg.dataType === 'activities') {
+                                     appendActivityResults(msg.data);
+                                 } else if (msg.dataType === 'hotels') {
+                                     appendHotelResults(msg.data);
+                                 }
+                             }
+                        }
+                    });
+                }
+            } catch (error) {
+                console.error('Failed to load session:', error);
+            }
+        }
 
         function handleKeyPress(e) {
             if (e.key === 'Enter') {
@@ -306,7 +532,7 @@
             const text = messageInput.value.trim();
             if (!text) return;
 
-            // Add user message
+            // Add user message locally
             appendMessage(text, 'user');
             messageInput.value = '';
             messageInput.disabled = true;
@@ -321,7 +547,7 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ 
                         message: text,
-                        history: conversationHistory
+                        sessionId: currentSessionId
                     })
                 });
 
@@ -330,26 +556,21 @@
                 // Remove loading message
                 document.getElementById(loadingId).remove();
 
-                // Update history with user message (now that we know it succeeded essentially, though we sent it before)
-                // Actually better to add it before sending, but we need to handle failure. 
-                // For simplicity, we add to history list here.
-                conversationHistory.push({ role: 'user', content: text });
-
                 if (data.error) {
                     appendMessage(`Error: ${data.error}`, 'bot');
                 } else {
+                    // Update title if it changed
+                    if (data.title) {
+                        loadSessions(); // Refresh sidebar
+                    }
+
                     // The model response (text)
                     if (data.content) {
                         appendMessage(data.content, 'bot');
                     }
 
-                    let historyContent = data.content || "";
-
                     // Render UI cards if available
                     if (data.data && data.data.length > 0) {
-                        // Append data context to history so model remembers it
-                        historyContent += `\n\n[System Context: The following ${data.dataType} options are displayed to the user. Use this data to answer follow-up questions like "compare these" or "book the first one". Data: ${JSON.stringify(data.data)}]`;
-
                         if (data.dataType === 'flights') {
                             appendFlightResults(data.data);
                         } else if (data.dataType === 'activities') {
@@ -357,11 +578,6 @@
                         } else if (data.dataType === 'hotels') {
                             appendHotelResults(data.data);
                         }
-                    }
-
-                    // Update history with the augmented content
-                    if (historyContent) {
-                        conversationHistory.push({ role: 'model', content: historyContent });
                     }
                 }
 
@@ -403,14 +619,12 @@
                         }
 
                         div.innerHTML = html;
-                        // Make this message wider for the table
                         div.style.maxWidth = '95%';
                     } catch (e) {
                         console.error("Failed to render comparison JSON", e);
-                        div.innerHTML = marked.parse(text); // Fallback
+                        div.innerHTML = marked.parse(text);
                     }
                 } else {
-                    // Standard Markdown rendering
                     div.innerHTML = marked.parse(text);
                 }
             } else {

@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
+const fs = require('fs');
 const path = require('path');
 const { GoogleGenerativeAI, SchemaType } = require('@google/generative-ai');
 const { SecretManagerServiceClient } = require('@google-cloud/secret-manager');
@@ -8,9 +9,38 @@ const { SecretManagerServiceClient } = require('@google-cloud/secret-manager');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// --- Session Persistence ---
+const SESSIONS_FILE = path.join(__dirname, 'sessions.json');
+let sessions = {};
+
+function loadSessions() {
+    if (fs.existsSync(SESSIONS_FILE)) {
+        try {
+            const data = fs.readFileSync(SESSIONS_FILE, 'utf8');
+            sessions = JSON.parse(data);
+            console.log(`Loaded ${Object.keys(sessions).length} sessions from disk.`);
+        } catch (err) {
+            console.error('Error loading sessions:', err);
+            sessions = {};
+        }
+    }
+}
+
+function saveSessions() {
+    try {
+        fs.writeFileSync(SESSIONS_FILE, JSON.stringify(sessions, null, 2), 'utf8');
+    } catch (err) {
+        console.error('Error saving sessions:', err);
+    }
+}
+
+// Load sessions on startup
+loadSessions();
+
 // --- Gemini Configuration ---
 let genAI = null;
 let model = null;
+let summaryModel = null;
 
 // Initialize Gemini with Secret Manager or Env Var
 async function initializeGemini() {
@@ -213,14 +243,72 @@ async function initializeGemini() {
             - Be conversational and maintain context.` }]
         }
     });
+
+    // Initialize summary model
+    summaryModel = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
 }
 
 // Call initialization
 initializeGemini();
 
+// Helper to generate ID
+function generateId() {
+    return Date.now().toString(36) + Math.random().toString(36).substr(2);
+}
+
+// Helper to generate title
+async function generateTitle(sessionId) {
+    const session = sessions[sessionId];
+    if (!session || !summaryModel) return;
+    
+    try {
+        // Only use the first few messages to generate a title to avoid long context
+        const historyText = session.messages.slice(0, 4).map(m => `${m.role}: ${m.content}`).join('\n');
+        const prompt = `Summarize the following conversation into a very short, catchy title (max 4-5 words). Do not use quotes or "Title:". conversation:\n${historyText}`;
+        
+        const result = await summaryModel.generateContent(prompt);
+        const title = result.response.text().trim();
+        if (title) {
+            session.title = title;
+            saveSessions();
+            console.log(`Generated title for session ${sessionId}: ${title}`);
+        }
+    } catch (e) {
+        console.error("Title generation failed", e);
+    }
+}
+
 // Serve static files from public directory
 app.use(express.static('public'));
 app.use(express.json());
+
+// --- Session Management Endpoints ---
+
+app.post('/api/sessions', (req, res) => {
+    const id = generateId();
+    sessions[id] = {
+        id,
+        title: 'New Chat',
+        messages: [],
+        createdAt: Date.now()
+    };
+    saveSessions();
+    res.json(sessions[id]);
+});
+
+app.get('/api/sessions', (req, res) => {
+    const sessionList = Object.values(sessions)
+        .sort((a, b) => b.createdAt - a.createdAt)
+        .map(({ id, title, createdAt }) => ({ id, title, createdAt }));
+    res.json(sessionList);
+});
+
+app.get('/api/sessions/:id', (req, res) => {
+    const session = sessions[req.params.id];
+    if (!session) return res.status(404).json({ error: 'Session not found' });
+    res.json(session);
+});
+
 
 let accessToken = null;
 let tokenExpiry = null;
@@ -425,20 +513,36 @@ const functions = {
 
 // Chat Endpoint using Gemini with Tools
 app.post('/api/chat', async (req, res) => {
-    const { message, history } = req.body;
+    const { message, sessionId } = req.body;
 
     if (!message) {
         return res.status(400).json({ error: 'Message is required' });
+    }
+
+    if (!sessionId) {
+        return res.status(400).json({ error: 'Session ID is required' });
     }
 
     if (!model) {
         return res.status(503).json({ error: 'AI Model not initialized. Check server logs for API Key issues.' });
     }
 
+    let session = sessions[sessionId];
+    if (!session) {
+        // If session doesn't exist (e.g. server restart), recreate it or error out. 
+        // For better UX in dev, we'll recreate.
+        session = { id: sessionId, title: 'Restored Chat', messages: [], createdAt: Date.now() };
+        sessions[sessionId] = session;
+        saveSessions();
+    }
+
     try {
-        // Convert frontend history to Gemini format
-        // Frontend sends: [{ role: 'user'|'model', content: '...' }]
-        const chatHistory = (history || []).map(msg => ({
+        // Append user message to session
+        session.messages.push({ role: 'user', content: message });
+        saveSessions();
+
+        // Convert session history to Gemini format
+        const chatHistory = session.messages.slice(0, -1).map(msg => ({
             role: msg.role,
             parts: [{ text: msg.content }]
         }));
@@ -507,12 +611,28 @@ app.post('/api/chat', async (req, res) => {
 
         // Final text response from model
         const text = response.text();
+        
+        // Append model response to session
+        session.messages.push({ 
+            role: 'model', 
+            content: text,
+            data: uiData,
+            dataType: uiType
+        });
+        saveSessions();
+
+        // Attempt to generate title if needed
+        if ((session.title === 'New Chat' || session.title === 'Restored Chat') && session.messages.length >= 2) {
+             generateTitle(sessionId).catch(console.error);
+        }
 
         res.json({
             type: uiData ? 'results' : 'message',
             content: text,
             data: uiData,
-            dataType: uiType
+            dataType: uiType,
+            sessionId: sessionId,
+            title: session.title
         });
 
     } catch (error) {
