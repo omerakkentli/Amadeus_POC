@@ -67,6 +67,104 @@ async function initializeGemini() {
                         },
                         required: ["origin", "destination", "date"]
                     }
+                },
+                {
+                    name: "searchHotelsByCity",
+                    description: "Search for hotels in a specific city.",
+                    parameters: {
+                        type: SchemaType.OBJECT,
+                        properties: {
+                            cityCode: {
+                                type: SchemaType.STRING,
+                                description: "The IATA city code (e.g., PAR, LON, NYC)."
+                            }
+                        },
+                        required: ["cityCode"]
+                    }
+                },
+                {
+                    name: "getHotelOffers",
+                    description: "Get offers for specific hotels. Use this after finding hotel IDs.",
+                    parameters: {
+                        type: SchemaType.OBJECT,
+                        properties: {
+                            hotelIds: {
+                                type: SchemaType.STRING,
+                                description: "Comma-separated list of Amadeus hotel IDs (e.g., RTPAR001)."
+                            },
+                            adults: {
+                                type: SchemaType.STRING,
+                                description: "Number of adult guests (default 1)."
+                            },
+                            checkInDate: {
+                                type: SchemaType.STRING,
+                                description: "Check-in date in YYYY-MM-DD format."
+                            },
+                            checkOutDate: {
+                                type: SchemaType.STRING,
+                                description: "Check-out date in YYYY-MM-DD format."
+                            }
+                        },
+                        required: ["hotelIds", "checkInDate", "checkOutDate"]
+                    }
+                },
+                {
+                    name: "bookHotel",
+                    description: "Book a hotel offer. This is a simulation.",
+                    parameters: {
+                        type: SchemaType.OBJECT,
+                        properties: {
+                            offerId: {
+                                type: SchemaType.STRING,
+                                description: "The offer ID to book."
+                            },
+                            guestName: {
+                                type: SchemaType.STRING,
+                                description: "Name of the guest."
+                            },
+                            guestEmail: {
+                                type: SchemaType.STRING,
+                                description: "Email of the guest."
+                            },
+                            guestPhone: {
+                                type: SchemaType.STRING,
+                                description: "Phone number of the guest."
+                            }
+                        },
+                        required: ["offerId", "guestName", "guestEmail", "guestPhone"]
+                    }
+                },
+                {
+                    name: "getHotelSentiments",
+                    description: "Get sentiment analysis/ratings for a hotel.",
+                    parameters: {
+                        type: SchemaType.OBJECT,
+                        properties: {
+                            hotelIds: {
+                                type: SchemaType.STRING,
+                                description: "Comma-separated list of Amadeus hotel IDs."
+                            }
+                        },
+                        required: ["hotelIds"]
+                    }
+                },
+                {
+                    name: "searchActivities",
+                    description: "Search for tours and activities in a location.",
+                    parameters: {
+                        type: SchemaType.OBJECT,
+                        properties: {
+                            latitude: {
+                                type: SchemaType.NUMBER,
+                                description: "Latitude of the location."
+                            },
+                            longitude: {
+                                type: SchemaType.NUMBER,
+                                description: "Longitude of the location."
+                            }
+                        },
+                        required: ["latitude", "longitude"]
+                    }
                 }
             ]
         }
@@ -76,27 +174,35 @@ async function initializeGemini() {
         model: 'gemini-2.0-flash',
         tools: tools,
         systemInstruction: {
-            parts: [{ text: `You are a helpful and friendly flight search assistant. 
-            Your goal is to help users find flights using the searchFlights tool.
+            parts: [{ text: `You are a helpful and friendly travel assistant. 
+            Your goal is to help users plan their trips by finding flights, hotels, and activities.
             
+            **Capabilities:**
+            - **Flights:** Search for flights using IATA codes.
+            - **Hotels:** Search for hotels by city, check offers, and book them.
+            - **Activities:** Find things to do in a specific location.
+            - **Sentiments:** Check reviews/ratings for hotels.
+
+            **Guidelines:**
             - Always ask clarifying questions if the user's request is ambiguous.
-            - If the user asks for a city name, convert it to the appropriate IATA code in your internal reasoning or tool call (e.g., London -> LHR, Istanbul -> IST).
+            - If the user asks for a city name for flights, convert it to the appropriate IATA code (e.g., London -> LHR).
+            - For hotel search, start by finding hotels in a city, then check for offers if the user is interested in a specific one.
             - If the user provides relative dates (e.g., "next Friday"), calculate the YYYY-MM-DD date based on the current date provided in the context.
             
             **Response Formatting:**
             - Use **Markdown** for general text (bold, lists).
-            - **Comparisons:** When asked to compare flights or when presenting a list of options for decision making, **DO NOT** create a Markdown table or a long text list.
+            - **Comparisons:** When asked to compare options (flights or hotels), **DO NOT** create a Markdown table or a long text list.
             - Instead, output the comparison data using a special **JSON Code Block** with the language tag \`json-comparison\`.
             - Structure the JSON like this:
               \`\`\`json-comparison
               {
-                "title": "Flight Options Comparison",
-                "columns": ["Airline", "Price", "Duration", "Stops"],
+                "title": "Options Comparison",
+                "columns": ["Name", "Price", "Rating", "Details"],
                 "rows": [
-                  ["Air Europa", "393 EUR", "34h 15m", "1 stop"],
-                  ["Turkish Airlines", "625 EUR", "16h 05m", "Direct"]
+                  ["Hotel A", "150 EUR", "4.5/5", "Near city center"],
+                  ["Hotel B", "120 EUR", "4.0/5", "Breakfast included"]
                 ],
-                "recommendation": "Air Canada is the best balance..."
+                "recommendation": "Hotel A is better located..."
               }
               \`\`\`
             - Do **not** repeat the table data in your text response. Just provide the JSON block and a brief intro/outro.
@@ -192,13 +298,123 @@ const functions = {
                 }
             });
             
-            // Log full response as requested
-            console.log('Amadeus API Response:', JSON.stringify(response.data, null, 2));
-            
+            console.log('Amadeus API Response (Flights):', JSON.stringify(response.data, null, 2));
             return response.data;
         } catch (error) {
-            console.error('Amadeus API Error:', error.response ? error.response.data : error.message);
+            console.error('Amadeus API Error (Flights):', error.response ? error.response.data : error.message);
             throw new Error('Failed to fetch flights from Amadeus.');
+        }
+    },
+
+    searchHotelsByCity: async ({ cityCode }) => {
+        console.log(`Executing searchHotelsByCity: ${cityCode}`);
+        try {
+            const token = await getAccessToken();
+            const response = await axios.get('https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city', {
+                headers: { 'Authorization': `Bearer ${token}` },
+                params: { cityCode: cityCode }
+            });
+            console.log(`Found ${response.data.data.length} hotels.`);
+            return response.data;
+        } catch (error) {
+            console.error('Amadeus API Error (Hotels):', error.response ? error.response.data : error.message);
+            throw new Error('Failed to search hotels.');
+        }
+    },
+
+    getHotelOffers: async ({ hotelIds, adults, checkInDate, checkOutDate }) => {
+        console.log(`Executing getHotelOffers for ${hotelIds} on ${checkInDate}`);
+        try {
+            const token = await getAccessToken();
+            const response = await axios.get('https://test.api.amadeus.com/v3/shopping/hotel-offers', {
+                headers: { 'Authorization': `Bearer ${token}` },
+                params: {
+                    hotelIds,
+                    adults: adults || 1,
+                    checkInDate,
+                    checkOutDate
+                }
+            });
+            console.log('Amadeus API Response (Offers):', JSON.stringify(response.data, null, 2));
+            return response.data;
+        } catch (error) {
+            console.error('Amadeus API Error (Hotel Offers):', error.response ? error.response.data : error.message);
+            throw new Error('Failed to fetch hotel offers.');
+        }
+    },
+
+    bookHotel: async ({ offerId, guestName, guestEmail, guestPhone }) => {
+        console.log(`Executing bookHotel for offer ${offerId}`);
+        try {
+            const token = await getAccessToken();
+            // Constructing the booking payload with dummy payment info as required for sandbox
+            const [firstName, lastName] = guestName.split(' ');
+            
+            const bookingPayload = {
+                data: {
+                    offerId: offerId,
+                    guests: [{
+                        name: {
+                            title: "MR",
+                            firstName: firstName ? firstName.toUpperCase() : "GUEST",
+                            lastName: lastName ? lastName.toUpperCase() : "USER"
+                        },
+                        contact: {
+                            phone: guestPhone || "+33679278416",
+                            email: guestEmail || "guest@example.com"
+                        }
+                    }],
+                    payments: [{
+                        method: "creditCard",
+                        card: {
+                            vendorCode: "VI",
+                            cardNumber: "4151289722471370", // Amadeus Test Card
+                            expiryDate: "2026-12"
+                        }
+                    }]
+                }
+            };
+
+            const response = await axios.post('https://test.api.amadeus.com/v1/booking/hotel-bookings', bookingPayload, {
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
+            
+            console.log('Amadeus API Response (Booking):', JSON.stringify(response.data, null, 2));
+            return response.data;
+        } catch (error) {
+            console.error('Amadeus API Error (Booking):', error.response ? error.response.data : error.message);
+            throw new Error('Failed to book hotel.');
+        }
+    },
+
+    getHotelSentiments: async ({ hotelIds }) => {
+        console.log(`Executing getHotelSentiments for ${hotelIds}`);
+        try {
+            const token = await getAccessToken();
+            const response = await axios.get('https://test.api.amadeus.com/v2/e-reputation/hotel-sentiments', {
+                headers: { 'Authorization': `Bearer ${token}` },
+                params: { hotelIds }
+            });
+            return response.data;
+        } catch (error) {
+             console.error('Amadeus API Error (Sentiments):', error.response ? error.response.data : error.message);
+             // Sentiments might not be available for all test hotels
+             return { message: "Sentiments not available for this hotel in test environment." };
+        }
+    },
+
+    searchActivities: async ({ latitude, longitude }) => {
+        console.log(`Executing searchActivities at ${latitude}, ${longitude}`);
+        try {
+            const token = await getAccessToken();
+            const response = await axios.get('https://test.api.amadeus.com/v1/shopping/activities', {
+                headers: { 'Authorization': `Bearer ${token}` },
+                params: { latitude, longitude, radius: 1 }
+            });
+            return response.data;
+        } catch (error) {
+            console.error('Amadeus API Error (Activities):', error.response ? error.response.data : error.message);
+            throw new Error('Failed to fetch activities.');
         }
     }
 };
