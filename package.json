@@ -1,0 +1,20 @@
+{
+  "name": "amadeus_poc",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@google-cloud/secret-manager": "^6.1.1",
+    "@google/generative-ai": "^0.24.1",
+    "axios": "^1.13.2",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0"
+  }
+}
