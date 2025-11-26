@@ -341,11 +341,15 @@
                     // The model response (text)
                     if (data.content) {
                         appendMessage(data.content, 'bot');
-                        conversationHistory.push({ role: 'model', content: data.content });
                     }
+
+                    let historyContent = data.content || "";
 
                     // Render UI cards if available
                     if (data.data && data.data.length > 0) {
+                        // Append data context to history so model remembers it
+                        historyContent += `\n\n[System Context: The following ${data.dataType} options are displayed to the user. Use this data to answer follow-up questions like "compare these" or "book the first one". Data: ${JSON.stringify(data.data)}]`;
+
                         if (data.dataType === 'flights') {
                             appendFlightResults(data.data);
                         } else if (data.dataType === 'activities') {
@@ -353,6 +357,11 @@
                         } else if (data.dataType === 'hotels') {
                             appendHotelResults(data.data);
                         }
+                    }
+
+                    // Update history with the augmented content
+                    if (historyContent) {
+                        conversationHistory.push({ role: 'model', content: historyContent });
                     }
                 }
 
