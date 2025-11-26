@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amadeus Flight Assistant</title>
+    <title>gengage travelmate</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -13,37 +13,41 @@
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f5f5f5;
+            background-color: #121212;
+            color: #e0e0e0;
             display: flex;
             flex-direction: column;
             height: 90vh;
         }
         .container {
-            background-color: white;
+            background-color: #1e1e1e;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             overflow: hidden;
+            border: 1px solid #333;
         }
         h1 {
-            color: #333;
+            color: #ffffff;
             text-align: center;
             margin-bottom: 20px;
             margin-top: 0;
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
         
         /* Chat Interface */
         #chat-history {
             flex-grow: 1;
             overflow-y: auto;
-            border: 1px solid #eee;
+            border: 1px solid #333;
             border-radius: 4px;
             padding: 15px;
             margin-bottom: 15px;
-            background-color: #fafafa;
+            background-color: #121212;
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -76,11 +80,12 @@
 
         .message strong {
             font-weight: 600;
+            color: #fff;
         }
 
         .message.user {
             align-self: flex-end;
-            background-color: #005eb8;
+            background-color: #172AAF; /* Brand Blue */
             color: white;
             border-bottom-right-radius: 4px;
         }
@@ -91,9 +96,10 @@
 
         .message.bot {
             align-self: flex-start;
-            background-color: #e9ecef;
-            color: #333;
+            background-color: #2d2d2d;
+            color: #e0e0e0;
             border-bottom-left-radius: 4px;
+            border: 1px solid #333;
         }
 
         /* Markdown Table Styles */
@@ -102,21 +108,23 @@
             border-collapse: collapse;
             margin: 10px 0;
             font-size: 0.9em;
+            color: #e0e0e0;
         }
 
         .message th, .message td {
-            border: 1px solid #ccc;
+            border: 1px solid #444;
             padding: 8px;
             text-align: left;
         }
 
         .message th {
-            background-color: #ddd;
+            background-color: #333;
             font-weight: bold;
+            color: #fff;
         }
 
         .message tr:nth-child(even) {
-            background-color: #f8f9fa;
+            background-color: #262626;
         }
 
         .comparison-container {
@@ -125,15 +133,15 @@
         }
         
         .comparison-container h3 {
-            color: #005eb8;
+            color: #F668F2; /* Brand Pink */
             margin: 0 0 10px 0;
         }
 
         .recommendation {
             margin-top: 10px;
             padding: 10px;
-            background-color: #e8f4fd;
-            border-left: 4px solid #005eb8;
+            background-color: #252525;
+            border-left: 4px solid #F668F2; /* Brand Pink */
             border-radius: 4px;
         }
 
@@ -145,19 +153,21 @@
         input[type="text"] {
             flex-grow: 1;
             padding: 12px;
-            border: 1px solid #ddd;
+            border: 1px solid #444;
             border-radius: 24px;
             font-size: 16px;
             outline: none;
+            background-color: #2d2d2d;
+            color: white;
         }
 
         input[type="text"]:focus {
-            border-color: #005eb8;
+            border-color: #172AAF;
         }
 
         button {
             padding: 10px 25px;
-            background-color: #005eb8;
+            background-color: #172AAF; /* Brand Blue */
             color: white;
             border: none;
             border-radius: 24px;
@@ -167,25 +177,26 @@
         }
 
         button:hover {
-            background-color: #004488;
+            background-color: #122085;
         }
         
         button:disabled {
-            background-color: #ccc;
+            background-color: #444;
+            color: #888;
         }
 
         /* Flight Cards in Chat */
         .flight-card {
-            background: white;
-            border: 1px solid #ddd;
+            background: #2d2d2d;
+            border: 1px solid #444;
             border-radius: 8px;
             padding: 15px;
             margin-top: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
         .flight-card h4 {
             margin: 0 0 10px 0;
-            color: #005eb8;
+            color: #F668F2; /* Pink highlight */
             display: flex;
             justify-content: space-between;
         }
@@ -198,6 +209,7 @@
             gap: 10px;
             font-size: 0.9em;
             margin-bottom: 5px;
+            color: #ccc;
         }
         .price-tag {
             font-size: 1.1em;
@@ -206,26 +218,26 @@
         }
         .carrier {
             font-weight: bold;
-            color: #555;
+            color: #aaa;
         }
 
         /* Activity Cards */
         .activity-card {
-            background: white;
-            border: 1px solid #ddd;
+            background: #2d2d2d;
+            border: 1px solid #444;
             border-radius: 8px;
             padding: 15px;
             margin-top: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
         .activity-card h4 {
             margin: 0 0 5px 0;
-            color: #005eb8;
+            color: #F668F2; /* Pink */
             font-size: 1.1em;
         }
         .activity-meta {
             font-size: 0.9em;
-            color: #666;
+            color: #aaa;
             margin-bottom: 8px;
             display: flex;
             gap: 10px;
@@ -241,8 +253,8 @@
 
         /* Hotel Cards */
         .hotel-card {
-            background: white;
-            border: 1px solid #ddd;
+            background: #2d2d2d;
+            border: 1px solid #444;
             border-radius: 8px;
             padding: 15px;
             margin-top: 10px;
@@ -252,17 +264,17 @@
         }
         .hotel-card h4 {
             margin: 0;
-            color: #005eb8;
+            color: #F668F2; /* Pink */
         }
         .hotel-info {
             font-size: 0.9em;
-            color: #555;
+            color: #aaa;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>✈️ Amadeus Travel Assistant</h1>
+        <h1>gengage travelmate</h1>
         
         <div id="chat-history">
             <div class="message bot">
