@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amadeus Flight Assistant</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -54,6 +55,27 @@
             font-size: 15px;
         }
 
+        .message p {
+            margin: 0 0 10px 0;
+        }
+        
+        .message p:last-child {
+            margin-bottom: 0;
+        }
+
+        .message ul, .message ol {
+            margin: 0 0 10px 0;
+            padding-left: 20px;
+        }
+
+        .message li {
+            margin-bottom: 5px;
+        }
+
+        .message strong {
+            font-weight: 600;
+        }
+
         .message.user {
             align-self: flex-end;
             background-color: #005eb8;
@@ -61,11 +83,56 @@
             border-bottom-right-radius: 4px;
         }
 
+        .message.user p {
+             margin: 0;
+        }
+
         .message.bot {
             align-self: flex-start;
             background-color: #e9ecef;
             color: #333;
             border-bottom-left-radius: 4px;
+        }
+
+        /* Markdown Table Styles */
+        .message table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 0.9em;
+        }
+
+        .message th, .message td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .message th {
+            background-color: #ddd;
+            font-weight: bold;
+        }
+
+        .message tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .comparison-container {
+            margin-top: 10px;
+            overflow-x: auto;
+        }
+        
+        .comparison-container h3 {
+            color: #005eb8;
+            margin: 0 0 10px 0;
+        }
+
+        .recommendation {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f4fd;
+            border-left: 4px solid #005eb8;
+            border-radius: 4px;
         }
 
         .chat-input-area {
@@ -233,11 +300,76 @@
         function appendMessage(text, sender, isLoading = false) {
             const div = document.createElement('div');
             div.className = `message ${sender}`;
-            div.textContent = text;
+            
+            if (sender === 'bot' && !isLoading) {
+                // Check for JSON comparison block
+                const jsonBlockRegex = /```json-comparison([\s\S]*?)```/;
+                const match = text.match(jsonBlockRegex);
+
+                if (match) {
+                    try {
+                        const jsonContent = match[1].trim();
+                        const comparisonData = JSON.parse(jsonContent);
+                        
+                        // Render text before the block (if any)
+                        const textParts = text.split(match[0]);
+                        let html = marked.parse(textParts[0] || '');
+
+                        // Render the Comparison Table
+                        html += renderComparisonTable(comparisonData);
+
+                        // Render text after (if any)
+                        if (textParts[1]) {
+                            html += marked.parse(textParts[1]);
+                        }
+
+                        div.innerHTML = html;
+                        // Make this message wider for the table
+                        div.style.maxWidth = '95%';
+                    } catch (e) {
+                        console.error("Failed to render comparison JSON", e);
+                        div.innerHTML = marked.parse(text); // Fallback
+                    }
+                } else {
+                    // Standard Markdown rendering
+                    div.innerHTML = marked.parse(text);
+                }
+            } else {
+                div.textContent = text;
+            }
+
             if (isLoading) div.id = 'loading-' + Date.now();
             chatHistory.appendChild(div);
             chatHistory.scrollTop = chatHistory.scrollHeight;
             return div.id;
+        }
+
+        function renderComparisonTable(data) {
+            if (!data || !data.columns || !data.rows) return '';
+
+            let tableHtml = `<div class="comparison-container">
+                <h3>${data.title || 'Comparison'}</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            ${data.columns.map(col => `<th>${col}</th>`).join('')}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${data.rows.map(row => `
+                            <tr>
+                                ${row.map(cell => `<td>${cell}</td>`).join('')}
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>`;
+
+            if (data.recommendation) {
+                tableHtml += `<div class="recommendation"><strong>Recommendation:</strong> ${data.recommendation}</div>`;
+            }
+            
+            tableHtml += `</div>`;
+            return tableHtml;
         }
 
         function appendFlightResults(flights) {
