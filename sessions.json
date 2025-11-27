@@ -32954,5 +32954,3944 @@
       }
     ],
     "createdAt": 1764233548538
+  },
+  "mih9ljgms2ckgskbdx": {
+    "id": "mih9ljgms2ckgskbdx",
+    "title": "Japan Flight Search Starts",
+    "messages": [
+      {
+        "role": "user",
+        "content": "fine me flights to japan"
+      },
+      {
+        "role": "model",
+        "content": "What airport are you flying from and what date would you like to depart?",
+        "data": null,
+        "dataType": null
+      },
+      {
+        "role": "user",
+        "content": "istanbul - tomorrow"
+      },
+      {
+        "role": "model",
+        "content": "OK. I found 15 flights from Istanbul to Tokyo-Narita (NRT) for tomorrow, November 28, 2025. The cheapest option is with Sichuan Airlines, with a duration of 17h 40m and costs 396.43 EUR.\n",
+        "data": [
+          {
+            "type": "flight-offer",
+            "id": "1",
+            "source": "GDS",
+            "instantTicketingRequired": false,
+            "nonHomogeneous": false,
+            "oneWay": false,
+            "isUpsellOffer": false,
+            "lastTicketingDate": "2025-11-28",
+            "lastTicketingDateTime": "2025-11-28",
+            "numberOfBookableSeats": 1,
+            "itineraries": [
+              {
+                "duration": "PT17H40M",
+                "segments": [
+                  {
+                    "departure": {
+                      "iataCode": "IST",
+                      "at": "2025-11-28T15:30:00"
+                    },
+                    "arrival": {
+                      "iataCode": "TFU",
+                      "terminal": "1",
+                      "at": "2025-11-29T05:20:00"
+                    },
+                    "carrierCode": "3U",
+                    "number": "3828",
+                    "aircraft": {
+                      "code": "332"
+                    },
+                    "operating": {
+                      "carrierCode": "3U"
+                    },
+                    "duration": "PT8H50M",
+                    "id": "23",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  },
+                  {
+                    "departure": {
+                      "iataCode": "TFU",
+                      "terminal": "1",
+                      "at": "2025-11-29T09:35:00"
+                    },
+                    "arrival": {
+                      "iataCode": "NRT",
+                      "terminal": "1",
+                      "at": "2025-11-29T15:10:00"
+                    },
+                    "carrierCode": "3U",
+                    "number": "3961",
+                    "aircraft": {
+                      "code": "320"
+                    },
+                    "operating": {
+                      "carrierCode": "3U"
+                    },
+                    "duration": "PT4H35M",
+                    "id": "24",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  }
+                ]
+              }
+            ],
+            "price": {
+              "currency": "EUR",
+              "total": "396.43",
+              "base": "226.00",
+              "fees": [
+                {
+                  "amount": "0.00",
+                  "type": "SUPPLIER"
+                },
+                {
+                  "amount": "0.00",
+                  "type": "TICKETING"
+                }
+              ],
+              "grandTotal": "396.43"
+            },
+            "pricingOptions": {
+              "fareType": [
+                "PUBLISHED"
+              ],
+              "includedCheckedBagsOnly": true
+            },
+            "validatingAirlineCodes": [
+              "3U"
+            ],
+            "travelerPricings": [
+              {
+                "travelerId": "1",
+                "fareOption": "STANDARD",
+                "travelerType": "ADULT",
+                "price": {
+                  "currency": "EUR",
+                  "total": "396.43",
+                  "base": "226.00"
+                },
+                "fareDetailsBySegment": [
+                  {
+                    "segmentId": "23",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "U1ABEA96",
+                    "class": "U",
+                    "includedCheckedBags": {
+                      "quantity": 2
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    }
+                  },
+                  {
+                    "segmentId": "24",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "U1ABEA96",
+                    "class": "B",
+                    "includedCheckedBags": {
+                      "quantity": 2
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "flight-offer",
+            "id": "2",
+            "source": "GDS",
+            "instantTicketingRequired": false,
+            "nonHomogeneous": false,
+            "oneWay": false,
+            "isUpsellOffer": false,
+            "lastTicketingDate": "2025-11-28",
+            "lastTicketingDateTime": "2025-11-28",
+            "numberOfBookableSeats": 9,
+            "itineraries": [
+              {
+                "duration": "PT14H15M",
+                "segments": [
+                  {
+                    "departure": {
+                      "iataCode": "IST",
+                      "at": "2025-11-28T18:15:00"
+                    },
+                    "arrival": {
+                      "iataCode": "UBN",
+                      "at": "2025-11-29T07:30:00"
+                    },
+                    "carrierCode": "OM",
+                    "number": "1162",
+                    "aircraft": {
+                      "code": "333"
+                    },
+                    "operating": {
+                      "carrierCode": "TK"
+                    },
+                    "duration": "PT8H15M",
+                    "id": "9",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  },
+                  {
+                    "departure": {
+                      "iataCode": "UBN",
+                      "at": "2025-11-29T08:55:00"
+                    },
+                    "arrival": {
+                      "iataCode": "NRT",
+                      "terminal": "2",
+                      "at": "2025-11-29T14:30:00"
+                    },
+                    "carrierCode": "OM",
+                    "number": "501",
+                    "aircraft": {
+                      "code": "73H"
+                    },
+                    "operating": {
+                      "carrierCode": "OM"
+                    },
+                    "duration": "PT4H35M",
+                    "id": "10",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  }
+                ]
+              }
+            ],
+            "price": {
+              "currency": "EUR",
+              "total": "432.71",
+              "base": "312.00",
+              "fees": [
+                {
+                  "amount": "0.00",
+                  "type": "SUPPLIER"
+                },
+                {
+                  "amount": "0.00",
+                  "type": "TICKETING"
+                }
+              ],
+              "grandTotal": "432.71"
+            },
+            "pricingOptions": {
+              "fareType": [
+                "PUBLISHED"
+              ],
+              "includedCheckedBagsOnly": true
+            },
+            "validatingAirlineCodes": [
+              "OM"
+            ],
+            "travelerPricings": [
+              {
+                "travelerId": "1",
+                "fareOption": "STANDARD",
+                "travelerType": "ADULT",
+                "price": {
+                  "currency": "EUR",
+                  "total": "432.71",
+                  "base": "312.00"
+                },
+                "fareDetailsBySegment": [
+                  {
+                    "segmentId": "9",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "VOWGM",
+                    "class": "V",
+                    "includedCheckedBags": {
+                      "quantity": 1
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    }
+                  },
+                  {
+                    "segmentId": "10",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "VOWMJ",
+                    "class": "V",
+                    "includedCheckedBags": {
+                      "quantity": 1
+                    },
+                    "includedCabinBags": {
+                      "weight": 8,
+                      "weightUnit": "KG"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "flight-offer",
+            "id": "3",
+            "source": "GDS",
+            "instantTicketingRequired": false,
+            "nonHomogeneous": false,
+            "oneWay": false,
+            "isUpsellOffer": false,
+            "lastTicketingDate": "2025-11-28",
+            "lastTicketingDateTime": "2025-11-28",
+            "numberOfBookableSeats": 9,
+            "itineraries": [
+              {
+                "duration": "PT15H40M",
+                "segments": [
+                  {
+                    "departure": {
+                      "iataCode": "IST",
+                      "at": "2025-11-28T14:00:00"
+                    },
+                    "arrival": {
+                      "iataCode": "AUH",
+                      "terminal": "A",
+                      "at": "2025-11-28T19:25:00"
+                    },
+                    "carrierCode": "EY",
+                    "number": "542",
+                    "aircraft": {
+                      "code": "32Q"
+                    },
+                    "operating": {
+                      "carrierCode": "EY"
+                    },
+                    "duration": "PT4H25M",
+                    "id": "21",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  },
+                  {
+                    "departure": {
+                      "iataCode": "AUH",
+                      "terminal": "A",
+                      "at": "2025-11-28T21:05:00"
+                    },
+                    "arrival": {
+                      "iataCode": "NRT",
+                      "terminal": "1",
+                      "at": "2025-11-29T11:40:00"
+                    },
+                    "carrierCode": "EY",
+                    "number": "800",
+                    "aircraft": {
+                      "code": "351"
+                    },
+                    "operating": {
+                      "carrierCode": "EY"
+                    },
+                    "duration": "PT9H35M",
+                    "id": "22",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  }
+                ]
+              }
+            ],
+            "price": {
+              "currency": "EUR",
+              "total": "474.73",
+              "base": "310.00",
+              "fees": [
+                {
+                  "amount": "0.00",
+                  "type": "SUPPLIER"
+                },
+                {
+                  "amount": "0.00",
+                  "type": "TICKETING"
+                }
+              ],
+              "grandTotal": "474.73"
+            },
+            "pricingOptions": {
+              "fareType": [
+                "PUBLISHED"
+              ],
+              "includedCheckedBagsOnly": false
+            },
+            "validatingAirlineCodes": [
+              "EY"
+            ],
+            "travelerPricings": [
+              {
+                "travelerId": "1",
+                "fareOption": "STANDARD",
+                "travelerType": "ADULT",
+                "price": {
+                  "currency": "EUR",
+                  "total": "474.73",
+                  "base": "310.00"
+                },
+                "fareDetailsBySegment": [
+                  {
+                    "segmentId": "21",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "ENN00H29",
+                    "brandedFare": "YBASIC",
+                    "brandedFareLabel": "ECONOMY BASIC",
+                    "class": "E",
+                    "includedCheckedBags": {
+                      "weight": 0,
+                      "weightUnit": "KG"
+                    },
+                    "includedCabinBags": {
+                      "weight": 7,
+                      "weightUnit": "KG"
+                    },
+                    "amenities": [
+                      {
+                        "description": "EXCESS WEIGHT SPECIAL CHARGE",
+                        "isChargeable": true,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "FOOD AND BEVERAGE",
+                        "isChargeable": false,
+                        "amenityType": "MEAL",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PRIORITY ACCESS",
+                        "isChargeable": true,
+                        "amenityType": "TRAVEL_SERVICES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "STANDARD SEAT SELECTION",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "segmentId": "22",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "ENN00H29",
+                    "brandedFare": "YBASIC",
+                    "brandedFareLabel": "ECONOMY BASIC",
+                    "class": "E",
+                    "includedCheckedBags": {
+                      "weight": 0,
+                      "weightUnit": "KG"
+                    },
+                    "includedCabinBags": {
+                      "weight": 7,
+                      "weightUnit": "KG"
+                    },
+                    "amenities": [
+                      {
+                        "description": "EXCESS WEIGHT SPECIAL CHARGE",
+                        "isChargeable": true,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "FOOD AND BEVERAGE",
+                        "isChargeable": false,
+                        "amenityType": "MEAL",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PRIORITY ACCESS",
+                        "isChargeable": true,
+                        "amenityType": "TRAVEL_SERVICES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "STANDARD SEAT SELECTION",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "flight-offer",
+            "id": "4",
+            "source": "GDS",
+            "instantTicketingRequired": false,
+            "nonHomogeneous": false,
+            "oneWay": false,
+            "isUpsellOffer": false,
+            "lastTicketingDate": "2025-11-28",
+            "lastTicketingDateTime": "2025-11-28",
+            "numberOfBookableSeats": 9,
+            "itineraries": [
+              {
+                "duration": "PT22H15M",
+                "segments": [
+                  {
+                    "departure": {
+                      "iataCode": "IST",
+                      "at": "2025-11-28T07:25:00"
+                    },
+                    "arrival": {
+                      "iataCode": "AUH",
+                      "terminal": "A",
+                      "at": "2025-11-28T13:00:00"
+                    },
+                    "carrierCode": "EY",
+                    "number": "544",
+                    "aircraft": {
+                      "code": "32Q"
+                    },
+                    "operating": {
+                      "carrierCode": "EY"
+                    },
+                    "duration": "PT4H35M",
+                    "id": "13",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  },
+                  {
+                    "departure": {
+                      "iataCode": "AUH",
+                      "terminal": "A",
+                      "at": "2025-11-28T21:05:00"
+                    },
+                    "arrival": {
+                      "iataCode": "NRT",
+                      "terminal": "1",
+                      "at": "2025-11-29T11:40:00"
+                    },
+                    "carrierCode": "EY",
+                    "number": "800",
+                    "aircraft": {
+                      "code": "351"
+                    },
+                    "operating": {
+                      "carrierCode": "EY"
+                    },
+                    "duration": "PT9H35M",
+                    "id": "14",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  }
+                ]
+              }
+            ],
+            "price": {
+              "currency": "EUR",
+              "total": "474.73",
+              "base": "310.00",
+              "fees": [
+                {
+                  "amount": "0.00",
+                  "type": "SUPPLIER"
+                },
+                {
+                  "amount": "0.00",
+                  "type": "TICKETING"
+                }
+              ],
+              "grandTotal": "474.73"
+            },
+            "pricingOptions": {
+              "fareType": [
+                "PUBLISHED"
+              ],
+              "includedCheckedBagsOnly": false
+            },
+            "validatingAirlineCodes": [
+              "EY"
+            ],
+            "travelerPricings": [
+              {
+                "travelerId": "1",
+                "fareOption": "STANDARD",
+                "travelerType": "ADULT",
+                "price": {
+                  "currency": "EUR",
+                  "total": "474.73",
+                  "base": "310.00"
+                },
+                "fareDetailsBySegment": [
+                  {
+                    "segmentId": "13",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "ENN00H29",
+                    "brandedFare": "YBASIC",
+                    "brandedFareLabel": "ECONOMY BASIC",
+                    "class": "E",
+                    "includedCheckedBags": {
+                      "weight": 0,
+                      "weightUnit": "KG"
+                    },
+                    "includedCabinBags": {
+                      "weight": 7,
+                      "weightUnit": "KG"
+                    },
+                    "amenities": [
+                      {
+                        "description": "EXCESS WEIGHT SPECIAL CHARGE",
+                        "isChargeable": true,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "FOOD AND BEVERAGE",
+                        "isChargeable": false,
+                        "amenityType": "MEAL",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PRIORITY ACCESS",
+                        "isChargeable": true,
+                        "amenityType": "TRAVEL_SERVICES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "STANDARD SEAT SELECTION",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "segmentId": "14",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "ENN00H29",
+                    "brandedFare": "YBASIC",
+                    "brandedFareLabel": "ECONOMY BASIC",
+                    "class": "E",
+                    "includedCheckedBags": {
+                      "weight": 0,
+                      "weightUnit": "KG"
+                    },
+                    "includedCabinBags": {
+                      "weight": 7,
+                      "weightUnit": "KG"
+                    },
+                    "amenities": [
+                      {
+                        "description": "EXCESS WEIGHT SPECIAL CHARGE",
+                        "isChargeable": true,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "FOOD AND BEVERAGE",
+                        "isChargeable": false,
+                        "amenityType": "MEAL",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PRIORITY ACCESS",
+                        "isChargeable": true,
+                        "amenityType": "TRAVEL_SERVICES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "STANDARD SEAT SELECTION",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "flight-offer",
+            "id": "5",
+            "source": "GDS",
+            "instantTicketingRequired": false,
+            "nonHomogeneous": false,
+            "oneWay": false,
+            "isUpsellOffer": false,
+            "lastTicketingDate": "2025-11-28",
+            "lastTicketingDateTime": "2025-11-28",
+            "numberOfBookableSeats": 9,
+            "itineraries": [
+              {
+                "duration": "PT22H5M",
+                "segments": [
+                  {
+                    "departure": {
+                      "iataCode": "IST",
+                      "at": "2025-11-28T14:55:00"
+                    },
+                    "arrival": {
+                      "iataCode": "PEK",
+                      "terminal": "3",
+                      "at": "2025-11-29T05:30:00"
+                    },
+                    "carrierCode": "CA",
+                    "number": "860",
+                    "aircraft": {
+                      "code": "332"
+                    },
+                    "operating": {
+                      "carrierCode": "CA"
+                    },
+                    "duration": "PT9H35M",
+                    "id": "7",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  },
+                  {
+                    "departure": {
+                      "iataCode": "PEK",
+                      "terminal": "3",
+                      "at": "2025-11-29T14:30:00"
+                    },
+                    "arrival": {
+                      "iataCode": "NRT",
+                      "terminal": "1",
+                      "at": "2025-11-29T19:00:00"
+                    },
+                    "carrierCode": "CA",
+                    "number": "113",
+                    "aircraft": {
+                      "code": "321"
+                    },
+                    "operating": {
+                      "carrierCode": "CA"
+                    },
+                    "duration": "PT3H30M",
+                    "id": "8",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  }
+                ]
+              }
+            ],
+            "price": {
+              "currency": "EUR",
+              "total": "558.07",
+              "base": "389.00",
+              "fees": [
+                {
+                  "amount": "0.00",
+                  "type": "SUPPLIER"
+                },
+                {
+                  "amount": "0.00",
+                  "type": "TICKETING"
+                }
+              ],
+              "grandTotal": "558.07"
+            },
+            "pricingOptions": {
+              "fareType": [
+                "PUBLISHED"
+              ],
+              "includedCheckedBagsOnly": true
+            },
+            "validatingAirlineCodes": [
+              "CA"
+            ],
+            "travelerPricings": [
+              {
+                "travelerId": "1",
+                "fareOption": "STANDARD",
+                "travelerType": "ADULT",
+                "price": {
+                  "currency": "EUR",
+                  "total": "558.07",
+                  "base": "389.00"
+                },
+                "fareDetailsBySegment": [
+                  {
+                    "segmentId": "7",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "PRCOTR",
+                    "brandedFare": "FLEXECO",
+                    "brandedFareLabel": "ECONOMY FLEX",
+                    "class": "P",
+                    "includedCheckedBags": {
+                      "quantity": 2
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    },
+                    "amenities": [
+                      {
+                        "description": "PRE PAID BAGGAGE",
+                        "isChargeable": true,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "CHECKED BAG SECOND",
+                        "isChargeable": true,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "EXCESS BAGGAGE",
+                        "isChargeable": true,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PAID SEAT DISCT ONLY ON CA APP",
+                        "isChargeable": true,
+                        "amenityType": "PRE_RESERVED_SEAT",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "REFUNDABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "CHANGEABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "segmentId": "8",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "LLORCTT",
+                    "brandedFare": "FLEXECO",
+                    "brandedFareLabel": "ECONOMY FLEX",
+                    "class": "L",
+                    "includedCheckedBags": {
+                      "quantity": 2
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    },
+                    "amenities": [
+                      {
+                        "description": "PRE PAID BAGGAGE",
+                        "isChargeable": true,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "CHECKED BAG SECOND",
+                        "isChargeable": false,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "EXCESS BAGGAGE",
+                        "isChargeable": true,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PAID SEAT DISCT ONLY ON CA APP",
+                        "isChargeable": true,
+                        "amenityType": "PRE_RESERVED_SEAT",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "REFUNDABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "CHANGEABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "flight-offer",
+            "id": "6",
+            "source": "GDS",
+            "instantTicketingRequired": false,
+            "nonHomogeneous": false,
+            "oneWay": false,
+            "isUpsellOffer": false,
+            "lastTicketingDate": "2025-11-28",
+            "lastTicketingDateTime": "2025-11-28",
+            "numberOfBookableSeats": 9,
+            "itineraries": [
+              {
+                "duration": "PT16H15M",
+                "segments": [
+                  {
+                    "departure": {
+                      "iataCode": "SAW",
+                      "at": "2025-11-28T13:40:00"
+                    },
+                    "arrival": {
+                      "iataCode": "DOH",
+                      "at": "2025-11-28T17:45:00"
+                    },
+                    "carrierCode": "QR",
+                    "number": "242",
+                    "aircraft": {
+                      "code": "320"
+                    },
+                    "operating": {
+                      "carrierCode": "QR"
+                    },
+                    "duration": "PT4H5M",
+                    "id": "11",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  },
+                  {
+                    "departure": {
+                      "iataCode": "DOH",
+                      "at": "2025-11-28T19:55:00"
+                    },
+                    "arrival": {
+                      "iataCode": "NRT",
+                      "terminal": "2",
+                      "at": "2025-11-29T11:55:00"
+                    },
+                    "carrierCode": "QR",
+                    "number": "808",
+                    "aircraft": {
+                      "code": "359"
+                    },
+                    "operating": {
+                      "carrierCode": "QR"
+                    },
+                    "duration": "PT10H",
+                    "id": "12",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  }
+                ]
+              }
+            ],
+            "price": {
+              "currency": "EUR",
+              "total": "633.92",
+              "base": "440.00",
+              "fees": [
+                {
+                  "amount": "0.00",
+                  "type": "SUPPLIER"
+                },
+                {
+                  "amount": "0.00",
+                  "type": "TICKETING"
+                }
+              ],
+              "grandTotal": "633.92"
+            },
+            "pricingOptions": {
+              "fareType": [
+                "PUBLISHED"
+              ],
+              "includedCheckedBagsOnly": true
+            },
+            "validatingAirlineCodes": [
+              "QR"
+            ],
+            "travelerPricings": [
+              {
+                "travelerId": "1",
+                "fareOption": "STANDARD",
+                "travelerType": "ADULT",
+                "price": {
+                  "currency": "EUR",
+                  "total": "633.92",
+                  "base": "440.00"
+                },
+                "fareDetailsBySegment": [
+                  {
+                    "segmentId": "11",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "SJR2R1SI",
+                    "brandedFare": "ECONVENIEN",
+                    "brandedFareLabel": "ECONOMY CONVENIENCE",
+                    "class": "S",
+                    "includedCheckedBags": {
+                      "weight": 30,
+                      "weightUnit": "KG"
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    },
+                    "amenities": [
+                      {
+                        "description": "CABIN BAG 1 PIECE 7 KG",
+                        "isChargeable": false,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PRE RESERVED SEAT ASSIGNMENT",
+                        "isChargeable": false,
+                        "amenityType": "PRE_RESERVED_SEAT",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "MEAL BEVERAGE",
+                        "isChargeable": false,
+                        "amenityType": "MEAL",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "REFUNDABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "CHANGEABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PREMIUM SEAT",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "75 PCT  QMILES ACCUMULATION",
+                        "isChargeable": false,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "segmentId": "12",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "SJR2R1SI",
+                    "brandedFare": "ECONVENIEN",
+                    "brandedFareLabel": "ECONOMY CONVENIENCE",
+                    "class": "S",
+                    "includedCheckedBags": {
+                      "weight": 30,
+                      "weightUnit": "KG"
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    },
+                    "amenities": [
+                      {
+                        "description": "CABIN BAG 1 PIECE 7 KG",
+                        "isChargeable": false,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PRE RESERVED SEAT ASSIGNMENT",
+                        "isChargeable": false,
+                        "amenityType": "PRE_RESERVED_SEAT",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "MEAL BEVERAGE",
+                        "isChargeable": false,
+                        "amenityType": "MEAL",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "REFUNDABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "CHANGEABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PREMIUM SEAT",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "75 PCT  QMILES ACCUMULATION",
+                        "isChargeable": false,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "flight-offer",
+            "id": "7",
+            "source": "GDS",
+            "instantTicketingRequired": false,
+            "nonHomogeneous": false,
+            "oneWay": false,
+            "isUpsellOffer": false,
+            "lastTicketingDate": "2025-11-28",
+            "lastTicketingDateTime": "2025-11-28",
+            "numberOfBookableSeats": 9,
+            "itineraries": [
+              {
+                "duration": "PT22H15M",
+                "segments": [
+                  {
+                    "departure": {
+                      "iataCode": "SAW",
+                      "at": "2025-11-28T13:40:00"
+                    },
+                    "arrival": {
+                      "iataCode": "DOH",
+                      "at": "2025-11-28T17:45:00"
+                    },
+                    "carrierCode": "QR",
+                    "number": "242",
+                    "aircraft": {
+                      "code": "320"
+                    },
+                    "operating": {
+                      "carrierCode": "QR"
+                    },
+                    "duration": "PT4H5M",
+                    "id": "15",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  },
+                  {
+                    "departure": {
+                      "iataCode": "DOH",
+                      "at": "2025-11-29T01:55:00"
+                    },
+                    "arrival": {
+                      "iataCode": "NRT",
+                      "terminal": "2",
+                      "at": "2025-11-29T17:55:00"
+                    },
+                    "carrierCode": "QR",
+                    "number": "806",
+                    "aircraft": {
+                      "code": "77W"
+                    },
+                    "operating": {
+                      "carrierCode": "QR"
+                    },
+                    "duration": "PT10H",
+                    "id": "16",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  }
+                ]
+              }
+            ],
+            "price": {
+              "currency": "EUR",
+              "total": "633.92",
+              "base": "440.00",
+              "fees": [
+                {
+                  "amount": "0.00",
+                  "type": "SUPPLIER"
+                },
+                {
+                  "amount": "0.00",
+                  "type": "TICKETING"
+                }
+              ],
+              "grandTotal": "633.92"
+            },
+            "pricingOptions": {
+              "fareType": [
+                "PUBLISHED"
+              ],
+              "includedCheckedBagsOnly": true
+            },
+            "validatingAirlineCodes": [
+              "QR"
+            ],
+            "travelerPricings": [
+              {
+                "travelerId": "1",
+                "fareOption": "STANDARD",
+                "travelerType": "ADULT",
+                "price": {
+                  "currency": "EUR",
+                  "total": "633.92",
+                  "base": "440.00"
+                },
+                "fareDetailsBySegment": [
+                  {
+                    "segmentId": "15",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "SJR2R1SI",
+                    "brandedFare": "ECONVENIEN",
+                    "brandedFareLabel": "ECONOMY CONVENIENCE",
+                    "class": "S",
+                    "includedCheckedBags": {
+                      "weight": 30,
+                      "weightUnit": "KG"
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    },
+                    "amenities": [
+                      {
+                        "description": "CABIN BAG 1 PIECE 7 KG",
+                        "isChargeable": false,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PRE RESERVED SEAT ASSIGNMENT",
+                        "isChargeable": false,
+                        "amenityType": "PRE_RESERVED_SEAT",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "MEAL BEVERAGE",
+                        "isChargeable": false,
+                        "amenityType": "MEAL",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "REFUNDABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "CHANGEABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PREMIUM SEAT",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "75 PCT  QMILES ACCUMULATION",
+                        "isChargeable": false,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "segmentId": "16",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "SJR2R1SI",
+                    "brandedFare": "ECONVENIEN",
+                    "brandedFareLabel": "ECONOMY CONVENIENCE",
+                    "class": "S",
+                    "includedCheckedBags": {
+                      "weight": 30,
+                      "weightUnit": "KG"
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    },
+                    "amenities": [
+                      {
+                        "description": "CABIN BAG 1 PIECE 7 KG",
+                        "isChargeable": false,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PRE RESERVED SEAT ASSIGNMENT",
+                        "isChargeable": false,
+                        "amenityType": "PRE_RESERVED_SEAT",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "MEAL BEVERAGE",
+                        "isChargeable": false,
+                        "amenityType": "MEAL",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "REFUNDABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "CHANGEABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PREMIUM SEAT",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "75 PCT  QMILES ACCUMULATION",
+                        "isChargeable": false,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "flight-offer",
+            "id": "8",
+            "source": "GDS",
+            "instantTicketingRequired": false,
+            "nonHomogeneous": false,
+            "oneWay": false,
+            "isUpsellOffer": false,
+            "lastTicketingDate": "2025-11-28",
+            "lastTicketingDateTime": "2025-11-28",
+            "numberOfBookableSeats": 9,
+            "itineraries": [
+              {
+                "duration": "PT22H15M",
+                "segments": [
+                  {
+                    "departure": {
+                      "iataCode": "SAW",
+                      "at": "2025-11-28T13:40:00"
+                    },
+                    "arrival": {
+                      "iataCode": "DOH",
+                      "at": "2025-11-28T17:45:00"
+                    },
+                    "carrierCode": "QR",
+                    "number": "242",
+                    "aircraft": {
+                      "code": "320"
+                    },
+                    "operating": {
+                      "carrierCode": "QR"
+                    },
+                    "duration": "PT4H5M",
+                    "id": "17",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  },
+                  {
+                    "departure": {
+                      "iataCode": "DOH",
+                      "at": "2025-11-29T01:55:00"
+                    },
+                    "arrival": {
+                      "iataCode": "NRT",
+                      "terminal": "2",
+                      "at": "2025-11-29T17:55:00"
+                    },
+                    "carrierCode": "JL",
+                    "number": "7994",
+                    "aircraft": {
+                      "code": "77W"
+                    },
+                    "operating": {
+                      "carrierCode": "QR"
+                    },
+                    "duration": "PT10H",
+                    "id": "18",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  }
+                ]
+              }
+            ],
+            "price": {
+              "currency": "EUR",
+              "total": "637.60",
+              "base": "442.00",
+              "fees": [
+                {
+                  "amount": "0.00",
+                  "type": "SUPPLIER"
+                },
+                {
+                  "amount": "0.00",
+                  "type": "TICKETING"
+                }
+              ],
+              "grandTotal": "637.60"
+            },
+            "pricingOptions": {
+              "fareType": [
+                "PUBLISHED"
+              ],
+              "includedCheckedBagsOnly": true
+            },
+            "validatingAirlineCodes": [
+              "JL"
+            ],
+            "travelerPricings": [
+              {
+                "travelerId": "1",
+                "fareOption": "STANDARD",
+                "travelerType": "ADULT",
+                "price": {
+                  "currency": "EUR",
+                  "total": "637.60",
+                  "base": "442.00"
+                },
+                "fareDetailsBySegment": [
+                  {
+                    "segmentId": "17",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "QNN0OGCH",
+                    "class": "Q",
+                    "includedCheckedBags": {
+                      "quantity": 2
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    }
+                  },
+                  {
+                    "segmentId": "18",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "QNN0OGCH",
+                    "class": "Q",
+                    "includedCheckedBags": {
+                      "quantity": 2
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "flight-offer",
+            "id": "9",
+            "source": "GDS",
+            "instantTicketingRequired": false,
+            "nonHomogeneous": false,
+            "oneWay": false,
+            "isUpsellOffer": false,
+            "lastTicketingDate": "2025-11-28",
+            "lastTicketingDateTime": "2025-11-28",
+            "numberOfBookableSeats": 9,
+            "itineraries": [
+              {
+                "duration": "PT15H45M",
+                "segments": [
+                  {
+                    "departure": {
+                      "iataCode": "IST",
+                      "at": "2025-11-28T20:10:00"
+                    },
+                    "arrival": {
+                      "iataCode": "DOH",
+                      "at": "2025-11-29T00:10:00"
+                    },
+                    "carrierCode": "QR",
+                    "number": "246",
+                    "aircraft": {
+                      "code": "788"
+                    },
+                    "operating": {
+                      "carrierCode": "QR"
+                    },
+                    "duration": "PT4H",
+                    "id": "25",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  },
+                  {
+                    "departure": {
+                      "iataCode": "DOH",
+                      "at": "2025-11-29T01:55:00"
+                    },
+                    "arrival": {
+                      "iataCode": "NRT",
+                      "terminal": "2",
+                      "at": "2025-11-29T17:55:00"
+                    },
+                    "carrierCode": "QR",
+                    "number": "806",
+                    "aircraft": {
+                      "code": "77W"
+                    },
+                    "operating": {
+                      "carrierCode": "QR"
+                    },
+                    "duration": "PT10H",
+                    "id": "26",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  }
+                ]
+              }
+            ],
+            "price": {
+              "currency": "EUR",
+              "total": "638.92",
+              "base": "440.00",
+              "fees": [
+                {
+                  "amount": "0.00",
+                  "type": "SUPPLIER"
+                },
+                {
+                  "amount": "0.00",
+                  "type": "TICKETING"
+                }
+              ],
+              "grandTotal": "638.92"
+            },
+            "pricingOptions": {
+              "fareType": [
+                "PUBLISHED"
+              ],
+              "includedCheckedBagsOnly": true
+            },
+            "validatingAirlineCodes": [
+              "QR"
+            ],
+            "travelerPricings": [
+              {
+                "travelerId": "1",
+                "fareOption": "STANDARD",
+                "travelerType": "ADULT",
+                "price": {
+                  "currency": "EUR",
+                  "total": "638.92",
+                  "base": "440.00"
+                },
+                "fareDetailsBySegment": [
+                  {
+                    "segmentId": "25",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "SJR2R1SI",
+                    "brandedFare": "ECONVENIEN",
+                    "brandedFareLabel": "ECONOMY CONVENIENCE",
+                    "class": "S",
+                    "includedCheckedBags": {
+                      "weight": 30,
+                      "weightUnit": "KG"
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    },
+                    "amenities": [
+                      {
+                        "description": "CABIN BAG 1 PIECE 7 KG",
+                        "isChargeable": false,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PRE RESERVED SEAT ASSIGNMENT",
+                        "isChargeable": false,
+                        "amenityType": "PRE_RESERVED_SEAT",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "MEAL BEVERAGE",
+                        "isChargeable": false,
+                        "amenityType": "MEAL",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "REFUNDABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "CHANGEABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PREMIUM SEAT",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "75 PCT  QMILES ACCUMULATION",
+                        "isChargeable": false,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "segmentId": "26",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "SJR2R1SI",
+                    "brandedFare": "ECONVENIEN",
+                    "brandedFareLabel": "ECONOMY CONVENIENCE",
+                    "class": "S",
+                    "includedCheckedBags": {
+                      "weight": 30,
+                      "weightUnit": "KG"
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    },
+                    "amenities": [
+                      {
+                        "description": "CABIN BAG 1 PIECE 7 KG",
+                        "isChargeable": false,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PRE RESERVED SEAT ASSIGNMENT",
+                        "isChargeable": false,
+                        "amenityType": "PRE_RESERVED_SEAT",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "MEAL BEVERAGE",
+                        "isChargeable": false,
+                        "amenityType": "MEAL",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "REFUNDABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "CHANGEABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PREMIUM SEAT",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "75 PCT  QMILES ACCUMULATION",
+                        "isChargeable": false,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "flight-offer",
+            "id": "10",
+            "source": "GDS",
+            "instantTicketingRequired": false,
+            "nonHomogeneous": false,
+            "oneWay": false,
+            "isUpsellOffer": false,
+            "lastTicketingDate": "2025-11-28",
+            "lastTicketingDateTime": "2025-11-28",
+            "numberOfBookableSeats": 9,
+            "itineraries": [
+              {
+                "duration": "PT16H5M",
+                "segments": [
+                  {
+                    "departure": {
+                      "iataCode": "IST",
+                      "at": "2025-11-28T13:50:00"
+                    },
+                    "arrival": {
+                      "iataCode": "DOH",
+                      "at": "2025-11-28T17:50:00"
+                    },
+                    "carrierCode": "QR",
+                    "number": "240",
+                    "aircraft": {
+                      "code": "77W"
+                    },
+                    "operating": {
+                      "carrierCode": "QR"
+                    },
+                    "duration": "PT4H",
+                    "id": "1",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  },
+                  {
+                    "departure": {
+                      "iataCode": "DOH",
+                      "at": "2025-11-28T19:55:00"
+                    },
+                    "arrival": {
+                      "iataCode": "NRT",
+                      "terminal": "2",
+                      "at": "2025-11-29T11:55:00"
+                    },
+                    "carrierCode": "QR",
+                    "number": "808",
+                    "aircraft": {
+                      "code": "359"
+                    },
+                    "operating": {
+                      "carrierCode": "QR"
+                    },
+                    "duration": "PT10H",
+                    "id": "2",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  }
+                ]
+              }
+            ],
+            "price": {
+              "currency": "EUR",
+              "total": "638.92",
+              "base": "440.00",
+              "fees": [
+                {
+                  "amount": "0.00",
+                  "type": "SUPPLIER"
+                },
+                {
+                  "amount": "0.00",
+                  "type": "TICKETING"
+                }
+              ],
+              "grandTotal": "638.92"
+            },
+            "pricingOptions": {
+              "fareType": [
+                "PUBLISHED"
+              ],
+              "includedCheckedBagsOnly": true
+            },
+            "validatingAirlineCodes": [
+              "QR"
+            ],
+            "travelerPricings": [
+              {
+                "travelerId": "1",
+                "fareOption": "STANDARD",
+                "travelerType": "ADULT",
+                "price": {
+                  "currency": "EUR",
+                  "total": "638.92",
+                  "base": "440.00"
+                },
+                "fareDetailsBySegment": [
+                  {
+                    "segmentId": "1",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "SJR2R1SI",
+                    "brandedFare": "ECONVENIEN",
+                    "brandedFareLabel": "ECONOMY CONVENIENCE",
+                    "class": "S",
+                    "includedCheckedBags": {
+                      "weight": 30,
+                      "weightUnit": "KG"
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    },
+                    "amenities": [
+                      {
+                        "description": "CABIN BAG 1 PIECE 7 KG",
+                        "isChargeable": false,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PRE RESERVED SEAT ASSIGNMENT",
+                        "isChargeable": false,
+                        "amenityType": "PRE_RESERVED_SEAT",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "MEAL BEVERAGE",
+                        "isChargeable": false,
+                        "amenityType": "MEAL",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "REFUNDABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "CHANGEABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PREMIUM SEAT",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "75 PCT  QMILES ACCUMULATION",
+                        "isChargeable": false,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "segmentId": "2",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "SJR2R1SI",
+                    "brandedFare": "ECONVENIEN",
+                    "brandedFareLabel": "ECONOMY CONVENIENCE",
+                    "class": "S",
+                    "includedCheckedBags": {
+                      "weight": 30,
+                      "weightUnit": "KG"
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    },
+                    "amenities": [
+                      {
+                        "description": "CABIN BAG 1 PIECE 7 KG",
+                        "isChargeable": false,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PRE RESERVED SEAT ASSIGNMENT",
+                        "isChargeable": false,
+                        "amenityType": "PRE_RESERVED_SEAT",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "MEAL BEVERAGE",
+                        "isChargeable": false,
+                        "amenityType": "MEAL",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "REFUNDABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "CHANGEABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PREMIUM SEAT",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "75 PCT  QMILES ACCUMULATION",
+                        "isChargeable": false,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "flight-offer",
+            "id": "11",
+            "source": "GDS",
+            "instantTicketingRequired": false,
+            "nonHomogeneous": false,
+            "oneWay": false,
+            "isUpsellOffer": false,
+            "lastTicketingDate": "2025-11-28",
+            "lastTicketingDateTime": "2025-11-28",
+            "numberOfBookableSeats": 9,
+            "itineraries": [
+              {
+                "duration": "PT17H55M",
+                "segments": [
+                  {
+                    "departure": {
+                      "iataCode": "IST",
+                      "at": "2025-11-28T12:00:00"
+                    },
+                    "arrival": {
+                      "iataCode": "DOH",
+                      "at": "2025-11-28T16:00:00"
+                    },
+                    "carrierCode": "QR",
+                    "number": "238",
+                    "aircraft": {
+                      "code": "320"
+                    },
+                    "operating": {
+                      "carrierCode": "QR"
+                    },
+                    "duration": "PT4H",
+                    "id": "29",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  },
+                  {
+                    "departure": {
+                      "iataCode": "DOH",
+                      "at": "2025-11-28T19:55:00"
+                    },
+                    "arrival": {
+                      "iataCode": "NRT",
+                      "terminal": "2",
+                      "at": "2025-11-29T11:55:00"
+                    },
+                    "carrierCode": "QR",
+                    "number": "808",
+                    "aircraft": {
+                      "code": "359"
+                    },
+                    "operating": {
+                      "carrierCode": "QR"
+                    },
+                    "duration": "PT10H",
+                    "id": "30",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  }
+                ]
+              }
+            ],
+            "price": {
+              "currency": "EUR",
+              "total": "638.92",
+              "base": "440.00",
+              "fees": [
+                {
+                  "amount": "0.00",
+                  "type": "SUPPLIER"
+                },
+                {
+                  "amount": "0.00",
+                  "type": "TICKETING"
+                }
+              ],
+              "grandTotal": "638.92"
+            },
+            "pricingOptions": {
+              "fareType": [
+                "PUBLISHED"
+              ],
+              "includedCheckedBagsOnly": true
+            },
+            "validatingAirlineCodes": [
+              "QR"
+            ],
+            "travelerPricings": [
+              {
+                "travelerId": "1",
+                "fareOption": "STANDARD",
+                "travelerType": "ADULT",
+                "price": {
+                  "currency": "EUR",
+                  "total": "638.92",
+                  "base": "440.00"
+                },
+                "fareDetailsBySegment": [
+                  {
+                    "segmentId": "29",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "SJR2R1SI",
+                    "brandedFare": "ECONVENIEN",
+                    "brandedFareLabel": "ECONOMY CONVENIENCE",
+                    "class": "S",
+                    "includedCheckedBags": {
+                      "weight": 30,
+                      "weightUnit": "KG"
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    },
+                    "amenities": [
+                      {
+                        "description": "CABIN BAG 1 PIECE 7 KG",
+                        "isChargeable": false,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PRE RESERVED SEAT ASSIGNMENT",
+                        "isChargeable": false,
+                        "amenityType": "PRE_RESERVED_SEAT",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "MEAL BEVERAGE",
+                        "isChargeable": false,
+                        "amenityType": "MEAL",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "REFUNDABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "CHANGEABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PREMIUM SEAT",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "75 PCT  QMILES ACCUMULATION",
+                        "isChargeable": false,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "segmentId": "30",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "SJR2R1SI",
+                    "brandedFare": "ECONVENIEN",
+                    "brandedFareLabel": "ECONOMY CONVENIENCE",
+                    "class": "S",
+                    "includedCheckedBags": {
+                      "weight": 30,
+                      "weightUnit": "KG"
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    },
+                    "amenities": [
+                      {
+                        "description": "CABIN BAG 1 PIECE 7 KG",
+                        "isChargeable": false,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PRE RESERVED SEAT ASSIGNMENT",
+                        "isChargeable": false,
+                        "amenityType": "PRE_RESERVED_SEAT",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "MEAL BEVERAGE",
+                        "isChargeable": false,
+                        "amenityType": "MEAL",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "REFUNDABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "CHANGEABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PREMIUM SEAT",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "75 PCT  QMILES ACCUMULATION",
+                        "isChargeable": false,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "flight-offer",
+            "id": "12",
+            "source": "GDS",
+            "instantTicketingRequired": false,
+            "nonHomogeneous": false,
+            "oneWay": false,
+            "isUpsellOffer": false,
+            "lastTicketingDate": "2025-11-28",
+            "lastTicketingDateTime": "2025-11-28",
+            "numberOfBookableSeats": 9,
+            "itineraries": [
+              {
+                "duration": "PT22H5M",
+                "segments": [
+                  {
+                    "departure": {
+                      "iataCode": "IST",
+                      "at": "2025-11-28T13:50:00"
+                    },
+                    "arrival": {
+                      "iataCode": "DOH",
+                      "at": "2025-11-28T17:50:00"
+                    },
+                    "carrierCode": "QR",
+                    "number": "240",
+                    "aircraft": {
+                      "code": "77W"
+                    },
+                    "operating": {
+                      "carrierCode": "QR"
+                    },
+                    "duration": "PT4H",
+                    "id": "3",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  },
+                  {
+                    "departure": {
+                      "iataCode": "DOH",
+                      "at": "2025-11-29T01:55:00"
+                    },
+                    "arrival": {
+                      "iataCode": "NRT",
+                      "terminal": "2",
+                      "at": "2025-11-29T17:55:00"
+                    },
+                    "carrierCode": "QR",
+                    "number": "806",
+                    "aircraft": {
+                      "code": "77W"
+                    },
+                    "operating": {
+                      "carrierCode": "QR"
+                    },
+                    "duration": "PT10H",
+                    "id": "4",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  }
+                ]
+              }
+            ],
+            "price": {
+              "currency": "EUR",
+              "total": "638.92",
+              "base": "440.00",
+              "fees": [
+                {
+                  "amount": "0.00",
+                  "type": "SUPPLIER"
+                },
+                {
+                  "amount": "0.00",
+                  "type": "TICKETING"
+                }
+              ],
+              "grandTotal": "638.92"
+            },
+            "pricingOptions": {
+              "fareType": [
+                "PUBLISHED"
+              ],
+              "includedCheckedBagsOnly": true
+            },
+            "validatingAirlineCodes": [
+              "QR"
+            ],
+            "travelerPricings": [
+              {
+                "travelerId": "1",
+                "fareOption": "STANDARD",
+                "travelerType": "ADULT",
+                "price": {
+                  "currency": "EUR",
+                  "total": "638.92",
+                  "base": "440.00"
+                },
+                "fareDetailsBySegment": [
+                  {
+                    "segmentId": "3",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "SJR2R1SI",
+                    "brandedFare": "ECONVENIEN",
+                    "brandedFareLabel": "ECONOMY CONVENIENCE",
+                    "class": "S",
+                    "includedCheckedBags": {
+                      "weight": 30,
+                      "weightUnit": "KG"
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    },
+                    "amenities": [
+                      {
+                        "description": "CABIN BAG 1 PIECE 7 KG",
+                        "isChargeable": false,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PRE RESERVED SEAT ASSIGNMENT",
+                        "isChargeable": false,
+                        "amenityType": "PRE_RESERVED_SEAT",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "MEAL BEVERAGE",
+                        "isChargeable": false,
+                        "amenityType": "MEAL",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "REFUNDABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "CHANGEABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PREMIUM SEAT",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "75 PCT  QMILES ACCUMULATION",
+                        "isChargeable": false,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "segmentId": "4",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "SJR2R1SI",
+                    "brandedFare": "ECONVENIEN",
+                    "brandedFareLabel": "ECONOMY CONVENIENCE",
+                    "class": "S",
+                    "includedCheckedBags": {
+                      "weight": 30,
+                      "weightUnit": "KG"
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    },
+                    "amenities": [
+                      {
+                        "description": "CABIN BAG 1 PIECE 7 KG",
+                        "isChargeable": false,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PRE RESERVED SEAT ASSIGNMENT",
+                        "isChargeable": false,
+                        "amenityType": "PRE_RESERVED_SEAT",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "MEAL BEVERAGE",
+                        "isChargeable": false,
+                        "amenityType": "MEAL",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "REFUNDABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "CHANGEABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PREMIUM SEAT",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "75 PCT  QMILES ACCUMULATION",
+                        "isChargeable": false,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "flight-offer",
+            "id": "13",
+            "source": "GDS",
+            "instantTicketingRequired": false,
+            "nonHomogeneous": false,
+            "oneWay": false,
+            "isUpsellOffer": false,
+            "lastTicketingDate": "2025-11-28",
+            "lastTicketingDateTime": "2025-11-28",
+            "numberOfBookableSeats": 9,
+            "itineraries": [
+              {
+                "duration": "PT15H45M",
+                "segments": [
+                  {
+                    "departure": {
+                      "iataCode": "IST",
+                      "at": "2025-11-28T20:10:00"
+                    },
+                    "arrival": {
+                      "iataCode": "DOH",
+                      "at": "2025-11-29T00:10:00"
+                    },
+                    "carrierCode": "QR",
+                    "number": "246",
+                    "aircraft": {
+                      "code": "788"
+                    },
+                    "operating": {
+                      "carrierCode": "QR"
+                    },
+                    "duration": "PT4H",
+                    "id": "27",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  },
+                  {
+                    "departure": {
+                      "iataCode": "DOH",
+                      "at": "2025-11-29T01:55:00"
+                    },
+                    "arrival": {
+                      "iataCode": "NRT",
+                      "terminal": "2",
+                      "at": "2025-11-29T17:55:00"
+                    },
+                    "carrierCode": "JL",
+                    "number": "7994",
+                    "aircraft": {
+                      "code": "77W"
+                    },
+                    "operating": {
+                      "carrierCode": "QR"
+                    },
+                    "duration": "PT10H",
+                    "id": "28",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  }
+                ]
+              }
+            ],
+            "price": {
+              "currency": "EUR",
+              "total": "642.60",
+              "base": "442.00",
+              "fees": [
+                {
+                  "amount": "0.00",
+                  "type": "SUPPLIER"
+                },
+                {
+                  "amount": "0.00",
+                  "type": "TICKETING"
+                }
+              ],
+              "grandTotal": "642.60"
+            },
+            "pricingOptions": {
+              "fareType": [
+                "PUBLISHED"
+              ],
+              "includedCheckedBagsOnly": true
+            },
+            "validatingAirlineCodes": [
+              "JL"
+            ],
+            "travelerPricings": [
+              {
+                "travelerId": "1",
+                "fareOption": "STANDARD",
+                "travelerType": "ADULT",
+                "price": {
+                  "currency": "EUR",
+                  "total": "642.60",
+                  "base": "442.00"
+                },
+                "fareDetailsBySegment": [
+                  {
+                    "segmentId": "27",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "QNN0OGCH",
+                    "class": "Q",
+                    "includedCheckedBags": {
+                      "quantity": 2
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    }
+                  },
+                  {
+                    "segmentId": "28",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "QNN0OGCH",
+                    "class": "Q",
+                    "includedCheckedBags": {
+                      "quantity": 2
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "flight-offer",
+            "id": "14",
+            "source": "GDS",
+            "instantTicketingRequired": false,
+            "nonHomogeneous": false,
+            "oneWay": false,
+            "isUpsellOffer": false,
+            "lastTicketingDate": "2025-11-28",
+            "lastTicketingDateTime": "2025-11-28",
+            "numberOfBookableSeats": 9,
+            "itineraries": [
+              {
+                "duration": "PT22H5M",
+                "segments": [
+                  {
+                    "departure": {
+                      "iataCode": "IST",
+                      "at": "2025-11-28T13:50:00"
+                    },
+                    "arrival": {
+                      "iataCode": "DOH",
+                      "at": "2025-11-28T17:50:00"
+                    },
+                    "carrierCode": "QR",
+                    "number": "240",
+                    "aircraft": {
+                      "code": "77W"
+                    },
+                    "operating": {
+                      "carrierCode": "QR"
+                    },
+                    "duration": "PT4H",
+                    "id": "5",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  },
+                  {
+                    "departure": {
+                      "iataCode": "DOH",
+                      "at": "2025-11-29T01:55:00"
+                    },
+                    "arrival": {
+                      "iataCode": "NRT",
+                      "terminal": "2",
+                      "at": "2025-11-29T17:55:00"
+                    },
+                    "carrierCode": "JL",
+                    "number": "7994",
+                    "aircraft": {
+                      "code": "77W"
+                    },
+                    "operating": {
+                      "carrierCode": "QR"
+                    },
+                    "duration": "PT10H",
+                    "id": "6",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  }
+                ]
+              }
+            ],
+            "price": {
+              "currency": "EUR",
+              "total": "642.60",
+              "base": "442.00",
+              "fees": [
+                {
+                  "amount": "0.00",
+                  "type": "SUPPLIER"
+                },
+                {
+                  "amount": "0.00",
+                  "type": "TICKETING"
+                }
+              ],
+              "grandTotal": "642.60"
+            },
+            "pricingOptions": {
+              "fareType": [
+                "PUBLISHED"
+              ],
+              "includedCheckedBagsOnly": true
+            },
+            "validatingAirlineCodes": [
+              "JL"
+            ],
+            "travelerPricings": [
+              {
+                "travelerId": "1",
+                "fareOption": "STANDARD",
+                "travelerType": "ADULT",
+                "price": {
+                  "currency": "EUR",
+                  "total": "642.60",
+                  "base": "442.00"
+                },
+                "fareDetailsBySegment": [
+                  {
+                    "segmentId": "5",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "QNN0OGCH",
+                    "class": "Q",
+                    "includedCheckedBags": {
+                      "quantity": 2
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    }
+                  },
+                  {
+                    "segmentId": "6",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "QNN0OGCH",
+                    "class": "Q",
+                    "includedCheckedBags": {
+                      "quantity": 2
+                    },
+                    "includedCabinBags": {
+                      "quantity": 1
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "flight-offer",
+            "id": "15",
+            "source": "GDS",
+            "instantTicketingRequired": false,
+            "nonHomogeneous": false,
+            "oneWay": false,
+            "isUpsellOffer": false,
+            "lastTicketingDate": "2025-11-28",
+            "lastTicketingDateTime": "2025-11-28",
+            "numberOfBookableSeats": 9,
+            "itineraries": [
+              {
+                "duration": "PT17H20M",
+                "segments": [
+                  {
+                    "departure": {
+                      "iataCode": "IST",
+                      "at": "2025-11-28T16:30:00"
+                    },
+                    "arrival": {
+                      "iataCode": "BKK",
+                      "at": "2025-11-29T05:20:00"
+                    },
+                    "carrierCode": "TG",
+                    "number": "901",
+                    "aircraft": {
+                      "code": "359"
+                    },
+                    "operating": {
+                      "carrierCode": "TG"
+                    },
+                    "duration": "PT8H50M",
+                    "id": "19",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  },
+                  {
+                    "departure": {
+                      "iataCode": "BKK",
+                      "at": "2025-11-29T08:00:00"
+                    },
+                    "arrival": {
+                      "iataCode": "NRT",
+                      "terminal": "1",
+                      "at": "2025-11-29T15:50:00"
+                    },
+                    "carrierCode": "TG",
+                    "number": "676",
+                    "aircraft": {
+                      "code": "77W"
+                    },
+                    "operating": {
+                      "carrierCode": "TG"
+                    },
+                    "duration": "PT5H50M",
+                    "id": "20",
+                    "numberOfStops": 0,
+                    "blacklistedInEU": false
+                  }
+                ]
+              }
+            ],
+            "price": {
+              "currency": "EUR",
+              "total": "694.79",
+              "base": "453.00",
+              "fees": [
+                {
+                  "amount": "0.00",
+                  "type": "SUPPLIER"
+                },
+                {
+                  "amount": "0.00",
+                  "type": "TICKETING"
+                }
+              ],
+              "grandTotal": "694.79"
+            },
+            "pricingOptions": {
+              "fareType": [
+                "PUBLISHED"
+              ],
+              "includedCheckedBagsOnly": true
+            },
+            "validatingAirlineCodes": [
+              "TG"
+            ],
+            "travelerPricings": [
+              {
+                "travelerId": "1",
+                "fareOption": "STANDARD",
+                "travelerType": "ADULT",
+                "price": {
+                  "currency": "EUR",
+                  "total": "694.79",
+                  "base": "453.00"
+                },
+                "fareDetailsBySegment": [
+                  {
+                    "segmentId": "19",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "WLOSVN",
+                    "brandedFare": "ECOSV1",
+                    "brandedFareLabel": "ECO SAVER1",
+                    "class": "W",
+                    "includedCheckedBags": {
+                      "weight": 23,
+                      "weightUnit": "KG"
+                    },
+                    "includedCabinBags": {
+                      "weight": 7,
+                      "weightUnit": "KG"
+                    },
+                    "amenities": [
+                      {
+                        "description": "EXTRA BAGGAGE PER ONE KILOGRAM",
+                        "isChargeable": true,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PRE RESERVED SEAT ASSIGNMENT",
+                        "isChargeable": true,
+                        "amenityType": "PRE_RESERVED_SEAT",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "HOT MEAL",
+                        "isChargeable": false,
+                        "amenityType": "MEAL",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "NAME CORRECTION",
+                        "isChargeable": true,
+                        "amenityType": "TRAVEL_SERVICES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "BASIC SEAT",
+                        "isChargeable": false,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "CHANGEABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "25 PERCENT MILES EARNED",
+                        "isChargeable": false,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "segmentId": "20",
+                    "cabin": "ECONOMY",
+                    "fareBasis": "WLOSVN",
+                    "brandedFare": "ECOSV1",
+                    "brandedFareLabel": "ECO SAVER1",
+                    "class": "W",
+                    "includedCheckedBags": {
+                      "weight": 23,
+                      "weightUnit": "KG"
+                    },
+                    "includedCabinBags": {
+                      "weight": 7,
+                      "weightUnit": "KG"
+                    },
+                    "amenities": [
+                      {
+                        "description": "EXTRA BAGGAGE PER ONE KILOGRAM",
+                        "isChargeable": true,
+                        "amenityType": "BAGGAGE",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "PRE RESERVED SEAT ASSIGNMENT",
+                        "isChargeable": true,
+                        "amenityType": "PRE_RESERVED_SEAT",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "HOT MEAL",
+                        "isChargeable": false,
+                        "amenityType": "MEAL",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "NAME CORRECTION",
+                        "isChargeable": true,
+                        "amenityType": "TRAVEL_SERVICES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "BASIC SEAT",
+                        "isChargeable": false,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "CHANGEABLE TICKET",
+                        "isChargeable": true,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      },
+                      {
+                        "description": "25 PERCENT MILES EARNED",
+                        "isChargeable": false,
+                        "amenityType": "BRANDED_FARES",
+                        "amenityProvider": {
+                          "name": "BrandedFare"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "dataType": "flights"
+      },
+      {
+        "role": "user",
+        "content": "ok compare these"
+      },
+      {
+        "role": "model",
+        "content": "```json-comparison\n{\n  \"title\": \"Comparison\",\n  \"columns\": [\"Airline\", \"Price\", \"Duration\"],\n  \"rows\": [\n    [\"Sichuan Airlines (3U)\", \"396.43 EUR\", \"17h 40m\"],\n    [\"Oman Air (OM)\", \"432.71 EUR\", \"Unknown\"],\n    [\"Etihad Airways (EY)\", \"474.73 EUR\", \"Unknown\"],\n    [\"Air China (CA)\", \"558.07 EUR\", \"Unknown\"]\n  ],\n  \"recommendation\": \"Sichuan Airlines is the cheapest option.\"\n}\n```",
+        "data": null,
+        "dataType": null
+      },
+      {
+        "role": "user",
+        "content": "is ischuna airline sreliablie?"
+      },
+      {
+        "role": "model",
+        "content": "I don't have enough information about Sichuan Airlines to assess its reliability. However, I can get you hotel reviews if you'd like, or search for activities in Tokyo.\n",
+        "data": null,
+        "dataType": null
+      },
+      {
+        "role": "user",
+        "content": "oh good yes hotel in tokyo"
+      },
+      {
+        "role": "model",
+        "content": "OK. I found 15 hotels in Tokyo. Here are some of the top options:\n\n*   **Intercontinental The Strings**\n*   **Hilton Tokyo Bay**\n*   **The Tokyo Station Hotel**\n*   **Intercontinental ANA Tokyo**\n\nDo any of these sound good? Also, what are the check-in and check-out dates?\n",
+        "data": [
+          {
+            "chainCode": "FG",
+            "iataCode": "TYO",
+            "dupeId": 700193867,
+            "name": "URAWA WASHINGTON HOTEL-SAITAMA",
+            "hotelId": "FGTYOUWH",
+            "geoCode": {
+              "latitude": 35.88418,
+              "longitude": 139.62888
+            },
+            "address": {
+              "countryCode": "JP",
+              "postalCode": "3300063",
+              "cityName": "SAITAMA",
+              "lines": [
+                "2-1 TAKASAGO",
+                "SAITAMA-SHI, SAITAMA"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:16:44"
+          },
+          {
+            "chainCode": "HL",
+            "iataCode": "TYO",
+            "dupeId": 700036954,
+            "name": "HILTON TOKYO BAY",
+            "hotelId": "HLTYO249",
+            "geoCode": {
+              "latitude": 35.62712,
+              "longitude": 139.87355
+            },
+            "address": {
+              "countryCode": "JP",
+              "postalCode": "279",
+              "cityName": "CHIBA",
+              "lines": [
+                "1 8 MAIHAMA URAYASU CITY"
+              ]
+            },
+            "masterChainCode": "EH",
+            "lastUpdate": "2025-06-03T10:21:33"
+          },
+          {
+            "chainCode": "IC",
+            "iataCode": "TYO",
+            "dupeId": 700061704,
+            "name": "INTERCONTINENTAL THE STRINGS",
+            "hotelId": "ICTYOSTR",
+            "geoCode": {
+              "latitude": 35.62789,
+              "longitude": 139.74078
+            },
+            "address": {
+              "countryCode": "JP",
+              "postalCode": "1088282",
+              "cityName": "TOKYO",
+              "lines": [
+                "26 32 F SHINAGAWA EAST ONE TWR",
+                "2 16 1 KONAN"
+              ]
+            },
+            "masterChainCode": "6C",
+            "lastUpdate": "2025-11-12T12:52:53"
+          },
+          {
+            "chainCode": "FG",
+            "iataCode": "TYO",
+            "dupeId": 700077467,
+            "name": "MONTEREY HANZOMON HOTEL",
+            "hotelId": "FGTYOMHH",
+            "geoCode": {
+              "latitude": 35.68657,
+              "longitude": 139.74222
+            },
+            "address": {
+              "countryCode": "JP",
+              "postalCode": "1020082",
+              "cityName": "TOKYO",
+              "lines": [
+                "23-1 ICHIBAN-CHO",
+                "CHIYODA-KU"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:16:44"
+          },
+          {
+            "chainCode": "IM",
+            "iataCode": "TYO",
+            "dupeId": 700053947,
+            "name": "THE B AKASAKA",
+            "hotelId": "IMTYOTBA",
+            "geoCode": {
+              "latitude": 35.6714,
+              "longitude": 139.73291
+            },
+            "address": {
+              "countryCode": "JP",
+              "postalCode": "1070052",
+              "cityName": "TOKYO",
+              "lines": [
+                "7 6 13 AKASAKA",
+                "MINATO KU"
+              ]
+            },
+            "masterChainCode": "EM",
+            "lastUpdate": "2025-06-03T10:19:41"
+          },
+          {
+            "chainCode": "IM",
+            "iataCode": "TYO",
+            "dupeId": 700137117,
+            "name": "HOTEL SUNROUTE AKASAKA",
+            "hotelId": "IMTYOHSA",
+            "geoCode": {
+              "latitude": 35.6766,
+              "longitude": 139.73595
+            },
+            "address": {
+              "countryCode": "JP",
+              "postalCode": "1070052",
+              "cityName": "TOKYO",
+              "lines": [
+                "3 21 7 AKASAKA",
+                "MINATO KU"
+              ]
+            },
+            "masterChainCode": "EM",
+            "lastUpdate": "2025-06-03T10:19:41"
+          },
+          {
+            "chainCode": "BC",
+            "iataCode": "TYO",
+            "dupeId": 700077230,
+            "name": "NEW OTANI MAKUHARI",
+            "hotelId": "BCTYOMAK",
+            "geoCode": {
+              "latitude": 35.64551,
+              "longitude": 140.03821
+            },
+            "address": {
+              "countryCode": "JP",
+              "postalCode": "2610021",
+              "cityName": "CHIBA",
+              "lines": [
+                "2 2 HIBINO",
+                "MIHAMA-KU"
+              ]
+            },
+            "masterChainCode": "PV",
+            "lastUpdate": "2025-06-03T10:19:29"
+          },
+          {
+            "chainCode": "JR",
+            "iataCode": "TYO",
+            "dupeId": 700162874,
+            "name": "THE TOKYO STATION HOTEL",
+            "hotelId": "JRTYOTSH",
+            "geoCode": {
+              "latitude": 35.68183,
+              "longitude": 139.76677
+            },
+            "address": {
+              "countryCode": "JP",
+              "postalCode": "1000005",
+              "cityName": "TOKYO",
+              "lines": [
+                "1 9 1 MARUNOUCHI CHIYODA"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:19:41"
+          },
+          {
+            "chainCode": "WW",
+            "iataCode": "TYO",
+            "dupeId": 700023591,
+            "name": "DAI-ICHI HOTEL TOKYO",
+            "hotelId": "WWTYO872",
+            "geoCode": {
+              "latitude": 35.62453,
+              "longitude": 139.75127
+            },
+            "address": {
+              "countryCode": "JP",
+              "postalCode": "1058621",
+              "cityName": "TOKYO",
+              "lines": [
+                "1-2-6 SHIMBASHI MINATO-KU"
+              ]
+            },
+            "masterChainCode": "EW",
+            "lastUpdate": "2025-06-03T10:18:22"
+          },
+          {
+            "chainCode": "IC",
+            "iataCode": "TYO",
+            "dupeId": 700023590,
+            "name": "INTERCONTINENTAL ANA TOKYO",
+            "hotelId": "ICTYOICC",
+            "geoCode": {
+              "latitude": 35.66823,
+              "longitude": 139.74106
+            },
+            "address": {
+              "countryCode": "JP",
+              "postalCode": "1070052",
+              "cityName": "TOKYO",
+              "lines": [
+                "1-12-33 AKASAKA MINATO-KU"
+              ]
+            },
+            "masterChainCode": "6C",
+            "lastUpdate": "2025-11-12T13:41:42"
+          },
+          {
+            "chainCode": "XL",
+            "iataCode": "TYO",
+            "dupeId": 700023595,
+            "name": "GRAND PACIFIC LE DAIBA SUMMIT",
+            "hotelId": "XLTYOGPH",
+            "geoCode": {
+              "latitude": 35.62482,
+              "longitude": 139.77138
+            },
+            "address": {
+              "countryCode": "JP",
+              "postalCode": "00000",
+              "cityName": "TOKYO",
+              "lines": [
+                "2-6-1  DAIBA",
+                "MINATO-KU"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:18:46"
+          },
+          {
+            "chainCode": "YX",
+            "iataCode": "TYO",
+            "dupeId": 700171680,
+            "name": "PALACE STUDIO KOJIMACHI",
+            "hotelId": "YXTYOPSK",
+            "geoCode": {
+              "latitude": 35.67598,
+              "longitude": 139.7635
+            },
+            "address": {
+              "countryCode": "JP",
+              "postalCode": "1020083",
+              "cityName": "CHIYODA-KU",
+              "lines": [
+                "1 10 1 KOJIMACHI"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:19:02"
+          },
+          {
+            "chainCode": "YH",
+            "iataCode": "TYO",
+            "dupeId": 700077484,
+            "name": "CHISUN HOTEL UENO",
+            "hotelId": "YHTYO298",
+            "geoCode": {
+              "latitude": 35.7126,
+              "longitude": 139.78201
+            },
+            "address": {
+              "countryCode": "JP",
+              "postalCode": "1100015",
+              "cityName": "TAITO KU",
+              "lines": [
+                "5-5-6 HIGASHI UENO"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:18:34"
+          },
+          {
+            "chainCode": "UZ",
+            "iataCode": "TYO",
+            "dupeId": 700096569,
+            "name": "OAKWOOD PREMIER TOKYO MIDTOWN",
+            "hotelId": "UZTYO830",
+            "geoCode": {
+              "latitude": 35.66595,
+              "longitude": 139.72953
+            },
+            "address": {
+              "countryCode": "JP",
+              "postalCode": "1070052",
+              "cityName": "TOKYO",
+              "lines": [
+                "9-7-4 AKASAKA MINATO-KU"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:18:06"
+          },
+          {
+            "chainCode": "UI",
+            "iataCode": "TYO",
+            "dupeId": 700061572,
+            "name": "SHIBUYA EXCEL HOTEL TOKYU",
+            "hotelId": "UITYOSEH",
+            "geoCode": {
+              "latitude": 35.65861,
+              "longitude": 139.69954
+            },
+            "address": {
+              "countryCode": "JP",
+              "postalCode": "1500043",
+              "cityName": "TOKYO",
+              "lines": [
+                "1-12-2 DOGENZAKA"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:17:58"
+          }
+        ],
+        "dataType": "hotels"
+      },
+      {
+        "role": "user",
+        "content": "how about toures?"
+      },
+      {
+        "role": "model",
+        "content": "OK. I found 20 tours and activities in Tokyo. Here are a few options:\n\n*   **Maxell Aqua Park Shinagawa:** Skip The Line Ticket + Dolphin Show - From $17\n*   **Tokyo by night photography tour** - From $103\n*   **Trip to Mt. Fuji 5th Station or Arakura Shrine, Oshino Hakkai, Onsen** - From $65\n\nWould you like more details on any of these?\n",
+        "data": [
+          {
+            "type": "activity",
+            "id": "139713657",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/139713657",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Maxell Aqua Park Shinagawa: Skip The Line Ticket + Dolphin Show",
+            "description": "<div><p>Located just a 2-minute walk from Shinagawa Station, visit an urban aquarium in Tokyo featuring dynamic performances and digital art that showcases Japan’s four seasons. See ever-changing exhibits and seasonal events every time you visit.\r</p><p>Discover around 20,000 creatures from 350 species. Highlights include the only Alfredi manta ray in eastern Japan and the world’s only dwarf sawfish on public display.</p></div>",
+            "geoCode": {
+              "latitude": 35.6894863,
+              "longitude": 139.6917052
+            },
+            "price": {
+              "amount": "17.0",
+              "currencyCode": "USD"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzk3MTAxMGFkLWQwYjgtNDVlYy05OTU5LWYzMmE0MGViZmQzMiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzEyMGM3YTVmLWI0OTQtNDYxZS1iYzYxLTBhNjFkMTEyMWU5NCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzE5N2IwMjhlLTRlODktNDk1My05NjUwLWU1ZWExZjljYWU0ZCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzFiMDlkZDc4LTUxMmYtNDVmYy05NDJlLWY1ZmVjNTYwODBmYyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2RlMDNmNjM2LThhZjMtNGVkZi05ODI3LTdkZTJjMDlkODFkYyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2VjODkyYzdiLWZlMmQtNGQ1Yy04MjRlLTg5NDQxYTAwMTkzYSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2MwZmE1NzZjLTEzOTEtNGFiNC05NDhlLTE1ZWYxNTVjNDI0NSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzA3MTNiY2U4LWFhZTQtNGIzMC1hYTliLTU0M2NjNTU3YjU5YSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/ad8a9b71-6ee8-4841-ac84-813a9642b230",
+            "minimumDuration": ""
+          },
+          {
+            "type": "activity",
+            "id": "139482612",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/139482612",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Tokyo by night photography tour",
+            "description": "<div><p>This tour begins at a chartered cyberpunk style bar. The bar, which looks like the world of the Blade Runner movie, will not only provide you with the most amazing photos you can get anywhere else, but will also conduct an interview with you over drinks to find out what kind of photos you are looking for. Specifically, we will help you choose the photo spots to visit and figure out what kind of mood you are looking for so that we can make your tour more satisfying.After leaving the first bar, you will be taken on a photo tour of some of the most iconic and at the same time lesser known spots in the heart of Tokyo. Your English-speaking local guide/photographer will take photos of each spot and share information that only a local would know, so you will leave the tour not only with great photos, but also with local knowledge about each spot.This tour is divided into two halves. Depending on your preference, you can choose either the iconic Shibuya Scramble Crossing or the observation deck of the Tokyo Metropolitan Government Building for a panoramic night view of Tokyo. After the tour, the guide him/herself will edit the photos taken during the tour and send you at least 20 photos within 3 days. While most solo, couples, and family travelers take selfies or have someone else in the group take pictures, you will have the opportunity to make your Tokyo highlights memorable by touring with a guide who is skilled in photography and English communication.</p></div>",
+            "geoCode": {
+              "latitude": 35.6896067,
+              "longitude": 139.7005713
+            },
+            "price": {
+              "amount": "103.0",
+              "currencyCode": "USD"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2RhMmY5MjVhLTM2MjgtNGU0YS05ODU1LWVhNGEyNjU0MTIyYSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2I3ZWJiMTk1LTJmMDctNDg5Zi05YzI0LWVmNjg4NTlmZWI5OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2E2MjI3YzA1LTRlZWEtNDZhZC04YzVlLWMxNDczNTkzNTIyMCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzAwMTQzOTdhLTIzNTQtNDFiYi05ZTU5LTU3NDkxMzk2YTNmYiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzE2Nzk3YmFkLTUxMTEtNGMwMy05NTQyLTg3MWJhMDkxOThkYSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzZjNGVkZDBhLTM5OWEtNDkzNi04YmMzLTljNjlhN2I0ZjFkNyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2NiZGE3N2Y1LTE3YmItNDAyNS1iNGM0LWM5ODM1ZGRlODBlOCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzU4ZWUwMzBjLWVlN2QtNGQzNC1iMzdlLWEwMWQxMTEwOTRmZCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzY4NzVlN2YyLWMwNTUtNGU2NC05OGVkLTJjYzIxZDIzMDAwMiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzA3Y2UzNjZiLWQ0MzgtNDRlNi1iYmY3LWE1YmM5ZDM0NzNiNiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2EwZWVmNDYxLTQ2ZjItNDFkOS05MTA3LTJiNjhmOTViNzM3ZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2MyM2EyNzMwLTI4NjktNDAyYy1iOGE3LTk5ZWFjM2IyZDg3YyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzY2MzIzYWE3LTA1Y2QtNDUxZi04YmRlLTJiNTUzNmFkMDVhYiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2ZlZDg5NjNhLTVjMjMtNDg5MC1hNzYwLTFmM2RjNjE0NWU0OCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2E1YzI5ZmQzLTE4ZjgtNGI0Ni04YTc5LWQ5MTMxMzE5ZmMwZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzZjM2EwZDA2LThlYmMtNDA0NS1iNjcxLTFkOGYwYTQ4MDEyOCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzM5OTc2ZTY1LTE2NDYtNDRiMC1hN2VkLTdjN2I5MWM1ZGMzOCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2NiYzY0MmQ0LTRlNWEtNGYwMi04ZGNlLTcwYzZiOTA3NGFiNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzJhNGEwNzNiLTQ3ZDEtNGRhYy04ZWZiLTAwM2YwODY3MWQxNyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2JkZmY5ZTY2LTRmNzktNDYwYy1hNmY2LWQxZmFkNWUwNzE4MCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2M1N2YwZTYxLTg1YzktNDIzOC05MDUwLTEyNjZmYTg4MDZiYiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzQ0NzEyNDNjLTljOTktNDA4NS1iMTZhLWJiZjhlMjg5OTk1ZCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2QyZDZmNjNiLTBlNjUtNDI3Yy1hMTNjLWQ3NWVhMDZiZTMyMyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzVhNmY0YjE4LWQzMzktNDYxYi04YTZlLTA2MTUzNzQ2ZjE5OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2RlOTU1M2Q2LWNmMGUtNGYwNS1iMjRmLWRiYmM5YmFlZTIzNyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2I5MTMwOTQ3LTgwMDktNGY3NC1hMjlhLWNlOTliNGJjNzU2ZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzZmMDBiMTE0LWNjNjEtNDhiMS1iOTQ1LWZlNmY4OTU2MWZlNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzEyYTkyZTRkLTEyN2QtNGZiNC04YTM5LTMxYjZiNDBhYzliZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/a0169e32-fa89-44b7-8370-b43888fdcbf1",
+            "minimumDuration": "2 hours 30 minutes"
+          },
+          {
+            "type": "activity",
+            "id": "139532072",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/139532072",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Trip to Mt. Fuji 5th Station or Arakura Shrine, Oshino Hakkai, Onsen",
+            "description": "<div><p>Begin your adventure with a scenic drive from Tokyo to Mount Fuji, the highest peak and an active volcano in Japan. Enjoy the journey in a comfortable, air-conditioned vehicle, accompanied by an expert guide. As you ascend towards this iconic mountain, pause at the 5th Station, situated halfway up. Here, you'll be able to appreciate the awe-inspiring views of the countryside and experience the majestic beauty of Mount Fuji from a close distance.Next, visit Arakurayama Sengen Park, a location that has become an internet sensation and is listed as one of the ‘21 places photographers all over the world must visit before they pass away.’ Here, ascend 397 steps to view the 5-story Chureito Pagoda, a sight not to be missed. Immersing yourself in the tranquil beauty of Oshino Hakkai. Explore the sacred series of eight ponds filled with crystal-clear water sourced from Mount Fuji's melting snow. The purity of this water is renowned across Japan and is used in sacred Shinto rituals.Finally, choose between indulging in a traditional Japanese hot spring or visiting an outlet mall. The hot spring is named after the goddess \"Konohanasakuyahime\", who is enshrined at Mount Fuji and Fuji Asama Shrine. This facility offers an overwhelming view of Mount Fuji and high-quality hot springs from its source. If the facility is closed, an alternative visit to either Gotemba Fuji Hakkei or Gotemba City Onsen Association will be arranged.</p></div>",
+            "geoCode": {
+              "latitude": 35.6901263,
+              "longitude": 139.6919916
+            },
+            "price": {
+              "amount": "65.0",
+              "currencyCode": "USD"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2UwMTFhNjZlLTNkYTUtNGQzZi1iZWE1LTY1NDE0MmU2YzZjMyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzNkZDgwYzljLTAyMzUtNDM3NS05OTgxLWJmYjA1MDVhN2M1ZCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzQ0MTM4ODZhLTZhMDMtNGQzZS04NjAwLWU4MzE5YmYzMTdiOSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzcwYWY3N2ViLWFmMDQtNDdkYy04YjljLTFhNDc0YmJlNDI4OCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzNmNGUwOTYyLTBiMTYtNDg4OS1iMDNjLTdhODJkNGEwZTQzMiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2JiYWNkYzY4LTA5OTgtNGJmNC1hZjJhLWUyYmNhYzM0OWRkNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2Y3MDQxZDFkLTc3NGItNGJhYi05NDJhLTBmN2Y5YjA2Y2Q3MSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2NlY2E2ZWM2LTQ0Y2QtNDAwNC1iNzc0LWY5NTAzYWQ1OGU0MCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/20bf5f0b-4e05-4fff-87f8-bdc300030435",
+            "minimumDuration": "10 hours"
+          },
+          {
+            "type": "activity",
+            "id": "139475363",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/139475363",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Tokyo night food tour in Shinjuku",
+            "description": "<div><p>Try some old-fashioned Japanese cuisine in Shinjuku. Shinjuku is one of the famous sightseeing spots in Tokyo, but since it has the largest number of eateries in Tokyo, you'll find it crowded, which makes it difficult to find hidden but famous restaurants that offer delicious food loved by the locals. In order to make it quite comfortable and to help you find the best restaurants off the beaten track, you will be accompanied by one of the local guides.While enjoying the delicious cuisine, you can also learn about the Japanese food culture and the complex Shinjuku area throughout the tour. You'll start your experience by visiting a Sushi restaurant located inside a building where it's even hard for locals to find.Afterward, you and your guide will visit a Yakiniku restaurant located near West side of Shinjuku or Kabuki-cho. Here, you'll prepare your own Japanese BBQ featuring the famous Wagyu. Enjoy your time grilling the meat with an authentic Japanese shichirin (BBQ stove). The foodie tour comes to a climax as you wander around the bustling Kabuki-Cho area, adorned with vibrant neon lights.To end the tour, you'll visit a bar or Japanese snack restaurant to have a dessert or alcohol drink to conclude the experience with a full stomach!</p></div>",
+            "geoCode": {
+              "latitude": 35.6926294,
+              "longitude": 139.6997214
+            },
+            "price": {
+              "amount": "120.0",
+              "currencyCode": "USD"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2IyOGNlNzFlLWIyZTEtNGMyNC1hOGI2LTM2ZGQzMTg2NjdlYiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzU0NDk4ZjY5LTRmZDQtNDAzZS1hOWM5LTI4OTNmZWFjMTAxNyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzYzYjlhN2NkLWNkNGMtNDMyZS1hYzE2LWExYjA5NDk1ZDZjYSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2JhZWVhNWIwLTQwM2EtNGM1ZS05MzYzLWEzOTBjZmRlNTBjOSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2ZmMTYzYTJjLTJiMjMtNDUzOC04MTJkLTk3NGUzNjQyNzhmNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzBjZWUxNmIxLTZmMjMtNGRhZC04ODUyLTFjZWE4MDIzMDZlOSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzFhYmI0OGM0LWE5YzItNDUwMS04MTMzLTk3MzBmMzRkNzQ4YyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzkxNmQxZGM2LTEwY2QtNDYyNy1iNDU5LTBkMGI1ZTAzYWUwZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzlkNWIyZWFkLWZmNmEtNDUyMy1hOWZlLTNmOTZiYTVkYjI5OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2QxMzkzODg3LWI1MTMtNGIyMC04NTNiLTY4OWJkNmMzNjMxMiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzUwMjMxNjZlLTc3MzYtNDcyNC05YzcxLTVlZmU5MzBhMjVjZCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzJhNjczODRjLTliY2QtNDZiNy04NGViLTNiMjU2NmZmYmIwMyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzQwOGMwNTI1LTIzMmQtNDEyYS1iZjU1LWRkYjcwYTI1ZmNiMCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2JkMjY5ZjBlLWFjM2MtNGE0OC1hOTE2LTUyYTMyY2VkNTkzZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzgyN2E4NWRiLTcwOGUtNDRlNy04OWE2LTcyYTMyMzY2ZDFhMyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzliYTkxZGU5LTA2M2MtNDc5Mi1iMmI0LWQ5MjU1NWE0YzRkMiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzQ3YTg0MDhmLWRlZDUtNDY5NC04NjdmLTZiMDliZTE4NTA2ZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzUyN2JmYjk2LTBmZTctNGRjZS1hNzE4LWMwMjgzZTIxMGNhYyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/09502dcf-cca4-4b82-9ae6-e290137019e5",
+            "minimumDuration": "3 hours 30 minutes"
+          },
+          {
+            "type": "activity",
+            "id": "139732684",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/139732684",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Tokyo full-day private walking tour with local guide",
+            "description": "<div><p>Experience Tokyo’s dynamic blend of past and present on this full-day guided tour through some of the city’s most iconic landmarks and lesser-known streets. With a knowledgeable local guide, uncover historical sites, cultural stories, and lively neighbourhoods.Begin at the famous Shibuya Crossing, where the energy of the city surrounds you in lights and movement. Continue to the Imperial Palace, the historic home of Japan’s emperor, and learn about its significance in the heart of Tokyo. Step into history at Senso-ji Temple, the city’s oldest and most revered temple, full of tradition and timeless charm.Wander through the peaceful and old-fashioned streets of Yanaka, an area that survived the war and retains its nostalgic character. Enjoy local street snacks and explore charming shops filled with souvenirs and crafts.End your experience with panoramic views from the Tokyo Tower observation deck, where you can take in the sweeping skyline of one of the world’s most impressive cities.</p></div>",
+            "geoCode": {
+              "latitude": 35.6901263,
+              "longitude": 139.6919916
+            },
+            "price": {
+              "amount": "178.0",
+              "currencyCode": "USD"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2JkNDIyMWQ5LTM1MzItNDc4ZC1hMDcwLTk5OGEzNWNhNWIzMCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzQ2MDBjOTg0LTE2MjUtNGZlNC05MWE2LTJjYmI0MDdlOTUxNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzYyNWQzOTI0LTMzM2MtNGQ5Ny1hMTI1LWQwYTY1NWRkNzRlNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2Q1MTQwMjE1LTI5OTAtNGU0Yi05NjQ0LTk1MzQyMjI2NTkzMiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2VhYzYyZGE3LWQ1YWEtNDZjNy05Nzg5LTQ2NGYyZjVjMjg3YSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzgwN2MyZDlkLTU3OGItNDJlOC04MmE2LTgxN2JjNDcwMzIyNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/dac2a343-7112-48f9-a2f7-275c6a9913b2",
+            "minimumDuration": "8 hours"
+          },
+          {
+            "type": "activity",
+            "id": "139630787",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/139630787",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Nikko Toshogu Shrine and Kegon Waterfall Tour from Tokyo",
+            "description": "<div><p>Your journey begins from Shinjuku, heading towards Tochigi prefecture, home to Nikko City. The first stop on your tour is the renowned Nikko Toshogu Shrine, the final resting place of Tokugawa Ieyasu, who founded the Tokugawa Shogunate that ruled Japan for over 250 years until 1868 during the Edo Period. Here, you can admire the beauty of this UNESCO World Heritage site while learning about the fascinating stories and legends behind its buildings from your guide.Following your visit to the shrine, you'll traverse the famous Iroha Slope, known for its 48 sharp turns and its depiction in the animation \"Initial D\". This road is particularly popular during autumn due to its beautiful fall foliage. Your next destination is Kegon Waterfall, an almost 100-meter-tall spectacle that ranks among Japan's three most beautiful waterfalls.Later in the day, your tour will split into two groups. You can choose to either stroll along Lake Chuzenji or experience the soothing Nikko hot spring. Before concluding your tour, you'll make a stop at the Onihei Edo service area, an intriguing rest stop featuring Edo-style designs and traditional souvenirs.</p></div>",
+            "geoCode": {
+              "latitude": 35.6918686,
+              "longitude": 139.6977341
+            },
+            "price": {
+              "amount": "115.0",
+              "currencyCode": "USD"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzlkMGEyM2Y4LTY1OWEtNDVkNy05MTVmLTIzOGQ2YjljZWM0ZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzI1MGQ1MTAzLWE1Y2EtNGZhZi05MTgzLWQyMTUxZjc2ZTNjOCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzczNjM0MWQzLTNkMjEtNDI5MS04ODkyLTQ2ODE4MWMzNTM2MiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzU3ODlhZWM4LTI0NmMtNGUwMy05OWNiLTAxODFhM2ZjZjFiMiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzkxYTRmZDQwLTZiNWYtNDQwMi1iMTM0LTA4ZTBlNTg2ODI4ZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2VmOTU0YmNjLWE5MzctNGVlNC05MTc5LTNmZGFjZWY4MjNlMCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzI0ZmUzYjhjLWRkNGMtNDE0NS1hMTg1LWZmMDIxZGRiMTY1MSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2ZkYjE2NjBhLTkxNTAtNGVkMC1iNDdmLTQ5ODdhNWU1YTdiNiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/e402b4aa-5d65-4e0d-bd44-7e2e75df4cd5",
+            "minimumDuration": "10 hours"
+          },
+          {
+            "type": "activity",
+            "id": "138953300",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/138953300",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Sensational Sake Tasting Experience In Tokyo",
+            "description": "Join the latest culinary trend of immersive and social dining where local hosts invite you into their homes for a magical meal.<br><br>Have you ever tried sake? Japan’s signature spirit is definitely one of the most fascinating and standout features of Japanese cuisine! Put your tastebuds to the test as you enjoy the taste of sake and individual snacks and small dishes designed to accompany each sip, with an experience which walks you through the history, making of and most importantly the taste of Japan’s fiery liquor. As an experienced sommelier, Yuma knows all there is to know about sake, and will be your guide as you take a walk through the Shinjuku neighbourhood of downtown Tokyo, trying no less than five different variations of sake on your tour.\n\n• Enjoy a unique walking-tour and tasting experience around one of the most prominent neighbourhoods of Tokyo\n• Experience sake as you’ve never experienced it before accompanied by an expert sommelier\n• Prepare for a true taste of Japan as you enjoy not only a fine selection of sake but also an inspired platter of small plates and delicate bites to go with it\n• Try only the finest of Japan’s most exquisite products and prepare for an evening immersing yourself in the literal art form that is Japanese cuisine\n",
+            "geoCode": {
+              "latitude": 35.69411539429594,
+              "longitude": 139.69646975399473
+            },
+            "price": {
+              "amount": "11437.0",
+              "currencyCode": "JPY"
+            },
+            "pictures": [
+              "https://screen-api.eatwith.com/files/461286/-/preview/-/progressive/yes/-/format/jpeg/image.jpg",
+              "https://screen-api.eatwith.com/files/1241989/-/preview/-/progressive/yes/-/format/jpeg/image.jpg",
+              "https://screen-api.eatwith.com/files/1241991/-/preview/-/progressive/yes/-/format/jpeg/image.jpg",
+              "https://screen-api.eatwith.com/files/461287/-/preview/-/progressive/yes/-/format/jpeg/image.jpg",
+              "https://screen-api.eatwith.com/files/1241988/-/preview/-/progressive/yes/-/format/jpeg/image.jpg",
+              "https://screen-api.eatwith.com/files/1241987/-/preview/-/progressive/yes/-/format/jpeg/image.jpg",
+              "https://screen-api.eatwith.com/files/461282/-/preview/-/progressive/yes/-/format/jpeg/image.jpg",
+              "https://screen-api.eatwith.com/files/461285/-/preview/-/progressive/yes/-/format/jpeg/image.jpg",
+              "https://screen-api.eatwith.com/files/1241986/-/preview/-/progressive/yes/-/format/jpeg/image.jpg",
+              "https://screen-api.eatwith.com/files/1279045/-/preview/-/progressive/yes/-/format/jpeg/image.jpg",
+              "https://screen-api.eatwith.com/files/461283/-/preview/-/progressive/yes/-/format/jpeg/image.jpg",
+              "https://screen-api.eatwith.com/files/1241985/-/preview/-/progressive/yes/-/format/jpeg/image.jpg"
+            ],
+            "bookingLink": "https://eatwith.com/events/22536?utm_source=amadeus-1381",
+            "minimumDuration": "2 hours"
+          },
+          {
+            "type": "activity",
+            "id": "139613794",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/139613794",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Tokyo Day Trip Mount Fuji Scenic Cable Car Experience",
+            "description": "<div><p>Depart from Tokyo and head to the scenic Lake Kawaguchi area. Enjoy a cable car ride offering stunning views of nature, including a panoramic cable car ride for a breathtaking view of Mount Fuji and the surrounding landscapes. Then, visit the picturesque Lake Kawaguchi, known for its breathtaking Mount Fuji views. Explore Oshino Hakkai, a serene spot with clear springs filtered through Mount Fuji’s snow. Next, take in panoramic views of Mount Fuji from Arakurayama Sengen Park, followed by a visit to Oishi Park, where you can enjoy different seasonal landscapes, from cherry blossoms to snowy vistas.</p></div>",
+            "geoCode": {
+              "latitude": 35.69186,
+              "longitude": 139.69774
+            },
+            "price": {
+              "amount": "74.0",
+              "currencyCode": "USD"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzZiMTA0MGRmLWFjYzktNDJhOS1iZjRmLTZhZWE5OGVlZDU0MCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzcyNmUyNWNkLTM5MjMtNDdhNS1iMGQxLTE2M2FkYmFiNmJjNyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzU4NmI3OWEzLTU1MjQtNGVmOC05MTM3LTE2YWEwZjI4NTQ5ZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2I1OTljOTBkLWM0MGUtNDIwZC05NDQ2LWJlZTljYmU0ZWFmNSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzkwYTRkOWFmLTdiYTMtNDYwMS1iZGRmLTE0ZDE4OWFmZDY1YSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2YzMmQ1YjVlLTY2MDMtNDJjZi1hY2E2LWU0YzQ4M2MwMGQwNyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2QxZTg2ZDM5LWJhZGQtNDczNS1iN2JhLTY1MzcxODUyYjM1MiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzZmZmJhZjNlLTk4MzAtNDVmYS1iNWQ1LTQ4YzVjMmZhODQwOCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzY4NDdhMjM0LTIwN2ItNDQyYS1hNzdjLWU2MWMyYmM2YjJiNSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzFlZWJmZWY1LTU4MjYtNGM5ZS04NmNhLTQxNjNlZDAyYmU0MyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/d13606ae-46a9-43c5-8d46-cfb88bec51b0",
+            "minimumDuration": "10 hours"
+          },
+          {
+            "type": "activity",
+            "id": "139658813",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/139658813",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Tokyo After Dark Shinjuku Tour of Tradition and Pop Culture",
+            "description": "<div><p>Discover the Best of Tokyo by Night.</p><p>Tradition Meets Pop Culture in Shinjuku.This 1.5 hour guided walking tour takes you through the vibrant streets of Shinjuku, where Tokyo’s past and present come alive after dark.</p><p>Start by exploring the nostalgic alleys of Omoide Yokocho and Golden Gai, where you’ll learn about post-war Tokyo and its deep-rooted nightlife traditions. Step into the peaceful grounds of Hanazono Shrine, a spiritual haven tucked away in the city’s bustle.</p><p>Then shift gears and dive into modern day Tokyo with a stroll through the neon lit Kabukicho district and Tokyu Kabukicho Tower, a home to themed izakaya, dazzling city views.</p><p>You’ll also experience a fun slice of Japanese youth culture with a Purikura, a photo sticker booth session, a favorite among local teens and young adults. </p><p>Whether you're into culture, food, photography, or just curious about Tokyo after dark, this tour is the perfect way to experience both tradition and trend in one unforgettable evening.</p></div>",
+            "geoCode": {
+              "latitude": 35.6917846,
+              "longitude": 139.7011327
+            },
+            "price": {
+              "amount": "33.0",
+              "currencyCode": "USD"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzdkZTA2MDkyLTJiZWYtNGM4YS1iMzNmLTA3OWRiN2I0NWRiMCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2RlY2M4NWVhLWI5MzgtNDQ4ZS1hZWI1LTVjNDQ5NTg4MjU2OCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzY3NDFiNDJhLTUxM2EtNDcyOS05ZmQ5LTk1MzAxZGZiOTEyNiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzIwZjVkMDEyLTE1MTEtNGFkOC04MmU5LWZhODlmNjRhMjI5YyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzM0YTRkNzQ4LWQwYjMtNGJjMi1iOTNmLWRjY2NhMzg0MTM5MyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzBjMzdjOTNhLTE0YTUtNDc3OC1iMTBjLWJkOTA0NDE4ZGViNiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzgzYWQ4OWI4LTAwNTgtNDhiNy1iYmU2LWFhYTA2Njc4NDM4NCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2M0ZTNhNTgxLTNlYWYtNDBmNC1iODE0LTc5NGRjNzIxN2I1ZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2E1YjM0YTIyLTVkMzItNDc2ZC05NWQ3LTQ0MzE2OTE4ZDFlNyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzQ2YzVkYzgyLWVhYTQtNGNhNC04YTMxLTY4N2FiNDU3ZWUyNSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzAxMWE1Yjg4LWU5NTItNDFmNC1hNTZkLTc3NzM5YzUyNjc1MSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2NkNGI5NjU3LWIxY2EtNDhiYS1iYjMwLWIwN2YwYWQzYzlmYyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2NhYTlmYWNiLTQzYzYtNDM1Zi1iMjQ0LWQ5ZjllNzA2YzQ4ZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/8f2e95ce-e897-4990-a2d0-3d22c2c83525",
+            "minimumDuration": "1 hour 30 minutes"
+          },
+          {
+            "type": "activity",
+            "id": "139656491",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/139656491",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Mount Fuji Oshino Hakkai and Hot Spring Day Tour",
+            "description": "<div><p>This full-day tour from Tokyo combines Mount Fuji’s natural wonders, cultural gems, and leisure activities. </p><p>Depending on the season, you’ll visit either Mount Fuji 5th Station (4/26–11/30) for close-up volcanic vistas or Arakurayama Sengen Park (12/1–4/25), famed for its pagoda-and-Fuji photo spot. </p><p>Explore Oshino Hakkai, eight crystal-clear springs mirroring Fuji’s slopes, often called “Japan’s Jiuzhaigou.” </p><p>Choose between shopping at Gotemba Premium Outlets(luxury brands at discounted prices) or soaking in Konohana no Yu, an onsen with open-air baths facing Fuji. (If both Gotemba Premium Outlets and the day-trip hot spring baths are closed on their regular closing days, the itinerary will be adjusted to either sightseeing at Lake Yamanaka or visiting Lake Yamanaka Hot Springs.)</p><p>Guides provide multilingual support, and round-trip transfers ensure a seamless experience. Ideal for first-timers seeking Fuji’s beauty, cultural insights, and relaxation in one day.</p></div>",
+            "geoCode": {
+              "latitude": 35.69186,
+              "longitude": 139.69774
+            },
+            "price": {
+              "amount": "68.0",
+              "currencyCode": "USD"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzY5ZDVkZmU3LTNjNDctNGVhZC04NWNlLTNlZjY1OTY3YTNkYSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2Y5Y2YwNjZhLTFiZWMtNDlkYS1hMzRjLTEwMWE3YjE2NTU3OCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzMyMDQ3ODE2LTIzMWUtNDI4YS05M2Q4LWY0OGI0NDc5ZTc2ZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzVhZTJiOTMxLWE5NGQtNDY3Yy05NDc3LThiZTZkZDhlYWZjZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzc2NDE5NTVlLWRmODQtNDU1NC1hNTQ2LTQ0YjBjMDRjYWI1OCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/dda53f5d-0a4b-49eb-9b1c-e8cd3285c488",
+            "minimumDuration": "10 hours"
+          },
+          {
+            "type": "activity",
+            "id": "139485881",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/139485881",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Tokyo: Mt.Fuji Area, Oshino Hakkai & Kawaguchi Lake Day Trip",
+            "description": "<div><p>Mount Fuji Day Tour: Scenic Views, Cultural Sites &amp; Optional Shopping or Onsen</p><p>Experience the majestic beauty of Mount Fuji on this guided day tour packed with scenic stops and cultural highlights. Begin your adventure by ascending to the 5th Station of Mount Fuji (weather permitting) or visiting the photogenic Arakurayama Sengen Park, home to the iconic five-story pagoda with a stunning backdrop of the mountain.</p><p>Continue to the serene village of Oshino Hakkai, famous for its crystal-clear spring ponds fed by Fuji’s melted snow — a picture-perfect setting with traditional charm.</p><p>Customize the rest of your day with your choice of relaxation or retail therapy:</p><p>Unwind in a rejuvenating hot spring bath with breathtaking views of Mount Fuji</p><p>or</p><p>Shop designer brands at Gotemba Premium Outlets, one of Japan’s top shopping destinations.</p><p>Whichever option you choose, this full-day tour offers a well-rounded and unforgettable experience centered around Japan’s most iconic natural landmark.</p></div>",
+            "geoCode": {
+              "latitude": 35.6896067,
+              "longitude": 139.7005713
+            },
+            "price": {
+              "amount": "68.0",
+              "currencyCode": "USD"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzYyYzFkYmRhLWVlOGEtNDlhMS05ODQ4LTI2MGJiMTQwM2Y5MiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzdhN2FiYTBhLTc2ZmMtNGFhMi04NWIyLWIyMzQ2MTc4OGM3ZCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2I0MDk4NzM1LTQ3ZTgtNDA1Ny04ZTEwLWIwMzg1YzRiYWEwYiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzYyY2Y0Mzk2LTUwYWMtNDNiOC1iOWJmLWJiYTk3YzdlOWIyYiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2QxNTg0NjkwLTlkZWQtNDNhNC04YjAxLWM2ZjYwZTYyMjllNSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzAyZDBhZGY4LTA2ZWEtNDlmYy04MzY5LWMwM2I5NzQyYjI3NCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzVlMWU5M2M1LTc1OGEtNGRmMS1hYzlmLWMzYTA5NDY0MjNjMiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzAyZjliNzU3LTY4YmUtNGMwNi04OTliLWMyNDhlY2IyNGY5NiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzgxNjMyYzU1LWM0NDMtNGI1Zi1iMWJhLTlhZDlkZjM5ZTJjNSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzBhODc0YzIwLTgzNjAtNDNlYS04NjM4LTllMTdmOTZkMDlkNiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzE4YWYxMDM3LTc1OTYtNGExYy1iNzkyLTEyYzAyZTM5OGI2MiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2M0MzhiNmQyLTQ4NWQtNDJhZS1hODU3LTI1ZTg5NDZjMDEyNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/38d0bdde-c1cd-4d6e-bd6e-80e9018c9dcc",
+            "minimumDuration": ""
+          },
+          {
+            "type": "activity",
+            "id": "139715236",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/139715236",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Full-Day Nikko Tour Toshogu Shrine, Lake Chuzenji and Kegon Falls",
+            "description": "<div><p>Escape the bustle of Tokyo and journey into the heart of Japan’s natural and cultural wonders on this unforgettable Nikko Day Tour. Explore the UNESCO World Heritage-listed Toshogu Shrine, a masterpiece of ornate architecture and deep spiritual heritage. Wind your way up the famous Irohazaka Mountain Road, known for its breathtaking views and thrilling curves. Take in the serenity of Lake Chuzenji, a scenic lake nestled at the foot of Mount Nantai, and witness the powerful beauty of Kegon Falls, one of Japan’s most spectacular waterfalls. This full-day adventure combines history, nature, and panoramic landscapes — perfect for travelers seeking a rich and scenic escape from the city.</p></div>",
+            "geoCode": {
+              "latitude": 35.69186,
+              "longitude": 139.69774
+            },
+            "price": {
+              "amount": "125.0",
+              "currencyCode": "USD"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzVjNTRkMmY4LWFhZTMtNDdlYS04YWJkLWQxNmVjZjYwYTJlNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2U1ZGQ0ZTIwLWUxYWMtNDNkNy04MzE1LTExNGMwNTQ0Nzg2YSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2I3ZWFiYzVmLTQ0YjctNDlkMi1iZjE3LTE3MDFmYmYzZGQxYiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzhiMWU0YzEwLWRiOTYtNGVmOS1hY2QwLWJlYmRkNmQ5YjJjMyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzYxYTYzY2I0LTA5ZmQtNGYyNy1hZjE2LTU5ZGVlYjhiYjJkNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2RjOGRmZGUzLTkyYmUtNDI1MC05Y2E5LThkMzE2Y2Q4NTVkZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzBlZWUyYzljLTlkM2ItNDFlMi05MTA4LTFjZDUzZGEyZmQ4OCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzMwYWUxMWViLTE0MjEtNGZjZS04MjE5LWIzOTliNWEwZDZkNyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzZiMDZkMTUwLTE5ODAtNGE1OS1iYWMyLWQ3ODNkMWMxNGY1YiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzEzMWZhNjhlLWU0MzAtNGY4OC1iNWVlLWQyMjA0ZWU4MThiNSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzQ5NjEwOGE3LTNlOWQtNDIzMS1iOTJjLWM3NDBiYjVmNTljZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzc1MTQ3YWVkLTY0ZGEtNDQ1NC1hNGFjLTlmZmFjNWNjMDQzOCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzkxNzlmYjgyLTU3ODItNDIwYy1hYTY1LTI1YTE0YjQ4MWExYyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzE4OGMzYWI5LTJjNjgtNDZmNy05NTI5LTIzMjA0MDY1MDQwOCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzYyMjAxMGUwLTEwNzAtNGI0Yy04NDFiLTVjZGU3YjhlZGQ4NiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzU0YmJiODlhLTQ1NDMtNGU4NS05NGNlLWJkZWQ1N2RiYzUwZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/ba8bf675-e6c9-4e77-b143-9442f9d9f676",
+            "minimumDuration": ""
+          },
+          {
+            "type": "activity",
+            "id": "139474979",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/139474979",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Japan Mount Fuji Tour",
+            "description": "<div><p>Experience the ultimate Mount Fuji tour, where you'll be captivated by the breathtaking cherry blossoms that envelop Japan's tallest peak in a vibrant spring display. This tour offers a unique opportunity to marvel at Mount Fuji's stunning transformation while savoring gourmet Japanese cuisine.</p></div>",
+            "geoCode": {
+              "latitude": 35.6906588,
+              "longitude": 139.695428
+            },
+            "price": {
+              "amount": "87.0",
+              "currencyCode": "USD"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzA1OTI1MDk0LTA3ZDEtNGZlZi1iZDdmLWM2NDc1N2U0MGZjZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzFhNjI1MThmLTlmNzEtNDlkYy1iN2RiLTExMmM4ZmYwZTU1ZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2U3MjY4NjI0LTg5MGYtNDVmNi05NGVkLWYyOGEzNjk2MmU5ZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2Y2ZTZiMTczLTU2ZjktNDUxNS04YzZkLTBjNGUwMDlmMjdhYiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2Q3YzQ2MTQ1LTA0MmYtNDA2OS05YjNhLWI0NGVhZWZhZGU5NyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzY2ODk2MGE0LTFkMTAtNDY4Zi04NTdmLTllNDJiOGZmZTZlZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzhiOGIwMDM0LTFkZDEtNDRkMC05MDM4LWY4N2U2Mzk4NDc2ZCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2M2ZjAzNWZhLTE4MzQtNGZjNS05YjI1LTc1N2ZkZTMzZTIzOSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2RkZjIyOTA4LWRiOTAtNDMwMS05ZjY3LWI4Y2UyMDkwNWQxMSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/3430444f-eda1-44ba-abd2-692ac9bcfd22",
+            "minimumDuration": ""
+          },
+          {
+            "type": "activity",
+            "id": "139476863",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/139476863",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Nikko World Heritage 1 Day Tour",
+            "description": "<div><p>You will visit Japan's National Treasure, Toshogu Shrine. According to many, this is the most gorgeous shrine of Japan, with its gold leaf decortions, its carvings of animal figures and the tomb of Tokugawa Ieyasu, the most famous shogun in Japanese history.</p><p>The Kegon waterfall will take your breath away with its 100 meters in height!</p><p>It is the only way out for Lake Chuzenji's water.</p><p>The lake, at the foot of Mt. Nantai, is the most iconic landscape of this region, with a temple and some former embassies by its shore.</p></div>",
+            "geoCode": {
+              "latitude": 35.6928421,
+              "longitude": 139.6942627
+            },
+            "price": {
+              "amount": "103.0",
+              "currencyCode": "USD"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2E4ZGQ5Y2M1LTZiNzgtNGY1Ni1iNjNiLTZlMTEzY2NiN2M1NiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzk0OGU5MTk1LWM5YmItNDY3NS05OGZlLTgzMGZhZDEyZjE3ZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzFiZjA2ZjJiLWZkMjgtNDMyMy05MjI1LTI5MWMwMDU1ZTY0YiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzZlNjI2MTI5LWMzZmEtNDRmNS05YzBhLTM4MGY2Y2UzZTNkYyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzc1ZGQ4NDdmLWY0ZTctNDMwNC1hMjllLWI2MTk2MmQyOTRhMSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2ZlZDE4ZTIyLWJkZTMtNDYwZC1iZTRmLTc4YjBlYmJjNjJlYSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2U2ZDAyOTkxLWQwNmQtNDRmZS04ZWU0LTdjN2M3ODdhMGIzZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzhiM2ExMmYxLTcwZTUtNDY0Yy1hZGQ3LWVmY2FjNTA3YzAzZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzljM2Y0MDJlLTU0OTYtNGQzMi1iM2U0LWFmZTgzNGNlYTA3NCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzk2NjAwNGY5LTgyZDQtNDQ4NS1iMzhiLTRlZjliYmYyMmU0ZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/145c92a2-984d-4c65-872c-3070a7e69834",
+            "minimumDuration": "10 hours 30 minutes"
+          },
+          {
+            "type": "activity",
+            "id": "139594890",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/139594890",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Mount Fuji & Lake Kawaguchi Group Day Tour from Tokyo",
+            "description": "<div><p>Explore the iconic Mount Fuji and its surrounding scenic spots on a full-day guided tour.</p><p>Visit Lake Kawaguchi and enjoy a traditional Matcha Experience.</p><p>Discover the crystal-clear ponds of Oshino Hakkai, formed by Mt. Fuji's melted snow.</p><p>Capture stunning views of the snow-capped summit of Mt. Fuji from Fuji Bussharito Heiwa Park.</p><p>Shop till you drop at Gotemba Premium Outlets and enjoy a stop at Takashimaya in Shinjuku.</p><p>Why Choose This Tour?</p><p>Perfect for first-time visitors to Japan!</p><p>Led by a professional English or Chinese-speaking guide for a seamless experience.</p><p>Comfortable round-trip transportation in an air-conditioned vehicle.</p><p>Small group size (max 15 travelers) for a more personalized experience.</p></div>",
+            "geoCode": {
+              "latitude": 35.6944772,
+              "longitude": 139.7001337
+            },
+            "price": {
+              "amount": "77.0",
+              "currencyCode": "USD"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzg1NzRhOTc0LTkyMTgtNDkwMS05NTE5LTc3M2I5ODE3NjNjOCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2NjNTIyNmFmLTEzNTYtNDAyZC1iNmEyLTczNDNmMzhhYzFhZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2MzNzQ0NGRjLWJlMDItNGRmYy1iYTU3LTg5OWUzODA5ZjhmNSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzUxOTVhZGM4LTFmNjctNGMwYi04MDNhLTQ5YWYwNTFiMjYzMSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2I2YzlkMTQ5LThkNDktNGM1NS1hZTU3LTlmZjU3NjAzN2U5MSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzViYjZhYjBmLTFiN2ItNDk3Yi04OGFlLWMxMGIzODU4ZmE2ZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/76b865ae-9967-424c-9f4a-a17a17b4d33c",
+            "minimumDuration": "11 hours"
+          }
+        ],
+        "dataType": "activities"
+      }
+    ],
+    "createdAt": 1764237738695
   }
 }
