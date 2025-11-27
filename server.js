@@ -204,48 +204,65 @@ async function initializeGemini() {
         model: 'gemini-2.0-flash',
         tools: tools,
         systemInstruction: {
-            parts: [{ text: `You are a helpful and friendly travel assistant. 
-            Your goal is to help users plan their trips by finding flights, hotels, and activities.
-            
-            **Capabilities:**
-            - **Flights:** Search for flights using IATA codes.
-            - **Hotels:** Search for hotels by city, check offers, and book them.
-            - **Activities:** Find things to do in a specific location.
-            - **Sentiments:** Check reviews/ratings for hotels.
+            parts: [{ text: `You are a smart, proactive, and efficient travel assistant.
+            Your goal is to help users plan their trips by finding flights, hotels, and activities using the available tools.
 
-            **Guidelines:**
-            - Always ask clarifying questions if the user's request is ambiguous.
-            - If the user asks for a city name for flights, convert it to the appropriate IATA code (e.g., London -> LHR).
-            - For hotel search, start by finding hotels in a city, then check for offers if the user is interested in a specific one.
-            - If the user provides relative dates (e.g., "next Friday"), calculate the YYYY-MM-DD date based on the current date provided in the context.
-            
+            **Capabilities:**
+            - **Flights:** Search for flights.
+            - **Hotels:** Search for hotels by city, check offers.
+            - **Activities:** Find things to do.
+            - **Sentiments:** Check hotel reviews.
+
+            **Key Behaviors:**
+            1.  **Be Proactive & Assuming:** Do NOT constantly ask for every little detail if you can make a reasonable guess or if the user's intent is clear enough to start a search.
+                -   *Example:* If user says "Flights to Paris next weekend", assume they mean from their likely location (if known) or ask for origin *once*. Assume 1 adult unless specified. Calculate the dates yourself.
+                -   *Example:* If finding hotels, don't ask for price range immediately unless results are too broad. Just show the best/popular options.
+            2.  **Lean Context:** You will see summaries of previous search results in the context. Use these to answer follow-up questions without needing to search again, but don't regurgitate the full list.
+            3.  **Efficient Responses:** Keep text responses concise. The UI handles showing the detailed cards.
+
             **Response Formatting:**
-            - Use **Markdown** for general text (bold, lists).
-            - **Data Display:**
-                - If the user asks for lists of flights, hotels, or activities, use the available tools.
-                - The system will automatically render cards for flights, hotels, and activities based on the tool output.
-                - **DO NOT** output raw JSON blocks for these items in your text response. Summarize the top options briefly in text if needed, or just say "Here are the results I found:".
-            - **Comparisons:** When asked to compare options (flights or hotels), **DO NOT** create a Markdown table or a long text list.
-            - Instead, output the comparison data using a special **JSON Code Block** with the language tag \`json-comparison\`.
-            - Structure the JSON like this:
+            - Use **Markdown** for text.
+            - **DO NOT** output raw JSON blocks for data (flights/hotels/etc) in your text response. The system handles the visual cards.
+            - **Comparisons:** If asked to compare, use the \`json-comparison\` block as follows:
               \`\`\`json-comparison
               {
-                "title": "Options Comparison",
-                "columns": ["Name", "Price", "Rating", "Details"],
-                "rows": [
-                  ["Hotel A", "150 EUR", "4.5/5", "Near city center"],
-                  ["Hotel B", "120 EUR", "4.0/5", "Breakfast included"]
-                ],
-                "recommendation": "Hotel A is better located..."
+                "title": "Comparison",
+                "columns": ["Option", "Price", "Score"],
+                "rows": [["A", "$100", "4.5"], ["B", "$90", "4.2"]],
+                "recommendation": "Option A is better because..."
               }
               \`\`\`
-            - Do **not** repeat the table data in your text response. Just provide the JSON block and a brief intro/outro.
-            - Be conversational and maintain context.` }]
+            ` }]
         }
     });
 
     // Initialize summary model
     summaryModel = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+}
+
+// Helper to summarize data for context
+function summarizeForContext(type, data) {
+    if (!data) return "";
+    
+    try {
+        if (type === 'flights') {
+            return data.slice(0, 5).map(f => {
+                const it = f.itineraries[0];
+                const seg = it.segments[0];
+                return `${seg.departure.iataCode}->${it.segments[it.segments.length-1].arrival.iataCode} | ${f.price.total} ${f.price.currency} | ${seg.carrierCode}`;
+            }).join('\n') + (data.length > 5 ? `\n...and ${data.length - 5} more` : '');
+        } else if (type === 'hotels') {
+            return data.slice(0, 10).map(h => `${h.name} (ID: ${h.hotelId})`).join('\n') + (data.length > 10 ? `\n...and ${data.length - 10} more` : '');
+        } else if (type === 'activities') {
+            return data.slice(0, 5).map(a => `${a.name} - ${a.price ? a.price.amount + " " + a.price.currencyCode : "N/A"}`).join('\n') + (data.length > 5 ? `\n...and ${data.length - 5} more` : '');
+        } else if (type === 'offers') {
+             // Hotel offers can be complex, just capture price and hotel
+             return data.data.slice(0, 5).map(o => `Hotel ${o.hotel.name}: ${o.offers[0].price.total} ${o.offers[0].price.currency}`).join('\n');
+        }
+    } catch (e) {
+        return "Data available but summarization failed.";
+    }
+    return "Data results available.";
 }
 
 // Call initialization
@@ -386,7 +403,7 @@ const functions = {
                     destinationLocationCode: destination,
                     departureDate: date,
                     adults: 1,
-                    max: 5
+                    max: 15 // Increased from 5 to 15 per user request
                 }
             });
             
@@ -407,7 +424,9 @@ const functions = {
                 params: { cityCode: cityCode }
             });
             console.log(`Found ${response.data.data.length} hotels.`);
-            return response.data;
+            // Limit to top 15 to prevent data bloating
+            const limitedData = response.data.data.slice(0, 15);
+            return { ...response.data, data: limitedData };
         } catch (error) {
             console.error('Amadeus API Error (Hotels):', error.response ? error.response.data : error.message);
             throw new Error('Failed to search hotels.');
@@ -503,7 +522,9 @@ const functions = {
                 headers: { 'Authorization': `Bearer ${token}` },
                 params: { latitude, longitude, radius: 1 }
             });
-            return response.data;
+            // Limit to top 15
+            const limitedData = response.data.slice(0, 15);
+            return limitedData;
         } catch (error) {
             console.error('Amadeus API Error (Activities):', error.response ? error.response.data : error.message);
             throw new Error('Failed to fetch activities.');
@@ -544,10 +565,11 @@ app.post('/api/chat', async (req, res) => {
         // Convert session history to Gemini format
         const chatHistory = session.messages.slice(0, -1).map(msg => {
             let textContent = msg.content;
-            // If the message had associated UI data (flights, hotels, etc.), inject it into the context
-            // so the model knows what the user is looking at.
+            // If the message had associated UI data (flights, hotels, etc.), inject a SUMMARY into the context
+            // This keeps the context lean while letting the agent know what was shown.
             if (msg.data && msg.dataType) {
-                textContent += `\n\n[System Context: The user was shown the following ${msg.dataType} results: ${JSON.stringify(msg.data)}]`;
+                const summary = summarizeForContext(msg.dataType, msg.data);
+                textContent += `\n\n[System Context: User saw these ${msg.dataType} results:\n${summary}]`;
             }
             return {
                 role: msg.role,
