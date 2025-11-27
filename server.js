@@ -522,9 +522,11 @@ const functions = {
                 headers: { 'Authorization': `Bearer ${token}` },
                 params: { latitude, longitude, radius: 1 }
             });
-            // Limit to top 15
-            const limitedData = response.data.slice(0, 15);
-            return limitedData;
+            // Amadeus response structure is { data: [...] }
+            // Check if response.data.data exists and is an array
+            const activities = response.data.data || [];
+            const limitedData = activities.slice(0, 15);
+            return { data: limitedData };
         } catch (error) {
             console.error('Amadeus API Error (Activities):', error.response ? error.response.data : error.message);
             throw new Error('Failed to fetch activities.');

@@ -32029,6 +32029,928 @@
           }
         ],
         "dataType": "flights"
+      },
+      {
+        "role": "user",
+        "content": "find hotels in marakesh"
+      },
+      {
+        "role": "model",
+        "content": "OK, I found some hotels in Marrakech. Here are a few options:\n\n*   **ATLAS ASNI (TYRAKASN):** Located on Avenue Mohammed V.\n*   **RIAD O2 - MARRAKECH (HSRAKAGG):** Located in Sidi Slimane Semmaria.\n*   **GOLDEN TULIP RAWABI (DHRAKAKE):** Located in Zone Touristique Agdal.\n\nI can provide more details or search for offers if you have specific dates in mind.\n",
+        "data": [
+          {
+            "chainCode": "TY",
+            "iataCode": "RAK",
+            "dupeId": 700042238,
+            "name": "ATLAS ASNI",
+            "hotelId": "TYRAKASN",
+            "geoCode": {
+              "latitude": 31.63282,
+              "longitude": -8.00876
+            },
+            "address": {
+              "countryCode": "MA",
+              "postalCode": "40000",
+              "cityName": "MARRAKECH",
+              "lines": [
+                "AVENUE MOHAMMED V"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:17:51"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "RAK",
+            "dupeId": 700184904,
+            "name": "RIAD O2 - MARRAKECH",
+            "hotelId": "HSRAKAGG",
+            "geoCode": {
+              "latitude": 31.63606,
+              "longitude": -7.99256
+            },
+            "address": {
+              "countryCode": "MA",
+              "postalCode": "40008",
+              "cityName": "MARRAKECH",
+              "lines": [
+                "SIDI SLIMANE SEMMARIA 97"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:21:13"
+          },
+          {
+            "chainCode": "DH",
+            "iataCode": "RAK",
+            "dupeId": 700174606,
+            "name": "GOLDEN TULIP RAWABI",
+            "hotelId": "DHRAKAKE",
+            "geoCode": {
+              "latitude": 31.5954,
+              "longitude": -7.96991
+            },
+            "address": {
+              "countryCode": "MA",
+              "cityName": "MARRAKECH",
+              "lines": [
+                "ZONE TOURISTIQUE AGDAL,"
+              ]
+            },
+            "masterChainCode": "TC",
+            "lastUpdate": "2025-06-03T10:21:52"
+          },
+          {
+            "chainCode": "GT",
+            "iataCode": "RAK",
+            "dupeId": 700174606,
+            "name": "GOLDEN TULIP RAWABI - MARRAKECH",
+            "hotelId": "GTRAKRAW",
+            "geoCode": {
+              "latitude": 31.68083,
+              "longitude": -8.00405
+            },
+            "address": {
+              "countryCode": "MA",
+              "postalCode": "40000",
+              "cityName": "MARRAKECH",
+              "lines": [
+                "ZONE TOURISTIQUE",
+                "AGDAL"
+              ]
+            },
+            "masterChainCode": "LI",
+            "lastUpdate": "2025-06-03T10:19:34"
+          },
+          {
+            "chainCode": "ON",
+            "iataCode": "RAK",
+            "dupeId": 700096886,
+            "name": "L MANSION GUEST PALACE",
+            "hotelId": "ONRAK100",
+            "geoCode": {
+              "latitude": 31.63338,
+              "longitude": -8
+            },
+            "address": {
+              "countryCode": "MA",
+              "postalCode": "40000",
+              "cityName": "MARRAKECH",
+              "lines": [
+                "KM 9 RT OF OUARZAZATE"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:16:06"
+          },
+          {
+            "chainCode": "YX",
+            "iataCode": "RAK",
+            "dupeId": 700072266,
+            "name": "RIYAD EL CADI",
+            "hotelId": "YXRAK797",
+            "geoCode": {
+              "latitude": 31.62862,
+              "longitude": -7.98514
+            },
+            "address": {
+              "countryCode": "MA",
+              "postalCode": "40000",
+              "cityName": "MARRAKECH",
+              "lines": [
+                "ABDELCADER DABACHI ST 86"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:18:59"
+          },
+          {
+            "chainCode": "WV",
+            "iataCode": "RAK",
+            "dupeId": 501413500,
+            "name": "SELMAN MARRAKECH",
+            "hotelId": "WVRAK001",
+            "geoCode": {
+              "latitude": 31.63382,
+              "longitude": -8.00223
+            },
+            "address": {
+              "countryCode": "MA",
+              "postalCode": "40000",
+              "cityName": "MARRAKECH",
+              "lines": [
+                "SELMAN MARRAKECH"
+              ]
+            },
+            "masterChainCode": "TC",
+            "lastUpdate": "2025-10-07T09:03:18"
+          },
+          {
+            "chainCode": "LW",
+            "iataCode": "RAK",
+            "dupeId": 700162709,
+            "name": "PALAIS NAMASKAR",
+            "hotelId": "LWRAK018",
+            "geoCode": {
+              "latitude": 31.67271,
+              "longitude": -7.99886
+            },
+            "address": {
+              "countryCode": "MA",
+              "postalCode": "40000",
+              "cityName": "MARRAKECH",
+              "lines": [
+                "ROUTE DE BAB ATLAS NO 8869"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:16:47"
+          },
+          {
+            "chainCode": "TA",
+            "iataCode": "RAK",
+            "dupeId": 700056345,
+            "name": "RIAD AFRICA",
+            "hotelId": "TARAK111",
+            "geoCode": {
+              "latitude": 31.6507,
+              "longitude": -8.02389
+            },
+            "address": {
+              "countryCode": "MA",
+              "postalCode": "MK40000",
+              "cityName": "MARRAKECH",
+              "lines": [
+                "94 95 DERB SAKKA"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:17:46"
+          },
+          {
+            "chainCode": "SB",
+            "iataCode": "RAK",
+            "dupeId": 700142139,
+            "name": "SOFITEL RAK PALAIS IMPERIAL",
+            "hotelId": "SBRAKPAL",
+            "geoCode": {
+              "latitude": 31.62175,
+              "longitude": -8.00281
+            },
+            "address": {
+              "countryCode": "MA",
+              "postalCode": "40000",
+              "cityName": "MARRAKECH",
+              "lines": [
+                "RUE HARROUN ERRACHID"
+              ]
+            },
+            "masterChainCode": "RT",
+            "lastUpdate": "2025-06-03T10:17:29"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "RAK",
+            "dupeId": 700117873,
+            "name": "ADAMA RESORT",
+            "hotelId": "HSRAKAEY",
+            "geoCode": {
+              "latitude": 31.55948,
+              "longitude": -8.03131
+            },
+            "address": {
+              "countryCode": "MA",
+              "postalCode": "40000",
+              "cityName": "MARRAKECH",
+              "lines": [
+                "ROUTE D'AMIZMIZ KM 7,5"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:21:13"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "RAK",
+            "dupeId": 700163687,
+            "name": "RIADS PRIVILEGE",
+            "hotelId": "HSRAKAGN",
+            "geoCode": {
+              "latitude": 31.62601,
+              "longitude": -7.992
+            },
+            "address": {
+              "countryCode": "MA",
+              "postalCode": "40000",
+              "cityName": "MARRAKECH",
+              "lines": [
+                "1, RUE MAHJOUB RMIZA"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:21:13"
+          },
+          {
+            "chainCode": "TA",
+            "iataCode": "RAK",
+            "dupeId": 700044692,
+            "name": "HOTEL RIAD ZAHRA",
+            "hotelId": "TARAK811",
+            "geoCode": {
+              "latitude": 43.88944,
+              "longitude": -0.99227
+            },
+            "address": {
+              "countryCode": "MA",
+              "postalCode": "44000",
+              "cityName": "ESSAOUIRA",
+              "lines": [
+                "90 QUARTIER DES DUNES"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:17:46"
+          },
+          {
+            "chainCode": "EU",
+            "iataCode": "RAK",
+            "dupeId": 700050038,
+            "name": "EXCLUSIVE HOTEL DAR RHIZLANE",
+            "hotelId": "EURAKDAR",
+            "geoCode": {
+              "latitude": 31.62943,
+              "longitude": -8.01201
+            },
+            "address": {
+              "countryCode": "MA",
+              "postalCode": "MA",
+              "cityName": "MARRAKECH",
+              "lines": [
+                "AVENUE JNANE EL HARTI"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:19:56"
+          },
+          {
+            "chainCode": "HS",
+            "iataCode": "RAK",
+            "dupeId": 700163681,
+            "name": "JET ELDO PALMERAIE",
+            "hotelId": "HSRAKAEJ",
+            "geoCode": {
+              "latitude": 31.62757,
+              "longitude": -7.99899
+            },
+            "address": {
+              "countryCode": "MA",
+              "postalCode": "40000",
+              "cityName": "MARRAKECH",
+              "lines": [
+                "COMMUNE RURALE ALOUIDANE - SIDI YOUSSEF BEN ALI -"
+              ]
+            },
+            "lastUpdate": "2025-06-03T10:21:12"
+          }
+        ],
+        "dataType": "hotels"
+      },
+      {
+        "role": "user",
+        "content": "find tours in marrakash"
+      },
+      {
+        "role": "model",
+        "content": "To find tours, I need the coordinates (latitude and longitude) of Marrakech. Could you please provide them?\n",
+        "data": null,
+        "dataType": null
+      },
+      {
+        "role": "user",
+        "content": "you find it"
+      },
+      {
+        "role": "model",
+        "content": "Here are some tours and activities in Marrakech:\n\n*   **Marrakech City Tour: Private Custom-Made:** Explore ancient city walls, palaces, and the Majorelle Garden. (84 EUR)\n*   **Kasbah Tamadot :Lunch at the Bransons:** Visit a Berber family and learn to prepare mint tea. (235 EUR)\n*   **Marrakech: 3-Hour Quad Bike Adventure:** Get your adrenaline thrills on a quad bike in the Palmeraie. (92 EUR)\n*   **Three Valleys & Waterfalls & Atlas Mountains - Camel ride Day Trip Marrakech:** Admire the scenic landscape of Imlil and the Atlas Mountains. (35 EUR)\n*   **ATLAS MOUNTAINS The National Park of Toubkal:** Hike in Toubkal National Park and see the second-highest peak in Africa. (129 EUR)\n*   **Marrakech Cultural & Shopping Tour: Old City & Souks:** Explore hidden stalls in Marrakech Old City with a private guide. (183 EUR)\n*   **Magical Sunset And Desert Dinner At Agafay:** Enjoy a private dinner in the Agafay Desert. (92 EUR)\n*   **Private Essaouira day trip from Marrakech:** Visit the blue and white bohemian seaport town of Essaouira Mogador. (207 EUR)\n*   **Atlas Mountains & Berber villages: optional Camel ride/Waterfall:** Enjoy the Atlas mountain road, visit Berber villages, and see the Setti Fatma waterfalls. (169 EUR)\n*   **Agafay Desert & Atlas Mountains Quad Biking Tour from Marrakech:** Enliven your stay in Marrakech by booking a quad biking tour in the High Atlas Mountains. (152 EUR)\n*   **Ouzoud Waterfalls Guided Hike and Boat Trip from Marrakech:** Visit the Ouzoud Waterfalls. (26 EUR)\n*   **Private Transfer: Marrakech to Agadir// or Agadir to Marrakech:** Transfer from Marrakech to Agadir. (184 EUR)\n*   **Private Ait Ben Haddou Tour with Road of the Kasbahs from Marrakech:** Travel across the High Atlas mountain range and visit the Kasbah of Ait Ben Haddou. (336 EUR)\n*   **Day trip to Imlil Mount Toubkal from Marrakech:** Explore the village of Imlil with lunch looking out over the second highest African summit. (74 EUR)\n*   **Marrakech Highlights Premium Tour With Lunch and Wi-Fi from Marrakech:** Enjoy a tour through the heart of Marrakech, a city brimming with history, culture, and beauty. (82 EUR)\n\n",
+        "data": [
+          {
+            "type": "activity",
+            "id": "31044580",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/31044580",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Marrakech City Tour: Private Custom-Made",
+            "description": "<div><p>Get a feel of Marrakech and enjoy this personalized door to door Marrakech city tour. Explore the ancient city walls, the splendid palaces with their Moorish iconic architecture and discover the prestigious Majorelle Garden, with its French-influenced architecture and connection to the French designer Yves Saint Laurent. \nEnjoy a genuine guided walk in the 9th century Old Medina with the famous Djemaa El Fna square and Souks, an open air theatre that always seduces its visitors.\nYour multilingual driver and expert guide will be at your entire service to assist you and to ensure you discover the best of Marrakech. You will be picked up from your hotel in a brand new, air-conditioned minivan and dropped off to visit each monument planned in the discovery of Marrakech.</p></div>",
+            "geoCode": {
+              "latitude": 31.6320168,
+              "longitude": -8.0029957
+            },
+            "price": {
+              "amount": "84.0",
+              "currencyCode": "EUR"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzBiN2QwZjhlLTM4ZjAtNDA2OC04NjhhLTU2MDg3YWU5NTQ3NSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2ZmMWQ4Y2ZlLWY4YTctNDIwMy1iMjgzLTM0OTE0ODBjNzc2NSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2NkNTQyYmM2LWNkMTEtNDljMS1iOTA1LTk1NmVkYzMxMGY4MiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzM1YmRjMjVkLTI0YjgtNDYwZi1iMmJkLWVmNzU1MDc0YzgzNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2U1YmM0MGRmLWRlMmItNDNiMy04NTk3LTU0ZGE4MTJmZDQxOSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2M2ZWJlYjQwLWJiOWItNDE5ZC05ZTU0LThhZTFkODQ1NGZiMSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2RkYTgzNjhlLWYzZWYtNDFiZS1hMjk4LTUwNTU1MDVhNDYyYSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzE4MjI2ZTFmLTkwMGQtNGJiZS04NjQyLWIxMWY1MWEzZDAyZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2NiYWY5NTgyLTZiZTgtNGVkMC1hY2Y2LTU3YjAwZTU2ZTJhOCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzI3NzE3ZDJhLTA5YTgtNGNiZC04MWM4LWM0Y2IxMzEwN2RjZCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzVjYTNlMjRlLTVkNjMtNGI1Ni05MWQ1LTc5MDNkMDNjYjg4MyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzBiMjkwNGMxLTRlMmEtNGM0MS04Y2Y3LWIxMDlmZDhjNWZhNiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzhlYmIxODhkLWUxNzctNDIzOC1hMzZkLWZjNTU0ZWJlYmYyNSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzQxZjcxODc2LTFjNjItNDQzMC04OWMzLWQyYjFkY2FhNTgzNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzczMjBjZjQ1LTNmNmMtNDdlZi04MDJkLWQ4YmU4M2RkN2QxMCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzkwY2E5N2E0LTVlY2MtNDBmMS1iOTkwLTk1Yzc2YjAyNzEzNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzkzZDEwZWY2LWYzMTQtNDg0OC05Mjk2LTI1ODAxMDAwYWM2OCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzViMjU1Y2VlLTk2YjItNGVmOS1hYTZiLTFkMWFiYmM1OTNjYyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzhkMWQ0ZTE0LWE0OTEtNDFkMi05NWEyLWQyYWViZTQ0ZTRlYyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2RlNTE5OWI3LWViNjctNDQwMC05MjdmLWJmMmZjY2NjMGZkNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2RjM2Q4YzFjLTA1N2YtNDQ4Ni1hOWRlLWIyNDk2NDEzNzNlZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2MxYTE3MGE4LTIyZTMtNGZiZC04ZTA1LWNmNjA2MzhlNjJjOSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2E4MmRmZGNiLWQyYzAtNGE1NS05MTExLWUwNDAwMjVjMzE3NiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzc4ZDIyZmIzLWYwZDAtNDNhNS05YmI4LTUwNmRlYWEyZGZmMCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2VkYWMzMjllLTQ4M2QtNGJlYS1hYjM0LThlOTEyNTk3N2QyMSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzUyMjBmNTkxLTU5N2EtNDQwOC04ZmQwLTY1OGUwZTQ4OTI1MCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzYzZWQxNzgyLTFkOTItNGZhNS1hYzdjLThkMzQ3NDczY2FiMyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2RkOWFiMjJlLTM4ZWUtNGFkZC1iMTczLTQzYWRjOTcxMjg0NiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzgzYzAxM2ZkLWY4NDYtNGE4Ny1iNDc3LTQxYWY5NTFiMDkyOSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzFjZTEzZDdlLWQ5NzktNDcyNy05N2U5LWNjMjhiOGJjMjg1MSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2UzZmJhNTIwLWZhNTMtNDU0MS04NzI3LTRjNzk1ODZjNzNhYyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2E4ZmEyZTA3LTRkZTgtNDk2OC04MGFmLWY4ZmQ3NzRmZjdjYSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2FjOGEzNjcyLTUzODUtNGUzYy04NjdlLWNkNzA2ZTJhNzMyYiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzk4M2JmYzA1LWFlNjctNGZmNS1hNGQyLThjYzhjNDRjYTAxYiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzk2NTgyZjBiLWRhZmQtNDhkMy1iZGE2LTJhMzk0NTAxMTEyZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2E1ODI3N2Y5LTkwMzMtNDNkYS04YWJhLWZmMzA2YTZmZTBiYiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzI0MGEwYTQ2LTQ4ZmEtNDQyNC05MTQ0LTYwYTJmNjhiMWMxMSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzUxYWM0YWZmLThiY2YtNGQ4YS1hOWZjLTRlNzk2NjZhM2M0MCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2ZlZjMzNTllLTYyZDItNGJhNy04YjZhLTRkZmQwN2E2MWNiZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzg1ZDQ0MWM2LTZkOTQtNDE1NC1hNTU3LTEyZTZmOTY1YjYxMSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2U0ODgyNjY3LWUyMmItNGYzNi1hZmJlLWM1MzZlMGFkYjUyOCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2EzZGM2NDU2LWYxNzctNDViNi05Y2M2LTI0MTk3YzRjM2NmYSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzY0NzVhYzg2LTgxM2QtNDc5NC05NzNiLTA0ZDAzNTMyNmI0NyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzZjMjhjMzYzLTJmNmEtNDZhMi04Y2IxLTBlZDk1N2QwYjQyYiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2RhYTA1ODYzLTUzMDktNDhhMC1hYzQ5LTBmNDQzNjVmZDRlYiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzAyMGYyNjkxLTYyYTctNGM5MS1iMDVhLTkxZDYzYTdlMGJmMyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzQ0MzBiODllLWJjZmEtNDRkMC05MzA0LTNmZTI2ZmMwYmUzMSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2MwNGVlZjNjLTBkNGMtNDcxYi05MjE0LTE1NzcyYjliMGRlMyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzEyNTVjNDFhLTczNWEtNDY4ZS1hYTBhLWI5OTRlNjNjNDU4MiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2ZhODEzYzQ1LTU4ZjgtNDlmMy1iZWRjLTNjMzE0ZGUyYmE0NSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzE0MGEzZTMzLTkxZDMtNDE2MS05MGY4LTQzNGI1MzE0NTc1MiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/e7b4a043-e1e2-4db9-8b97-5db7b93cb970",
+            "minimumDuration": "6 hours"
+          },
+          {
+            "type": "activity",
+            "id": "138967688",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/138967688",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Kasbah Tamadot :Lunch at the Bransons",
+            "description": "<div><p>Meet a Berber family and learn how to prepare a cup of mint tea. Visit Imlil and take an optional hike to Armed village. </p></div>",
+            "geoCode": {
+              "latitude": 31.6320168,
+              "longitude": -8.0029957
+            },
+            "price": {
+              "amount": "235.0",
+              "currencyCode": "EUR"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzEyMjVjMTYyLWM3MTctNGZlZi1hMDkzLWI0NTA0NzRhNzkzNSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzZkMzVhNWY0LTQxZDEtNDY1Ni1iZTBjLTAxOWI3ODI3Njc0OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2UwNjc3ODUzLTE0NTctNDBmZi1hNDljLWQ3OGQ3ZjVlMjU2OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2ViNWViOTc1LWNlZTEtNGVjZC04ZTIxLTFiNDE0NmQyNzcwNSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzhlNTU0MTQzLWIwMDktNGI0YS04ZTJjLWZlYjUwZGMzMzJhZCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2Y2N2ViMGY0LWM0M2EtNGFiMC05Y2M2LWM3OWQzMjA3YTgyMSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2JmMTA1NWM1LTgyNDItNDVkOC05ZmE1LTkwZjFkNTVjNmVmMCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzdkOTEwMTdhLWJkNWYtNDFjMC04MDM5LWI3NDgxNzMxM2VjZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/8e9d7ecf-f328-4012-86c9-6224c7c3acd9",
+            "minimumDuration": "5 hours"
+          },
+          {
+            "type": "activity",
+            "id": "138967694",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/138967694",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Marrakech: 3-Hour Quad Bike Adventure",
+            "description": "<div><p>Get your adrenaline thrills on the back of a Quad Bike on a 3-hour adventure tour from Marrakech. Speed across the dirt tracks of the Palmeraie, and pass Berber villages untouched by modern life. Stop for a mint tea and snacks, and more.</p></div>",
+            "geoCode": {
+              "latitude": 31.6320168,
+              "longitude": -8.0029957
+            },
+            "price": {
+              "amount": "92.0",
+              "currencyCode": "EUR"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2E0MzFhMmM2LTI2NGMtNGE5My1hODExLWEwOWRmNzI3N2U2OCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzkyNDc4OWNkLTI5MjYtNDA5NS1iYmZmLWRhOTY1YWM0ZDJkZCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzc3ZmEwNTQwLWFlOGYtNDU5Ni05NTVlLWVlZDBhYWU3ZmQxZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2VlYjQzMWI2LTRiZjEtNGM5Yi1iNjA2LTJjMjk2ODc5NDMzYyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzUzYmFjOWJjLTU1MGItNDU5Zi1hNjAwLWVmNzQyNWQxOTMzYiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzdmN2VlMzdlLTIzZTctNGExMi04Yjk4LTY4Y2RhYjNjNDYzZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/c98f43a1-f86b-4f6a-8410-4bf2d5543cbc",
+            "minimumDuration": "3 hours"
+          },
+          {
+            "type": "activity",
+            "id": "138967690",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/138967690",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Three Valleys & Waterfalls & Atlas Mountains - Camel ride Day Trip Marrakech",
+            "description": "<div><p>Admire the scenic landscape of the charming mountain village of Imlil, immerse yourself in the Berber culture, see the 3 valleys Asni Valley, Moulay Brahim located at the foot of the famous Toubkal in the High Atlas Mountains.</p></div>",
+            "geoCode": {
+              "latitude": 31.6320168,
+              "longitude": -8.0029957
+            },
+            "price": {
+              "amount": "35.0",
+              "currencyCode": "EUR"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2FmNzU0YmQwLTc4MGMtNGE4Zi1iOTBkLTBmZGMyNThlYzBiNyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2Q2MGRiMWQ0LWE3NGUtNDBhOC05YTY2LTFhNTg3YjBkMDkyMyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2UzYWZhODNhLTczOWMtNDY0OC04YzBiLWIzZjQ0OTA4Njg5ZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzlkMTEwMjI0LTViNGYtNDdhOC04NTM5LWRhZmFmMmNlNzE5ZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzE3OTQzYzQ3LTMwZDMtNDU2NS04NDliLTliY2M0OTgwOTljNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzA0MGU4MDllLWU5ZmEtNDA3Yy05M2ZhLTIyNTM5YzA3M2I4NSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2M5MDU0NWU1LWY5MWItNGQxZC05OWQ3LWQwYTIxMWQ1NGJhYyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzk3ZDk3ZWEwLTYxY2UtNDM4NS1hMDlmLTgyOWFhMGYxYzU5MSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzExZmE5NmM4LTZlYjItNDk0ZS04NmY1LTZlYzcxODZjYzg1ZCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/0b6c72c8-7f02-4ce6-b9ee-6441686b6226",
+            "minimumDuration": "8 hours"
+          },
+          {
+            "type": "activity",
+            "id": "138967687",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/138967687",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "ATLAS MOUNTAINS The National Park of Toubkal",
+            "description": "<div><p>• Enjoy the natural beauty of Toubkal National Park in Morocco’s Atlas Mountains \n • Take a hike from Imlil village and stop for lunch at a restaurant facing Mount Toubkal \n • Marvel at the views of the second-highest peak in Africa</p></div>",
+            "geoCode": {
+              "latitude": 31.6320168,
+              "longitude": -8.0029957
+            },
+            "price": {
+              "amount": "129.0",
+              "currencyCode": "EUR"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzRhOGMyMmRlLTZhMTktNDJkNS04OTBhLWY3MjdlNDU5ODk1YiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2IzMjIyYjFjLTJjMGYtNDIxYy1hYTFjLTBhYWE5YTcwOGE5NSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzY1NTE3MjYwLWJkZTktNDMzYi04OWQyLTJjOTVhNDJiNTE5NCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzllYzAzMzlmLTNhZmMtNDQxNS05NWZkLTNhYzRhZGJlNDE1MSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2U1ZWQwMDhiLWYzZTAtNDJiZi1iODJiLWZhNGUyMjBkMDhkMSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzVhYmQ5OTMxLWZhYWUtNDllZS05OWYwLTA1M2FhMDBiNTRmYiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzAzMGU3NzY1LWRhNzQtNDU4ZS05NjFjLWExOTIyMTMyOWYxMSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzJhNzMxNjIzLWVkNzEtNGI5YS05YzI1LTZjMDc4ZDU1ZjFlNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzJjNDQzNzM1LTFlYjctNDNhYy1hZjlmLTg2NWMxNjJmZGIyYyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzBkNmUwYjRiLTE5MzYtNGI0Yy04MWI1LWQyZjg1ZjNiMjY5NSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/b88b5e69-f8c2-4625-a5b1-f8cb1b0b2551",
+            "minimumDuration": "5 hours 30 minutes"
+          },
+          {
+            "type": "activity",
+            "id": "31047757",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/31047757",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Marrakech Cultural & Shopping Tour: Old City & Souks",
+            "description": "<div><p>With your Private Certified local guide by your side, head towards the hidden stalls in Marrakech Old City! A shopper’s paradise with thousands of shops packed into a maze of small alleyways. </p></div>",
+            "geoCode": {
+              "latitude": 31.6320168,
+              "longitude": -8.0029957
+            },
+            "price": {
+              "amount": "183.0",
+              "currencyCode": "EUR"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzNkZDVlMWFkLWFmMmUtNGMyMC04MjFjLTgxMzQ5ZTFmYjIzMyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzUxZTA1YmU0LTE0YWUtNDI3MC05NTdmLWRlN2VjNWQxNjA1ZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzg0MDkzMDE3LWY2MTQtNGQzZC05NmU1LWVjODY2NDQ1NWI0NCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2M1MDAzODUwLWY0MjEtNDc1ZC1iNDYxLTlhNjU5NzNlNjIxMSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2U4YzEzNTc5LTUzMzItNGU4NC1iZTc5LWMzNDAzZTdhYzUxMSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2RmNThmMDA1LTM0ZDgtNDJiZS04MTk2LWY0ZTM5ZDg3MjkzZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2I0NjRlN2JhLTE1YzctNDdlYy05OGFhLTlkMmQ2YTY1YTgwYSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzA3ZWU2ODM5LTlhM2ItNDVjNS05MDY0LTI5MzIzNDAwYjZiNSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzBkMDBmMmMyLTRmYTgtNDI0YS1hNTE4LWQ2YTQyZTU4NjFkYyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzQ4NTQyYWEzLTgxODctNDFlMy1iYmQxLTk3Y2Y5NjlkMjM4MiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzQ0ZjNmODUzLTgxZTctNDhlNS05NzM1LTU0YTg0MDY2YmI1NCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2FiODM1ZjI1LTUyZDgtNDJmMy05MDAxLTdjOTBhMDBhMDcwMSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzM4ZDBiZDFiLTQxYzktNDE5ZC1iNWM2LTkxNjEzMDc3NmY4NCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2MwYTUyZDBkLTllMmQtNDIzOS04MDM0LTQxZmI4MWIxYWI0ZCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzliZDI5NmVjLTBkYTItNGQ2ZS04NjNhLTVjNmI2ZTQzNmEzMiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2UyNDg1YTRmLWM4M2QtNGRmOC1iZjBmLTMyYjg5ODAyMDU3YiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzRlMmM3OGVjLTVjZWEtNGJlZS05ODRmLTUxNDYwN2EzYjM0YyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2M3MGQxOTg1LWM3ZmMtNDMzMS04MmY3LWM5YTI3MzFmYjY0NSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzZmNTgwNjA1LTM3ZTktNDAyYS1hN2M0LTJmNTFkNzExMGM0OCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzllYmJjYThmLTAzMGEtNDJhOS05NGJlLTg0MDU0ZWVmNWVkYiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzM3Y2Y5MjYzLWFlMGMtNDg5Ni1hMThiLWEyOGQ3MmY5Zjg3MCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzk0NzdkZTlmLTFkYzYtNDZlNy04ZjdhLTkwODFjMjBiOWNiMiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2ViOTkyNTFlLTM2ODAtNDlmNC04ZTIyLTI5MTcyYTQxMTQ1YyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2FiNTgzOTM0LTQ2MzMtNGJhMS04M2RmLWE5NzdiYmQ4NTkzYyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzAyZTAzMmMyLTA4MjctNDk5MC04YzUwLWVmYjM2NDdjYTY5YSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2U5M2YxZGYwLTI1YmUtNDBjYy05NDgzLWVlYjk4ODMxYjI5MyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzBmOWU2ODg1LTU4OWQtNDg0OC04MGU1LWE2NWM1YzZlYWNlYyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/37070cce-e05d-46e4-bf76-2f069b3a05c7",
+            "minimumDuration": "4 hours"
+          },
+          {
+            "type": "activity",
+            "id": "138967692",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/138967692",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Magical Sunset And Desert Dinner At Agafay",
+            "description": "<div><p>Enjoy a magical private dinner in the Agafay Desert just outside of Marrakech. Savor a delicious meal under a tent canopy as you watch the sunset and look up at the stars - perfect for couples and families.</p></div>",
+            "geoCode": {
+              "latitude": 31.6320168,
+              "longitude": -8.0029957
+            },
+            "price": {
+              "amount": "92.0",
+              "currencyCode": "EUR"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2VlNWQyYzFiLWVlMjQtNDIxMS1iOWQ5LWQwMzVkZmQyOGI4ZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzg4MzRmMzM5LWQyOTItNDliMy1hYTk0LWIwMzA4OTY3YjI5NSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2NlNDJjODA0LTcwZmQtNDQwZi05MzJjLTE2ZjIyMDQ0ZWFiOCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzYwZGZmNTIwLTdmMmYtNDJkMi1hOTU4LThmNjMzNWEzZTYyNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2Q1NGUwZDUzLTUwMmEtNGE4OC1iOTFiLTI0ZjU1MzZlZGM2OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzE0ZmJlOGI3LTMxZDYtNDIyYy1hNjYzLTUxMzhkOWRhNTcwMSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzVhOGE5MDZlLWUyMjQtNDc4YS1iYjViLTRjZGRjNGRlYzI3NCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/ff7df769-4c54-4c68-9c67-5fd6ff1dc049",
+            "minimumDuration": "4 hours"
+          },
+          {
+            "type": "activity",
+            "id": "31044462",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/31044462",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Private Essaouira day trip from Marrakech",
+            "description": "<div><p>A fun-filled and relaxing private day trip to Essaouira Mogador, the blue and white bohemian seaport town famous for its vibrant cultural life, traditional fishing port, historic ramparts, old Medina and exceptional laid-back rhythm. \nWith your tour Guide by your side, enjoy the view of colorful houses and atmosphere, wander through picturesque streets, explore the historic ramparts and old Medina. Stroll along the quays and watch fishermen in their fishing boats coming back to shore and unloading their catch of the day, feast on fresh fish and seafood at the many harbor side restaurants.</p></div>",
+            "geoCode": {
+              "latitude": 31.6320168,
+              "longitude": -8.0029957
+            },
+            "price": {
+              "amount": "207.0",
+              "currencyCode": "EUR"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2Y2NmE0NjRlLWU3MzMtNDYxMi1hODU2LTU0NjEyNDBmY2E1YiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzRmY2E3NjA1LTNmM2MtNGE4Ny05YWQ4LTVjMzJhNTZlYTI5MiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2JlNzhiZjAwLTQ3MzYtNGQzMS05MGQ2LTIzNDQ2MWY0YzA5ZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzE3ZjliYTU3LTNiNzItNGJhZS1hMWRhLWZjYjg5N2FhNmFmMCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2NhYTUzZjRmLTM5NzQtNGUwNi05NjJlLTM1Mjk1ZTQwZjhiOCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzM2YWQ2ZWE2LTBiZjItNGEzMC04MjQwLWYxMWVlNDJkMjJlNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2UyMTgzMDdkLTEzMTgtNGE1YS05ZDFmLTRhMmY0MmIxNDQ4ZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzlmNmIwY2E1LWM3MzEtNDIwNy04ODFhLTNhNzQ1YTRmYjAyYyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/e4655477-0d95-42d4-b4b9-88499538d127",
+            "minimumDuration": "11 hours"
+          },
+          {
+            "type": "activity",
+            "id": "31047923",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/31047923",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Atlas Mountains & Berber villages: optional Camel ride/Waterfall",
+            "description": "<div><p>Relax, enoy the ride along the scenic Atlas mountain road and immerse yourself in a world of natural wonders before stopping for a traditional breakfast with the local Berbers in a mud-built house where the richness of Berber traditions will reveal itself to you.\nTest your camel riding skills in a festival of laughter with your camel guide by your side (optional).\nContinue to Setti Fatma village, a scenic stop for lunch by the river neatly nestled in a canyon beneath the High Atlas mountains. \nTake a guided walk-hike to the famous Setti Fatma waterfalls at you own pace (optional ) Or just relax by the river.\nEnjoy the ride back to Marrakech. </p></div>",
+            "geoCode": {
+              "latitude": 31.6320168,
+              "longitude": -8.0029957
+            },
+            "price": {
+              "amount": "169.0",
+              "currencyCode": "EUR"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2RiYmUyZDk2LWRmYzItNGJmMi1iODgzLTQyOTcxZmU5YjNmNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzAyOGMxZTkzLTkzNmUtNDY2Ny05M2U5LThmZjFlOWExZTQzNiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzNmYjU3NTJhLTBjYWYtNDdhOC1hYzNhLTg4MDg2YmJkYTVhNSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzBkNGRiMTBiLWU3NDAtNDdmYi05OGExLTI3NzkzYWI2MGUwYiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2ExZWI5MjIyLTNiM2ItNGYyNS1hOTExLTRiMjM4Zjk2MmYwMyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzA4YTIyZjk3LTRlMzktNGM1Yy05MWUwLTY2NzgyNzlkODFmZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2FiYzg2ZWQ2LTg1NmItNDA0NS04NDkzLWEzMDNlMGU3NzE4YiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzhjMTAzZTM5LTdmN2YtNDQ2NS1hYjM3LWY2ZjJhOWFjNDM1YSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzhhNTZkMmYwLWFkOTUtNDY3Ni05NjYyLTMyOGVkYTdkNGU3MyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzE2OTBmMThiLWE5NTMtNGMxMC1hYzliLWZmMWZiZWIyOTc5YiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2VlN2FhNWY3LWU4NmMtNGJiOS05Y2UwLTQ3ZTk1NmZmZWZkOSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2ViOGIwZWJmLTg3M2UtNDg4Mi04NmVmLWNiMzcyYTliOGJlZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzhmZDdjNDE5LTZkMjYtNGUwNi1iNmQ5LTAwNWI5M2NjYzg4NyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzlhYTc4NDE2LWI4YmUtNDQ1NS1hMDc5LThkMjdmNDcwMzE1NSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzlkZTQ2ZDljLTA5YTUtNGNiYS1iYzU2LWUzMzcyMDcwZDI1ZCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2U2OTA5YWM3LWY5YWUtNDcwZS1hNGE2LTUyNDBkYTk5MGZlMSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzMxMWFlZmYwLTJmYTAtNGRkZi04NWRmLWYxMjNlMjI4ZGRkZCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzVhOTEyMGIzLTY0NGItNDAyYS04MWYxLThiMjg4OTVhZDdkMCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/ac564197-1320-4636-a1fb-5a6167d85098",
+            "minimumDuration": "5 hours 30 minutes"
+          },
+          {
+            "type": "activity",
+            "id": "31047140",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/31047140",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Agafay Desert & Atlas Mountains Quad Biking Tour from Marrakech",
+            "description": "<div><p>Enliven your stay in Marrakech by booking a quad biking tour in the High Atlas Mountains. Take a refreshing day out in Marrakech countryside on your Quad bike and discover the beauty of the Majestic High Atlas Mountains with its snow-capped peaks, green meadows, fruit trees and refreshing lakes. Be surprised by this exciting guided quad biking adventure in the heart of High Atlas walls with its famous Turtle valley, Eucalyptus forests and Agafay Desert. Immerse yourself in this exotically different world with the cool Atlas mountains fresh air and the culture of the Atlas populations.</p></div>",
+            "geoCode": {
+              "latitude": 31.6320168,
+              "longitude": -8.0029957
+            },
+            "price": {
+              "amount": "152.0",
+              "currencyCode": "EUR"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2NhYzY3YjBkLWYxNTEtNGMyMC04NTE4LTI4ODg1Y2QwMjAzNSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2FjZmQ4NzFhLTYyMjUtNDQ2Ni04ZTllLWIxM2U3MmM2ODQxMCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzI0Y2RiZjUwLTc1NjYtNGFhNS05N2JjLTU1MTkyOTc2NWE3YyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzUzNjU2NDEyLWU5OWYtNDQ5OS05N2VjLWVmYmUwNTFjZTU4OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2FmZDJkZDQyLWY0MjgtNDkwZC1hNjFjLTU3NjJkZjBjMTYxNSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2ZjOGRiNGU5LTZjZWQtNDkzZS04MmRiLTkxOGQ4NzJjMjA1NyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2Y2ZGJlZjIwLTM4ODMtNGVkNi05MWJiLWFjODg1NTBlN2VhOSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzhmYWFjYmFhLWMzN2QtNDFjZC1iZjM3LWExNTZjYTJkYTVkMiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2Q4NWU1YzJiLTFhODItNDNjNS04MGU2LTRkODE3NDNhNGVlZCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2ZiNzdmMDkwLWU2MGYtNDQ2ZC1hNTkyLWI4MGYwMDJiZDRhNiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzU1YWMwYzZkLWYxNmMtNGI4Zi1iOWRlLTE0MWFhZGUwNzg4OCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2NmYmM0MDE3LWE2OTktNDQxMS1iNWU4LWQ0N2E0ZTllNDk5ZCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzE1Y2I2N2FjLTdiZTktNGRlMy1iZmRiLTY1ZDllZjY4YTQ3ZCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzE1NmI4MjNiLTYzNjgtNGMzMC1iNDgwLTMyZjJhZjhmODAxOSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2JmODBhZjEyLTc5Y2ItNDI3YS05NWRiLTViY2U2N2M0ODdjYiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2JmOWNjZDljLWM5OGMtNDBkMC1hMGE1LTNiMGJmMzk5Y2EyMyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzc3MjRlYTZkLWM0NTgtNDI2YS04OGNmLThkODdhYzgyMzJjZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2NhNmQxNjM5LWY0NDgtNGY1MC05M2ExLTAwYTMzYjdhYTJiYSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzRlZTllODQ3LTg4ZjctNDU3Mi1iNmM1LWVjMDhlNWYxYzU2OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzE4Mjk5NGFiLTZmZGQtNGI3NC1iYWQxLTU4MmEyOTA5MTBlOCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2VhMjMwZWFlLTljYzItNDFlMi04MmJjLTM4MTMyZjYyMDRhMCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzFiYWUwMjQzLWUwMjAtNDY4ZS04MGNlLWZjODE5MGEzN2FlZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzc3M2M4OTBkLTljODMtNDNlMC1hYzZkLTViYTUyNzY5YjY5MyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/cad1f0c8-4650-4a41-8980-f74c136362ca",
+            "minimumDuration": "3 hours 30 minutes"
+          },
+          {
+            "type": "activity",
+            "id": "138967683",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/138967683",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Ouzoud Waterfalls Guided Hike and Boat Trip from Marrakech",
+            "description": "<div><p>start with pickup from your hotel or riad, before departing for one of the most spectacular waterfalls in North Africa.\n\nAs you arrive in the village of Ouzoud, admire views of the cascades . Follow your local guide through olive groves to an argan oil co-operative and learn about Berber culture. Make the most of the opportunity to admire the views and take photos.\n\nContinue down a network of trails to a viewpoint \nBoard a traditional boat for a short ride on the pool at the bottom of the waterfalls. Then, enjoy a late, Berber lunch at a local restaurant overlooking the falls. \n\nIn the mid-afternoon,your transfer back to Marrakech.</p></div>",
+            "geoCode": {
+              "latitude": 31.6320168,
+              "longitude": -8.0029957
+            },
+            "price": {
+              "amount": "26.0",
+              "currencyCode": "EUR"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2RjY2U2YzdmLTU0YTctNGM0Yi1iYWYyLWIwYjU2MTQ2MzQyMSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzFkMGQ5MmU5LWE3NGUtNDBhMy05Y2M5LTY2OTRhZGE1MjNjOCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzQ0MTYyNTgwLTRkYzctNGVjYS1iZWQ4LTk2ZGZkZDA1MGZjOCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2UyN2RlNDc4LWQxYjQtNGUwMS1hZmNlLTgyZDA1N2I5ODU0NCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzg4OGJhYzI5LTQ1NjItNDE0My1iMjg2LTM1MWNjNmU1MzU2OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzAwNzMwZWUxLTRlZmEtNDQ1Ni04YjU1LWNhOTQ0M2UwM2FmNSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2M5NjI5ZDk1LTYwN2QtNDdmZC1hYjA0LTlmMWI4N2EzZDRjMSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2QyODQwOGQ0LTkzYjUtNGRmMS1iYjk3LWE2MmQyZWQzNzRkYSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2QxZGM0ZWMzLWE0NDktNDZlZi05NTE0LWM3MDY4NGY2MDNmYiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/a8bf21af-5593-4588-93f6-6beda45b93d1",
+            "minimumDuration": "10 hours"
+          },
+          {
+            "type": "activity",
+            "id": "139434070",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/139434070",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Private Transfer: Marrakech to Agadir// or Agadir to Marrakech",
+            "description": "<div><p>Choose the hassle-free way to travel from Marrakech to Agadir with this private one-way transfer service. Place your booking and meet your driver at a prearranged time at your Marrakech hotel or Menara Airport. Hop aboard your private air-conditioned vehicle, relax in comfort on your 3-hour journey to Agadir and enjoy an optional break to stretch your legs. Avoid potential delays and difficulties on public transport, and arrive in Agadir refreshed and ready to make the most of your time on the coast.</p></div>",
+            "geoCode": {
+              "latitude": 31.6320168,
+              "longitude": -8.0029957
+            },
+            "price": {
+              "amount": "184.0",
+              "currencyCode": "EUR"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzY2NzU2NzJkLTEzYWUtNDM0NC05MmRmLWU5YjU4OGZiNTM3MiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzcyOWY5NjBhLTE4N2QtNDBmYy1iNTI4LWU0MjRjM2MxNDA2ZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/77483f77-509b-43f2-bad7-1f21e2424ab1",
+            "minimumDuration": "3 hours"
+          },
+          {
+            "type": "activity",
+            "id": "31047968",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/31047968",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Private Ait Ben Haddou Tour with Road of the Kasbahs from Marrakech",
+            "description": "<div><p>Perfect for those who cannot spare more than one day but anxiously wish to get a glimpse of the majestic desert of Morocco. All entrance fees and attractions tour guides are included.\n\nTravel across the High Atlas mountain range by minivan following the ancient caravan routes and pass a series of lush oases, spectacular kasbahs, and imperial fortified villages. Marvel at one of the world’s cultural treasures classified as a UNESCO world heritage site and the backdrop to many Hollywood movies, the fortified Kasbah of Ait Ben Haddou.\n\nOptions available to test your camel riding skills in a festival of laughter or lunch in a panoramic local restaurant.</p></div>",
+            "geoCode": {
+              "latitude": 31.6320168,
+              "longitude": -8.0029957
+            },
+            "price": {
+              "amount": "336.0",
+              "currencyCode": "EUR"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2FhNjIwNGM0LWQ0ZDYtNGI2Zi1iMmVmLTJkZjZiMzY4YmUzZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzIyMjg0ZDkxLWVkZTEtNGEyMS05NmM4LTUxMDI5ZDJiZGZmNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2Y2NjM4OTJhLTBmNzUtNDJhNC04NjU5LTc2YTQ2ZTY4MGEwYyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzk3OTQyY2FmLTUwZGQtNDg0Ny1iODMwLWZjMjM1MGVkY2UxMSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzk1ZTcyOTY5LTQ3NWYtNGZiYy04NGVkLTE5MmVjNGFhMTFiZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2UwYzBmYTRmLTkwMmMtNDM4NC04NDcwLTU2NzM5NjIxOTRlOSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzNhNzVjMTQ3LWRhYzAtNGRmMS1iZDQ2LWE1NjIyNDFiMGNlNyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzliNmQ2YWIyLWYyM2ItNGU3OC1hNmNkLTgzYzIxYmFiMTJjNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzZjZjhkMmQ2LWY3YTgtNDAwZS05ODI3LWQ4ZjhkYmJjN2RlOSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2NhZjk4ZGZlLTBlNTUtNGZhOC1hNTUxLWZlOTcwOWRmZGM3ZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzU5NGVlZDAzLTg2N2YtNDljZi05OWExLTcxZmFjZGFiN2E1ZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzVhZjUyOTQ5LTRkMzMtNDBlYS1iNThiLWIyYzM3MTBjZDAwYSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzA2MTY4NGIyLWUzNTgtNGQ2YS1hMzcwLWM2MjYzMjVjM2Y0YSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2JkYjA2ZGU5LWMwODgtNGNiOS04YWU1LTlkOWQzM2I2MWYzZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2E3MTg5ZjU1LTE0NjAtNGQ5MS1hZGU5LTFlNzhlYjMwOGU4ZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzRlYzVlZmQ0LTYyOWYtNDhmOS04NDQyLTM3NmI2ZjJlY2QyNiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2E0ZTJiMzkzLWYxYTQtNDg4OS1hMjJhLTc3ZjI1YTQ2MjQxNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2UwNzI4OGIyLTY4MDUtNGIxNy05YzlkLTkwOTZiMTU3OWQwMSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzJhMDg3YzM1LTJiODItNGU4Yy1hZjQ2LWU0YzI1MmExZDFhNCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzJhMjJmMjY0LTYyOWMtNGFmMC04MjgzLWUzZGViOTBjYWNlNiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2QyM2JjNDYyLWRhMDctNGNmNi04YjI5LTgwNGE4YzI0ZDhkMyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzcwNjFlZTg3LTM5ZjQtNGM3OC1hYzUwLTk1MWMwM2YyZDBmZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2M4YTJmZGZjLTIyOTQtNDU1My1hODFiLWU0MTMwM2ZmMWI3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzQ4ZDNhYWVmLWZmODYtNDI3NC1hMWY3LWQzZGNhOTI4ODc4NSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzc5Y2ZkMDA0LTVhMTQtNDE0Yi1iMzI3LWM2NDk4ZGQwNWRiZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzAyNGZmODI5LTJlMmItNDEwOS04MTg5LTQwYTJiYTNlY2YwZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2JiZGJkNjE5LWUzZTAtNDUwZS04ZmM3LTBmZDkxMDNmYzFjMCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzE3MmI4MGZlLTRmY2EtNDJhYS04Njg5LWMyMDA5NTRkZjgwMCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzA0NThkNmU0LWMxMTUtNDExZC05YTliLTIyMTc5ZDA4ZDRmZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2FlZjY5MmRlLTUxYjctNDk0YS04MWEwLTFiNjFiNTQ0ZDRkNiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzIxMTkxYTE0LTViZDYtNGYzOS1hM2U1LTBiMzFmMzg1ZDViOSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzVjNzdiNzRmLTM1MjUtNGUwMS1iZjRkLTdhOGY4MGQxNzNlYSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzExOTNhMzE1LWYxNWQtNGM5OC1hNTA2LTA5N2M2YWJjOTI3ZCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzg1YzdiYzNmLTc2NzEtNDdlOS04YTQyLTM1ZTk2ODFkMGUxOSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzU0NzFiNzExLTExOWUtNGQ1Yy1hMDQwLWE5ZjRhMTg5Y2M3MiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzUyNDQyMTBmLTc3MGYtNDBkYS05ZWU2LTdkNjk4N2E5ZGUyZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2MzODgxN2M2LTkyMGQtNDhmMi05YzIyLTcyYjI0NDM3MGQwYiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2VlNWU0NmNiLWRkYmItNDJjZC04MzNiLWUzODdkMTMyZWQ5YyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2I3NTkzNGExLTQwNjYtNGY0My04YjBmLTM2Y2NkYTg2MWIyZCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/9747149e-b15b-4b4d-8299-495e424e133e",
+            "minimumDuration": "11 hours"
+          },
+          {
+            "type": "activity",
+            "id": "31048301",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/31048301",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Day trip to Imlil Mount Toubkal from Marrakech",
+            "description": "<div><p>Explore the village of Imlil with lunch looking out over the second highest African summitTravel to <strong>Toubkal Massif</strong>, a national park full of craggy mountain peaks and deep valleys. <strong>Toubkal </strong>contains the highest summits in the Atlas chain of Mountains. Roads teem with peasants, domestic animals, scooters and Lorries belching diesel fumes. We will exit at the small village of Imlil, the starting point for exploring the Toubkal area.\n\nEnjoy a 20 minute hike, approximately, to a restaurant for lunch facing <strong>Mount Toubkal</strong> (12 700 ft), the second highest African summit after Kilimandjaro.</p></div>",
+            "geoCode": {
+              "latitude": 31.63196019999999,
+              "longitude": -8.0005651
+            },
+            "price": {
+              "amount": "74.0",
+              "currencyCode": "EUR"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzU2YjY0ZmM0LWZjYjEtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzU2YjY1MjhmLWZjYjEtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzU2YjY0Yjc3LWZjYjEtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzU2YjY1NTIxLWZjYjEtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzU2YjY0MjYyLWZjYjEtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/817cdd30-fcb2-4cef-9186-d08cce2ccd6f",
+            "minimumDuration": "8 hours"
+          },
+          {
+            "type": "activity",
+            "id": "139447281",
+            "self": {
+              "href": "https://test.api.amadeus.com/v1/shopping/activities/139447281",
+              "methods": [
+                "GET"
+              ]
+            },
+            "name": "Marrakech Highlights Premium Tour With Lunch and Wi-Fi from Marrakech",
+            "description": "<div><p>Enjoy a tour through the heart of Marrakech, a city brimming with history, culture, and beauty. This tour is your golden ticket to explore Marrakech without the hassle of planning or organizing. Your adventure begins with a complimentary pick-up from your hotel, followed by a visit to the iconic Koutoubia Mosque, one of Morocco's oldest and most impressive religious landmarks. Next, you'll step back in time at Ben Youssef Madrasa, an intellectual hub for centuries. You'll also have the opportunity to wander freely through the traditional souq of Marrakech, immersing yourself in the bustling atmosphere.Finally, you'll head to Jemaa el-Fna Square, a symbol of Marrakesh since its foundation in the eleventh century. Here, you'll witness a rich tapestry of Moroccan cultural traditions expressed through music, religion, and art. To top off your day, taste an authentic lunch at a local restaurant.</p></div>",
+            "geoCode": {
+              "latitude": 31.63196019999999,
+              "longitude": -8.0005651
+            },
+            "price": {
+              "amount": "82.0",
+              "currencyCode": "EUR"
+            },
+            "pictures": [
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzMwODI2OWY1LTdjMTMtNDQzYi1iN2ZhLTI2MDFjZjJjZGNjMSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzg5ODY3OWViLTYyYWMtNDM0Ny04ZDhmLTY4ZGVmYWY0ZDI2MiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzA1ODZhMGNmLTAxZjEtNDcxMS1iYjA1LTNhNWM1Mjk4OWFmNiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0=",
+              "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2U4M2QzMzgyLTFjNWItNGM3Mi04Y2Y3LTA4NjYxNjg5NWE1NSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+            ],
+            "bookingLink": "https://amadeus.booking.holibob.tech/product/092119ef-8338-4f7b-b3eb-c2fbe1c99480",
+            "minimumDuration": "8 hours"
+          }
+        ],
+        "dataType": "activities"
       }
     ],
     "createdAt": 1764233548538

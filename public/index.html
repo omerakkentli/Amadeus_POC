@@ -371,6 +371,22 @@
             font-size: 0.9em;
             color: #aaa;
         }
+
+        /* Flight Card Badges */
+        .badge {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            background-color: #444;
+            color: #e0e0e0;
+            margin-right: 4px;
+            margin-bottom: 2px;
+        }
+        .badge.amenity {
+            background-color: #1e3a5f;
+            color: #a0cfff;
+        }
     </style>
 </head>
 <body>
@@ -512,6 +528,8 @@
                                      appendActivityResults(msg.data);
                                  } else if (msg.dataType === 'hotels') {
                                      appendHotelResults(msg.data);
+                                 } else if (msg.dataType === 'offers') {
+                                     appendOfferResults(msg.data);
                                  }
                              }
                         }
@@ -577,6 +595,8 @@
                             appendActivityResults(data.data);
                         } else if (data.dataType === 'hotels') {
                             appendHotelResults(data.data);
+                        } else if (data.dataType === 'offers') {
+                            appendOfferResults(data.data);
                         }
                     }
                 }
@@ -677,26 +697,116 @@
                 const card = document.createElement('div');
                 card.className = 'flight-card';
                 
+                // Basic Itinerary Info
                 const itinerary = flight.itineraries[0];
                 const segments = itinerary.segments;
                 const firstSegment = segments[0];
                 const lastSegment = segments[segments.length - 1];
-                const duration = itinerary.duration.replace('PT', '').toLowerCase();
                 
-                const carrierCode = firstSegment.carrierCode;
+                // Calculate duration nicely
+                const formatDuration = (ptDuration) => {
+                     if (!ptDuration) return '';
+                     return ptDuration.replace('PT', '').toLowerCase();
+                };
+                const duration = formatDuration(itinerary.duration);
+                
+                // Traveler Pricing Info (assuming 1st traveler is representative)
+                const travelerPricing = flight.travelerPricings ? flight.travelerPricings[0] : null;
+                
+                // Price
+                const price = flight.price.total;
+                const currency = flight.price.currency;
+
+                // Build segments HTML
+                let segmentsHtml = '';
+                segments.forEach((segment, index) => {
+                    // Find corresponding fare details
+                    let segmentDetails = null;
+                    if (travelerPricing && travelerPricing.fareDetailsBySegment) {
+                        segmentDetails = travelerPricing.fareDetailsBySegment.find(f => f.segmentId === segment.id);
+                    }
+
+                    const depTime = new Date(segment.departure.at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                    const arrTime = new Date(segment.arrival.at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                    const segDuration = formatDuration(segment.duration);
+
+                    // Extra details
+                    const cabin = segmentDetails ? segmentDetails.cabin : '';
+                    const brandedFare = segmentDetails ? (segmentDetails.brandedFareLabel || segmentDetails.class) : '';
+                    
+                    // Baggage
+                    let baggageText = [];
+                    if (segmentDetails) {
+                        if (segmentDetails.includedCheckedBags) {
+                             if (segmentDetails.includedCheckedBags.weight) baggageText.push(`Checked: ${segmentDetails.includedCheckedBags.weight}${segmentDetails.includedCheckedBags.weightUnit}`);
+                             else if (segmentDetails.includedCheckedBags.quantity) baggageText.push(`Checked: ${segmentDetails.includedCheckedBags.quantity} PC`);
+                        }
+                        if (segmentDetails.includedCabinBags) {
+                             if (segmentDetails.includedCabinBags.quantity) baggageText.push(`Cabin: ${segmentDetails.includedCabinBags.quantity} PC`);
+                        }
+                    }
+                    const baggage = baggageText.join(' • ');
+                    
+                    // Amenities (take non-chargeable ones primarily)
+                    let amenitiesHtml = '';
+                    if (segmentDetails && segmentDetails.amenities) {
+                        const relevantAmenities = segmentDetails.amenities
+                            .filter(a => a.isChargeable === false)
+                            .slice(0, 4); // Limit to 4
+                        
+                        amenitiesHtml = relevantAmenities
+                            .map(a => `<span class="badge amenity">${a.description}</span>`)
+                            .join(' ');
+                    }
+
+                    const aircraft = segment.aircraft ? `Aircraft: ${segment.aircraft.code}` : '';
+                    const operating = segment.operating && segment.operating.carrierCode !== segment.carrierCode ? `Operated by ${segment.operating.carrierCode}` : '';
+
+                    segmentsHtml += `
+                        <div class="segment-detail" style="border-top: ${index > 0 ? '1px solid #444' : 'none'}; padding-top: ${index > 0 ? '12px' : '0'}; margin-top: ${index > 0 ? '12px' : '0'};">
+                            <div class="segment-header" style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.9em; color: #ccc;">
+                                <span class="carrier">✈️ ${segment.carrierCode} ${segment.number} ${operating ? `(${operating})` : ''}</span>
+                                <span class="cabin-class" style="color: #aaa;">${cabin} ${brandedFare ? `• ${brandedFare}` : ''}</span>
+                            </div>
+                            
+                            <div class="segment-route" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                <div class="dep">
+                                    <div class="time" style="font-weight: bold; font-size: 1.2em; color: #fff;">${depTime}</div>
+                                    <div class="code" style="color: #888;">${segment.departure.iataCode}</div>
+                                </div>
+                                <div class="duration" style="font-size: 0.85em; color: #666; text-align: center; min-width: 80px;">
+                                     ${segDuration}<br>
+                                     <span style="color: #444;">--------</span>
+                                </div>
+                                <div class="arr">
+                                    <div class="time" style="font-weight: bold; font-size: 1.2em; color: #fff;">${arrTime}</div>
+                                    <div class="code" style="color: #888;">${segment.arrival.iataCode}</div>
+                                </div>
+                            </div>
+
+                             <div class="segment-extras" style="font-size: 0.8em; color: #bbb; line-height: 1.5;">
+                                ${baggage ? `<div style="margin-bottom:4px;">🧳 ${baggage}</div>` : ''}
+                                ${aircraft ? `<div style="margin-bottom:4px; color: #888;">${aircraft}</div>` : ''}
+                                <div style="margin-top: 4px;">${amenitiesHtml}</div>
+                            </div>
+                        </div>
+                    `;
+                });
                 
                 card.innerHTML = `
-                    <h4>
-                        <span>${firstSegment.departure.iataCode} ➝ ${lastSegment.arrival.iataCode}</span>
-                        <span class="price-tag">${flight.price.total} ${flight.price.currency}</span>
-                    </h4>
-                    <div class="flight-segments">
-                        <div class="segment">
-                            <span class="carrier">${carrierCode}</span> | 
-                            Departure: ${new Date(firstSegment.departure.at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})} |
-                            Duration: ${duration} |
-                            ${segments.length > 1 ? (segments.length - 1) + ' stop(s)' : 'Direct'}
+                    <div class="flight-card-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; border-bottom: 1px solid #444; padding-bottom: 10px;">
+                        <div class="route-summary">
+                            <h4 style="margin: 0; color: #F668F2; font-size: 1.1em;">${firstSegment.departure.iataCode} ➝ ${lastSegment.arrival.iataCode}</h4>
+                            <div style="font-size: 0.85em; color: #aaa; margin-top: 4px;">
+                                ${new Date(firstSegment.departure.at).toLocaleDateString()} • ${segments.length > 1 ? (segments.length - 1) + ' Stop(s)' : 'Direct'} • ${duration}
                         </div>
+                        </div>
+                        <div class="price-summary" style="text-align: right;">
+                            <div class="price-tag" style="color: #28a745; font-size: 1.4em; font-weight: bold;">${price} <span style="font-size:0.6em;">${currency}</span></div>
+                        </div>
+                    </div>
+                    <div class="flight-segments-container">
+                        ${segmentsHtml}
                     </div>
                 `;
                 container.appendChild(card);
@@ -707,6 +817,7 @@
         }
 
         function appendActivityResults(activities) {
+            console.log('Activities Data:', activities);
             const container = document.createElement('div');
             container.className = 'message bot';
             container.style.backgroundColor = 'transparent';
@@ -719,18 +830,40 @@
                 
                 const price = activity.price ? `${activity.price.amount} ${activity.price.currencyCode}` : '';
                 const rating = activity.rating ? `⭐ ${activity.rating}` : '';
+                const image = activity.pictures && activity.pictures.length > 0 ? activity.pictures[0] : null;
+                const duration = activity.minimumDuration ? `🕒 ${activity.minimumDuration}` : '';
+                
+                let imageHtml = '';
+                if (image) {
+                    imageHtml = `<img src="${image}" alt="${activity.name}" class="activity-image">`;
+                }
                 
                 card.innerHTML = `
+                    ${imageHtml}
+                    <div style="padding: 0 5px;">
                     <h4>${activity.name}</h4>
                     <div class="activity-meta">
                         ${rating ? `<span class="activity-rating">${rating}</span>` : ''}
                         ${price ? `<span class="activity-price">${price}</span>` : ''}
+                            ${duration ? `<span style="margin-left: 10px; color: #aaa;">${duration}</span>` : ''}
                     </div>
-                    <div style="font-size: 0.9em; color: #444;">${activity.shortDescription || 'No description available.'}</div>
-                    <div style="margin-top: 8px; font-size: 0.8em; color: #888;">
-                        <a href="${activity.bookingLink || '#'}" target="_blank" style="color: #005eb8; text-decoration: none;">
-                            ${activity.bookingLink ? 'Book Now ↗' : ''}
-                        </a>
+                        <div style="font-size: 0.9em; color: #bbb; margin-bottom: 10px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                            ${activity.shortDescription || 'No description available.'}
+                        </div>
+                        <div style="margin-top: 8px; text-align: right;">
+                            ${activity.bookingLink ? `
+                                <a href="${activity.bookingLink}" target="_blank" style="
+                                    display: inline-block;
+                                    background-color: #172AAF;
+                                    color: white;
+                                    padding: 6px 12px;
+                                    border-radius: 4px;
+                                    text-decoration: none;
+                                    font-size: 0.9em;
+                                    font-weight: 500;
+                                ">Book Now ↗</a>
+                            ` : ''}
+                        </div>
                     </div>
                 `;
                 container.appendChild(card);
@@ -741,6 +874,7 @@
         }
 
         function appendHotelResults(hotels) {
+            console.log('Hotels Data:', hotels);
             const container = document.createElement('div');
             container.className = 'message bot';
             container.style.backgroundColor = 'transparent';
@@ -768,7 +902,6 @@
 
                 // Initialize Map
                 setTimeout(() => {
-                    // Default view - will be overridden by fitBounds
                     const map = L.map(mapId).setView([0, 0], 2);
 
                     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -790,22 +923,32 @@
                         map.fitBounds(bounds, { padding: [20, 20] });
                     }
                     
-                    // Invalidate size to ensure proper rendering
                     map.invalidateSize();
                 }, 100);
             }
 
-            // Limit to 5 hotels for display to avoid spamming
+            // Limit to 5 hotels for display
             hotels.slice(0, 5).forEach(hotel => {
                 const card = document.createElement('div');
                 card.className = 'hotel-card';
                 
+                const address = hotel.address ? 
+                    [hotel.address.lines ? hotel.address.lines.join(', ') : '', hotel.address.cityName, hotel.address.countryCode]
+                    .filter(Boolean).join(', ') 
+                    : 'Address not available';
+                
                 card.innerHTML = `
-                    <h4>${hotel.name}</h4>
-                    <div class="hotel-info">ID: ${hotel.hotelId} | Chain: ${hotel.chainCode}</div>
-                    <div class="hotel-info">
-                        Latitude: ${hotel.geoCode ? hotel.geoCode.latitude : 'N/A'}, 
-                        Longitude: ${hotel.geoCode ? hotel.geoCode.longitude : 'N/A'}
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <h4 style="font-size: 1.1em; color: #F668F2; margin: 0 0 5px 0;">${hotel.name}</h4>
+                        <span style="font-size: 0.8em; background: #333; padding: 2px 6px; border-radius: 4px; color: #aaa;">${hotel.chainCode || 'Hotel'}</span>
+                    </div>
+                    <div class="hotel-info" style="margin-bottom: 5px;">
+                        📍 ${address}
+                    </div>
+                    <div class="hotel-info" style="font-size: 0.85em; color: #888;">
+                        ID: ${hotel.hotelId} | 
+                        Lat: ${hotel.geoCode ? parseFloat(hotel.geoCode.latitude).toFixed(4) : 'N/A'}, 
+                        Lon: ${hotel.geoCode ? parseFloat(hotel.geoCode.longitude).toFixed(4) : 'N/A'}
                     </div>
                 `;
                 container.appendChild(card);
@@ -819,6 +962,60 @@
                  moreDiv.textContent = `...and ${hotels.length - 5} more hotels.`;
                  container.appendChild(moreDiv);
              }
+
+            chatHistory.appendChild(container);
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+        }
+
+        function appendOfferResults(offersData) {
+            console.log('Offers Data:', offersData);
+            const container = document.createElement('div');
+            container.className = 'message bot';
+            container.style.backgroundColor = 'transparent';
+            container.style.padding = '0';
+            container.style.width = '100%';
+
+            if (!offersData || offersData.length === 0) {
+                container.innerHTML = '<div class="message bot">No offers found.</div>';
+                chatHistory.appendChild(container);
+                return;
+            }
+
+            offersData.forEach(item => {
+                // Structure: { type: 'hotel-offers', hotel: {...}, offers: [...] }
+                const hotel = item.hotel;
+                const offers = item.offers || [];
+
+                offers.forEach(offer => {
+                    const card = document.createElement('div');
+                    card.className = 'hotel-card';
+                    card.style.borderLeft = '4px solid #28a745'; // Green accent for offers
+
+                    const price = offer.price ? `${offer.price.total} ${offer.price.currency}` : 'N/A';
+                    const room = offer.room;
+                    const roomType = room.typeEstimated ? (room.typeEstimated.category || room.typeEstimated.bedType) : (room.description ? room.description.text : 'Standard Room');
+                    
+                    const checkIn = offer.checkInDate;
+                    const checkOut = offer.checkOutDate;
+
+                    card.innerHTML = `
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <h4 style="margin: 0; color: #F668F2;">${hotel.name}</h4>
+                            <div style="font-weight: bold; color: #28a745; font-size: 1.2em;">${price}</div>
+                        </div>
+                        <div style="font-size: 0.9em; color: #e0e0e0; margin-bottom: 5px;">
+                            🛏️ ${roomType}
+                        </div>
+                        <div style="font-size: 0.85em; color: #aaa; margin-bottom: 8px;">
+                            📅 ${checkIn} ➝ ${checkOut} | 👤 ${offer.guests ? offer.guests.adults + ' Adult(s)' : '1 Adult'}
+                        </div>
+                        <div style="text-align: right;">
+                             <button onclick="alert('Booking simulation: Offer ${offer.id} selected.')" style="padding: 6px 12px; font-size: 0.9em;">Book This Offer</button>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            });
 
             chatHistory.appendChild(container);
             chatHistory.scrollTop = chatHistory.scrollHeight;
