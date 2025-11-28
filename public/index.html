@@ -8,8 +8,12 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #121212;
@@ -23,39 +27,41 @@
             display: flex;
             width: 100%;
             height: 100%;
+            overflow: hidden; /* Prevent body scroll */
         }
 
         /* Sidebar */
         #sidebar {
             width: 260px;
-            background-color: #171717;
-            border-right: 1px solid #333;
+            background-color: #000000;
+            border-right: 1px solid #222;
             display: flex;
             flex-direction: column;
-            padding: 15px;
+            padding: 20px;
             flex-shrink: 0;
         }
 
         #new-chat-btn {
-            background-color: #172AAF;
-            color: white;
+            background-color: #fff;
+            color: #000;
             border: none;
-            border-radius: 6px;
-            padding: 12px;
+            border-radius: 30px;
+            padding: 12px 20px;
             width: 100%;
-            text-align: left;
+            text-align: center;
             cursor: pointer;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
             margin-bottom: 20px;
-            transition: background-color 0.2s;
+            transition: transform 0.1s;
         }
 
         #new-chat-btn:hover {
-            background-color: #122085;
+            background-color: #f0f0f0;
         }
 
         #session-list {
@@ -68,10 +74,10 @@
 
         .session-item {
             padding: 10px 12px;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
             font-size: 14px;
-            color: #ccc;
+            color: #888;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -80,11 +86,12 @@
         }
 
         .session-item:hover {
-            background-color: #2a2a2a;
+            background-color: #1a1a1a;
+            color: #fff;
         }
 
         .session-item.active {
-            background-color: #333;
+            background-color: #1a1a1a;
             color: #fff;
         }
 
@@ -93,99 +100,87 @@
             flex-grow: 1;
             display: flex;
             flex-direction: column;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 0;
             width: 100%;
-            box-sizing: border-box;
+            background-color: #121212;
+            position: relative;
         }
 
         .container {
-            background-color: #1e1e1e;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            background-color: transparent;
+            padding: 40px 20px; /* More balanced padding */
+            box-shadow: none;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            border: 1px solid #333;
+            border: none;
             height: 100%;
+            max-width: 900px; /* match standard readable width */
+            margin: 0 auto;
+            width: 100%;
         }
 
         h1 {
             color: #ffffff;
             text-align: center;
-            margin-bottom: 20px;
-            margin-top: 0;
-            font-weight: 500;
-            letter-spacing: 0.5px;
+            margin-bottom: 30px;
+            margin-top: 20px; /* Reduced top margin, container padding handles spacing */
+            font-weight: 700;
+            font-size: 42px;
+            letter-spacing: -0.5px;
+            display: inline-block;
+            align-self: center;
         }
         
         /* Chat Interface */
         #chat-history {
             flex-grow: 1;
             overflow-y: auto;
-            border: 1px solid #333;
-            border-radius: 4px;
-            padding: 15px;
-            margin-bottom: 15px;
-            background-color: #121212;
+            border: none;
+            padding: 10px 0; /* Add some vertical padding */
+            margin-bottom: 20px;
+            background-color: transparent;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 20px;
+            /* Hide scrollbar but allow scroll */
+            scrollbar-width: none; 
+            -ms-overflow-style: none;
+        }
+        
+        #chat-history::-webkit-scrollbar {
+            display: none;
         }
 
         .message {
-            max-width: 80%;
-            padding: 10px 15px;
-            border-radius: 18px;
-            line-height: 1.4;
-            font-size: 15px;
-        }
-
-        .message p {
-            margin: 0 0 10px 0;
-        }
-        
-        .message p:last-child {
-            margin-bottom: 0;
-        }
-
-        .message ul, .message ol {
-            margin: 0 0 10px 0;
-            padding-left: 20px;
-        }
-
-        .message li {
-            margin-bottom: 5px;
-        }
-
-        .message strong {
-            font-weight: 600;
-            color: #fff;
+            max-width: 100%;
+            padding: 0;
+            line-height: 1.6;
+            font-size: 16px;
+            color: #ccc;
         }
 
         .message.user {
             align-self: flex-end;
-            background-color: #172AAF; /* Brand Blue */
+            background-color: #2d2d2d;
             color: white;
+            padding: 12px 20px;
+            border-radius: 20px;
             border-bottom-right-radius: 4px;
-        }
-
-        .message.user p {
-             margin: 0;
+            max-width: 80%;
+            margin-left: auto;
         }
 
         .message.bot {
             align-self: flex-start;
-            background-color: #2d2d2d;
+            background-color: transparent;
             color: #e0e0e0;
-            border-bottom-left-radius: 4px;
-            border: 1px solid #333;
+            border: none;
+            width: 100%;
         }
 
-        /* Markdown Table Styles */
+        /* ... Markdown Table Styles ... */
         .message table {
             width: 100%;
             border-collapse: collapse;
@@ -231,36 +226,44 @@
         .chat-input-area {
             display: flex;
             gap: 10px;
+            background-color: #2d2d2d;
+            padding: 10px;
+            border-radius: 30px;
+            border: 1px solid #444;
+            width: 100%;
+            max-width: 100%; /* Fill the container width */
+            margin-bottom: 10px; /* spacing from bottom edge */
         }
 
         input[type="text"] {
             flex-grow: 1;
-            padding: 12px;
-            border: 1px solid #444;
+            padding: 12px 20px;
+            border: none;
             border-radius: 24px;
             font-size: 16px;
             outline: none;
-            background-color: #2d2d2d;
+            background-color: transparent;
             color: white;
         }
 
         input[type="text"]:focus {
-            border-color: #172AAF;
+            border-color: transparent;
         }
 
         button {
             padding: 10px 25px;
-            background-color: #172AAF; /* Brand Blue */
-            color: white;
+            background-color: #fff; /* White button */
+            color: #000;
             border: none;
             border-radius: 24px;
             cursor: pointer;
             font-size: 16px;
             font-weight: bold;
+            transition: background-color 0.2s;
         }
 
         button:hover {
-            background-color: #122085;
+            background-color: #ddd;
         }
         
         button:disabled {
@@ -268,60 +271,161 @@
             color: #888;
         }
 
+        /* Typewriter Effect */
+        .typewriter h1 {
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid #F668F2; /* The typwriter cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+            letter-spacing: .05em; /* Adjust as needed */
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-caret .75s step-end infinite;
+            max-width: fit-content;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #F668F2; }
+        }
+
         /* Flight Cards in Chat */
         .flight-card {
-            background: #2d2d2d;
-            border: 1px solid #444;
-            border-radius: 8px;
-            padding: 15px;
-            margin-top: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            background: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
         }
-        .flight-card h4 {
-            margin: 0 0 10px 0;
-            color: #F668F2; /* Pink highlight */
+        .flight-card:hover {
+            transform: translateY(-2px);
+            border-color: #555;
+        }
+        .flight-header {
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
         }
-        .flight-segments {
-            margin-bottom: 10px;
+        .flight-route {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #fff;
         }
-        .segment {
+        .flight-meta {
+            color: #888;
+            font-size: 0.9em;
+            margin-top: 4px;
+        }
+        .flight-price {
+            text-align: right;
+        }
+        .flight-price .amount {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #fff;
+        }
+        .flight-price .currency {
+            font-size: 0.8em;
+            color: #888;
+            font-weight: normal;
+        }
+        
+        .segment-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            gap: 15px;
+        }
+        .segment-row:last-child {
+            margin-bottom: 0;
+        }
+        .carrier-logo {
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #000;
+            font-weight: bold;
+        }
+        .segment-times {
+            display: flex;
+            flex-direction: column;
+            min-width: 80px;
+        }
+        .time-main {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        .time-sub {
+            color: #666;
+            font-size: 0.85em;
+        }
+        .segment-path {
+            flex-grow: 1;
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 0.9em;
-            margin-bottom: 5px;
-            color: #ccc;
         }
-        .price-tag {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: #28a745;
+        .path-line {
+            flex-grow: 1;
+            height: 1px;
+            background-color: #444;
+            position: relative;
         }
-        .carrier {
-            font-weight: bold;
-            color: #aaa;
+        .path-line::after {
+            content: '✈';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #666;
+            font-size: 12px;
+        }
+        .segment-duration {
+            font-size: 0.85em;
+            color: #888;
+            white-space: nowrap;
         }
 
         /* Activity Cards */
         .activity-card {
-            background: #2d2d2d;
-            border: 1px solid #444;
-            border-radius: 8px;
-            padding: 15px;
-            margin-top: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            background: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 0;
+            margin-top: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .activity-card:hover {
+            transform: translateY(-2px);
+        }
+        .activity-content {
+            padding: 15px;
         }
         .activity-image {
             width: 100%;
-            height: 150px;
+            height: 180px;
             object-fit: cover;
-            border-radius: 4px;
-            background-color: #333;
+            background-color: #2d2d2d;
         }
         .activity-card h4 {
             margin: 0 0 5px 0;
@@ -346,30 +450,82 @@
 
         /* Hotel Cards */
         .hotel-card {
-            background: #2d2d2d;
-            border: 1px solid #444;
-            border-radius: 8px;
-            padding: 15px;
-            margin-top: 10px;
+            background: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 0;
+            margin-top: 15px;
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        .hotel-card:hover {
+            transform: translateY(-2px);
+        }
+        .hotel-image-container {
+            width: 100%;
+            height: 160px;
+            background-color: #2d2d2d;
+            position: relative;
         }
         .hotel-image {
             width: 100%;
-            height: 150px;
+            height: 100%;
             object-fit: cover;
-            border-radius: 4px;
-            background-color: #333;
-            margin-bottom: 10px;
         }
-        .hotel-card h4 {
+        .hotel-content {
+            padding: 15px;
+        }
+        .hotel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+        .hotel-name {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #fff;
             margin: 0;
-            color: #F668F2; /* Pink */
         }
-        .hotel-info {
+        .hotel-rating {
+            color: #f39c12;
             font-size: 0.9em;
-            color: #aaa;
+        }
+        .hotel-address {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .hotel-footer {
+            border-top: 1px solid #333;
+            padding-top: 10px;
+            margin-top: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85em;
+            color: #666;
+        }
+        
+        /* Offer Specifics */
+        .offer-price {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #28a745;
+        }
+        .offer-details {
+            background-color: #262626;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #ccc;
         }
 
         /* Flight Card Badges */
@@ -402,7 +558,9 @@
         
         <main class="main-content">
             <div class="container">
-                <h1>TravelMate</h1>
+                <div class="typewriter">
+                    <h1>What's your trip plan?</h1>
+                </div>
                 
                 <div id="chat-history">
                     <!-- Messages will appear here -->
@@ -703,109 +861,59 @@
                 const firstSegment = segments[0];
                 const lastSegment = segments[segments.length - 1];
                 
-                // Calculate duration nicely
+                // Format Duration
                 const formatDuration = (ptDuration) => {
                      if (!ptDuration) return '';
                      return ptDuration.replace('PT', '').toLowerCase();
                 };
                 const duration = formatDuration(itinerary.duration);
                 
-                // Traveler Pricing Info (assuming 1st traveler is representative)
-                const travelerPricing = flight.travelerPricings ? flight.travelerPricings[0] : null;
-                
                 // Price
                 const price = flight.price.total;
                 const currency = flight.price.currency;
 
-                // Build segments HTML
+                // Build segments HTML (Compact view)
                 let segmentsHtml = '';
                 segments.forEach((segment, index) => {
-                    // Find corresponding fare details
-                    let segmentDetails = null;
-                    if (travelerPricing && travelerPricing.fareDetailsBySegment) {
-                        segmentDetails = travelerPricing.fareDetailsBySegment.find(f => f.segmentId === segment.id);
-                    }
-
                     const depTime = new Date(segment.departure.at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
                     const arrTime = new Date(segment.arrival.at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-                    const segDuration = formatDuration(segment.duration);
-
-                    // Extra details
-                    const cabin = segmentDetails ? segmentDetails.cabin : '';
-                    const brandedFare = segmentDetails ? (segmentDetails.brandedFareLabel || segmentDetails.class) : '';
                     
-                    // Baggage
-                    let baggageText = [];
-                    if (segmentDetails) {
-                        if (segmentDetails.includedCheckedBags) {
-                             if (segmentDetails.includedCheckedBags.weight) baggageText.push(`Checked: ${segmentDetails.includedCheckedBags.weight}${segmentDetails.includedCheckedBags.weightUnit}`);
-                             else if (segmentDetails.includedCheckedBags.quantity) baggageText.push(`Checked: ${segmentDetails.includedCheckedBags.quantity} PC`);
-                        }
-                        if (segmentDetails.includedCabinBags) {
-                             if (segmentDetails.includedCabinBags.quantity) baggageText.push(`Cabin: ${segmentDetails.includedCabinBags.quantity} PC`);
-                        }
-                    }
-                    const baggage = baggageText.join(' • ');
-                    
-                    // Amenities (take non-chargeable ones primarily)
-                    let amenitiesHtml = '';
-                    if (segmentDetails && segmentDetails.amenities) {
-                        const relevantAmenities = segmentDetails.amenities
-                            .filter(a => a.isChargeable === false)
-                            .slice(0, 4); // Limit to 4
-                        
-                        amenitiesHtml = relevantAmenities
-                            .map(a => `<span class="badge amenity">${a.description}</span>`)
-                            .join(' ');
-                    }
-
-                    const aircraft = segment.aircraft ? `Aircraft: ${segment.aircraft.code}` : '';
-                    const operating = segment.operating && segment.operating.carrierCode !== segment.carrierCode ? `Operated by ${segment.operating.carrierCode}` : '';
-
                     segmentsHtml += `
-                        <div class="segment-detail" style="border-top: ${index > 0 ? '1px solid #444' : 'none'}; padding-top: ${index > 0 ? '12px' : '0'}; margin-top: ${index > 0 ? '12px' : '0'};">
-                            <div class="segment-header" style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.9em; color: #ccc;">
-                                <span class="carrier">✈️ ${segment.carrierCode} ${segment.number} ${operating ? `(${operating})` : ''}</span>
-                                <span class="cabin-class" style="color: #aaa;">${cabin} ${brandedFare ? `• ${brandedFare}` : ''}</span>
+                        <div class="segment-row">
+                            <div class="carrier-logo">${segment.carrierCode}</div>
+                            <div class="segment-times">
+                                <div class="time-main">${depTime}</div>
+                                <div class="time-sub">${segment.departure.iataCode}</div>
                             </div>
-                            
-                            <div class="segment-route" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                                <div class="dep">
-                                    <div class="time" style="font-weight: bold; font-size: 1.2em; color: #fff;">${depTime}</div>
-                                    <div class="code" style="color: #888;">${segment.departure.iataCode}</div>
-                                </div>
-                                <div class="duration" style="font-size: 0.85em; color: #666; text-align: center; min-width: 80px;">
-                                     ${segDuration}<br>
-                                     <span style="color: #444;">--------</span>
-                                </div>
-                                <div class="arr">
-                                    <div class="time" style="font-weight: bold; font-size: 1.2em; color: #fff;">${arrTime}</div>
-                                    <div class="code" style="color: #888;">${segment.arrival.iataCode}</div>
-                                </div>
+                            <div class="segment-path">
+                                <div class="path-line"></div>
                             </div>
-
-                             <div class="segment-extras" style="font-size: 0.8em; color: #bbb; line-height: 1.5;">
-                                ${baggage ? `<div style="margin-bottom:4px;">🧳 ${baggage}</div>` : ''}
-                                ${aircraft ? `<div style="margin-bottom:4px; color: #888;">${aircraft}</div>` : ''}
-                                <div style="margin-top: 4px;">${amenitiesHtml}</div>
+                            <div class="segment-times" style="text-align: right;">
+                                <div class="time-main">${arrTime}</div>
+                                <div class="time-sub">${segment.arrival.iataCode}</div>
                             </div>
                         </div>
                     `;
                 });
                 
+                // Date
+                const depDate = new Date(firstSegment.departure.at).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+                
+                // Stops text
+                const stopsText = segments.length > 1 ? `${segments.length - 1} Stop(s)` : 'Direct';
+
                 card.innerHTML = `
-                    <div class="flight-card-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; border-bottom: 1px solid #444; padding-bottom: 10px;">
-                        <div class="route-summary">
-                            <h4 style="margin: 0; color: #F668F2; font-size: 1.1em;">${firstSegment.departure.iataCode} ➝ ${lastSegment.arrival.iataCode}</h4>
-                            <div style="font-size: 0.85em; color: #aaa; margin-top: 4px;">
-                                ${new Date(firstSegment.departure.at).toLocaleDateString()} • ${segments.length > 1 ? (segments.length - 1) + ' Stop(s)' : 'Direct'} • ${duration}
+                    <div class="flight-header">
+                        <div class="route-info">
+                            <div class="flight-route">${firstSegment.departure.iataCode} <span style="color:#666">➝</span> ${lastSegment.arrival.iataCode}</div>
+                            <div class="flight-meta">${depDate} • ${stopsText} • ${duration}</div>
                         </div>
-                        </div>
-                        <div class="price-summary" style="text-align: right;">
-                            <div class="price-tag" style="color: #28a745; font-size: 1.4em; font-weight: bold;">${price} <span style="font-size:0.6em;">${currency}</span></div>
+                        <div class="flight-price">
+                            <div class="amount">${price}</div>
+                            <div class="currency">${currency}</div>
                         </div>
                     </div>
-                    <div class="flight-segments-container">
+                    <div class="flight-body">
                         ${segmentsHtml}
                     </div>
                 `;
@@ -836,31 +944,34 @@
                 let imageHtml = '';
                 if (image) {
                     imageHtml = `<img src="${image}" alt="${activity.name}" class="activity-image">`;
+                } else {
+                     imageHtml = `<div style="height: 180px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 40px;">🎭</div>`;
                 }
                 
                 card.innerHTML = `
                     ${imageHtml}
-                    <div style="padding: 0 5px;">
-                    <h4>${activity.name}</h4>
-                    <div class="activity-meta">
-                        ${rating ? `<span class="activity-rating">${rating}</span>` : ''}
-                        ${price ? `<span class="activity-price">${price}</span>` : ''}
-                            ${duration ? `<span style="margin-left: 10px; color: #aaa;">${duration}</span>` : ''}
-                    </div>
-                        <div style="font-size: 0.9em; color: #bbb; margin-bottom: 10px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                    <div class="activity-content">
+                        <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 1.1em;">${activity.name}</h4>
+                        <div class="activity-meta" style="display: flex; gap: 15px; margin-bottom: 10px; font-size: 0.9em; color: #aaa;">
+                            ${rating ? `<span class="activity-rating">${rating}</span>` : ''}
+                            ${price ? `<span class="activity-price" style="color: #28a745; font-weight: bold;">${price}</span>` : ''}
+                            ${duration ? `<span>${duration}</span>` : ''}
+                        </div>
+                        <div style="font-size: 0.9em; color: #bbb; margin-bottom: 15px; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
                             ${activity.shortDescription || 'No description available.'}
                         </div>
-                        <div style="margin-top: 8px; text-align: right;">
+                        <div style="text-align: right;">
                             ${activity.bookingLink ? `
                                 <a href="${activity.bookingLink}" target="_blank" style="
                                     display: inline-block;
-                                    background-color: #172AAF;
-                                    color: white;
-                                    padding: 6px 12px;
-                                    border-radius: 4px;
+                                    background-color: #fff;
+                                    color: #000;
+                                    padding: 8px 20px;
+                                    border-radius: 20px;
                                     text-decoration: none;
                                     font-size: 0.9em;
-                                    font-weight: 500;
+                                    font-weight: 600;
+                                    transition: background-color 0.2s;
                                 ">Book Now ↗</a>
                             ` : ''}
                         </div>
@@ -895,8 +1006,9 @@
                 mapContainer.id = mapId;
                 mapContainer.style.height = '300px';
                 mapContainer.style.width = '100%';
-                mapContainer.style.borderRadius = '8px';
-                mapContainer.style.marginBottom = '10px';
+                mapContainer.style.borderRadius = '12px';
+                mapContainer.style.marginBottom = '20px';
+                mapContainer.style.border = '1px solid #333';
                 mapContainer.style.zIndex = '1';
                 container.appendChild(mapContainer);
 
@@ -936,19 +1048,28 @@
                     [hotel.address.lines ? hotel.address.lines.join(', ') : '', hotel.address.cityName, hotel.address.countryCode]
                     .filter(Boolean).join(', ') 
                     : 'Address not available';
+
+                // Placeholder image logic (using a gradient or generic travel image if possible, here using a gradient div)
+                const imageHtml = `
+                    <div class="hotel-image-container" style="background: linear-gradient(45deg, #2c3e50, #3498db); display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 30px;">🏨</span>
+                    </div>
+                `;
                 
                 card.innerHTML = `
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                        <h4 style="font-size: 1.1em; color: #F668F2; margin: 0 0 5px 0;">${hotel.name}</h4>
-                        <span style="font-size: 0.8em; background: #333; padding: 2px 6px; border-radius: 4px; color: #aaa;">${hotel.chainCode || 'Hotel'}</span>
-                    </div>
-                    <div class="hotel-info" style="margin-bottom: 5px;">
-                        📍 ${address}
-                    </div>
-                    <div class="hotel-info" style="font-size: 0.85em; color: #888;">
-                        ID: ${hotel.hotelId} | 
-                        Lat: ${hotel.geoCode ? parseFloat(hotel.geoCode.latitude).toFixed(4) : 'N/A'}, 
-                        Lon: ${hotel.geoCode ? parseFloat(hotel.geoCode.longitude).toFixed(4) : 'N/A'}
+                    ${imageHtml}
+                    <div class="hotel-content">
+                        <div class="hotel-header">
+                            <h4 class="hotel-name">${hotel.name}</h4>
+                            <span style="background: #333; padding: 2px 8px; border-radius: 12px; font-size: 0.75em; color: #aaa;">${hotel.chainCode || 'Hotel'}</span>
+                        </div>
+                        <div class="hotel-address">
+                            📍 ${address}
+                        </div>
+                        <div class="hotel-footer">
+                            <span>ID: ${hotel.hotelId}</span>
+                            <span>${hotel.geoCode ? `${parseFloat(hotel.geoCode.latitude).toFixed(4)}, ${parseFloat(hotel.geoCode.longitude).toFixed(4)}` : ''}</span>
+                        </div>
                     </div>
                 `;
                 container.appendChild(card);
@@ -957,8 +1078,9 @@
              if (hotels.length > 5) {
                  const moreDiv = document.createElement('div');
                  moreDiv.style.textAlign = 'center';
-                 moreDiv.style.padding = '10px';
-                 moreDiv.style.color = '#666';
+                 moreDiv.style.padding = '15px';
+                 moreDiv.style.color = '#888';
+                 moreDiv.style.fontSize = '0.9em';
                  moreDiv.textContent = `...and ${hotels.length - 5} more hotels.`;
                  container.appendChild(moreDiv);
              }
@@ -988,29 +1110,38 @@
 
                 offers.forEach(offer => {
                     const card = document.createElement('div');
-                    card.className = 'hotel-card';
-                    card.style.borderLeft = '4px solid #28a745'; // Green accent for offers
+                    card.className = 'hotel-card'; // Reuse hotel card style
+                    // Add green border on left to distinguish
+                    card.style.borderLeft = '5px solid #28a745'; 
 
                     const price = offer.price ? `${offer.price.total} ${offer.price.currency}` : 'N/A';
                     const room = offer.room;
                     const roomType = room.typeEstimated ? (room.typeEstimated.category || room.typeEstimated.bedType) : (room.description ? room.description.text : 'Standard Room');
                     
-                    const checkIn = offer.checkInDate;
-                    const checkOut = offer.checkOutDate;
+                    const checkIn = new Date(offer.checkInDate).toLocaleDateString();
+                    const checkOut = new Date(offer.checkOutDate).toLocaleDateString();
 
                     card.innerHTML = `
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                            <h4 style="margin: 0; color: #F668F2;">${hotel.name}</h4>
-                            <div style="font-weight: bold; color: #28a745; font-size: 1.2em;">${price}</div>
-                        </div>
-                        <div style="font-size: 0.9em; color: #e0e0e0; margin-bottom: 5px;">
-                            🛏️ ${roomType}
-                        </div>
-                        <div style="font-size: 0.85em; color: #aaa; margin-bottom: 8px;">
-                            📅 ${checkIn} ➝ ${checkOut} | 👤 ${offer.guests ? offer.guests.adults + ' Adult(s)' : '1 Adult'}
-                        </div>
-                        <div style="text-align: right;">
-                             <button onclick="alert('Booking simulation: Offer ${offer.id} selected.')" style="padding: 6px 12px; font-size: 0.9em;">Book This Offer</button>
+                        <div class="hotel-content">
+                            <div class="hotel-header">
+                                <h4 class="hotel-name">${hotel.name}</h4>
+                            </div>
+                            <div style="margin-bottom: 15px;">
+                                <div class="offer-price">${price}</div>
+                                <div style="font-size: 0.9em; color: #888;">Total Price</div>
+                            </div>
+                            
+                            <div class="offer-details">
+                                <div style="font-weight: 600; color: #fff; margin-bottom: 5px;">${roomType}</div>
+                                <div style="display: flex; gap: 15px; margin-top: 8px; font-size: 0.9em;">
+                                    <div>📅 ${checkIn} - ${checkOut}</div>
+                                    <div>👤 ${offer.guests ? offer.guests.adults + ' Adult(s)' : '1 Adult'}</div>
+                                </div>
+                            </div>
+
+                            <div style="text-align: right; margin-top: 15px;">
+                                 <button onclick="alert('Booking simulation: Offer ${offer.id} selected.')" style="padding: 8px 20px; font-size: 0.9em; background-color: #28a745; color: white;">Select Offer</button>
+                            </div>
                         </div>
                     `;
                     container.appendChild(card);
