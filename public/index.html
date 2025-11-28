@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gengage travelmate</title>
+    <title>TravelMate</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -39,6 +39,18 @@
             flex-direction: column;
             padding: 20px;
             flex-shrink: 0;
+            height: 100%; /* Ensure full height */
+            overflow: hidden; /* Prevent sidebar itself from scrolling */
+        }
+
+        .logo-container {
+            margin-bottom: 25px;
+            padding-left: 5px;
+        }
+
+        .logo-container img {
+            height: 24px; /* Adjust based on svg aspect ratio */
+            display: block;
         }
 
         #new-chat-btn {
@@ -58,6 +70,7 @@
             font-weight: 600;
             margin-bottom: 20px;
             transition: transform 0.1s;
+            flex-shrink: 0; /* Don't shrink */
         }
 
         #new-chat-btn:hover {
@@ -70,6 +83,22 @@
             display: flex;
             flex-direction: column;
             gap: 5px;
+            min-height: 0; /* Critical for flex scrolling */
+            padding-bottom: 20px;
+            /* Custom scrollbar for sidebar */
+            scrollbar-width: thin;
+            scrollbar-color: #333 transparent;
+        }
+
+        #session-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        #session-list::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        #session-list::-webkit-scrollbar-thumb {
+            background-color: #333;
+            border-radius: 3px;
         }
 
         .session-item {
@@ -83,6 +112,8 @@
             text-overflow: ellipsis;
             transition: background-color 0.2s;
             text-decoration: none;
+            flex-shrink: 0; /* Prevent squashing */
+            display: block; /* Ensure block formatting */
         }
 
         .session-item:hover {
@@ -108,7 +139,7 @@
 
         .container {
             background-color: transparent;
-            padding: 40px 20px; /* More balanced padding */
+            padding: 40px 20px;
             box-shadow: none;
             flex-grow: 1;
             display: flex;
@@ -116,21 +147,45 @@
             overflow: hidden;
             border: none;
             height: 100%;
-            max-width: 900px; /* match standard readable width */
+            max-width: 900px;
             margin: 0 auto;
             width: 100%;
+            transition: all 0.5s ease; /* Smooth transition for layout changes */
+        }
+
+        /* Initial Centered State */
+        .container.initial-state {
+            justify-content: center;
+        }
+
+        .container.initial-state #chat-history {
+            flex-grow: 0 !important;
+            height: 0;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .container.initial-state h1 {
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+        
+        .container.initial-state .chat-input-area {
+            /* No special styles needed if flex-grow is 0 on history */
         }
 
         h1 {
             color: #ffffff;
             text-align: center;
             margin-bottom: 30px;
-            margin-top: 20px; /* Reduced top margin, container padding handles spacing */
+            margin-top: 20px; 
             font-weight: 700;
             font-size: 42px;
             letter-spacing: -0.5px;
             display: inline-block;
             align-self: center;
+            transition: margin 0.5s ease;
         }
         
         /* Chat Interface */
@@ -543,11 +598,30 @@
             background-color: #1e3a5f;
             color: #a0cfff;
         }
+        
+        .logo-container {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 12px; /* Matching existing radii */
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
     </style>
 </head>
 <body>
     <div class="app-layout">
         <aside id="sidebar">
+            <div class="logo-container">
+                <img src="gengage.svg" alt="Gengage">
+            </div>
             <button id="new-chat-btn" onclick="createNewSession()">
                 <span>+</span> New Chat
             </button>
@@ -632,6 +706,9 @@
                 
                 chatHistory.innerHTML = '';
                 
+                // Reset to initial state layout
+                document.querySelector('.container').classList.add('initial-state');
+
                 // Add welcome message
                 appendMessage('Hello! I can help you find flights, hotels, and activities. Where would you like to go?', 'bot');
                 
@@ -668,9 +745,13 @@
                 // We re-render list to make it easy
                 await loadSessions();
 
+                // Manage Layout State based on content
+                const container = document.querySelector('.container');
                 if (session.messages.length === 0) {
+                     container.classList.add('initial-state');
                      appendMessage('Hello! I can help you find flights, hotels, and activities. Where would you like to go?', 'bot');
                 } else {
+                    container.classList.remove('initial-state');
                     // Replay messages
                     session.messages.forEach(msg => {
                         if (msg.role === 'user') {
@@ -707,6 +788,9 @@
         async function sendMessage() {
             const text = messageInput.value.trim();
             if (!text) return;
+            
+            // Remove initial state class on first interaction
+            document.querySelector('.container').classList.remove('initial-state');
 
             // Add user message locally
             appendMessage(text, 'user');
@@ -811,7 +895,21 @@
 
             if (isLoading) div.id = 'loading-' + Date.now();
             chatHistory.appendChild(div);
-            chatHistory.scrollTop = chatHistory.scrollHeight;
+            
+            // Smart Scroll Logic
+            if (sender === 'user') {
+                 // User message: Scroll to bottom to show it
+                 chatHistory.scrollTop = chatHistory.scrollHeight;
+            } else {
+                 // Bot message: Scroll to the start of the message, so user sees top
+                 // Use a small timeout to ensure layout is done
+                 setTimeout(() => {
+                    // Only scroll if it's not visible or if we are at the very bottom?
+                    // Actually simpler: scroll the new message into view at the top
+                    div.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                 }, 50);
+            }
+            
             return div.id;
         }
 
@@ -921,7 +1019,10 @@
             });
 
             chatHistory.appendChild(container);
-            chatHistory.scrollTop = chatHistory.scrollHeight;
+            // Smart scroll for cards
+            setTimeout(() => {
+                 container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 50);
         }
 
         function appendActivityResults(activities) {
@@ -981,7 +1082,10 @@
             });
 
             chatHistory.appendChild(container);
-            chatHistory.scrollTop = chatHistory.scrollHeight;
+            // Smart scroll for cards
+            setTimeout(() => {
+                 container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 50);
         }
 
         function appendHotelResults(hotels) {
@@ -1086,7 +1190,10 @@
              }
 
             chatHistory.appendChild(container);
-            chatHistory.scrollTop = chatHistory.scrollHeight;
+            // Smart scroll for cards
+            setTimeout(() => {
+                 container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 50);
         }
 
         function appendOfferResults(offersData) {
@@ -1149,7 +1256,10 @@
             });
 
             chatHistory.appendChild(container);
-            chatHistory.scrollTop = chatHistory.scrollHeight;
+            // Smart scroll for cards
+            setTimeout(() => {
+                 container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 50);
         }
     </script>
 </body>

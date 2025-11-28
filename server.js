@@ -315,6 +315,7 @@ app.post('/api/sessions', (req, res) => {
 
 app.get('/api/sessions', (req, res) => {
     const sessionList = Object.values(sessions)
+        .filter(session => session.messages && session.messages.length > 0) // Filter out empty sessions
         .sort((a, b) => b.createdAt - a.createdAt)
         .map(({ id, title, createdAt }) => ({ id, title, createdAt }));
     res.json(sessionList);
