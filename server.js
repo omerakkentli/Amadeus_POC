@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
+const fs = require('fs');
 const path = require('path');
 const { GoogleGenerativeAI, SchemaType } = require('@google/generative-ai');
 const { SecretManagerServiceClient } = require('@google-cloud/secret-manager');
@@ -8,9 +9,38 @@ const { SecretManagerServiceClient } = require('@google-cloud/secret-manager');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// --- Session Persistence ---
+const SESSIONS_FILE = path.join(__dirname, 'sessions.json');
+let sessions = {};
+
+function loadSessions() {
+    if (fs.existsSync(SESSIONS_FILE)) {
+        try {
+            const data = fs.readFileSync(SESSIONS_FILE, 'utf8');
+            sessions = JSON.parse(data);
+            console.log(`Loaded ${Object.keys(sessions).length} sessions from disk.`);
+        } catch (err) {
+            console.error('Error loading sessions:', err);
+            sessions = {};
+        }
+    }
+}
+
+function saveSessions() {
+    try {
+        fs.writeFileSync(SESSIONS_FILE, JSON.stringify(sessions, null, 2), 'utf8');
+    } catch (err) {
+        console.error('Error saving sessions:', err);
+    }
+}
+
+// Load sessions on startup
+loadSessions();
+
 // --- Gemini Configuration ---
 let genAI = null;
 let model = null;
+let summaryModel = null;
 
 // Initialize Gemini with Secret Manager or Env Var
 async function initializeGemini() {
@@ -174,53 +204,129 @@ async function initializeGemini() {
         model: 'gemini-2.0-flash',
         tools: tools,
         systemInstruction: {
-            parts: [{ text: `You are a helpful and friendly travel assistant. 
-            Your goal is to help users plan their trips by finding flights, hotels, and activities.
-            
-            **Capabilities:**
-            - **Flights:** Search for flights using IATA codes.
-            - **Hotels:** Search for hotels by city, check offers, and book them.
-            - **Activities:** Find things to do in a specific location.
-            - **Sentiments:** Check reviews/ratings for hotels.
+            parts: [{ text: `You are a smart, proactive, and efficient travel assistant.
+            Your goal is to help users plan their trips by finding flights, hotels, and activities using the available tools.
 
-            **Guidelines:**
-            - Always ask clarifying questions if the user's request is ambiguous.
-            - If the user asks for a city name for flights, convert it to the appropriate IATA code (e.g., London -> LHR).
-            - For hotel search, start by finding hotels in a city, then check for offers if the user is interested in a specific one.
-            - If the user provides relative dates (e.g., "next Friday"), calculate the YYYY-MM-DD date based on the current date provided in the context.
-            
+            **Capabilities:**
+            - **Flights:** Search for flights.
+            - **Hotels:** Search for hotels by city, check offers.
+            - **Activities:** Find things to do.
+            - **Sentiments:** Check hotel reviews.
+
+            **Key Behaviors:**
+            1.  **Be Proactive & Assuming:** Do NOT constantly ask for every little detail if you can make a reasonable guess or if the user's intent is clear enough to start a search.
+                -   *Example:* If user says "Flights to Paris next weekend", assume they mean from their likely location (if known) or ask for origin *once*. Assume 1 adult unless specified. Calculate the dates yourself.
+                -   *Example:* If finding hotels, don't ask for price range immediately unless results are too broad. Just show the best/popular options.
+            2.  **Lean Context:** You will see summaries of previous search results in the context. Use these to answer follow-up questions without needing to search again, but don't regurgitate the full list.
+            3.  **Efficient Responses:** Keep text responses concise. The UI handles showing the detailed cards.
+
             **Response Formatting:**
-            - Use **Markdown** for general text (bold, lists).
-            - **Data Display:**
-                - If the user asks for lists of flights, hotels, or activities, use the available tools.
-                - The system will automatically render cards for flights, hotels, and activities based on the tool output.
-                - **DO NOT** output raw JSON blocks for these items in your text response. Summarize the top options briefly in text if needed, or just say "Here are the results I found:".
-            - **Comparisons:** When asked to compare options (flights or hotels), **DO NOT** create a Markdown table or a long text list.
-            - Instead, output the comparison data using a special **JSON Code Block** with the language tag \`json-comparison\`.
-            - Structure the JSON like this:
+            - Use **Markdown** for text.
+            - **DO NOT** output raw JSON blocks for data (flights/hotels/etc) in your text response. The system handles the visual cards.
+            - **Comparisons:** If asked to compare, use the \`json-comparison\` block as follows:
               \`\`\`json-comparison
               {
-                "title": "Options Comparison",
-                "columns": ["Name", "Price", "Rating", "Details"],
-                "rows": [
-                  ["Hotel A", "150 EUR", "4.5/5", "Near city center"],
-                  ["Hotel B", "120 EUR", "4.0/5", "Breakfast included"]
-                ],
-                "recommendation": "Hotel A is better located..."
+                "title": "Comparison",
+                "columns": ["Option", "Price", "Score"],
+                "rows": [["A", "$100", "4.5"], ["B", "$90", "4.2"]],
+                "recommendation": "Option A is better because..."
               }
               \`\`\`
-            - Do **not** repeat the table data in your text response. Just provide the JSON block and a brief intro/outro.
-            - Be conversational and maintain context.` }]
+            ` }]
         }
     });
+
+    // Initialize summary model
+    summaryModel = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+}
+
+// Helper to summarize data for context
+function summarizeForContext(type, data) {
+    if (!data) return "";
+    
+    try {
+        if (type === 'flights') {
+            return data.slice(0, 5).map(f => {
+                const it = f.itineraries[0];
+                const seg = it.segments[0];
+                return `${seg.departure.iataCode}->${it.segments[it.segments.length-1].arrival.iataCode} | ${f.price.total} ${f.price.currency} | ${seg.carrierCode}`;
+            }).join('\n') + (data.length > 5 ? `\n...and ${data.length - 5} more` : '');
+        } else if (type === 'hotels') {
+            return data.slice(0, 10).map(h => `${h.name} (ID: ${h.hotelId})`).join('\n') + (data.length > 10 ? `\n...and ${data.length - 10} more` : '');
+        } else if (type === 'activities') {
+            return data.slice(0, 5).map(a => `${a.name} - ${a.price ? a.price.amount + " " + a.price.currencyCode : "N/A"}`).join('\n') + (data.length > 5 ? `\n...and ${data.length - 5} more` : '');
+        } else if (type === 'offers') {
+             // Hotel offers can be complex, just capture price and hotel
+             return data.data.slice(0, 5).map(o => `Hotel ${o.hotel.name}: ${o.offers[0].price.total} ${o.offers[0].price.currency}`).join('\n');
+        }
+    } catch (e) {
+        return "Data available but summarization failed.";
+    }
+    return "Data results available.";
 }
 
 // Call initialization
 initializeGemini();
 
+// Helper to generate ID
+function generateId() {
+    return Date.now().toString(36) + Math.random().toString(36).substr(2);
+}
+
+// Helper to generate title
+async function generateTitle(sessionId) {
+    const session = sessions[sessionId];
+    if (!session || !summaryModel) return;
+    
+    try {
+        // Only use the first few messages to generate a title to avoid long context
+        const historyText = session.messages.slice(0, 4).map(m => `${m.role}: ${m.content}`).join('\n');
+        const prompt = `Summarize the following conversation into a very short, catchy title (max 4-5 words). Do not use quotes or "Title:". conversation:\n${historyText}`;
+        
+        const result = await summaryModel.generateContent(prompt);
+        const title = result.response.text().trim();
+        if (title) {
+            session.title = title;
+            saveSessions();
+            console.log(`Generated title for session ${sessionId}: ${title}`);
+        }
+    } catch (e) {
+        console.error("Title generation failed", e);
+    }
+}
+
 // Serve static files from public directory
 app.use(express.static('public'));
 app.use(express.json());
+
+// --- Session Management Endpoints ---
+
+app.post('/api/sessions', (req, res) => {
+    const id = generateId();
+    sessions[id] = {
+        id,
+        title: 'New Chat',
+        messages: [],
+        createdAt: Date.now()
+    };
+    saveSessions();
+    res.json(sessions[id]);
+});
+
+app.get('/api/sessions', (req, res) => {
+    const sessionList = Object.values(sessions)
+        .filter(session => session.messages && session.messages.length > 0) // Filter out empty sessions
+        .sort((a, b) => b.createdAt - a.createdAt)
+        .map(({ id, title, createdAt }) => ({ id, title, createdAt }));
+    res.json(sessionList);
+});
+
+app.get('/api/sessions/:id', (req, res) => {
+    const session = sessions[req.params.id];
+    if (!session) return res.status(404).json({ error: 'Session not found' });
+    res.json(session);
+});
+
 
 let accessToken = null;
 let tokenExpiry = null;
@@ -298,7 +404,7 @@ const functions = {
                     destinationLocationCode: destination,
                     departureDate: date,
                     adults: 1,
-                    max: 5
+                    max: 15 // Increased from 5 to 15 per user request
                 }
             });
             
@@ -319,7 +425,9 @@ const functions = {
                 params: { cityCode: cityCode }
             });
             console.log(`Found ${response.data.data.length} hotels.`);
-            return response.data;
+            // Limit to top 15 to prevent data bloating
+            const limitedData = response.data.data.slice(0, 15);
+            return { ...response.data, data: limitedData };
         } catch (error) {
             console.error('Amadeus API Error (Hotels):', error.response ? error.response.data : error.message);
             throw new Error('Failed to search hotels.');
@@ -415,7 +523,11 @@ const functions = {
                 headers: { 'Authorization': `Bearer ${token}` },
                 params: { latitude, longitude, radius: 1 }
             });
-            return response.data;
+            // Amadeus response structure is { data: [...] }
+            // Check if response.data.data exists and is an array
+            const activities = response.data.data || [];
+            const limitedData = activities.slice(0, 15);
+            return { data: limitedData };
         } catch (error) {
             console.error('Amadeus API Error (Activities):', error.response ? error.response.data : error.message);
             throw new Error('Failed to fetch activities.');
@@ -425,23 +537,48 @@ const functions = {
 
 // Chat Endpoint using Gemini with Tools
 app.post('/api/chat', async (req, res) => {
-    const { message, history } = req.body;
+    const { message, sessionId } = req.body;
 
     if (!message) {
         return res.status(400).json({ error: 'Message is required' });
+    }
+
+    if (!sessionId) {
+        return res.status(400).json({ error: 'Session ID is required' });
     }
 
     if (!model) {
         return res.status(503).json({ error: 'AI Model not initialized. Check server logs for API Key issues.' });
     }
 
+    let session = sessions[sessionId];
+    if (!session) {
+        // If session doesn't exist (e.g. server restart), recreate it or error out. 
+        // For better UX in dev, we'll recreate.
+        session = { id: sessionId, title: 'Restored Chat', messages: [], createdAt: Date.now() };
+        sessions[sessionId] = session;
+        saveSessions();
+    }
+
     try {
-        // Convert frontend history to Gemini format
-        // Frontend sends: [{ role: 'user'|'model', content: '...' }]
-        const chatHistory = (history || []).map(msg => ({
-            role: msg.role,
-            parts: [{ text: msg.content }]
-        }));
+        // Append user message to session
+        session.messages.push({ role: 'user', content: message });
+        saveSessions();
+
+        // Convert session history to Gemini format
+        const chatHistory = session.messages.slice(0, -1).map(msg => {
+            let textContent = msg.content;
+            // If the message had associated UI data (flights, hotels, etc.), inject a SUMMARY into the context
+            // This keeps the context lean while letting the agent know what was shown.
+            if (msg.data && msg.dataType) {
+                const summary = summarizeForContext(msg.dataType, msg.data);
+                textContent += `\n\n[System Context: User saw these ${msg.dataType} results:\n${summary}]`;
+            }
+            return {
+                role: msg.role,
+                parts: [{ text: textContent }]
+            };
+        });
 
         const chat = model.startChat({
             history: chatHistory
@@ -507,12 +644,28 @@ app.post('/api/chat', async (req, res) => {
 
         // Final text response from model
         const text = response.text();
+        
+        // Append model response to session
+        session.messages.push({ 
+            role: 'model', 
+            content: text,
+            data: uiData,
+            dataType: uiType
+        });
+        saveSessions();
+
+        // Attempt to generate title if needed
+        if ((session.title === 'New Chat' || session.title === 'Restored Chat') && session.messages.length >= 2) {
+             generateTitle(sessionId).catch(console.error);
+        }
 
         res.json({
             type: uiData ? 'results' : 'message',
             content: text,
             data: uiData,
-            dataType: uiType
+            dataType: uiType,
+            sessionId: sessionId,
+            title: session.title
         });
 
     } catch (error) {

@@ -3,120 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amadeus Flight Assistant</title>
+    <title>TravelMate</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+            height: 100vh;
+            display: flex;
+        }
+
+        /* Layout */
+        .app-layout {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Prevent body scroll */
+        }
+
+        /* Sidebar */
+        #sidebar {
+            width: 260px;
+            background-color: #000000;
+            border-right: 1px solid #222;
             display: flex;
             flex-direction: column;
-            height: 90vh;
-        }
-        .container {
-            background-color: white;
             padding: 20px;
+            flex-shrink: 0;
+            height: 100%; /* Ensure full height */
+            overflow: hidden; /* Prevent sidebar itself from scrolling */
+        }
+
+        .logo-container {
+            margin-bottom: 25px;
+            padding-left: 5px;
+        }
+
+        .logo-container img {
+            height: 24px; /* Adjust based on svg aspect ratio */
+            display: block;
+        }
+
+        #new-chat-btn {
+            background-color: #fff;
+            color: #000;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 20px;
+            width: 100%;
+            text-align: center;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: transform 0.1s;
+            flex-shrink: 0; /* Don't shrink */
+        }
+
+        #new-chat-btn:hover {
+            background-color: #f0f0f0;
+        }
+
+        #session-list {
+            flex-grow: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            min-height: 0; /* Critical for flex scrolling */
+            padding-bottom: 20px;
+            /* Custom scrollbar for sidebar */
+            scrollbar-width: thin;
+            scrollbar-color: #333 transparent;
+        }
+
+        #session-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        #session-list::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        #session-list::-webkit-scrollbar-thumb {
+            background-color: #333;
+            border-radius: 3px;
+        }
+
+        .session-item {
+            padding: 10px 12px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            cursor: pointer;
+            font-size: 14px;
+            color: #888;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: background-color 0.2s;
+            text-decoration: none;
+            flex-shrink: 0; /* Prevent squashing */
+            display: block; /* Ensure block formatting */
+        }
+
+        .session-item:hover {
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        .session-item.active {
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            width: 100%;
+            background-color: #121212;
+            position: relative;
+        }
+
+        .container {
+            background-color: transparent;
+            padding: 40px 20px;
+            box-shadow: none;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             overflow: hidden;
+            border: none;
+            height: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+            transition: all 0.5s ease; /* Smooth transition for layout changes */
         }
-        h1 {
-            color: #333;
-            text-align: center;
+
+        /* Initial Centered State */
+        .container.initial-state {
+            justify-content: center;
+        }
+
+        .container.initial-state #chat-history {
+            flex-grow: 0 !important;
+            height: 0;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .container.initial-state h1 {
             margin-bottom: 20px;
             margin-top: 0;
+        }
+        
+        .container.initial-state .chat-input-area {
+            /* No special styles needed if flex-grow is 0 on history */
+        }
+
+        h1 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 30px;
+            margin-top: 20px; 
+            font-weight: 700;
+            font-size: 42px;
+            letter-spacing: -0.5px;
+            display: inline-block;
+            align-self: center;
+            transition: margin 0.5s ease;
         }
         
         /* Chat Interface */
         #chat-history {
             flex-grow: 1;
             overflow-y: auto;
-            border: 1px solid #eee;
-            border-radius: 4px;
-            padding: 15px;
-            margin-bottom: 15px;
-            background-color: #fafafa;
+            border: none;
+            padding: 10px 0; /* Add some vertical padding */
+            margin-bottom: 20px;
+            background-color: transparent;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 20px;
+            /* Hide scrollbar but allow scroll */
+            scrollbar-width: none; 
+            -ms-overflow-style: none;
+        }
+        
+        #chat-history::-webkit-scrollbar {
+            display: none;
         }
 
         .message {
-            max-width: 80%;
-            padding: 10px 15px;
-            border-radius: 18px;
-            line-height: 1.4;
-            font-size: 15px;
-        }
-
-        .message p {
-            margin: 0 0 10px 0;
-        }
-        
-        .message p:last-child {
-            margin-bottom: 0;
-        }
-
-        .message ul, .message ol {
-            margin: 0 0 10px 0;
-            padding-left: 20px;
-        }
-
-        .message li {
-            margin-bottom: 5px;
-        }
-
-        .message strong {
-            font-weight: 600;
+            max-width: 100%;
+            padding: 0;
+            line-height: 1.6;
+            font-size: 16px;
+            color: #ccc;
         }
 
         .message.user {
             align-self: flex-end;
-            background-color: #005eb8;
+            background-color: #2d2d2d;
             color: white;
+            padding: 12px 20px;
+            border-radius: 20px;
             border-bottom-right-radius: 4px;
-        }
-
-        .message.user p {
-             margin: 0;
+            max-width: 80%;
+            margin-left: auto;
         }
 
         .message.bot {
             align-self: flex-start;
-            background-color: #e9ecef;
-            color: #333;
-            border-bottom-left-radius: 4px;
+            background-color: transparent;
+            color: #e0e0e0;
+            border: none;
+            width: 100%;
         }
 
-        /* Markdown Table Styles */
+        /* ... Markdown Table Styles ... */
         .message table {
             width: 100%;
             border-collapse: collapse;
             margin: 10px 0;
             font-size: 0.9em;
+            color: #e0e0e0;
         }
 
         .message th, .message td {
-            border: 1px solid #ccc;
+            border: 1px solid #444;
             padding: 8px;
             text-align: left;
         }
 
         .message th {
-            background-color: #ddd;
+            background-color: #333;
             font-weight: bold;
+            color: #fff;
         }
 
         .message tr:nth-child(even) {
-            background-color: #f8f9fa;
+            background-color: #262626;
         }
 
         .comparison-container {
@@ -125,107 +266,230 @@
         }
         
         .comparison-container h3 {
-            color: #005eb8;
+            color: #F668F2; /* Brand Pink */
             margin: 0 0 10px 0;
         }
 
         .recommendation {
             margin-top: 10px;
             padding: 10px;
-            background-color: #e8f4fd;
-            border-left: 4px solid #005eb8;
+            background-color: #252525;
+            border-left: 4px solid #F668F2; /* Brand Pink */
             border-radius: 4px;
         }
 
         .chat-input-area {
             display: flex;
             gap: 10px;
+            background-color: #2d2d2d;
+            padding: 10px;
+            border-radius: 30px;
+            border: 1px solid #444;
+            width: 100%;
+            max-width: 100%; /* Fill the container width */
+            margin-bottom: 10px; /* spacing from bottom edge */
         }
 
         input[type="text"] {
             flex-grow: 1;
-            padding: 12px;
-            border: 1px solid #ddd;
+            padding: 12px 20px;
+            border: none;
             border-radius: 24px;
             font-size: 16px;
             outline: none;
+            background-color: transparent;
+            color: white;
         }
 
         input[type="text"]:focus {
-            border-color: #005eb8;
+            border-color: transparent;
         }
 
         button {
             padding: 10px 25px;
-            background-color: #005eb8;
-            color: white;
+            background-color: #fff; /* White button */
+            color: #000;
             border: none;
             border-radius: 24px;
             cursor: pointer;
             font-size: 16px;
             font-weight: bold;
+            transition: background-color 0.2s;
         }
 
         button:hover {
-            background-color: #004488;
+            background-color: #ddd;
         }
         
         button:disabled {
-            background-color: #ccc;
+            background-color: #444;
+            color: #888;
+        }
+
+        /* Typewriter Effect */
+        .typewriter h1 {
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid #F668F2; /* The typwriter cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+            letter-spacing: .05em; /* Adjust as needed */
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-caret .75s step-end infinite;
+            max-width: fit-content;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #F668F2; }
         }
 
         /* Flight Cards in Chat */
         .flight-card {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 15px;
-            margin-top: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            background: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
         }
-        .flight-card h4 {
-            margin: 0 0 10px 0;
-            color: #005eb8;
+        .flight-card:hover {
+            transform: translateY(-2px);
+            border-color: #555;
+        }
+        .flight-header {
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
         }
-        .flight-segments {
-            margin-bottom: 10px;
+        .flight-route {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #fff;
         }
-        .segment {
+        .flight-meta {
+            color: #888;
+            font-size: 0.9em;
+            margin-top: 4px;
+        }
+        .flight-price {
+            text-align: right;
+        }
+        .flight-price .amount {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #fff;
+        }
+        .flight-price .currency {
+            font-size: 0.8em;
+            color: #888;
+            font-weight: normal;
+        }
+        
+        .segment-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            gap: 15px;
+        }
+        .segment-row:last-child {
+            margin-bottom: 0;
+        }
+        .carrier-logo {
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #000;
+            font-weight: bold;
+        }
+        .segment-times {
+            display: flex;
+            flex-direction: column;
+            min-width: 80px;
+        }
+        .time-main {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        .time-sub {
+            color: #666;
+            font-size: 0.85em;
+        }
+        .segment-path {
+            flex-grow: 1;
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 0.9em;
-            margin-bottom: 5px;
         }
-        .price-tag {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: #28a745;
+        .path-line {
+            flex-grow: 1;
+            height: 1px;
+            background-color: #444;
+            position: relative;
         }
-        .carrier {
-            font-weight: bold;
-            color: #555;
+        .path-line::after {
+            content: '✈';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #666;
+            font-size: 12px;
+        }
+        .segment-duration {
+            font-size: 0.85em;
+            color: #888;
+            white-space: nowrap;
         }
 
         /* Activity Cards */
         .activity-card {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            background: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 0;
+            margin-top: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .activity-card:hover {
+            transform: translateY(-2px);
+        }
+        .activity-content {
             padding: 15px;
-            margin-top: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .activity-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #2d2d2d;
         }
         .activity-card h4 {
             margin: 0 0 5px 0;
-            color: #005eb8;
+            color: #F668F2; /* Pink */
             font-size: 1.1em;
         }
         .activity-meta {
             font-size: 0.9em;
-            color: #666;
+            color: #aaa;
             margin-bottom: 8px;
             display: flex;
             gap: 10px;
@@ -241,48 +505,279 @@
 
         /* Hotel Cards */
         .hotel-card {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 15px;
-            margin-top: 10px;
+            background: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 0;
+            margin-top: 15px;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        .hotel-card:hover {
+            transform: translateY(-2px);
+        }
+        .hotel-image-container {
+            width: 100%;
+            height: 160px;
+            background-color: #2d2d2d;
+            position: relative;
+        }
+        .hotel-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hotel-content {
+            padding: 15px;
+        }
+        .hotel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+        .hotel-name {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #fff;
+            margin: 0;
+        }
+        .hotel-rating {
+            color: #f39c12;
+            font-size: 0.9em;
+        }
+        .hotel-address {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
             gap: 5px;
         }
-        .hotel-card h4 {
-            margin: 0;
-            color: #005eb8;
+        .hotel-footer {
+            border-top: 1px solid #333;
+            padding-top: 10px;
+            margin-top: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85em;
+            color: #666;
         }
-        .hotel-info {
+        
+        /* Offer Specifics */
+        .offer-price {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #28a745;
+        }
+        .offer-details {
+            background-color: #262626;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 10px;
             font-size: 0.9em;
-            color: #555;
+            color: #ccc;
+        }
+
+        /* Flight Card Badges */
+        .badge {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            background-color: #444;
+            color: #e0e0e0;
+            margin-right: 4px;
+            margin-bottom: 2px;
+        }
+        .badge.amenity {
+            background-color: #1e3a5f;
+            color: #a0cfff;
+        }
+        
+        .logo-container {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 12px; /* Matching existing radii */
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>✈️ Amadeus Travel Assistant</h1>
-        
-        <div id="chat-history">
-            <div class="message bot">
-                Hello! I can help you find flights. Try asking something like "Find me a flight from Istanbul to San Francisco today".
+    <div class="app-layout">
+        <aside id="sidebar">
+            <div class="logo-container">
+                <img src="gengage.svg" alt="Gengage">
             </div>
-        </div>
+            <button id="new-chat-btn" onclick="createNewSession()">
+                <span>+</span> New Chat
+            </button>
+            <div id="session-list">
+                <!-- Sessions will be populated here -->
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <div class="container">
+                <div class="typewriter">
+                    <h1>What's your trip plan?</h1>
+                </div>
+                
+                <div id="chat-history">
+                    <!-- Messages will appear here -->
+                </div>
 
-        <div class="chat-input-area">
-            <input type="text" id="messageInput" placeholder="Type your request here..." onkeypress="handleKeyPress(event)">
-            <button id="sendBtn" onclick="sendMessage()">Send</button>
-        </div>
+                <div class="chat-input-area">
+                    <input type="text" id="messageInput" placeholder="Type your request here..." onkeypress="handleKeyPress(event)">
+                    <button id="sendBtn" onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </main>
     </div>
 
     <script>
         const chatHistory = document.getElementById('chat-history');
         const messageInput = document.getElementById('messageInput');
         const sendBtn = document.getElementById('sendBtn');
+        const sessionList = document.getElementById('session-list');
         
-        // Store conversation history for the API
-        let conversationHistory = [];
+        let currentSessionId = null;
+        const STORAGE_KEY_SESSION_ID = 'travelMate_currentSessionId';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadSessions();
+            
+            // Check localStorage for existing session
+            const savedSessionId = localStorage.getItem(STORAGE_KEY_SESSION_ID);
+            
+            if (savedSessionId) {
+                // Check if valid by trying to load it
+                await loadSession(savedSessionId);
+            }
+            
+            // If no saved session or load failed (currentSessionId still null), create new
+            if (!currentSessionId) {
+                await createNewSession();
+            }
+        });
+
+        async function loadSessions() {
+            try {
+                const response = await fetch('/api/sessions');
+                const sessions = await response.json();
+                
+                sessionList.innerHTML = '';
+                sessions.forEach(session => {
+                    const div = document.createElement('div');
+                    div.className = 'session-item';
+                    div.textContent = session.title || 'New Chat';
+                    div.onclick = () => loadSession(session.id);
+                    if (session.id === currentSessionId) {
+                        div.classList.add('active');
+                    }
+                    sessionList.appendChild(div);
+                });
+            } catch (error) {
+                console.error('Failed to load sessions:', error);
+            }
+        }
+
+        async function createNewSession() {
+            try {
+                const response = await fetch('/api/sessions', { method: 'POST' });
+                const session = await response.json();
+                
+                currentSessionId = session.id;
+                localStorage.setItem(STORAGE_KEY_SESSION_ID, currentSessionId);
+                
+                chatHistory.innerHTML = '';
+                
+                // Reset to initial state layout
+                document.querySelector('.container').classList.add('initial-state');
+
+                // Add welcome message
+                appendMessage('Hello! I can help you find flights, hotels, and activities. Where would you like to go?', 'bot');
+                
+                await loadSessions(); // Refresh list
+            } catch (error) {
+                console.error('Failed to create session:', error);
+            }
+        }
+
+        async function loadSession(id) {
+            if (currentSessionId === id && chatHistory.children.length > 0) return;
+            
+            try {
+                const response = await fetch(`/api/sessions/${id}`);
+                if (!response.ok) {
+                    if (response.status === 404) {
+                        console.warn('Session not found, clearing storage');
+                        localStorage.removeItem(STORAGE_KEY_SESSION_ID);
+                        currentSessionId = null; 
+                        return;
+                    }
+                    throw new Error('Failed to fetch session');
+                }
+                
+                const session = await response.json();
+                
+                currentSessionId = id;
+                localStorage.setItem(STORAGE_KEY_SESSION_ID, currentSessionId);
+                
+                chatHistory.innerHTML = '';
+                
+                // Update UI active state
+                document.querySelectorAll('.session-item').forEach(el => el.classList.remove('active'));
+                // We re-render list to make it easy
+                await loadSessions();
+
+                // Manage Layout State based on content
+                const container = document.querySelector('.container');
+                if (session.messages.length === 0) {
+                     container.classList.add('initial-state');
+                     appendMessage('Hello! I can help you find flights, hotels, and activities. Where would you like to go?', 'bot');
+                } else {
+                    container.classList.remove('initial-state');
+                    // Replay messages
+                    session.messages.forEach(msg => {
+                        if (msg.role === 'user') {
+                            appendMessage(msg.content, 'user');
+                        } else {
+                             appendMessage(msg.content, 'bot');
+                             
+                             // Render rich UI components if they exist in history
+                             if (msg.data && msg.dataType) {
+                                 if (msg.dataType === 'flights') {
+                                     appendFlightResults(msg.data);
+                                 } else if (msg.dataType === 'activities') {
+                                     appendActivityResults(msg.data);
+                                 } else if (msg.dataType === 'hotels') {
+                                     appendHotelResults(msg.data);
+                                 } else if (msg.dataType === 'offers') {
+                                     appendOfferResults(msg.data);
+                                 }
+                             }
+                        }
+                    });
+                }
+            } catch (error) {
+                console.error('Failed to load session:', error);
+            }
+        }
 
         function handleKeyPress(e) {
             if (e.key === 'Enter') {
@@ -293,8 +788,11 @@
         async function sendMessage() {
             const text = messageInput.value.trim();
             if (!text) return;
+            
+            // Remove initial state class on first interaction
+            document.querySelector('.container').classList.remove('initial-state');
 
-            // Add user message
+            // Add user message locally
             appendMessage(text, 'user');
             messageInput.value = '';
             messageInput.disabled = true;
@@ -309,7 +807,7 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ 
                         message: text,
-                        history: conversationHistory
+                        sessionId: currentSessionId
                     })
                 });
 
@@ -318,18 +816,17 @@
                 // Remove loading message
                 document.getElementById(loadingId).remove();
 
-                // Update history with user message (now that we know it succeeded essentially, though we sent it before)
-                // Actually better to add it before sending, but we need to handle failure. 
-                // For simplicity, we add to history list here.
-                conversationHistory.push({ role: 'user', content: text });
-
                 if (data.error) {
                     appendMessage(`Error: ${data.error}`, 'bot');
                 } else {
+                    // Update title if it changed
+                    if (data.title) {
+                        loadSessions(); // Refresh sidebar
+                    }
+
                     // The model response (text)
                     if (data.content) {
                         appendMessage(data.content, 'bot');
-                        conversationHistory.push({ role: 'model', content: data.content });
                     }
 
                     // Render UI cards if available
@@ -340,6 +837,8 @@
                             appendActivityResults(data.data);
                         } else if (data.dataType === 'hotels') {
                             appendHotelResults(data.data);
+                        } else if (data.dataType === 'offers') {
+                            appendOfferResults(data.data);
                         }
                     }
                 }
@@ -382,14 +881,12 @@
                         }
 
                         div.innerHTML = html;
-                        // Make this message wider for the table
                         div.style.maxWidth = '95%';
                     } catch (e) {
                         console.error("Failed to render comparison JSON", e);
-                        div.innerHTML = marked.parse(text); // Fallback
+                        div.innerHTML = marked.parse(text);
                     }
                 } else {
-                    // Standard Markdown rendering
                     div.innerHTML = marked.parse(text);
                 }
             } else {
@@ -398,7 +895,21 @@
 
             if (isLoading) div.id = 'loading-' + Date.now();
             chatHistory.appendChild(div);
-            chatHistory.scrollTop = chatHistory.scrollHeight;
+            
+            // Smart Scroll Logic
+            if (sender === 'user') {
+                 // User message: Scroll to bottom to show it
+                 chatHistory.scrollTop = chatHistory.scrollHeight;
+            } else {
+                 // Bot message: Scroll to the start of the message, so user sees top
+                 // Use a small timeout to ensure layout is done
+                 setTimeout(() => {
+                    // Only scroll if it's not visible or if we are at the very bottom?
+                    // Actually simpler: scroll the new message into view at the top
+                    div.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                 }, 50);
+            }
+            
             return div.id;
         }
 
@@ -442,36 +953,80 @@
                 const card = document.createElement('div');
                 card.className = 'flight-card';
                 
+                // Basic Itinerary Info
                 const itinerary = flight.itineraries[0];
                 const segments = itinerary.segments;
                 const firstSegment = segments[0];
                 const lastSegment = segments[segments.length - 1];
-                const duration = itinerary.duration.replace('PT', '').toLowerCase();
                 
-                const carrierCode = firstSegment.carrierCode;
+                // Format Duration
+                const formatDuration = (ptDuration) => {
+                     if (!ptDuration) return '';
+                     return ptDuration.replace('PT', '').toLowerCase();
+                };
+                const duration = formatDuration(itinerary.duration);
                 
-                card.innerHTML = `
-                    <h4>
-                        <span>${firstSegment.departure.iataCode} ➝ ${lastSegment.arrival.iataCode}</span>
-                        <span class="price-tag">${flight.price.total} ${flight.price.currency}</span>
-                    </h4>
-                    <div class="flight-segments">
-                        <div class="segment">
-                            <span class="carrier">${carrierCode}</span> | 
-                            Departure: ${new Date(firstSegment.departure.at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})} |
-                            Duration: ${duration} |
-                            ${segments.length > 1 ? (segments.length - 1) + ' stop(s)' : 'Direct'}
+                // Price
+                const price = flight.price.total;
+                const currency = flight.price.currency;
+
+                // Build segments HTML (Compact view)
+                let segmentsHtml = '';
+                segments.forEach((segment, index) => {
+                    const depTime = new Date(segment.departure.at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                    const arrTime = new Date(segment.arrival.at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                    
+                    segmentsHtml += `
+                        <div class="segment-row">
+                            <div class="carrier-logo">${segment.carrierCode}</div>
+                            <div class="segment-times">
+                                <div class="time-main">${depTime}</div>
+                                <div class="time-sub">${segment.departure.iataCode}</div>
+                            </div>
+                            <div class="segment-path">
+                                <div class="path-line"></div>
+                            </div>
+                            <div class="segment-times" style="text-align: right;">
+                                <div class="time-main">${arrTime}</div>
+                                <div class="time-sub">${segment.arrival.iataCode}</div>
+                            </div>
                         </div>
+                    `;
+                });
+                
+                // Date
+                const depDate = new Date(firstSegment.departure.at).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+                
+                // Stops text
+                const stopsText = segments.length > 1 ? `${segments.length - 1} Stop(s)` : 'Direct';
+
+                card.innerHTML = `
+                    <div class="flight-header">
+                        <div class="route-info">
+                            <div class="flight-route">${firstSegment.departure.iataCode} <span style="color:#666">➝</span> ${lastSegment.arrival.iataCode}</div>
+                            <div class="flight-meta">${depDate} • ${stopsText} • ${duration}</div>
+                        </div>
+                        <div class="flight-price">
+                            <div class="amount">${price}</div>
+                            <div class="currency">${currency}</div>
+                        </div>
+                    </div>
+                    <div class="flight-body">
+                        ${segmentsHtml}
                     </div>
                 `;
                 container.appendChild(card);
             });
 
             chatHistory.appendChild(container);
-            chatHistory.scrollTop = chatHistory.scrollHeight;
+            // Smart scroll for cards
+            setTimeout(() => {
+                 container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 50);
         }
 
         function appendActivityResults(activities) {
+            console.log('Activities Data:', activities);
             const container = document.createElement('div');
             container.className = 'message bot';
             container.style.backgroundColor = 'transparent';
@@ -484,28 +1039,57 @@
                 
                 const price = activity.price ? `${activity.price.amount} ${activity.price.currencyCode}` : '';
                 const rating = activity.rating ? `⭐ ${activity.rating}` : '';
+                const image = activity.pictures && activity.pictures.length > 0 ? activity.pictures[0] : null;
+                const duration = activity.minimumDuration ? `🕒 ${activity.minimumDuration}` : '';
+                
+                let imageHtml = '';
+                if (image) {
+                    imageHtml = `<img src="${image}" alt="${activity.name}" class="activity-image">`;
+                } else {
+                     imageHtml = `<div style="height: 180px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 40px;">🎭</div>`;
+                }
                 
                 card.innerHTML = `
-                    <h4>${activity.name}</h4>
-                    <div class="activity-meta">
-                        ${rating ? `<span class="activity-rating">${rating}</span>` : ''}
-                        ${price ? `<span class="activity-price">${price}</span>` : ''}
-                    </div>
-                    <div style="font-size: 0.9em; color: #444;">${activity.shortDescription || 'No description available.'}</div>
-                    <div style="margin-top: 8px; font-size: 0.8em; color: #888;">
-                        <a href="${activity.bookingLink || '#'}" target="_blank" style="color: #005eb8; text-decoration: none;">
-                            ${activity.bookingLink ? 'Book Now ↗' : ''}
-                        </a>
+                    ${imageHtml}
+                    <div class="activity-content">
+                        <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 1.1em;">${activity.name}</h4>
+                        <div class="activity-meta" style="display: flex; gap: 15px; margin-bottom: 10px; font-size: 0.9em; color: #aaa;">
+                            ${rating ? `<span class="activity-rating">${rating}</span>` : ''}
+                            ${price ? `<span class="activity-price" style="color: #28a745; font-weight: bold;">${price}</span>` : ''}
+                            ${duration ? `<span>${duration}</span>` : ''}
+                        </div>
+                        <div style="font-size: 0.9em; color: #bbb; margin-bottom: 15px; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                            ${activity.shortDescription || 'No description available.'}
+                        </div>
+                        <div style="text-align: right;">
+                            ${activity.bookingLink ? `
+                                <a href="${activity.bookingLink}" target="_blank" style="
+                                    display: inline-block;
+                                    background-color: #fff;
+                                    color: #000;
+                                    padding: 8px 20px;
+                                    border-radius: 20px;
+                                    text-decoration: none;
+                                    font-size: 0.9em;
+                                    font-weight: 600;
+                                    transition: background-color 0.2s;
+                                ">Book Now ↗</a>
+                            ` : ''}
+                        </div>
                     </div>
                 `;
                 container.appendChild(card);
             });
 
             chatHistory.appendChild(container);
-            chatHistory.scrollTop = chatHistory.scrollHeight;
+            // Smart scroll for cards
+            setTimeout(() => {
+                 container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 50);
         }
 
         function appendHotelResults(hotels) {
+            console.log('Hotels Data:', hotels);
             const container = document.createElement('div');
             container.className = 'message bot';
             container.style.backgroundColor = 'transparent';
@@ -526,14 +1110,14 @@
                 mapContainer.id = mapId;
                 mapContainer.style.height = '300px';
                 mapContainer.style.width = '100%';
-                mapContainer.style.borderRadius = '8px';
-                mapContainer.style.marginBottom = '10px';
+                mapContainer.style.borderRadius = '12px';
+                mapContainer.style.marginBottom = '20px';
+                mapContainer.style.border = '1px solid #333';
                 mapContainer.style.zIndex = '1';
                 container.appendChild(mapContainer);
 
                 // Initialize Map
                 setTimeout(() => {
-                    // Default view - will be overridden by fitBounds
                     const map = L.map(mapId).setView([0, 0], 2);
 
                     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -555,22 +1139,41 @@
                         map.fitBounds(bounds, { padding: [20, 20] });
                     }
                     
-                    // Invalidate size to ensure proper rendering
                     map.invalidateSize();
                 }, 100);
             }
 
-            // Limit to 5 hotels for display to avoid spamming
+            // Limit to 5 hotels for display
             hotels.slice(0, 5).forEach(hotel => {
                 const card = document.createElement('div');
                 card.className = 'hotel-card';
                 
+                const address = hotel.address ? 
+                    [hotel.address.lines ? hotel.address.lines.join(', ') : '', hotel.address.cityName, hotel.address.countryCode]
+                    .filter(Boolean).join(', ') 
+                    : 'Address not available';
+
+                // Placeholder image logic (using a gradient or generic travel image if possible, here using a gradient div)
+                const imageHtml = `
+                    <div class="hotel-image-container" style="background: linear-gradient(45deg, #2c3e50, #3498db); display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 30px;">🏨</span>
+                    </div>
+                `;
+                
                 card.innerHTML = `
-                    <h4>${hotel.name}</h4>
-                    <div class="hotel-info">ID: ${hotel.hotelId} | Chain: ${hotel.chainCode}</div>
-                    <div class="hotel-info">
-                        Latitude: ${hotel.geoCode ? hotel.geoCode.latitude : 'N/A'}, 
-                        Longitude: ${hotel.geoCode ? hotel.geoCode.longitude : 'N/A'}
+                    ${imageHtml}
+                    <div class="hotel-content">
+                        <div class="hotel-header">
+                            <h4 class="hotel-name">${hotel.name}</h4>
+                            <span style="background: #333; padding: 2px 8px; border-radius: 12px; font-size: 0.75em; color: #aaa;">${hotel.chainCode || 'Hotel'}</span>
+                        </div>
+                        <div class="hotel-address">
+                            📍 ${address}
+                        </div>
+                        <div class="hotel-footer">
+                            <span>ID: ${hotel.hotelId}</span>
+                            <span>${hotel.geoCode ? `${parseFloat(hotel.geoCode.latitude).toFixed(4)}, ${parseFloat(hotel.geoCode.longitude).toFixed(4)}` : ''}</span>
+                        </div>
                     </div>
                 `;
                 container.appendChild(card);
@@ -579,14 +1182,84 @@
              if (hotels.length > 5) {
                  const moreDiv = document.createElement('div');
                  moreDiv.style.textAlign = 'center';
-                 moreDiv.style.padding = '10px';
-                 moreDiv.style.color = '#666';
+                 moreDiv.style.padding = '15px';
+                 moreDiv.style.color = '#888';
+                 moreDiv.style.fontSize = '0.9em';
                  moreDiv.textContent = `...and ${hotels.length - 5} more hotels.`;
                  container.appendChild(moreDiv);
              }
 
             chatHistory.appendChild(container);
-            chatHistory.scrollTop = chatHistory.scrollHeight;
+            // Smart scroll for cards
+            setTimeout(() => {
+                 container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 50);
+        }
+
+        function appendOfferResults(offersData) {
+            console.log('Offers Data:', offersData);
+            const container = document.createElement('div');
+            container.className = 'message bot';
+            container.style.backgroundColor = 'transparent';
+            container.style.padding = '0';
+            container.style.width = '100%';
+
+            if (!offersData || offersData.length === 0) {
+                container.innerHTML = '<div class="message bot">No offers found.</div>';
+                chatHistory.appendChild(container);
+                return;
+            }
+
+            offersData.forEach(item => {
+                // Structure: { type: 'hotel-offers', hotel: {...}, offers: [...] }
+                const hotel = item.hotel;
+                const offers = item.offers || [];
+
+                offers.forEach(offer => {
+                    const card = document.createElement('div');
+                    card.className = 'hotel-card'; // Reuse hotel card style
+                    // Add green border on left to distinguish
+                    card.style.borderLeft = '5px solid #28a745'; 
+
+                    const price = offer.price ? `${offer.price.total} ${offer.price.currency}` : 'N/A';
+                    const room = offer.room;
+                    const roomType = room.typeEstimated ? (room.typeEstimated.category || room.typeEstimated.bedType) : (room.description ? room.description.text : 'Standard Room');
+                    
+                    const checkIn = new Date(offer.checkInDate).toLocaleDateString();
+                    const checkOut = new Date(offer.checkOutDate).toLocaleDateString();
+
+                    card.innerHTML = `
+                        <div class="hotel-content">
+                            <div class="hotel-header">
+                                <h4 class="hotel-name">${hotel.name}</h4>
+                            </div>
+                            <div style="margin-bottom: 15px;">
+                                <div class="offer-price">${price}</div>
+                                <div style="font-size: 0.9em; color: #888;">Total Price</div>
+                            </div>
+                            
+                            <div class="offer-details">
+                                <div style="font-weight: 600; color: #fff; margin-bottom: 5px;">${roomType}</div>
+                                <div style="display: flex; gap: 15px; margin-top: 8px; font-size: 0.9em;">
+                                    <div>📅 ${checkIn} - ${checkOut}</div>
+                                    <div>👤 ${offer.guests ? offer.guests.adults + ' Adult(s)' : '1 Adult'}</div>
+                                </div>
+                            </div>
+
+                            <div style="text-align: right; margin-top: 15px;">
+                                 <button onclick="alert('Booking simulation: Offer ${offer.id} selected.')" style="padding: 8px 20px; font-size: 0.9em; background-color: #28a745; color: white;">Select Offer</button>
+                            </div>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            });
+
+            chatHistory.appendChild(container);
+            // Smart scroll for cards
+            setTimeout(() => {
+                 container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 50);
         }
     </script>
 </body>
