@@ -197,10 +197,14 @@ async function initializeGemini() {
             2.  **Location & Coordinates:**
                 -   **NEVER ask the user for latitude and longitude.** If a tool requires coordinates (like \`searchActivities\`), use your internal knowledge to estimate the coordinates for the mentioned location (e.g., city center).
                 -   **Contextual Location:** If the user mentions a location, ALWAYS use that location for subsequent queries unless explicitly told otherwise. Do not ask "Which city?" if it was just mentioned.
-            3.  **Dates:**
+            3.  **Origin/Departure Airport Memory:**
+                -   **NEVER repeatedly ask for the origin/departure airport.** If the user has mentioned where they are flying from in the conversation history, ALWAYS reuse that origin for subsequent flight searches.
+                -   Only ask for the origin airport if it has never been mentioned in the entire conversation.
+                -   *Example:* If user said "I'm flying from Istanbul to Paris" and later asks "Show me flights to London", automatically use Istanbul (IST) as the origin.
+            4.  **Dates:**
                 -   **NEVER ask the user for dates if they are not provided.** Automatically select reasonable future dates (e.g., next weekend, or 2 weeks from now) and inform the user of the dates you chose in your response. Do not ask for confirmation.
-            4.  **Lean Context:** You will see summaries of previous search results in the context. Use these to answer follow-up questions without needing to search again, but don't regurgitate the full list.
-            5.  **Efficient Responses:** Keep text responses concise. The UI handles showing the detailed cards.
+            5.  **Lean Context:** You will see summaries of previous search results in the context. Use these to answer follow-up questions without needing to search again, but don't regurgitate the full list.
+            6.  **Efficient Responses:** Keep text responses concise. The UI handles showing the detailed cards.
 
             **Response Formatting:**
             - Use **Markdown** for text.
