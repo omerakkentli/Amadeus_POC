@@ -870,6 +870,31 @@
             }
         }
 
+        // Helper to summarize data for context (Client-side version)
+        function summarizeForContext(type, data) {
+            if (!data) return "";
+
+            try {
+                if (type === 'flights') {
+                    return data.slice(0, 5).map(f => {
+                        const it = f.itineraries[0];
+                        const seg = it.segments[0];
+                        return `${seg.departure.iataCode}->${it.segments[it.segments.length - 1].arrival.iataCode} | ${f.price.total} ${f.price.currency} | ${seg.carrierCode}`;
+                    }).join('\n') + (data.length > 5 ? `\n...and ${data.length - 5} more` : '');
+                } else if (type === 'hotels') {
+                    return data.slice(0, 10).map(h => `${h.name} (ID: ${h.hotelId})`).join('\n') + (data.length > 10 ? `\n...and ${data.length - 10} more` : '');
+                } else if (type === 'activities') {
+                    return data.slice(0, 5).map(a => `${a.name} - ${a.price ? a.price.amount + " " + a.price.currencyCode : "N/A"}`).join('\n') + (data.length > 5 ? `\n...and ${data.length - 5} more` : '');
+                } else if (type === 'offers') {
+                    // Hotel offers can be complex, just capture price and hotel
+                    return data.slice(0, 5).map(o => `Hotel ${o.hotel.name}: ${o.offers[0].price.total} ${o.offers[0].price.currency}`).join('\n');
+                }
+            } catch (e) {
+                return "Data available but summarization failed.";
+            }
+            return "Data results available.";
+        }
+
         async function sendMessage() {
             const text = messageInput.value.trim();
             if (!text) return;
@@ -893,13 +918,48 @@
             const loadingId = appendMessage('Searching...', 'bot', true);
 
             try {
+                // Prepare optimized history
+                // 1. Clone the messages to avoid mutating local state
+                let historyToSend = JSON.parse(JSON.stringify(session.messages));
+
+                // 2. Find the index of the last message that has data
+                let lastDataIndex = -1;
+                for (let i = historyToSend.length - 1; i >= 0; i--) {
+                    if (historyToSend[i].data) {
+                        lastDataIndex = i;
+                        break;
+                    }
+                }
+
+                // 3. Process messages
+                historyToSend = historyToSend.map((msg, index) => {
+                    if (msg.data) {
+                        if (index === lastDataIndex) {
+                            // For the LAST data message, keep data but limit to top 10
+                            if (Array.isArray(msg.data)) {
+                                msg.data = msg.data.slice(0, 10);
+                            } else if (msg.data.data && Array.isArray(msg.data.data)) {
+                                // Handle structure like { data: [...] } if applicable, though usually we store array directly
+                                msg.data.data = msg.data.data.slice(0, 10);
+                            }
+                        } else {
+                            // For OLDER data messages, summarize and remove data
+                            const summary = summarizeForContext(msg.dataType, msg.data);
+                            msg.content += `\n\n[System Context: User saw these ${msg.dataType} results:\n${summary}]`;
+                            delete msg.data;
+                            delete msg.dataType;
+                        }
+                    }
+                    return msg;
+                });
+
                 // Send history along with message
                 const response = await fetch('/api/chat', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         message: text,
-                        history: session.messages // Send full history
+                        history: historyToSend // Send optimized history
                     })
                 });
 
