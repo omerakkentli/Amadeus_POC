@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelMate</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <style>
         * {
             box-sizing: border-box;
@@ -27,7 +30,8 @@
             display: flex;
             width: 100%;
             height: 100%;
-            overflow: hidden; /* Prevent body scroll */
+            overflow: hidden;
+            /* Prevent body scroll */
         }
 
         /* Sidebar */
@@ -39,8 +43,10 @@
             flex-direction: column;
             padding: 20px;
             flex-shrink: 0;
-            height: 100%; /* Ensure full height */
-            overflow: hidden; /* Prevent sidebar itself from scrolling */
+            height: 100%;
+            /* Ensure full height */
+            overflow: hidden;
+            /* Prevent sidebar itself from scrolling */
         }
 
         .logo-container {
@@ -49,7 +55,8 @@
         }
 
         .logo-container img {
-            height: 24px; /* Adjust based on svg aspect ratio */
+            height: 24px;
+            /* Adjust based on svg aspect ratio */
             display: block;
         }
 
@@ -70,7 +77,8 @@
             font-weight: 600;
             margin-bottom: 20px;
             transition: transform 0.1s;
-            flex-shrink: 0; /* Don't shrink */
+            flex-shrink: 0;
+            /* Don't shrink */
         }
 
         #new-chat-btn:hover {
@@ -83,7 +91,8 @@
             display: flex;
             flex-direction: column;
             gap: 5px;
-            min-height: 0; /* Critical for flex scrolling */
+            min-height: 0;
+            /* Critical for flex scrolling */
             padding-bottom: 20px;
             /* Custom scrollbar for sidebar */
             scrollbar-width: thin;
@@ -93,9 +102,11 @@
         #session-list::-webkit-scrollbar {
             width: 6px;
         }
+
         #session-list::-webkit-scrollbar-track {
             background: transparent;
         }
+
         #session-list::-webkit-scrollbar-thumb {
             background-color: #333;
             border-radius: 3px;
@@ -112,8 +123,10 @@
             text-overflow: ellipsis;
             transition: background-color 0.2s;
             text-decoration: none;
-            flex-shrink: 0; /* Prevent squashing */
-            display: block; /* Ensure block formatting */
+            flex-shrink: 0;
+            /* Prevent squashing */
+            display: block;
+            /* Ensure block formatting */
         }
 
         .session-item:hover {
@@ -150,7 +163,8 @@
             max-width: 900px;
             margin: 0 auto;
             width: 100%;
-            transition: all 0.5s ease; /* Smooth transition for layout changes */
+            transition: all 0.5s ease;
+            /* Smooth transition for layout changes */
         }
 
         /* Initial Centered State */
@@ -170,7 +184,7 @@
             margin-bottom: 20px;
             margin-top: 0;
         }
-        
+
         .container.initial-state .chat-input-area {
             /* No special styles needed if flex-grow is 0 on history */
         }
@@ -179,7 +193,7 @@
             color: #ffffff;
             text-align: center;
             margin-bottom: 30px;
-            margin-top: 20px; 
+            margin-top: 20px;
             font-weight: 700;
             font-size: 42px;
             letter-spacing: -0.5px;
@@ -187,23 +201,24 @@
             align-self: center;
             transition: margin 0.5s ease;
         }
-        
+
         /* Chat Interface */
         #chat-history {
             flex-grow: 1;
             overflow-y: auto;
             border: none;
-            padding: 10px 0; /* Add some vertical padding */
+            padding: 10px 0;
+            /* Add some vertical padding */
             margin-bottom: 20px;
             background-color: transparent;
             display: flex;
             flex-direction: column;
             gap: 20px;
             /* Hide scrollbar but allow scroll */
-            scrollbar-width: none; 
+            scrollbar-width: none;
             -ms-overflow-style: none;
         }
-        
+
         #chat-history::-webkit-scrollbar {
             display: none;
         }
@@ -244,7 +259,8 @@
             color: #e0e0e0;
         }
 
-        .message th, .message td {
+        .message th,
+        .message td {
             border: 1px solid #444;
             padding: 8px;
             text-align: left;
@@ -264,9 +280,10 @@
             margin-top: 10px;
             overflow-x: auto;
         }
-        
+
         .comparison-container h3 {
-            color: #F668F2; /* Brand Pink */
+            color: #F668F2;
+            /* Brand Pink */
             margin: 0 0 10px 0;
         }
 
@@ -274,7 +291,8 @@
             margin-top: 10px;
             padding: 10px;
             background-color: #252525;
-            border-left: 4px solid #F668F2; /* Brand Pink */
+            border-left: 4px solid #F668F2;
+            /* Brand Pink */
             border-radius: 4px;
         }
 
@@ -286,8 +304,10 @@
             border-radius: 30px;
             border: 1px solid #444;
             width: 100%;
-            max-width: 100%; /* Fill the container width */
-            margin-bottom: 10px; /* spacing from bottom edge */
+            max-width: 100%;
+            /* Fill the container width */
+            margin-bottom: 10px;
+            /* spacing from bottom edge */
         }
 
         input[type="text"] {
@@ -307,7 +327,8 @@
 
         button {
             padding: 10px 25px;
-            background-color: #fff; /* White button */
+            background-color: #fff;
+            /* White button */
             color: #000;
             border: none;
             border-radius: 24px;
@@ -320,7 +341,7 @@
         button:hover {
             background-color: #ddd;
         }
-        
+
         button:disabled {
             background-color: #444;
             color: #888;
@@ -328,25 +349,42 @@
 
         /* Typewriter Effect */
         .typewriter h1 {
-            overflow: hidden; /* Ensures the content is not revealed until the animation */
-            border-right: .15em solid #F668F2; /* The typwriter cursor */
-            white-space: nowrap; /* Keeps the content on a single line */
-            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-            letter-spacing: .05em; /* Adjust as needed */
-            animation: 
+            overflow: hidden;
+            /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid #F668F2;
+            /* The typwriter cursor */
+            white-space: nowrap;
+            /* Keeps the content on a single line */
+            margin: 0 auto;
+            /* Gives that scrolling effect as the typing happens */
+            letter-spacing: .05em;
+            /* Adjust as needed */
+            animation:
                 typing 3.5s steps(40, end),
                 blink-caret .75s step-end infinite;
             max-width: fit-content;
         }
 
         @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
         }
 
         @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #F668F2; }
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: #F668F2;
+            }
         }
 
         /* Flight Cards in Chat */
@@ -356,13 +394,15 @@
             border-radius: 12px;
             padding: 20px;
             margin-top: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s;
         }
+
         .flight-card:hover {
             transform: translateY(-2px);
             border-color: #555;
         }
+
         .flight-header {
             display: flex;
             justify-content: space-between;
@@ -371,39 +411,46 @@
             padding-bottom: 15px;
             margin-bottom: 15px;
         }
+
         .flight-route {
             font-size: 1.2em;
             font-weight: 600;
             color: #fff;
         }
+
         .flight-meta {
             color: #888;
             font-size: 0.9em;
             margin-top: 4px;
         }
+
         .flight-price {
             text-align: right;
         }
+
         .flight-price .amount {
             font-size: 1.5em;
             font-weight: 700;
             color: #fff;
         }
+
         .flight-price .currency {
             font-size: 0.8em;
             color: #888;
             font-weight: normal;
         }
-        
+
         .segment-row {
             display: flex;
             align-items: center;
             margin-bottom: 12px;
             gap: 15px;
         }
+
         .segment-row:last-child {
             margin-bottom: 0;
         }
+
         .carrier-logo {
             width: 30px;
             height: 30px;
@@ -416,32 +463,38 @@
             color: #000;
             font-weight: bold;
         }
+
         .segment-times {
             display: flex;
             flex-direction: column;
             min-width: 80px;
         }
+
         .time-main {
             color: #fff;
             font-weight: 600;
             font-size: 1.1em;
         }
+
         .time-sub {
             color: #666;
             font-size: 0.85em;
         }
+
         .segment-path {
             flex-grow: 1;
             display: flex;
             align-items: center;
             gap: 10px;
         }
+
         .path-line {
             flex-grow: 1;
             height: 1px;
             background-color: #444;
             position: relative;
         }
+
         .path-line::after {
             content: '✈';
             position: absolute;
@@ -451,6 +504,7 @@
             color: #666;
             font-size: 12px;
         }
+
         .segment-duration {
             font-size: 0.85em;
             color: #888;
@@ -464,29 +518,35 @@
             border-radius: 12px;
             padding: 0;
             margin-top: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             display: flex;
             flex-direction: column;
             overflow: hidden;
             transition: transform 0.2s;
         }
+
         .activity-card:hover {
             transform: translateY(-2px);
         }
+
         .activity-content {
             padding: 15px;
         }
+
         .activity-image {
             width: 100%;
             height: 180px;
             object-fit: cover;
             background-color: #2d2d2d;
         }
+
         .activity-card h4 {
             margin: 0 0 5px 0;
-            color: #F668F2; /* Pink */
+            color: #F668F2;
+            /* Pink */
             font-size: 1.1em;
         }
+
         .activity-meta {
             font-size: 0.9em;
             color: #aaa;
@@ -494,10 +554,12 @@
             display: flex;
             gap: 10px;
         }
+
         .activity-rating {
             color: #f39c12;
             font-weight: bold;
         }
+
         .activity-price {
             color: #28a745;
             font-weight: bold;
@@ -513,42 +575,50 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s;
         }
+
         .hotel-card:hover {
             transform: translateY(-2px);
         }
+
         .hotel-image-container {
             width: 100%;
             height: 160px;
             background-color: #2d2d2d;
             position: relative;
         }
+
         .hotel-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .hotel-content {
             padding: 15px;
         }
+
         .hotel-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 8px;
         }
+
         .hotel-name {
             font-size: 1.1em;
             font-weight: 600;
             color: #fff;
             margin: 0;
         }
+
         .hotel-rating {
             color: #f39c12;
             font-size: 0.9em;
         }
+
         .hotel-address {
             font-size: 0.9em;
             color: #888;
@@ -557,6 +627,7 @@
             align-items: center;
             gap: 5px;
         }
+
         .hotel-footer {
             border-top: 1px solid #333;
             padding-top: 10px;
@@ -567,13 +638,14 @@
             font-size: 0.85em;
             color: #666;
         }
-        
+
         /* Offer Specifics */
         .offer-price {
             font-size: 1.3em;
             font-weight: 700;
             color: #28a745;
         }
+
         .offer-details {
             background-color: #262626;
             padding: 10px;
@@ -594,15 +666,17 @@
             margin-right: 4px;
             margin-bottom: 2px;
         }
+
         .badge.amenity {
             background-color: #1e3a5f;
             color: #a0cfff;
         }
-        
+
         .logo-container {
             background-color: #ffffff;
             padding: 15px;
-            border-radius: 12px; /* Matching existing radii */
+            border-radius: 12px;
+            /* Matching existing radii */
             margin-bottom: 20px;
             display: flex;
             justify-content: center;
@@ -616,6 +690,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="app-layout">
         <aside id="sidebar">
@@ -629,19 +704,20 @@
                 <!-- Sessions will be populated here -->
             </div>
         </aside>
-        
+
         <main class="main-content">
             <div class="container">
                 <div class="typewriter">
                     <h1>What's your trip plan?</h1>
                 </div>
-                
+
                 <div id="chat-history">
                     <!-- Messages will appear here -->
                 </div>
 
                 <div class="chat-input-area">
-                    <input type="text" id="messageInput" placeholder="Type your request here..." onkeypress="handleKeyPress(event)">
+                    <input type="text" id="messageInput" placeholder="Type your request here..."
+                        onkeypress="handleKeyPress(event)">
                     <button id="sendBtn" onclick="sendMessage()">Send</button>
                 </div>
             </div>
@@ -653,129 +729,138 @@
         const messageInput = document.getElementById('messageInput');
         const sendBtn = document.getElementById('sendBtn');
         const sessionList = document.getElementById('session-list');
-        
+
         let currentSessionId = null;
-        const STORAGE_KEY_SESSION_ID = 'travelMate_currentSessionId';
+        const STORAGE_KEY_SESSIONS = 'travelMate_sessions';
+        const STORAGE_KEY_CURRENT_ID = 'travelMate_currentSessionId';
+
+        // --- Session Management (Client Side) ---
+
+        function getLocalSessions() {
+            const sessionsJson = localStorage.getItem(STORAGE_KEY_SESSIONS);
+            return sessionsJson ? JSON.parse(sessionsJson) : {};
+        }
+
+        function saveLocalSessions(sessions) {
+            localStorage.setItem(STORAGE_KEY_SESSIONS, JSON.stringify(sessions));
+        }
+
+        function getSession(id) {
+            const sessions = getLocalSessions();
+            return sessions[id];
+        }
+
+        function saveSession(session) {
+            const sessions = getLocalSessions();
+            sessions[session.id] = session;
+            saveLocalSessions(sessions);
+        }
+
+        function deleteSession(id) {
+            const sessions = getLocalSessions();
+            delete sessions[id];
+            saveLocalSessions(sessions);
+        }
+
+        function generateId() {
+            return Date.now().toString(36) + Math.random().toString(36).substr(2);
+        }
 
         // Initialize
         document.addEventListener('DOMContentLoaded', async () => {
-            await loadSessions();
-            
+            renderSessionList();
+
             // Check localStorage for existing session
-            const savedSessionId = localStorage.getItem(STORAGE_KEY_SESSION_ID);
-            
-            if (savedSessionId) {
-                // Check if valid by trying to load it
+            const savedSessionId = localStorage.getItem(STORAGE_KEY_CURRENT_ID);
+
+            if (savedSessionId && getSession(savedSessionId)) {
                 await loadSession(savedSessionId);
-            }
-            
-            // If no saved session or load failed (currentSessionId still null), create new
-            if (!currentSessionId) {
+            } else {
                 await createNewSession();
             }
         });
 
+        function renderSessionList() {
+            const sessions = getLocalSessions();
+            const sessionArray = Object.values(sessions).sort((a, b) => b.createdAt - a.createdAt);
+
+            sessionList.innerHTML = '';
+            sessionArray.forEach(session => {
+                const div = document.createElement('div');
+                div.className = 'session-item';
+                div.textContent = session.title || 'New Chat';
+                div.onclick = () => loadSession(session.id);
+                if (session.id === currentSessionId) {
+                    div.classList.add('active');
+                }
+                sessionList.appendChild(div);
+            });
+        }
+
+        // Mocking loadSessions for compatibility if needed, but we use renderSessionList
         async function loadSessions() {
-            try {
-                const response = await fetch('/api/sessions');
-                const sessions = await response.json();
-                
-                sessionList.innerHTML = '';
-                sessions.forEach(session => {
-                    const div = document.createElement('div');
-                    div.className = 'session-item';
-                    div.textContent = session.title || 'New Chat';
-                    div.onclick = () => loadSession(session.id);
-                    if (session.id === currentSessionId) {
-                        div.classList.add('active');
-                    }
-                    sessionList.appendChild(div);
-                });
-            } catch (error) {
-                console.error('Failed to load sessions:', error);
-            }
+            renderSessionList();
         }
 
         async function createNewSession() {
-            try {
-                const response = await fetch('/api/sessions', { method: 'POST' });
-                const session = await response.json();
-                
-                currentSessionId = session.id;
-                localStorage.setItem(STORAGE_KEY_SESSION_ID, currentSessionId);
-                
-                chatHistory.innerHTML = '';
-                
-                // Reset to initial state layout
-                document.querySelector('.container').classList.add('initial-state');
+            const id = generateId();
+            const newSession = {
+                id: id,
+                title: 'New Chat',
+                messages: [],
+                createdAt: Date.now()
+            };
 
-                // Add welcome message
-                appendMessage('Hello! I can help you find flights, hotels, and activities. Where would you like to go?', 'bot');
-                
-                await loadSessions(); // Refresh list
-            } catch (error) {
-                console.error('Failed to create session:', error);
-            }
+            saveSession(newSession);
+            await loadSession(id);
         }
 
         async function loadSession(id) {
-            if (currentSessionId === id && chatHistory.children.length > 0) return;
-            
-            try {
-                const response = await fetch(`/api/sessions/${id}`);
-                if (!response.ok) {
-                    if (response.status === 404) {
-                        console.warn('Session not found, clearing storage');
-                        localStorage.removeItem(STORAGE_KEY_SESSION_ID);
-                        currentSessionId = null; 
-                        return;
-                    }
-                    throw new Error('Failed to fetch session');
-                }
-                
-                const session = await response.json();
-                
-                currentSessionId = id;
-                localStorage.setItem(STORAGE_KEY_SESSION_ID, currentSessionId);
-                
-                chatHistory.innerHTML = '';
-                
-                // Update UI active state
-                document.querySelectorAll('.session-item').forEach(el => el.classList.remove('active'));
-                // We re-render list to make it easy
-                await loadSessions();
+            const session = getSession(id);
+            if (!session) {
+                console.warn('Session not found');
+                localStorage.removeItem(STORAGE_KEY_CURRENT_ID);
+                return;
+            }
 
-                // Manage Layout State based on content
-                const container = document.querySelector('.container');
-                if (session.messages.length === 0) {
-                     container.classList.add('initial-state');
-                     appendMessage('Hello! I can help you find flights, hotels, and activities. Where would you like to go?', 'bot');
-                } else {
-                    container.classList.remove('initial-state');
-                    // Replay messages
-                    session.messages.forEach(msg => {
-                        if (msg.role === 'user') {
-                            appendMessage(msg.content, 'user');
-                        } else {
-                             appendMessage(msg.content, 'bot');
-                             
-                             // Render rich UI components if they exist in history
-                             if (msg.data && msg.dataType) {
-                                 if (msg.dataType === 'flights') {
-                                     appendFlightResults(msg.data);
-                                 } else if (msg.dataType === 'activities') {
-                                     appendActivityResults(msg.data);
-                                 } else if (msg.dataType === 'hotels') {
-                                     appendHotelResults(msg.data);
-                                 } else if (msg.dataType === 'offers') {
-                                     appendOfferResults(msg.data);
-                                 }
-                             }
+            if (currentSessionId === id && chatHistory.children.length > 0) return;
+
+            currentSessionId = id;
+            localStorage.setItem(STORAGE_KEY_CURRENT_ID, currentSessionId);
+
+            chatHistory.innerHTML = '';
+
+            // Update UI active state
+            renderSessionList();
+
+            // Manage Layout State based on content
+            const container = document.querySelector('.container');
+            if (session.messages.length === 0) {
+                container.classList.add('initial-state');
+                appendMessage('Hello! I can help you find flights, hotels, and activities. Where would you like to go?', 'bot');
+            } else {
+                container.classList.remove('initial-state');
+                // Replay messages
+                session.messages.forEach(msg => {
+                    if (msg.role === 'user') {
+                        appendMessage(msg.content, 'user');
+                    } else {
+                        appendMessage(msg.content, 'bot');
+
+                        // Render rich UI components if they exist in history
+                        if (msg.data && msg.dataType) {
+                            if (msg.dataType === 'flights') {
+                                appendFlightResults(msg.data);
+                            } else if (msg.dataType === 'activities') {
+                                appendActivityResults(msg.data);
+                            } else if (msg.dataType === 'hotels') {
+                                appendHotelResults(msg.data);
+                            } else if (msg.dataType === 'offers') {
+                                appendOfferResults(msg.data);
+                            }
                         }
-                    });
-                }
-            } catch (error) {
-                console.error('Failed to load session:', error);
+                    }
+                });
             }
         }
 
@@ -788,12 +873,18 @@
         async function sendMessage() {
             const text = messageInput.value.trim();
             if (!text) return;
-            
+
             // Remove initial state class on first interaction
             document.querySelector('.container').classList.remove('initial-state');
 
             // Add user message locally
             appendMessage(text, 'user');
+
+            // Save user message to local session
+            const session = getSession(currentSessionId);
+            session.messages.push({ role: 'user', content: text });
+            saveSession(session);
+
             messageInput.value = '';
             messageInput.disabled = true;
             sendBtn.disabled = true;
@@ -802,31 +893,36 @@
             const loadingId = appendMessage('Searching...', 'bot', true);
 
             try {
+                // Send history along with message
                 const response = await fetch('/api/chat', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ 
+                    body: JSON.stringify({
                         message: text,
-                        sessionId: currentSessionId
+                        history: session.messages // Send full history
                     })
                 });
 
                 const data = await response.json();
-                
+
                 // Remove loading message
                 document.getElementById(loadingId).remove();
 
                 if (data.error) {
                     appendMessage(`Error: ${data.error}`, 'bot');
                 } else {
-                    // Update title if it changed
-                    if (data.title) {
-                        loadSessions(); // Refresh sidebar
-                    }
-
                     // The model response (text)
                     if (data.content) {
                         appendMessage(data.content, 'bot');
+
+                        // Save bot response to local session
+                        session.messages.push({
+                            role: 'model',
+                            content: data.content,
+                            data: data.data,
+                            dataType: data.dataType
+                        });
+                        saveSession(session);
                     }
 
                     // Render UI cards if available
@@ -841,6 +937,11 @@
                             appendOfferResults(data.data);
                         }
                     }
+
+                    // Generate Title if needed (e.g. after 2 messages and title is still default)
+                    if (session.title === 'New Chat' && session.messages.length >= 2) {
+                        generateTitle(session);
+                    }
                 }
 
             } catch (error) {
@@ -854,10 +955,28 @@
             }
         }
 
+        async function generateTitle(session) {
+            try {
+                const response = await fetch('/api/generate-title', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ history: session.messages })
+                });
+                const data = await response.json();
+                if (data.title) {
+                    session.title = data.title;
+                    saveSession(session);
+                    renderSessionList();
+                }
+            } catch (e) {
+                console.error("Title generation failed", e);
+            }
+        }
+
         function appendMessage(text, sender, isLoading = false) {
             const div = document.createElement('div');
             div.className = `message ${sender}`;
-            
+
             if (sender === 'bot' && !isLoading) {
                 // Check for JSON comparison block
                 const jsonBlockRegex = /```json-comparison([\s\S]*?)```/;
@@ -867,7 +986,7 @@
                     try {
                         const jsonContent = match[1].trim();
                         const comparisonData = JSON.parse(jsonContent);
-                        
+
                         // Render text before the block (if any)
                         const textParts = text.split(match[0]);
                         let html = marked.parse(textParts[0] || '');
@@ -895,21 +1014,21 @@
 
             if (isLoading) div.id = 'loading-' + Date.now();
             chatHistory.appendChild(div);
-            
+
             // Smart Scroll Logic
             if (sender === 'user') {
-                 // User message: Scroll to bottom to show it
-                 chatHistory.scrollTop = chatHistory.scrollHeight;
+                // User message: Scroll to bottom to show it
+                chatHistory.scrollTop = chatHistory.scrollHeight;
             } else {
-                 // Bot message: Scroll to the start of the message, so user sees top
-                 // Use a small timeout to ensure layout is done
-                 setTimeout(() => {
+                // Bot message: Scroll to the start of the message, so user sees top
+                // Use a small timeout to ensure layout is done
+                setTimeout(() => {
                     // Only scroll if it's not visible or if we are at the very bottom?
                     // Actually simpler: scroll the new message into view at the top
                     div.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                 }, 50);
+                }, 50);
             }
-            
+
             return div.id;
         }
 
@@ -936,7 +1055,7 @@
             if (data.recommendation) {
                 tableHtml += `<div class="recommendation"><strong>Recommendation:</strong> ${data.recommendation}</div>`;
             }
-            
+
             tableHtml += `</div>`;
             return tableHtml;
         }
@@ -952,20 +1071,20 @@
             flights.forEach(flight => {
                 const card = document.createElement('div');
                 card.className = 'flight-card';
-                
+
                 // Basic Itinerary Info
                 const itinerary = flight.itineraries[0];
                 const segments = itinerary.segments;
                 const firstSegment = segments[0];
                 const lastSegment = segments[segments.length - 1];
-                
+
                 // Format Duration
                 const formatDuration = (ptDuration) => {
-                     if (!ptDuration) return '';
-                     return ptDuration.replace('PT', '').toLowerCase();
+                    if (!ptDuration) return '';
+                    return ptDuration.replace('PT', '').toLowerCase();
                 };
                 const duration = formatDuration(itinerary.duration);
-                
+
                 // Price
                 const price = flight.price.total;
                 const currency = flight.price.currency;
@@ -973,9 +1092,9 @@
                 // Build segments HTML (Compact view)
                 let segmentsHtml = '';
                 segments.forEach((segment, index) => {
-                    const depTime = new Date(segment.departure.at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-                    const arrTime = new Date(segment.arrival.at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-                    
+                    const depTime = new Date(segment.departure.at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                    const arrTime = new Date(segment.arrival.at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
                     segmentsHtml += `
                         <div class="segment-row">
                             <div class="carrier-logo">${segment.carrierCode}</div>
@@ -993,10 +1112,10 @@
                         </div>
                     `;
                 });
-                
+
                 // Date
                 const depDate = new Date(firstSegment.departure.at).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
-                
+
                 // Stops text
                 const stopsText = segments.length > 1 ? `${segments.length - 1} Stop(s)` : 'Direct';
 
@@ -1021,7 +1140,7 @@
             chatHistory.appendChild(container);
             // Smart scroll for cards
             setTimeout(() => {
-                 container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                container.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, 50);
         }
 
@@ -1036,19 +1155,19 @@
             activities.forEach(activity => {
                 const card = document.createElement('div');
                 card.className = 'activity-card';
-                
+
                 const price = activity.price ? `${activity.price.amount} ${activity.price.currencyCode}` : '';
                 const rating = activity.rating ? `⭐ ${activity.rating}` : '';
                 const image = activity.pictures && activity.pictures.length > 0 ? activity.pictures[0] : null;
                 const duration = activity.minimumDuration ? `🕒 ${activity.minimumDuration}` : '';
-                
+
                 let imageHtml = '';
                 if (image) {
                     imageHtml = `<img src="${image}" alt="${activity.name}" class="activity-image">`;
                 } else {
-                     imageHtml = `<div style="height: 180px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 40px;">🎭</div>`;
+                    imageHtml = `<div style="height: 180px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 40px;">🎭</div>`;
                 }
-                
+
                 card.innerHTML = `
                     ${imageHtml}
                     <div class="activity-content">
@@ -1084,7 +1203,7 @@
             chatHistory.appendChild(container);
             // Smart scroll for cards
             setTimeout(() => {
-                 container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                container.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, 50);
         }
 
@@ -1129,16 +1248,16 @@
                     validHotels.forEach(hotel => {
                         const lat = parseFloat(hotel.geoCode.latitude);
                         const lng = parseFloat(hotel.geoCode.longitude);
-                        
+
                         const marker = L.marker([lat, lng]).addTo(map);
                         marker.bindPopup(`<b>${hotel.name}</b><br>ID: ${hotel.hotelId}`);
                         bounds.push([lat, lng]);
                     });
-                    
+
                     if (bounds.length > 0) {
                         map.fitBounds(bounds, { padding: [20, 20] });
                     }
-                    
+
                     map.invalidateSize();
                 }, 100);
             }
@@ -1147,10 +1266,10 @@
             hotels.slice(0, 5).forEach(hotel => {
                 const card = document.createElement('div');
                 card.className = 'hotel-card';
-                
-                const address = hotel.address ? 
+
+                const address = hotel.address ?
                     [hotel.address.lines ? hotel.address.lines.join(', ') : '', hotel.address.cityName, hotel.address.countryCode]
-                    .filter(Boolean).join(', ') 
+                        .filter(Boolean).join(', ')
                     : 'Address not available';
 
                 // Placeholder image logic (using a gradient or generic travel image if possible, here using a gradient div)
@@ -1159,7 +1278,7 @@
                         <span style="font-size: 30px;">🏨</span>
                     </div>
                 `;
-                
+
                 card.innerHTML = `
                     ${imageHtml}
                     <div class="hotel-content">
@@ -1178,21 +1297,21 @@
                 `;
                 container.appendChild(card);
             });
-             
-             if (hotels.length > 5) {
-                 const moreDiv = document.createElement('div');
-                 moreDiv.style.textAlign = 'center';
-                 moreDiv.style.padding = '15px';
-                 moreDiv.style.color = '#888';
-                 moreDiv.style.fontSize = '0.9em';
-                 moreDiv.textContent = `...and ${hotels.length - 5} more hotels.`;
-                 container.appendChild(moreDiv);
-             }
+
+            if (hotels.length > 5) {
+                const moreDiv = document.createElement('div');
+                moreDiv.style.textAlign = 'center';
+                moreDiv.style.padding = '15px';
+                moreDiv.style.color = '#888';
+                moreDiv.style.fontSize = '0.9em';
+                moreDiv.textContent = `...and ${hotels.length - 5} more hotels.`;
+                container.appendChild(moreDiv);
+            }
 
             chatHistory.appendChild(container);
             // Smart scroll for cards
             setTimeout(() => {
-                 container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                container.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, 50);
         }
 
@@ -1219,12 +1338,12 @@
                     const card = document.createElement('div');
                     card.className = 'hotel-card'; // Reuse hotel card style
                     // Add green border on left to distinguish
-                    card.style.borderLeft = '5px solid #28a745'; 
+                    card.style.borderLeft = '5px solid #28a745';
 
                     const price = offer.price ? `${offer.price.total} ${offer.price.currency}` : 'N/A';
                     const room = offer.room;
                     const roomType = room.typeEstimated ? (room.typeEstimated.category || room.typeEstimated.bedType) : (room.description ? room.description.text : 'Standard Room');
-                    
+
                     const checkIn = new Date(offer.checkInDate).toLocaleDateString();
                     const checkOut = new Date(offer.checkOutDate).toLocaleDateString();
 
@@ -1258,9 +1377,10 @@
             chatHistory.appendChild(container);
             // Smart scroll for cards
             setTimeout(() => {
-                 container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                container.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, 50);
         }
     </script>
 </body>
+
 </html>
