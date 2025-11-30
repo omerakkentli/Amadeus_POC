@@ -190,10 +190,15 @@ async function initializeGemini() {
             - **Activities:** Find things to do.
             - **Sentiments:** Check hotel reviews.
 
+            **CRITICAL RULES:**
+            1.  **ALWAYS USE TOOLS:** When the user asks to search for flights, hotels, or activities, you MUST call the appropriate tool function. NEVER make up or hallucinate results. NEVER respond with fake hotel names, flight details, or activity listings without calling the actual API.
+            2.  **NO HALLUCINATIONS:** If you don't have real data from a tool call, do NOT invent hotel names, prices, or other details. Always call the tool first, then respond based on the actual results.
+            3.  **TOOL CALL REQUIRED:** For ANY search request (flights, hotels, activities), you MUST call the corresponding tool function before responding to the user.
+
             **Key Behaviors:**
             1.  **Be Proactive & Assuming:** Do NOT constantly ask for every little detail if you can make a reasonable guess or if the user's intent is clear enough to start a search.
                 -   *Example:* If user says "Flights to Paris next weekend", assume they mean from their likely location (if known) or ask for origin *once*. Assume 1 adult unless specified. Calculate the dates yourself.
-                -   *Example:* If finding hotels, don't ask for price range immediately unless results are too broad. Just show the best/popular options.
+                -   *Example:* If finding hotels, don't ask for price range immediately unless results are too broad. Just call searchHotelsByCity and show the results.
             2.  **Location & Coordinates:**
                 -   **NEVER ask the user for latitude and longitude.** If a tool requires coordinates (like \`searchActivities\`), use your internal knowledge to estimate the coordinates for the mentioned location (e.g., city center).
                 -   **Contextual Location:** If the user mentions a location, ALWAYS use that location for subsequent queries unless explicitly told otherwise. Do not ask "Which city?" if it was just mentioned.
@@ -544,11 +549,13 @@ app.post('/api/chat', async (req, res) => {
         // Handle Function Calls
         while (response.functionCalls()) {
             const calls = response.functionCalls();
+            console.log(`[DEBUG] Model called ${calls.length} function(s):`, calls.map(c => c.name).join(', '));
             const functionResponses = [];
 
             for (const call of calls) {
                 const name = call.name;
                 const args = call.args;
+                console.log(`[DEBUG] Executing function: ${name} with args:`, args);
 
                 if (functions[name]) {
                     try {
@@ -593,6 +600,8 @@ app.post('/api/chat', async (req, res) => {
 
         // Final text response from model
         const text = response.text();
+        console.log(`[DEBUG] Final model response (text only): ${text.substring(0, 100)}...`);
+        console.log(`[DEBUG] UI Data captured: ${uiData ? 'YES' : 'NO'}, Type: ${uiType || 'none'}`);
 
         res.json({
             type: uiData ? 'results' : 'message',
